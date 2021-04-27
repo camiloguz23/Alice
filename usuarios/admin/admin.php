@@ -32,9 +32,9 @@
             <ul class="menu2">
             
                 <h2>INSTRUCTORES</h2>
-                <p href="" class="menu">Crear Nuevo</p>
-                <p href="" class="menu">Eliminar</p>
-                <p href="" class="menu">Modificar Datos</p>
+                <a href="" class="menu">Crear Nuevo</a>
+                <a href="" class="menu">Eliminar</a>
+                <a href="" class="menu">Modificar Datos</a>
                
             </ul>
                 <div>

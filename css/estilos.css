@@ -1,0 +1,179 @@
+#principal{
+	overflow: hidden;
+	border: 0px solid #000;
+	margin: auto;
+}
+body{
+    background: rgb(238, 237, 237);
+}
+header{
+	width: 100%;
+	height: 100px;
+    border: 2px solid #000;
+    background-color: #e72828;
+}
+/*Clase para las opciones del menu*/
+.btnletra {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #EB5C00;
+    font-size: 15px;
+}
+.fecha {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #EB5C00;
+}
+/* El menu de nuestra pagina*/
+#main-header {
+    background: rgb(255, 255, 255);
+    color: white;
+    height: 100px;
+    width: 100%; 
+}
+
+/*
+ * Logo
+ */
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none;
+}
+	
+	
+	#logo-header .site-name {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em;
+	}
+	
+	#logo-header .site-desc {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #999;
+    }
+    
+        
+    .logosena {
+        width: 60px;
+        height: 70px;
+    }
+
+    .logoproyecto{
+        width: 160px;
+        height: 70px;
+    }
+    /*Opciones del menu*/
+    nav {
+        float: right;
+        list-style: none;
+        margin-top: 8px;
+    }
+    nav ul li{
+        display: inline-block;
+        line-height: 20px;
+    }
+    nav ul li a {
+        display: block;
+        padding: 1px 5px;
+        text-decoration: none;  
+    }
+
+.formulario{
+	text-decoration: none;
+    width: 400px;
+    height: 400px;
+    margin: 40px;
+    border: orange 5px solid ;
+    background-image: url(../img/logo.png);
+    background-size: cover;
+    position: relative;
+}
+
+h2{
+    text-align: center;
+    font-weight: 700;
+    background:rgba(252, 92, 0, 0.485);
+    color: #EB5C00;
+}
+form{
+    width: 100%;
+    margin: auto;
+}
+.espacio{
+    position: relative;
+    margin: 70px;
+}
+input{
+    background: none;
+    font-size: 15px;
+    padding: 8px;
+    width: 100%;
+    background-color: #eb9900;
+    border-radius: 6px;
+    
+}
+.casilla{
+    background: none;
+    font-size: 15px;
+    padding: 8px;
+    width: 100%;
+}
+
+.a1{
+    margin: 120px;
+    
+}
+.a2{
+    margin: 60px;
+}
+
+.logo{
+    text-align: right;
+    margin: 150px;
+    position: absolute;
+    top: -30px; left: 680px;
+}
+
+.logo h1{
+    text-align: left;
+    font-size: 35px;
+}
+/*Nuestro pie de pagina*/
+footer{
+    width: 93.5%;
+    background: #23bb81;
+    color: white;
+    padding: 40.5px;
+    margin-top: 10px;
+    height: auto;
+    }
+    .container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between ;
+    }
+    .column1{
+    max-width: 500px;
+    }
+    .column1 p{
+    font-size: 14px;
+    margin: 1px;
+    }
+    
+    .column2{
+     max-width: 500px;
+    }
+    .column2 h2{
+    font-size: 22px;
+    }
+    .column2.img{
+    margin-top: 20px;
+    display: flex;
+    }
+    .column2 img{
+    width: 35px;
+    height: 36px;
+    margin: 8px;
+    }

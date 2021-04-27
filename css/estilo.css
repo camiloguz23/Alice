@@ -1,0 +1,66 @@
+/*Estilos de la cabecera*/
+
+.header {
+    overflow: hidden;
+    background-color: white;
+    padding: 20px 10px;
+    border-bottom: 6px solid orangered;
+}
+
+/*Estilos de los enlaces de la cabecera*/
+.header a {
+    float: left;
+    color: orangered;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+/*Estilo del enlace del logo*/
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/*cambiar el color de fondo al pasar el puntero del mouse*/
+.header a:hover{
+    background-color: orangered;
+    color: #ddd; 
+}
+
+/*Estilo al enlace actual*/
+.header a.active {
+    background-color: orangered;
+    color: white;
+}
+
+/*Float para la sección del enlace a la derecha*/
+.parent-header-right {
+    position: unset;
+}
+
+.header-right {
+    overflow: auto;
+    margin-left: 690px;
+    margin-top: 46px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/*Agregar consultas de medios para mejorar la capacidad de respuesta: cuando la pantalla tenga 500 píxeles de ancho o menos, apile los enlaces uno encima del otro*/
+@media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }

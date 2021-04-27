@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INGRESO</title>
+    <link rel="stylesheet" href="static/css/estilo.css">
+</head>
+<body>
+    <div id="principal">
+        <div id="main-header">
+            
+            <a id="logo-header" href="#">
+                <img src="static/img/logo.png" alt="Logo Sena" class="logosena">
+                <img src="static/img/ashleylogo2.png" alt="Logo Proyecto" class="logoproyecto">
+
+            <nav>
+                <ul>
+                    <li class="botones"><a class="btnletra">CALENDARIO SISTEMA PARA ASIGNACION
+                        INSTRUCTORES A LOS AMBIENTES DE FORMACION</a></li>
+                    <li class="botones"><a class="fecha" href="#">
+                        <script>
+                        var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                        var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+                        var f=new Date();
+                        document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+                        </script>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="parte2">
+    <div class="formulario">
+        <h2>INGRESO Usuario Regitrado</h2>
+        <form action="" method="POST" name="formulario">
+            <div class="espacio">
+                <label for="">Usuario</label>
+                <input name= "usuario" type="text" placeholder="" required class="casilla">
+                <label for="">clave</label>
+                <input name= "clave" type="password" placeholder="" required class="casilla">
+            </div>
+            <input type="submit" value="Iniciar Sesión">
+            <a href="#" class="a1">¿Olvide mi Contraseña?</a> 
+            <a href="#" class="a2">¿Su usuario esta bloqueado o inactivo?</a>
+        </form>
+    </div> 
+    <div class="logo">
+        <img src="static/img/ashleylogo.png" alt="">
+        <h1>INICIO DE SESION</h1>
+    </div>    
+</div>
+<footer>
+    <div class="container">
+        <div class="column1">
+        <p>CENTRO DE INDUSTRIA Y CONTRUCCION</p>
+        <p>SENA</p>
+        <p>IBAGUE-TOLIMA</p>
+        </div>
+
+        <div class="column2">
+            <img src="static/img/facebook.png">
+            <img src="static/img/twitter.png">
+            <img src="static/img/instagram.png">
+            <img src="static/img/youtube.png">
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

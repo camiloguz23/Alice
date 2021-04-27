@@ -1,83 +1,127 @@
 *{
-    margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    
+    margin: 0px;
 }
-header{
-    border-bottom: 1px solid #000;
-    background-color:white;
-}
-h1{
-    color:#238276 ;
-    padding: 33px 60px;
-    margin-top: -13%;
-   
-}
-div.calen{
-    width:50px; 
-    height:50px;  
-}
-li:hover{
-    cursor: pointer;
-    background-color:#fc7323 ;
-    width: 30px;
-    height: 5px;
-}
-ul.header{
-    display: inline-flex;
-    background-color: white;
-  
-}
-li.header{
-     padding: 20px 50px ;
+body
+{   
+    background-color: rgb(230, 230, 230); 
+    font-family:Verdana;  
+
 }
 
-li.header{
-    overflow: hidden;
+
+.header{
+    position: absolute;
+    width: 100%;
+
 }
-div.foto{
-background-color:#238276;
+.menu{
+    border-bottom: 1px solid #000;
+    position: absolute;
+    background-color: #ffffff;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    margin-left: 0px;
 }
-nav{
-    position: fixed;
-    width: 200px;
-    height: 600px;
-    background-color: rgba(245, 239, 239, 0.815);
-    border-bottom:  4px solid #000;
+.menu .logo
+{
+    margin-left: 25px;
+    margin-top: 10px;   
 }
-h2{
-    border-bottom: 1px solid #000;  
-    padding: 8px; 
-   
+.nombre
+{
+    color: #238276;
+    margin-top: 5px;
+    margin-right: auto;
+    font-size: 25px;
+    
+
+}
+/* menu  */
+
+.menu .list-container
+{
+    margin: 0px -13%;
+    margin-top: 30px;
     
 }
-h2:hover{
-    cursor: pointer;
-    background-color: #238276;
+.menu .list-container ul
+{
+    display: inline-flex;
+
 }
-ul.menu2{
+.menu .list-container ul
+{
     list-style: none;
-    display: block;
-    border-bottom: 1px solid #000;
+}
+.menu .list-container ul  a {
+    margin-left: 25px;
+    text-decoration: none;
+    padding: 7px 20px;
+    color: black;
+    transition: 0.3s;
+    font-size: 15px;
+}
+.menu .list-container li:hover > ul{
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+
+
+}
+.menu .list-container ul li a:hover
+{
+    background:#fc7323 ;
+    color: #ffffff;
     
 }
-p.menu{
-    position: relative;
-    padding: 5px;
-    padding-right: 28px;
-    font-size:20px ;
+.menu .salir {
+    padding: 0px 50px;
+    margin-top: -25px;
 }
-p:hover{
-    cursor: pointer;
-    background-color: #238276;
+.menu .salir ul{
+    list-style: none;
 }
-div{
-    border-bottom: 1px solid #000;
+.menu .salir a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
 }
-.calendar{
-    padding-top: 20px;
-    width: 180px;
-    height: 180px;
+
+
+.admin{
+    color: #ffffff;
+    font-size: 17px;
+    margin-left: 45%;
+    margin-top: 40px;
+
 }
+.uno img{
+    margin-top: -40%;
+    margin-left: 20px;
+    
+}
+
+.menu2{
+    border-right: 1px solid black;
+    margin-top:78px;
+    margin-left: -10px;
+    width: 20%;
+    height: 582px;
+    background-color: rgb(255, 255, 255);
+    
+}
+.uno{
+    padding: 1px;
+    background-color:#238276;
+}
+.menu2 li{
+    list-style: none;
+}
+

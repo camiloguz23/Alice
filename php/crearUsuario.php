@@ -1,3 +1,4 @@
+
 <?php
 require_once ("conexion.php");
 
@@ -26,3 +27,4 @@ $insertar= mysqli_query($bdmysql,$crear);
 
 
 ?>
+

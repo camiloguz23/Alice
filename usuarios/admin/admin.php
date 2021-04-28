@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +13,6 @@
             
             <nav class="menu">
                
-                
                 <div class="logo">
                     <img  height="60px" width="60px" src="../../assets/img/logo_calendar.png" alt="">
                 </div>
@@ -47,16 +45,16 @@
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"> DIANA LUCIA</p>
+                <p class= "admin"></p>
                 <img  height="70px" widih="70px" src= "../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">
                     <li><a href="#">INSTRUCTORES</a>
                       <ul class="sub">
-                        <li><a href=""><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../../formularios/admin/crear/crearUsu.html"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+                        <li><a href="../../formularios/admin/eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../../formularios/admin/modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>

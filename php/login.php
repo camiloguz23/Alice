@@ -14,23 +14,24 @@ if($fila){
     $_SESSION["tipo"] = $fila["id_tip_usu"];
 
     if($_SESSION['tipo'] == 1){
-        header("Location: /Alice/usuarios/admin/admin.html");
+        header("location: ../usuarios/admin/admin.html");
         exit();
     }
 
     elseif($_SESSION['tipo'] == 2){
-        header("Location: /Alice/usuarios/coordinador/coordinador.html");
+        header("location: ../usuarios/coordinador/coordinador.html");
         exit();
     }
 
     elseif($_SESSION['tipo'] == 3){
-        header("Location: /Alice/usuarios/instructores/instru.html");
+        header("location: ../usuarios/instructores/instru.html");
         exit();
     }
 
 }
 else{
-    header("Location: /Alice/index.html");
+//    header("Location: /Alice/index.html");
+    echo "jajjaja";
     exit();
 }
 ?>

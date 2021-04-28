@@ -1,4 +1,3 @@
-
 *{
     padding: 0px;
     margin: 0px;
@@ -174,6 +173,7 @@ ul.acorc li li:last-child a {
 ul.acorh li:hover ul {
     max-height: 300px;
     transition: .7s all ease-in;
+    
 }
 ul.acorh .sub li a:hover {
     background: #238276;
@@ -181,5 +181,11 @@ ul.acorh .sub li a:hover {
 }
 ul.acorh li a:hover {
     background-color: #fc7323;
+    color: #fff;
+
+}
+
+ul.acorh li a.active{
+    background-color: #238276;
     color: #fff;
 }

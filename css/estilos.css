@@ -133,14 +133,13 @@ input{
 }
 
 .logo{
-    text-align: right;
+    text-align: center;
     margin: 150px;
-    position: absolute;
     top: -30px; left: 680px;
 }
 
 .logo h1{
-    text-align: left;
+    text-align: center;
     font-size: 35px;
 }
 /*Nuestro pie de pagina*/
@@ -214,3 +213,4 @@ footer{
         background-color: orangered;
         color: #ddd; 
     }
+

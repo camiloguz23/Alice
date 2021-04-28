@@ -151,7 +151,6 @@ ul.acorh li a {
     box-sizing: border-box;
 }
 ul.acorh li ul {
-    max-height: 0;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -173,12 +172,81 @@ ul.acorc li li:last-child a {
 ul.acorh li:hover ul {
     max-height: 300px;
     transition: .7s all ease-in;
+    display: block;
 }
 ul.acorh .sub li a:hover {
     background: #238276;
     color: #fff;
 }
 ul.acorh li a:hover {
+    background-color: #fc7323;
+    color: #fff;
+
+}
+ul.acorh li a.active{
+    background-color: #238276;
+    color: #fff;
+}
+ul.acorh li a.activ{
+    background-color: #fc7323;
+    color: #fff;
+}
+
+ul.acor,
+ul.acor * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ul.acor {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-size: 16px;
+}
+ul.acor li {
+    list-style: none;
+
+}
+ul.acor li a {
+    display: block;
+    padding: 10px 10px 15px 40px;
+    background: rgb(255, 255, 255);
+    color: rgb(10, 10, 10);
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+ul.acor li ul {
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: .3s all ease-in;
+}
+ul.acor li li a {
+    padding: 10px 10px 10px 40px;
+    background:  #ffffff;
+    color: #000;
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid rgb(117, 117, 117);
+    box-sizing: border-box;
+}
+ul.acorc li li:last-child a {
+    border-bottom: 0;
+}
+ul.acor li:hover ul {
+    max-height: 300px;
+    transition: .7s all ease-in;
+    display: block;
+}
+ul.acor .sub li a:hover {
+    background: #238276;
+    color: #fff;
+}
+ul.acor li a:hover {
     background-color: #fc7323;
     color: #fff;
 

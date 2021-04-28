@@ -13,7 +13,6 @@
             
             <nav class="menu">
                
-                
                 <div class="logo">
                     <img  height="60px" width="60px" src="../../assets/img/logo_calendar.png" alt="">
                 </div>
@@ -46,7 +45,7 @@
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"> DIANA LUCIA</p>
+                <p class= "admin"></p>
                 <img  height="70px" widih="70px" src= "../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">

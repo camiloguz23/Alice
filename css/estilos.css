@@ -148,7 +148,7 @@ footer{
     width: 97.5%;
     background: #23bb81;
     color: white;
-    padding: 40.5px;
+    padding: 20px;
     margin-top: 94px;
     height: auto;
     float: left;
@@ -214,3 +214,5 @@ footer{
         background-color: orangered;
         color: #ddd; 
     }
+
+    

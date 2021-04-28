@@ -189,3 +189,44 @@ ul.acorh li a.active{
     background-color: #238276;
     color: #fff;
 }
+div.form{
+    margin-top:-40% ;
+    padding:0px 430px 0px;
+    
+    }
+    form{
+    background-color: white;
+    width: 800px;
+    height:500px;
+    
+    }
+    h1{
+        margin-left: 40px;
+        margin-top: -3%;
+        text-align: center;
+        color: #000;
+        font-size: 30px;
+    }
+    label.texto{
+    background-color: #fc7323;
+    }
+    input{
+        margin: 20px;
+        padding: 3px;
+        margin-top: 10px;
+    }
+    .enviar{
+        margin-left: 75px;
+        padding: 8px;
+        margin-top: 25px;
+        border-radius: 10px;
+        width: 120px;
+        font-size: 15px;
+        cursor: pointer;
+         
+    }
+    .enviar:hover{
+        background-color: #fc7323;
+    }
+    
+    

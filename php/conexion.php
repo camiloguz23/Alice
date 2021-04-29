@@ -9,6 +9,6 @@
   {
     die("fallo la conexion con la base de datos $database" . mysqli_connect_errno());
   }
-  session_start();
+
 ?>
 

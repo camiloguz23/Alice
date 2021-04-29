@@ -1,3 +1,10 @@
+<?php
+    require_once( "../../php/conexion.php");
+    include("../../php/iniciosesion.php");
+    $sql = "SELECT * FROM usuario, tipousu where docu = '".$_SESSION['id_user']."' AND usuario.id_tip_usu=tipousu.id_tip_usu";
+    $usuarios = mysqli_query ($bdmysqli, $sql) or die (mysqli_error());
+    $row_usuarios = mysqli_fetch_assoc ($usuarios);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +42,7 @@
 
                 <div class="salir">
                     <ul>
-                        <li><a href=""> CERRAR SESION</a></li>
+                        <li><a href="../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -45,7 +52,7 @@
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"></p>
+                <p class= "admin">ASHLEY AGUDELO</p>
                 <img  height="70px" widih="70px" src= "../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
@@ -82,3 +89,4 @@
 
     </body>
 </html>
+

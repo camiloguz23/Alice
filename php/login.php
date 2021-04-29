@@ -1,37 +1,54 @@
+
 <?php
-    require_once ("conexion.php");
+    require_once("conexion.php");
+    if($_POST["inicio"])
+    {
+       
 
-    $Docu = $_POST['usuario'];
-    $clave = $_POST['clave'];
+        $Docu = $_POST['usuario'];
+        $clave = $_POST['clave'];
+        //consultamos el usuario segun el usuario y la clave
 
-    $consul= "SELECT * FROM usuario where docu = '$Docu' AND contra_seguridad = '$clave'";
-    $resultado = mysqli_query($bdmysql, $consul);
-    $fila= mysqli_fetch_assoc($resultado);
+        $consul= "SELECT * FROM usuario where docu = '$Docu' AND contra_seguridad = '$clave'";
+        $resultado = mysqli_query($bdmysqli, $consul);
+        $fila= mysqli_fetch_assoc($resultado);
+    
 
-if($fila){
+        if($fila)
+        {
+            // si el usuario es correcto creamos las variables
 
-    $_SESSION["id_user"] = $fila["docu"];
-    $_SESSION["tipo"] = $fila["id_tip_usu"];
+            $_SESSION["id_user"] = $fila["docu"];
+            $_SESSION["tipousu"] = $fila["id_tip_usu"];
+            $_SESSION['nombres'] = $fila['nombres'];
 
-    if($_SESSION['tipo'] == 1){
-        header("location: ../usuarios/admin/admin.html");
-        exit();
+    
+            
+
+            // dependiendo del tipo de USuario redireccionamos
+            //si es un aprendiz
+            if($_SESSION['tipousu'] == 1){
+                header("location: ../usuarios/admin/admin.php");
+                exit();
+            }
+    
+            elseif($_SESSION['tipousu'] == 2){
+                header("location: ../usuarios/coordinador/coordinador.html");
+                exit();
+            }
+    
+            elseif($_SESSION['tipousu'] == 3){
+                header("location: ../usuarios/instructores/instru.html");
+                exit();
+            }
+    
+    
+        }else{
+            // si son incorrectos lo va a mandar a un error 
+            header("location: ../index.html");
+            exit();
+        }  
     }
-
-    elseif($_SESSION['tipo'] == 2){
-        header("location: ../usuarios/coordinador/coordinador.html");
-        exit();
-    }
-
-    elseif($_SESSION['tipo'] == 3){
-        header("location: ../usuarios/instructores/instru.html");
-        exit();
-    }
-
-}
-else{
-//    header("Location: /Alice/index.html");
-    echo "jajjaja";
-    exit();
-}
 ?>
+
+

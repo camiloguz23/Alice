@@ -1,3 +1,24 @@
+<?php
+require_once ("../../../php/conexion.php");
+
+$sql = "SELECT * from tipousu";
+$usuario = mysqli_query($bdmysqli,$sql);
+?>
+
+<?php
+$sql2 = "SELECT * from tipodocu";
+$documen = mysqli_query($bdmysqli,$sql2);
+?>
+
+<?php
+$sql3 = "SELECT * from titul_academ";
+$titulo = mysqli_query($bdmysqli,$sql3);
+?>
+
+<?php
+$sql4 = "SELECT * from especializacion";
+$especial = mysqli_query($bdmysqli,$sql4);
+?>
 
 
 <!DOCTYPE html>
@@ -56,7 +77,7 @@
                 <ul class="acorh">
                     <li ><a class="activ" href="#">INSTRUCTORES</a>
                       <ul class="sub">
-                        <li><a href="crearUsu.html" class="active"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+                        <li><a href="crearUsu.php" class="active"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../eliminar/EliminarUsu.html" ><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
@@ -84,7 +105,7 @@
             
         </div>
         <div class="form">
-          <form class="formula" action="" method="POST">
+          <form class="formula" action="../../../php/crearUsuario.php" method="POST">
             <p>NUEVO USUARIO</p>
 
            
@@ -92,36 +113,36 @@
             <div class="contenedor">
                 <div>
                     <label for="" class="texto">Documento</label><br>
-                    <input type="text">
+                    <input type="number" name="documento">
     
                 </div>
                 <div>
-                    <label for="" class="texto">Nombre</label><br>
-                    <input type="text">
+                    <label  class="texto">Nombre</label><br>
+                    <input type="text" name="nombre">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Apellido</label><br>
-                    <input type="text">
+                    <input type="text" name="apellido">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Edad</label><br>
-                    <input type="text">
+                    <input type="number" name="edad">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="text">
+                    <input type="number" name="celular">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Fijo</label><br>
-                    <input type="text">
+                    <input type="number" name="fijo">
     
                 </div> 
 
@@ -130,7 +151,7 @@
             <div class="contened">
                 <div class="direccion">
                     <label for="" class="texto">Direccion</label><br>
-                    <input type="text">
+                    <input type="text" name="direccion">
     
                 </div>
 
@@ -141,17 +162,29 @@
 
                 <div class=" tipo">
                     <label for="" class="texto">Tipo Usuario</label><br>
-                    <select >   
-                        <option >Seleccione </option> 
+                    <select  name="tipousu">
+                        <option >Seleccione </option>
+                        <?php
+                        foreach ($usuario as $tipoUsu){
+                            ?> <option value="<?=$tipoUsu['id_tip_usu']?>"><?=$tipoUsu['nom_tip_usu']?></option>
+                        <?php
+                        }
+                        ?>
                     </select>                            
 
 
                 </div>
 
                 <div>
-                    <label for="" class="texto">Tipo Documento</label><br>
-                    <select>   
-                        <option >Seleccione </option> 
+                    <label  class="texto">Tipo Documento</label><br>
+                    <select name="tipodocu">
+                        <option >Seleccione </option>
+                        <?php
+                        foreach ($documen as $tipDocu){
+                            ?> <option value="<?=$tipDocu['id_tip_docu']?>"><?=$tipDocu['nom_tip_docu']?></option>
+                        <?php
+                        }
+                        ?>
                     </select>                            
 
 
@@ -162,36 +195,48 @@
             <div class="conte">
                 <div>
                     <label for="" class="texto">Correo</label><br>
-                    <input type="text">
+                    <input type="email" name="correo" >
     
                 </div>
     
                 <div>
-                    <label for="" class="texto">Clave de seguridad</label><br>
-                    <input type="text">
+                    <label  class="texto">Clave de seguridad</label><br>
+                    <input type="password" name="clave">
     
                 </div>
-                <div>
-                    <label for="" class="texto">Codigo de barras</label><br>
-                    <input type="text">
-    
-                </div>
+<!--                <div>-->
+<!--                    <label for="" class="texto">Codigo de barras</label><br>-->
+<!--                    <input type="text" name="cod">-->
+<!--    -->
+<!--                </div>-->
 
             </div>
 
             <div class="cont">
                 <div>
-                    <label for="" class="texto">titulo academico</label><br>
-                    <select  >   
-                        <option >Seleccione </option> 
+                    <label  class="texto">titulo academico</label><br>
+                    <select name="tituloacade" >
+                        <option >Seleccione </option>
+                        <?php
+                        foreach ($titulo as $titulacad){
+                            ?> <option value="<?=$titulacad['id_titu']?>"><?=$titulacad['nom_titu']?>/option>
+                        <?php
+                        }
+                        ?>
                     </select>                            
 
     
                 </div>
                 <div>
-                    <label for="" class="texto">Especializacion</label><br>
-                    <select >
-                        <option >Seleccione </option> 
+                    <label  class="texto">Especializacion</label><br>
+                    <select name="especializacion" >
+                        <option value="" >Seleccione </option>
+                        <?php
+                        foreach ($especial as $especializacion){
+                            ?> <option value="<?=$especializacion['id_esp']?>"><?=$especializacion['nom_esp']?></option>
+                        <?php
+                        }
+                        ?>
                     </select>                            
 
     

@@ -19,7 +19,7 @@ $especializacion  = $_POST["especializacion"];
 
 
 $crear = "INSERT INTO usuario (docu,id_tip_usu,id_tip_docu,nombres,apellidos,edad,celular,fijo,direccion,email,contra_seguridad,codigo_barras)";
-$insertar= mysqli_query($bdmysql,$crear);
+$insertar= mysqli_query($bdmysqli,$crear);
 
 
 

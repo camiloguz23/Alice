@@ -321,13 +321,13 @@ input{
 }
 
 .container{
-    width: 70%;
+    width: 50%;
     background: white;
     margin: 60px auto;
     
     display: grid;
-    grid-template-columns: repeat(11, 20%);
-    grid-auto-rows: 60px;
+    grid-template-columns: repeat(11, 10%);
+    grid-auto-rows: 50px;
 }
 
 

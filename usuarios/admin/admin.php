@@ -70,7 +70,7 @@ if ($validar == "" || $validar == null){
                       <ul class="sub">
                         <li><a href="../../formularios/admin/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../../formularios/admin/eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../../formularios/admin/modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../../formularios/admin/modificar/ModifiUsu.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>

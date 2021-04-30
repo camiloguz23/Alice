@@ -71,8 +71,8 @@ $consul = mysqli_query($bdmysqli,$ambi);
                     <li><a class="activ"  href="#">AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href="modificarAmbi.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href="" ><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                          <li><a href="../eliminar/"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="modificarAmbi.php" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -92,14 +92,11 @@ $consul = mysqli_query($bdmysqli,$ambi);
             
         </div>
 
-
-
         <div class="form">
 
                 <p>ELIMINAR AMBIENTES</p>
 
-            <table class="tabla">
-
+            <table>
                 <thead>
                 <tr>
                     <th>N° Ambiente</th>
@@ -130,57 +127,6 @@ $consul = mysqli_query($bdmysqli,$ambi);
 
         </div>
                 
-        <div class="form">
-          <form class="formula" action="" method="POST">
-                <p>ELIMINAR USUARIO</p>
-
-                <div class="contenedor">
-                    <div>
-                        <label for="" class="texto">Documento</label><br>
-                        <input type="text"><i class="fas fa-search"></i>
-
-        
-                    </div>
-                    <div class="tabla">
-                        <table class="datos"">
-                            <tr class="nn">
-                                <div class="contenedor">
-                                    <div>
-                                        <td>NOMBRES</td>
-                                    </div>
-                                    <div>
-                                        <td>APELLIDOS</td>
-                                    </div>
-                                </div>
-                                <div class="contened">
-                                    <td>EDAD</td>
-                                    <td>CELULAR</td>
-                                    <td>FIJO</td>	
-                                </div>
-                                <div class="contend"> 
-                                    <td>DIRECCION</td>	
-                                </div>
-                                <div>
-                                    <td>TIPO DE USUARIO</td>
-                                    <td>TIPO DE DOCUMENTO</td>    
-                                </div>
-                                <div class="conten">
-                                    <td>CORREO</td>
-                                </div>
-                                <div class="conte">
-                                    <td>CLAVE DE SEGURIDAD</td>
-                                    <td>TITULO PROFECIONAL</td>
-                                    <td>ESPECIALIZACION</td>
-                                </div>
-                                <div class="con">
-                                    <td>CODIGO DE BARRAS</td>
-                                </div>
-                            </tr>
-                        </table>
-                    </div>
-                <input type="submit" class="enviar" name="ELIMINAR" value="Eliminar">
-            </form>
-        </div>
 
 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>

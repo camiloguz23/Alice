@@ -1,8 +1,7 @@
 
 <?php
     require_once("conexion.php");
-    if($_POST["inicio"])
-    {
+
        
 
         $Docu = $_POST['usuario'];
@@ -48,7 +47,7 @@
             header("location: ../index.html");
             exit();
         }  
-    }
+
 ?>
 
 

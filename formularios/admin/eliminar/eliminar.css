@@ -354,3 +354,21 @@ input{
     gap:5px;
 
 }
+
+.tabla{
+    border: 1px solid red;
+    margin-left: -250px;
+
+    border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+    width: 70%;
+    border:1px solid black;
+}
+
+.tabla th{
+    background: maroon;
+    width: 100px;
+    padding: 0 20px 0 20px ;
+}

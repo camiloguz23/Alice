@@ -1,3 +1,10 @@
+<?php
+require_once ("../../../php/conexion.php");
+
+$consulta = "SELECT usuario.docu,usuario.nombres,usuario.apellidos,usuario.direccion,tipousu.nom_tip_usu,titul_academ.nom_titu,especializacion.nom_esp from usuario,tipousu,titul_academ,especializacion,detalle_p_e WHERE usuario.id_tip_usu=tipousu.id_tip_usu and usuario.docu = detalle_p_e.docu and detalle_p_e.id_titu=titul_academ.id_titu and detalle_p_e.id_esp= especializacion.id_esp";
+$delete = mysqli_query($bdmysqli,$consulta);
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +61,7 @@
                     <li><a class="activ" href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../eliminar/EliminarUsu.html" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="EliminarUsu.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
@@ -64,7 +71,7 @@
                     <li><a href="#">AMBIENTES</a>
                         <ul class="sub">
                           <li><a href=""><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="../modificar/modificarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                           <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
@@ -85,7 +92,7 @@
 
         
         <div class="form">
-          <form class="formula" action="" method="POST">
+
                 <p>ELIMINAR USUARIO</p>
 
                 <div class="contenedor">
@@ -95,45 +102,42 @@
 
         
                     </div>
-                    <div class="tabla">
-                        <table class="datos"">
-                            <tr class="nn">
-                                <div class="contenedor">
-                                    <div>
-                                        <td>NOMBRES</td>
-                                    </div>
-                                    <div>
-                                        <td>APELLIDOS</td>
-                                    </div>
-                                </div>
-                                <div class="contened">
-                                    <td>EDAD</td>
-                                    <td>CELULAR</td>
-                                    <td>FIJO</td>	
-                                </div>
-                                <div class="contend"> 
-                                    <td>DIRECCION</td>	
-                                </div>
-                                <div>
-                                    <td>TIPO DE USUARIO</td>
-                                    <td>TIPO DE DOCUMENTO</td>    
-                                </div>
-                                <div class="conten">
-                                    <td>CORREO</td>
-                                </div>
-                                <div class="conte">
-                                    <td>CLAVE DE SEGURIDAD</td>
-                                    <td>TITULO PROFECIONAL</td>
-                                    <td>ESPECIALIZACION</td>
-                                </div>
-                                <div class="con">
-                                    <td>CODIGO DE BARRAS</td>
-                                </div>
+
+                        <table class="tabla">
+                            <thead>
+                            <tr>
+                                <th>Documento</th>
+                                <th>Nombre  y apellido</th>
+                                <th>Direccion</th>
+                                <th>Tipo de usuario</th>
+                                <th>Titulo Academico</th>
+                                <th>Especializacion</th>
+                                <th>Eliminar</th>
                             </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach ($delete as $elim){
+                                ?> <tr>
+                                    <td><?=$elim["docu"]?></td>
+                                    <td><?=$elim["nombres"]?> <?=$elim["apellidos"]?></td>
+                                    <td><?=$elim["direccion"]?></td>
+                                    <td><?=$elim["nom_tip_usu"]?></td>
+                                    <td><?=$elim["nom_titu"]?></td>
+                                    <td><?=$elim["nom_esp"]?></td>
+                                    <td><form action="" method="POST">
+                                            <input type="hidden" value="<?=$elim["docu"]?>">
+                                            <button type="submit">Eliminar</button>
+                                        </form> </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                            </tbody>
                         </table>
-                    </div>
-                <input type="submit" class="enviar" name="ELIMINAR" value="Eliminar">
-            </form>
+
+
+
         </div>
 
     

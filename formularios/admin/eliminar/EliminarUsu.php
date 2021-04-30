@@ -95,11 +95,6 @@ $delete = mysqli_query($bdmysqli,$consulta);
 
                 <p>ELIMINAR USUARIO</p>
 
-                <div class="contenedor">
-                    <div>
-                        <label for="" class="texto">Documento</label><br>
-                        <input type="text"><i class="fas fa-search"></i>
-
         
                     </div>
 

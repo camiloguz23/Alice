@@ -1,3 +1,11 @@
+<?php
+require_once ("../../../php/conexion.php");
+
+$sqli = "SELECT * from naves";
+$ambien = mysqli_query($bdmysqli,$sqli);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,9 +14,7 @@
 
         <link rel="stylesheet" href="crearAm.css">
 
-        <link rel="stylesheet" href="style.css">
-
-        <link rel="shortcut icon" href="../../assets/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -17,7 +23,7 @@
             <nav class="menu">
                
                 <div class="logo">
-                    <img  height="60px" width="60px" src="../../assets/img/logo_calendar.png" alt="">
+                    <img  height="60px" width="60px" src="../../../assets/img/logo_calendar.png" alt="">
                 </div>
                 <a class="nombre">ADMINISTRADOR</a>
 
@@ -38,7 +44,7 @@
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
+                        <li><a href="../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -49,39 +55,43 @@
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin">ASHLEY AGUDELO</p>
-                <img  height="70px" widih="70px" src= "../../assets/img/logo_usuar.png" alt="">
+                <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
-                <ul class="acorh">
+                <ul class="acor">
                     <li><a href="#">INSTRUCTORES</a>
                       <ul class="sub">
-                        <li><a href="../../formularios/admin/crear/crearUsu.html"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../../formularios/admin/eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../../formularios/admin/modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="crearUsu.html"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+                        <li><a href="../eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>
-                    <li><a href="#">AMBIENTES</a>
+                </ul>
+                <ul class="acorh">
+                    <li ><a class="activ" href="#">AMBIENTES</a>
                       <ul class="sub">
-                        <li><a href=""><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                        <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="crearAmbien.html"  class="active"><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                        <li><a href="../eliminar/"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../modificar/modificarAmbi.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
+                </ul>
+                <ul class="acor">
                     <li><a href="#">CLASES</a>
                       <ul class="sub">
                         <li><a href=""><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
                         <li><a href=""><i class="fas fa-pen-square"></i>.Modificar </a></li>
                       </ul>
                     </li>
-                  </ul>
+                </ul>
                   
 
             </div>   
             
         </div>
         <div class="form">
-          <form class="formula" action="" method="POST">
+          <form class="formula" action="../../../php/crearAmbiente.php" method="POST">
             <p>NUEVO AMBIENTE DE FORMACION</p>
 
            
@@ -89,37 +99,27 @@
             <div class="contenedor">
                 <div>
                     <label for="" class="texto"> Ambiente de formacion</label><br>
-                    <input type="text">
+                    <input name="ambiente" type="text">
     
-                </div>
-                <div>
-                    <label for="" class="texto">Nombre del Ambiente </label><br>
-                    <input type="text">
-    
-                </div>
-  
-            </div>
-
-           <div class="conten">
+                </div>  
 
                 <div class=" tipo">
                     <label for="" class="texto"> Nave</label><br>
-                    <select >   
+                    <select name="nave">   
                         <option >Seleccione </option> 
-                    </select>                            
-
-
-                <!---</div>
-                <div>
-                  <label for="" class="texto">nombre de la nave</label><br>
-                  <input type="text">
-  
-              </div>!-->
-
+                        <?php
+                        foreach ($ambien as $naves){
+                            ?> <option value="<?=$naves['id_naves']?>"><?=$naves['nom_nave']?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>    
+                </div>                        
 
             </div>
               
             <input type="submit" class="enviar" name="enviar" value="Enviar">
+            
         </form>
   </div>
         

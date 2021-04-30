@@ -62,7 +62,7 @@ $ambien = mysqli_query($bdmysqli,$sqli);
                     <li><a href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="crearUsu.html"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
@@ -73,7 +73,7 @@ $ambien = mysqli_query($bdmysqli,$sqli);
                       <ul class="sub">
                         <li><a href="crearAmbien.html"  class="active"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                         <li><a href="../eliminar/"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../modificar/modificarAmbi.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../modificar/modificarAmbi.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
                 </ul>

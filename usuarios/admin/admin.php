@@ -1,4 +1,13 @@
 <?php
+session_start();
+$validar = $_SESSION["id_user"];
+
+if ($validar == "" || $validar == null){
+    header("location: ../../index.html");
+}
+?>
+
+<?php
     require_once( "../../php/conexion.php");
     include("../../php/iniciosesion.php");
     $sql = "SELECT * FROM usuario, tipousu where docu = '".$_SESSION['id_user']."' AND usuario.id_tip_usu=tipousu.id_tip_usu";

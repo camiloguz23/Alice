@@ -70,9 +70,9 @@ $delete = mysqli_query($bdmysqli,$consulta);
                 <ul class="acor">                    
                     <li><a href="#">AMBIENTES</a>
                         <ul class="sub">
-                          <li><a href=""><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                          <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../modificar/modificarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                          <li><a href="../modificar/modificarAmbi.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
                     <li><a href="#">CLASES</a>

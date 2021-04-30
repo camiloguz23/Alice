@@ -1,4 +1,7 @@
-
+<?php
+include ('conexion.php');
+$usuarios = "SELECT * FROM usuario"
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -54,8 +57,8 @@
                     <li><a class="activ" href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="ModifiUsu.html" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="modificar/ModifiUsu.html" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
                 </ul>
@@ -63,14 +66,11 @@
                 <ul class="acor">                    
                     <li><a href="#">AMBIENTES</a>
                         <ul class="sub">
-                          <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href="../eliminar/"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href="modificarAmbi.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                          <li><a href=""><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                          <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
-
-                </ul>
-                <ul class="acor">
                     <li><a href="#">CLASES</a>
                         <ul class="sub">
                           <li><a href=""><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
@@ -85,7 +85,45 @@
             </div>   
             
         </div>
-    
+        <div class="form">
+            <form class="formula" action="" method="POST">
+                  <p>MODIFICAR USUARIO</p>
+                    <div class="contenedor">
+                        <div>
+                            <label for="" class="texto">Documento</label><br>
+                            <input type="text"><i class="fas fa-search"></i>
+
+        
+                        </div>
+                    </div>
+        <div class="container">
+        <div class="table__header">Documento</div>
+        <div class="table__header">Tipo usuario</div>
+        <div class="table__header">Tipo documento</div>
+        <div class="table__header">Nombre</div>
+        <div class="table__header">Apellido</div>
+        <div class="table__header">Edad</div>
+        <div class="table__header">Celular</div>
+        <div class="table__header">fijo</div>
+        <div class="table__header">Direccion</div>
+        <div class="table__header">Gmail</div>
+        <div class="table__header">Contraseña</div>
+        <?php $resultado = mysqli_query($conexion, $usuarios);
+        while($row=mysqli_fetch_assoc($resultado))  {?>
+            <div class="table__item"><?php echo $row["docu"];?></div>
+            <div class="table__item"><?php echo $row["id_tip_usu"];?></div>
+            <div class="table__item"><?php echo $row["id_tip_docu"];?></div>
+            <div class="table__item"><?php echo $row["nombres"];?></div>
+            <div class="table__item"><?php echo $row["apellidos"];?></div>
+            <div class="table__item"><?php echo $row["edad"];?></div>
+            <div class="table__item"><?php echo $row["celular"];?></div>
+            <div class="table__item"><?php echo $row["fijo"];?></div>
+            <div class="table__item"><?php echo $row["direccion"];?></div>
+            <div class="table__item"><?php echo $row["email"];?></div>
+            <div class="table__item"><?php echo $row["contra_seguridad"];?></div>
+            <?php } mysqli_free_result($resultado) ?>
+          </div>
+
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>

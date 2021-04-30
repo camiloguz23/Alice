@@ -93,8 +93,6 @@ body
     color: rgb(0, 0, 0);
     font-size: 14px;
 }
-
-
 .admin{
     color: #ffffff;
     font-size: 17px;
@@ -103,14 +101,14 @@ body
 
 }
 .uno img{
-    margin-top: -20%;
+    margin-top: -40%;
     margin-left: 20px;
     
 }
 
 .menu2{
     border-right: 1px solid black;
-    margin-top:58px;
+    margin-top:78px;
     margin-left: -10px;
     width: 20%;
     height: 582px;
@@ -253,17 +251,33 @@ ul.acor li a:hover {
 }
 
 
+
+
+/*formulario*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:5px;
+    margin-top: 40px;
+    
+
+}
+.tipo{
+    align-content: center;
+    margin-left: 50%;
+    
+}
 .form{
     width:70%; 
-    height: 530px;
+    height: 300px;
     color: rgb(7, 7, 7);
     background: white;
-    top: 57%;
+    top: 60%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 20px 50px;
+    padding: 10px 50px;
     margin-left: 130px;
 
     
@@ -271,7 +285,7 @@ ul.acor li a:hover {
 
 .form p{
     margin: 0;
-    padding: 0 0 20px;
+    padding: 10px 0 ;
     text-align: center;
     font-size: 30px;
     text-decoration: underline;
@@ -287,13 +301,20 @@ input{
     margin: 10px;
     padding: 3px;
     margin-top: 10px;
-    width: 81%;
+    width: 120%;
+}
+
+select{
+    margin: 10px;
+    padding: 3px ;
+    margin-top: 10px;
+    width: 295%;
 }
 
 .form input[type="submit"] {
     outline: none;
     height: 25px;
-    width: 30%;
+    width: 20%;
     background-color: transparent;
     color:  rgb(255, 255, 255);
     font-size: 18px;
@@ -301,6 +322,7 @@ input{
     margin-left: 40%;
     font-family: 'Julius Sans One', sans-serif;  
     border-style: none;
+    margin-top: 30px;
 
 }
 
@@ -309,40 +331,6 @@ input{
     background:#238276;
     color: rgb(255, 255, 255);
     border-style: none;
-}
-
-.form .contenedor{
-    position: absolute;
-    width:30%;
-    text-align:center;
-    margin-left: 31%;
-    top: 60px;
-
-}
-
-.container{
-    width: 70%;
-    background: white;
-    margin: 60px auto;
+    transform: translatey(3px);
     
-    display: grid;
-    grid-template-columns: repeat(11, 20%);
-    grid-auto-rows: 60px;
-}
-
-
-.table__title, .container-table{
-    display: flex;
-    align-items: center;
-}
-
-.table__header{
-    font-weight: bold;
-    font-size: 1em;
-    color: #fc7323;
-}
-
-.table__item{
-    padding: 1px;
-    font-size: 1em;
 }

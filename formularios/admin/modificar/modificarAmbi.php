@@ -1,10 +1,17 @@
+<?php
+require_once ("../../../php/conexion.php");
+
+$ambi = "select id_amb,nom_amb,nom_nave from ambiente,naves where ambiente.id_naves=naves.id_naves";
+$consul = mysqli_query($bdmysqli,$ambi);
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
-        <link rel="stylesheet" href="modificar.css">
+        <link rel="stylesheet" href="modifiAm.css">
         <link rel="shortcut icon" href="../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
@@ -50,25 +57,24 @@
                 <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
-                <ul class="acorh">
-                    <li><a class="activ" href="#">INSTRUCTORES</a>
+                <ul class="acor">
+                    <li><a  href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="ModifiUsu.html" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
                 </ul>
 
-                <ul class="acor">                    
-                    <li><a href="#">AMBIENTES</a>
+                <ul class="acorh">                    
+                    <li><a class="activ"  href="#">AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href="modificarAmbi.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                          <li><a href="modificarAmbi.php" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
-
                 </ul>
                 <ul class="acor">
                     <li><a href="#">CLASES</a>
@@ -85,7 +91,44 @@
             </div>   
             
         </div>
-    
+
+        <div class="form">
+
+                <p>ELIMINAR AMBIENTES</p>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>N° Ambiente</th>
+                    <th>Nombre del ambiente</th>
+                    <th>Nave</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                foreach ($consul as $ambiente){
+                    ?> <tr>
+                        <td><?=$ambiente["id_amb"]?></td>
+                        <td><?=$ambiente["nom_amb"]?></td>
+                        <td><?=$ambiente["nom_nave"]?></td>
+                        <td><form action="" method="POST">
+                                <input type="hidden" value="<?=$ambiente["id_amb"]?>">
+                                <button type="submit">Eliminar</button>
+                            </form> </td>
+                    </tr>
+                <?php
+                }
+                ?>
+                </tbody>
+            </table>
+  
+
+
+        </div>
+                
+
+
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>

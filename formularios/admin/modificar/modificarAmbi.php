@@ -1,4 +1,13 @@
 <?php
+session_start();
+$validar = $_SESSION["id_user"];
+
+if ($validar == "" || $validar == null){
+    header("location: ../../index.html");
+}
+?>
+
+<?php
 require_once ("../../../php/conexion.php");
 
 $ambi = "select id_amb,nom_amb,nom_nave from ambiente,naves where ambiente.id_naves=naves.id_naves";
@@ -71,8 +80,8 @@ $consul = mysqli_query($bdmysqli,$ambi);
                     <li><a class="activ"  href="#">AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href="../eliminar/"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href="modificarAmbi.php" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                          <li><a href="modificarAmbi.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="" ><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -96,7 +105,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
 
                 <p>ELIMINAR AMBIENTES</p>
 
-            <table>
+            <table class="tabla">
                 <thead>
                 <tr>
                     <th>N° Ambiente</th>
@@ -112,8 +121,8 @@ $consul = mysqli_query($bdmysqli,$ambi);
                         <td><?=$ambiente["id_amb"]?></td>
                         <td><?=$ambiente["nom_amb"]?></td>
                         <td><?=$ambiente["nom_nave"]?></td>
-                        <td><form action="" method="POST">
-                                <input type="hidden" value="<?=$ambiente["id_amb"]?>">
+                        <td><form action="eliminaramb.php" method="POST">
+                                <input type="hidden" value="<?=$ambiente["id_amb"]?>" name="datoeli">
                                 <button type="submit">Eliminar</button>
                             </form> </td>
                     </tr>

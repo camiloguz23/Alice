@@ -275,44 +275,42 @@ ul.acor li a:hover {
     text-decoration: underline;
     font-weight: 700;
 }
-label.texto{
-    font-family: Verdana;
-    font-size: 16px;
-    margin-left: 3%;
-}
-    
-input{
-    margin: 10px;
-    padding: 3px;
-    margin-top: 10px;
-    width: 81%;
-}
 
-.form input[type="submit"] {
+button[type="submit"] {
     outline: none;
-    height: 25px;
-    width: 30%;
+    height: 16px;
+    width: 70%;
     background-color: transparent;
     color:  rgb(255, 255, 255);
-    font-size: 18px;
-    background-color:#fc7323;
-    margin-left: 40%;
-    font-family: 'Julius Sans One', sans-serif;  
+    font-size: 14px;
+    background-color:#238276;
+    margin-left: 10%;
     border-style: none;
 
 }
 
-.form input[type="submit"]:hover {
+button[type="submit"]:hover {
     cursor: pointer;
-    background:#238276;
+    background-color: rgb(89, 181, 72);
     color: rgb(255, 255, 255);
     border-style: none;
 }
 
-.form .contenedor{
-    position: absolute;
-    width:30%;
-    text-align:center;
-    margin-left: 31%;
 
+.tabla{
+    margin-left: 22%;
+    border: 1px solid #238276;
+    border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid black;
+}
+
+.tabla th{
+    background:#238276;
+    padding: 0 10px 5px 20px ;
 }

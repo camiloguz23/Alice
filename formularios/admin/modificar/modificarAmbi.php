@@ -71,8 +71,8 @@ $consul = mysqli_query($bdmysqli,$ambi);
                     <li><a class="activ"  href="#">AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href="../eliminar/"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href="modificarAmbi.php" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                          <li><a href="modificarAmbi.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="" ><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -96,7 +96,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
 
                 <p>ELIMINAR AMBIENTES</p>
 
-            <table>
+            <table class="tabla">
                 <thead>
                 <tr>
                     <th>N° Ambiente</th>

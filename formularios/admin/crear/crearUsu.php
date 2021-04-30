@@ -79,7 +79,7 @@ $especial = mysqli_query($bdmysqli,$sql4);
                       <ul class="sub">
                         <li><a href="crearUsu.php" class="active"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../eliminar/EliminarUsu.php" ><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../modificar/modifiusu.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>

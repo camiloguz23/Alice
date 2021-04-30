@@ -103,14 +103,14 @@ body
 
 }
 .uno img{
-    margin-top: -40%;
+    margin-top: -20%;
     margin-left: 20px;
     
 }
 
 .menu2{
     border-right: 1px solid black;
-    margin-top:78px;
+    margin-top:58px;
     margin-left: -10px;
     width: 20%;
     height: 582px;
@@ -250,4 +250,130 @@ ul.acor li a:hover {
     background-color: #fc7323;
     color: #fff;
 
+}
+
+
+.form{
+    width:70%; 
+    height: 530px;
+    color: rgb(7, 7, 7);
+    background: white;
+    top: 57%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 20px 50px;
+    margin-left: 130px;
+
+    
+}
+
+.form p{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+label.texto{
+    font-family: Verdana;
+    font-size: 16px;
+    margin-left: 3%;
+}
+    
+input{
+    margin: 10px;
+    padding: 3px;
+    margin-top: 10px;
+    width: 81%;
+}
+
+.form input[type="submit"] {
+    outline: none;
+    height: 25px;
+    width: 30%;
+    background-color: transparent;
+    color:  rgb(255, 255, 255);
+    font-size: 18px;
+    background-color:#fc7323;
+    margin-left: 40%;
+    font-family: 'Julius Sans One', sans-serif;  
+    border-style: none;
+
+}
+
+.form input[type="submit"]:hover {
+    cursor: pointer;
+    background:#238276;
+    color: rgb(255, 255, 255);
+    border-style: none;
+}
+
+.form .contenedor{
+    position: absolute;
+    width:30%;
+    text-align:center;
+    margin-left: 31%;
+    top: 60px;
+
+}
+
+.container{
+    width: 70%;
+    background: white;
+    
+    display: grid;
+    margin-top: 70px;
+    grid-template-columns: repeat(9, 17%);
+    grid-auto-rows: 40px;
+}
+
+
+.table__title, .container-table{
+    display: flex;
+    align-items: flex-start;
+}
+
+.table__header{
+    font-weight: bold;
+    font-size: 8px;
+    color: #fc7323;
+}
+
+.table__item{
+    padding: 1px;
+    font-size: 8px;
+}
+
+a.title_edit{
+    position: absolute;
+    right: 7%;
+    color: #fc7323;
+    text-decoration: none;
+    top: 100px;
+}
+
+.container container--edit{
+    grid-template-columns: repeat(10, 17%);
+    min-width: 900px;
+    grid-template-rows: 50px;
+}
+
+.table__title--edit{
+    grid-column-start: 1;
+    grid-column-end: 11;
+}
+
+.table__input{
+    display: block;
+    padding-left: 10px;
+    margin-left: 80px;
+}
+.container container--edit.container-submit{
+    padding: 0;
+    margin: 0;
+    font-size: 9px;
+    width: 100%;
 }

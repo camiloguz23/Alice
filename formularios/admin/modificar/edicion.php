@@ -1,10 +1,13 @@
-
+<?php
+include ('conexion.php');
+$usuarios = "SELECT * FROM usuario"
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
-        <link rel="stylesheet" href="eliminar.css">
+        <link rel="stylesheet" href="modificar.css">
         <link rel="shortcut icon" href="../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
@@ -54,8 +57,8 @@
                     <li><a class="activ" href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../eliminar/EliminarUsu.html" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../modificar/modifiusu.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="modificar/ModifiUsu.html" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
                 </ul>
@@ -82,61 +85,46 @@
             </div>   
             
         </div>
-
-        
         <div class="form">
-          <form class="formula" action="" method="POST">
-                <p>ELIMINAR USUARIO</p>
-
-                <div class="contenedor">
-                    <div>
-                        <label for="" class="texto">Documento</label><br>
-                        <input type="text"><i class="fas fa-search"></i>
+            <form class="formula" action="" method="POST">
+                  <p>MODIFICAR USUARIO</p>
+                    <div class="contenedor">
+                        <div>
+                            <label for="" class="texto">Documento</label><br>
+                            <input type="text"><i class="fas fa-search"></i>
 
         
+                        </div>
                     </div>
-                    <div class="tabla">
-                        <table class="datos"">
-                            <tr class="nn">
-                                <div class="contenedor">
-                                    <div>
-                                        <td>NOMBRES</td>
-                                    </div>
-                                    <div>
-                                        <td>APELLIDOS</td>
-                                    </div>
-                                </div>
-                                <div class="contened">
-                                    <td>EDAD</td>
-                                    <td>CELULAR</td>
-                                    <td>FIJO</td>	
-                                </div>
-                                <div class="contend"> 
-                                    <td>DIRECCION</td>	
-                                </div>
-                                <div>
-                                    <td>TIPO DE USUARIO</td>
-                                    <td>TIPO DE DOCUMENTO</td>    
-                                </div>
-                                <div class="conten">
-                                    <td>CORREO</td>
-                                </div>
-                                <div class="conte">
-                                    <td>CLAVE DE SEGURIDAD</td>
-                                    <td>TITULO PROFECIONAL</td>
-                                    <td>ESPECIALIZACION</td>
-                                </div>
-                                <div class="con">
-                                    <td>CODIGO DE BARRAS</td>
-                                </div>
-                            </tr>
-                        </table>
-                    </div>
-                <input type="submit" class="enviar" name="ELIMINAR" value="Eliminar">
-            </form>
-        </div>
+        <div class="container container--edit">
+            <div class="table__title--edit"></div>
+        <div class="table__header">Documento</div>
+        <div class="table__header">Nombre</div>
+        <div class="table__header">Apellido</div>
+        <div class="table__header">Edad</div>
+        <div class="table__header">Celular</div>
+        <div class="table__header">fijo</div>
+        <div class="table__header">Direccion</div>
+        <div class="table__header">Gmail</div>
+        <div class="table__header">Contraseña</div>
+        <div class="table__header">OPERACION</div>
+        <?php $resultado = mysqli_query($conexion, $usuarios);
+        while($row=mysqli_fetch_assoc($resultado))  {?>
+            <div class="table__item"><?php echo $row["docu"];?></div>
+            <div class="table__item"><?php echo $row["nombres"];?></div>
+            <div class="table__item"><?php echo $row["apellidos"];?></div>
+            <div class="table__item"><?php echo $row["edad"];?></div>
+            <div class="table__item"><?php echo $row["celular"];?></div>
+            <div class="table__item"><?php echo $row["fijo"];?></div>
+            <div class="table__item"><?php echo $row["direccion"];?></div>
+            <div class="table__item"><?php echo $row["email"];?></div>
+            <div class="table__item"><?php echo $row["contra_seguridad"];?></div>
+            <div class="table__item">
+                <a href="actualizar.php?id=<?php echo $row["docu"];?>" class="table__iteam__link">EDITAR</a>
+            </div>
+            <?php } mysqli_free_result($resultado) ?>
+          </div>
 
-    
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>

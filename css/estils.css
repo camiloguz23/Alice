@@ -1,0 +1,35 @@
+.header a:hover{
+    background-color: orangered;
+    color: #ddd; 
+}
+
+.header a.active {
+    background-color: orangered;
+    color: white;
+}
+
+.parent-header-right {
+    position: unset;
+}
+
+.header-right {
+    overflow: auto;
+    margin-left: 690px;
+    margin-top: 46px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }

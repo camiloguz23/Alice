@@ -1,26 +1,13 @@
-<?php
-session_start();
-$validar = $_SESSION["id_user"];
-
-if ($validar == "" || $validar == null){
-    header("location: ../../index.html");
-}
-?>
-
-<?php
-    require_once( "../../php/conexion.php");
-    include("../../php/iniciosesion.php");
-    $sql = "SELECT * FROM usuario, tipousu where docu = '".$_SESSION['id_user']."' AND usuario.id_tip_usu=tipousu.id_tip_usu";
-    $usuarios = mysqli_query ($bdmysqli, $sql) or die (mysqli_error());
-    $row_usuarios = mysqli_fetch_assoc ($usuarios);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
-        <link rel="stylesheet" href="admin.css">
+
+        <link rel="stylesheet" href="crearAm.css">
+
+        <link rel="stylesheet" href="style.css">
+
         <link rel="shortcut icon" href="../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
@@ -68,9 +55,9 @@ if ($validar == "" || $validar == null){
                 <ul class="acorh">
                     <li><a href="#">INSTRUCTORES</a>
                       <ul class="sub">
-                        <li><a href="../../formularios/admin/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../../formularios/admin/eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../../formularios/admin/modificar/modifiusu.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../../formularios/admin/crear/crearUsu.html"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+                        <li><a href="../../formularios/admin/eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../../formularios/admin/modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>
@@ -93,6 +80,49 @@ if ($validar == "" || $validar == null){
             </div>   
             
         </div>
+        <div class="form">
+          <form class="formula" action="" method="POST">
+            <p>NUEVO AMBIENTE DE FORMACION</p>
+
+           
+
+            <div class="contenedor">
+                <div>
+                    <label for="" class="texto"> Ambiente de formacion</label><br>
+                    <input type="text">
+    
+                </div>
+                <div>
+                    <label for="" class="texto">Nombre del Ambiente </label><br>
+                    <input type="text">
+    
+                </div>
+  
+            </div>
+
+           <div class="conten">
+
+                <div class=" tipo">
+                    <label for="" class="texto"> Nave</label><br>
+                    <select >   
+                        <option >Seleccione </option> 
+                    </select>                            
+
+
+                <!---</div>
+                <div>
+                  <label for="" class="texto">nombre de la nave</label><br>
+                  <input type="text">
+  
+              </div>!-->
+
+
+            </div>
+              
+            <input type="submit" class="enviar" name="enviar" value="Enviar">
+        </form>
+  </div>
+        
     
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 

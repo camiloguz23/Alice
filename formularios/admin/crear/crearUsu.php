@@ -58,7 +58,7 @@ $especial = mysqli_query($bdmysqli,$sql4);
 
                 <div class="salir">
                     <ul>
-                        <li><a href=""> CERRAR SESION</a></li>
+                        <li><a href="../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 

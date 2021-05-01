@@ -7,14 +7,6 @@ if ($validar == "" || $validar == null){
 }
 ?>
 
-<?php
-    require_once( "../../php/conexion.php");
-    include("../../php/iniciosesion.php");
-    $sql = "SELECT * FROM usuario, tipousu where docu = '".$_SESSION['id_user']."' AND usuario.id_tip_usu=tipousu.id_tip_usu";
-    $usuarios = mysqli_query ($bdmysqli, $sql) or die (mysqli_error());
-    $row_usuarios = mysqli_fetch_assoc ($usuarios);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>

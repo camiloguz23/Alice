@@ -53,7 +53,7 @@ if ($validar == "" || $validar == null){
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin">ASHLEY AGUDELO</p>
+                <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
                 <img  height="70px" widih="70px" src= "../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
@@ -68,7 +68,7 @@ if ($validar == "" || $validar == null){
                     </li>
                     <li><a href="#">AMBIENTES</a>
                       <ul class="sub">
-                        <li><a href=""><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                        <li><a href="../.../formularios/crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                         <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>

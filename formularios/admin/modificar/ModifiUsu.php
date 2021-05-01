@@ -57,8 +57,10 @@ $usuarios = "SELECT * FROM usuario"
                     <li><a class="activ" href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+
                         <li><a href="../eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="modificar/ModifiUsu.html" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="modificar/ModifiUsu.php" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+
                       </ul>
                     </li>
                 </ul>

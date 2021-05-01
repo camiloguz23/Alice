@@ -24,7 +24,7 @@
             if($fila["id_tip_usu"] == 1){
                 $_SESSION["id_user"] = $fila["docu"];
                 $_SESSION["tipousu"] = $fila["id_tip_usu"];
-                $_SESSION['nombres'] = $fila['nombres'];
+                $_SESSION["nombre"] = $fila['nombres'];
                 $_SESSION["apellido"] = $fila["apellidos"];
                 header("location: ../usuarios/admin/admin.php");
                 exit();

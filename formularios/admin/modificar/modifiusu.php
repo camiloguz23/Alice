@@ -1,4 +1,3 @@
-
 <?php
 include ('conexion.php');
 $usuarios = "SELECT * FROM usuario"
@@ -111,8 +110,6 @@ $usuarios = "SELECT * FROM usuario"
         <?php $resultado = mysqli_query($conexion, $usuarios);
         while($row=mysqli_fetch_assoc($resultado))  {?>
             <div class="table__item"><?php echo $row["docu"];?></div>
-            <div class="table__item"><?php echo $row["id_tip_usu"];?></div>
-            <div class="table__item"><?php echo $row["id_tip_docu"];?></div>
             <div class="table__item"><?php echo $row["nombres"];?></div>
             <div class="table__item"><?php echo $row["apellidos"];?></div>
             <div class="table__item"><?php echo $row["edad"];?></div>

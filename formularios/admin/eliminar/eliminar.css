@@ -18,7 +18,7 @@ body
 .menu{
     border-bottom: 1px solid #000;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #ffffff00;
     top:0;
     left: 0;
     width: 100%;
@@ -70,7 +70,7 @@ body
 }
 .menu .list-container li:hover > ul{
     position: fixed;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.055);
     border-radius: 10px;
 
 

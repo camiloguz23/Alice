@@ -79,7 +79,7 @@ $especial = mysqli_query($bdmysqli,$sql4);
                       <ul class="sub">
                         <li><a href="crearUsu.php" class="active"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../eliminar/EliminarUsu.php" ><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../modificar/modifiusu.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>
@@ -89,7 +89,7 @@ $especial = mysqli_query($bdmysqli,$sql4);
                     <li><a href="#">AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href="../modificar/modificarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                           <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>

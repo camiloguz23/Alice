@@ -97,9 +97,8 @@ $usuarios = "SELECT * FROM usuario"
                         </div>
                     </div>
         <div class="container">
+        <a href="edicion.php" class="title_edit">Modificar</a>
         <div class="table__header">Documento</div>
-        <div class="table__header">Tipo usuario</div>
-        <div class="table__header">Tipo documento</div>
         <div class="table__header">Nombre</div>
         <div class="table__header">Apellido</div>
         <div class="table__header">Edad</div>
@@ -111,8 +110,6 @@ $usuarios = "SELECT * FROM usuario"
         <?php $resultado = mysqli_query($conexion, $usuarios);
         while($row=mysqli_fetch_assoc($resultado))  {?>
             <div class="table__item"><?php echo $row["docu"];?></div>
-            <div class="table__item"><?php echo $row["id_tip_usu"];?></div>
-            <div class="table__item"><?php echo $row["id_tip_docu"];?></div>
             <div class="table__item"><?php echo $row["nombres"];?></div>
             <div class="table__item"><?php echo $row["apellidos"];?></div>
             <div class="table__item"><?php echo $row["edad"];?></div>

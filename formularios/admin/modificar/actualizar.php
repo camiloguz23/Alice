@@ -1,7 +1,7 @@
 <?php
 include ('conexion.php');
-$id = $_GET["id"];
-$usuarios = "SELECT * FROM usuario WHERE docu = '$id'"
+$docu = $_GET["id"];
+$usuarios = "SELECT * FROM usuario WHERE docu = '$docu'";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,23 +87,23 @@ $usuarios = "SELECT * FROM usuario WHERE docu = '$id'"
             
         </div>
         <div class="form">
-            <form class="formula" action="" method="POST">
+            <form class="formula" action="procesar.php" method="post">
                   <p>MODIFICAR USUARIO</p>
-        <form class="container container--edit" action="procesar.php" method="POST">
+        <form class="container container--edit" action="procesar.php" method="post">
             <div class="table__title--edit"></div>      
         <?php $resultado = mysqli_query($conexion, $usuarios);
         while($row=mysqli_fetch_assoc($resultado))  {?>
-            <input type="text" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
-            <input type="text" class="table__input" value="<?php echo $row["nombres"];?>" name="nombre">
-            <input type="text" class="table__input" value="<?php echo $row["apellidos"];?>" name="apellido">
+            <input type="hidden" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
+            <input type="text" class="table__input" value="<?php echo $row["nombres"];?>" name="nombre" disabled="disabled">
+            <input type="text" class="table__input" value="<?php echo $row["apellidos"];?>" name="apellido" disabled="disabled">
             <input type="text" class="table__input" value="<?php echo $row["edad"];?>" name="edad">
             <input type="text" class="table__input" value="<?php echo $row["celular"];?>" name="celular">
             <input type="text" class="table__input" value="<?php echo $row["fijo"];?>" name="fijo">
             <input type="text" class="table__input" value="<?php echo $row["direccion"];?>" name="direccion">
             <input type="text" class="table__input" value="<?php echo $row["email"];?>" name="email">
-            <input type="text" class="table__input" value="<?php echo $row["contra_seguridad"];?>" name="contraseña">
-            <?php } mysqli_free_result($resultado) ?>
-            <input type="submit" value="actualizar" class="container-submit">
+            <input type="text" class="table__input" value="<?php echo $row["contra_seguridad"];?>" name="contraseña" disabled="disabled">
+            <?php } mysqli_free_result($resultado);?>
+            <input type="submit" value="Actualizar" class="container-submit">
         </form>
 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>

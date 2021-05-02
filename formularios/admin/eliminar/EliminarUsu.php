@@ -10,7 +10,7 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../../php/conexion.php");
 
-$consulta = "SELECT usuario.docu,usuario.nombres,usuario.apellidos,usuario.direccion,tipousu.nom_tip_usu,titul_academ.nom_titu,especializacion.nom_esp from usuario,tipousu,titul_academ,especializacion,detalle_p_e WHERE usuario.id_tip_usu=tipousu.id_tip_usu and usuario.docu = detalle_p_e.docu and detalle_p_e.id_titu=titul_academ.id_titu and detalle_p_e.id_esp= especializacion.id_esp";
+$consulta = "SELECT usuario.docu,usuario.nombres,usuario.apellidos,usuario.direccion,tipousu.nom_tip_usu,titul_academ.nom_titu,especializacion.nom_esp from usuario LEFT JOIN tipousu on usuario.id_tip_usu=tipousu.id_tip_usu LEFT JOIN detalle_p_e on detalle_p_e.docu = usuario.docu left JOIN titul_academ on titul_academ.id_titu = detalle_p_e.id_titu LEFT JOIN especializacion on especializacion.id_esp = detalle_p_e.id_esp";
 $delete = mysqli_query($bdmysqli,$consulta);
 ?>
 

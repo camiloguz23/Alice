@@ -1,9 +1,10 @@
 <?php
-    require_once( "../../php/conexion.php");
-    include("../../php/iniciosesion.php");
-    $sql = "SELECT * FROM usuario, tipousu where docu = '".$_SESSION['id_user']."' AND usuario.id_tip_usu=tipousu.id_tip_usu";
-    $usuarios = mysqli_query ($bdmysqli, $sql) or die (mysqli_error());
-    $row_usuarios = mysqli_fetch_assoc ($usuarios);
+session_start();
+$validar = $_SESSION["id_user"];
+
+if ($validar == "" || $validar == null){
+    header("location: ../../index.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,7 @@
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin">ASHLEY AGUDELO</p>
+                <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
                 <img  height="70px" widih="70px" src= "../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
@@ -60,15 +61,15 @@
                     <li><a href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="../../formularios/admin/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../../formularios/admin/eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../../formularios/admin/modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../../formularios/admin/eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../../formularios/admin/modificar/edicion.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>
                     <li><a href="#">AMBIENTES</a>
                       <ul class="sub">
-                        <li><a href=""><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                        <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../.../formularios/crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                        <li><a href="../../formularios/admin/eliminar/eliminarAdmin.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>

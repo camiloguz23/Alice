@@ -1,6 +1,6 @@
 
 <?php
-require_once ("conexion.php");
+require_once("conexion.php");
 
 $documento = $_POST["documento"];
 
@@ -40,7 +40,10 @@ if ($insertar){
     $consulta = mysqli_query($bdmysqli,$titulos);
 
     if ($consulta){
-        echo "bien todo funciona";
+
+        echo '<script>alert ("se ingresaron los datos con exito");</script>';
+        echo '<script>window.location="../formularios/admin/crear/crearUsu.php"</script>';        
+
     }
 }
 

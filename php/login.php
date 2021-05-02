@@ -1,8 +1,8 @@
 
 <?php
     require_once("conexion.php");
-    if($_POST["inicio"])
-    {
+
+    session_start();
        
 
         $Docu = $_POST['usuario'];
@@ -12,43 +12,43 @@
         $consul= "SELECT * FROM usuario where docu = '$Docu' AND contra_seguridad = '$clave'";
         $resultado = mysqli_query($bdmysqli, $consul);
         $fila= mysqli_fetch_assoc($resultado);
-    
 
-        if($fila)
+
+
+        if($resultado)
         {
             // si el usuario es correcto creamos las variables
 
-            $_SESSION["id_user"] = $fila["docu"];
-            $_SESSION["tipousu"] = $fila["id_tip_usu"];
-            $_SESSION['nombres'] = $fila['nombres'];
-
-    
-            
-
             // dependiendo del tipo de USuario redireccionamos
             //si es un aprendiz
-            if($_SESSION['tipousu'] == 1){
+            if($fila["id_tip_usu"] == 1){
+                $_SESSION["id_user"] = $fila["docu"];
+                $_SESSION["tipousu"] = $fila["id_tip_usu"];
+                $_SESSION["nombre"] = $fila['nombres'];
+                $_SESSION["apellido"] = $fila["apellidos"];
                 header("location: ../usuarios/admin/admin.php");
                 exit();
-            }
-    
-            elseif($_SESSION['tipousu'] == 2){
+            } elseif($fila["id_tip_usu"] == 2){
+                $_SESSION["id_coordinador"] = $fila["docu"];
+                $_SESSION["tipousu"] = $fila["id_tip_usu"];
+                $_SESSION['nombres'] = $fila['nombres'];
+                $_SESSION["apellido"] = $fila["apellidos"];
                 header("location: ../usuarios/coordinador/coordinador.html");
                 exit();
-            }
-    
-            elseif($_SESSION['tipousu'] == 3){
+            } elseif($fila["id_tip_usu"] == 3){
+                $_SESSION["id_instructor"] = $fila["docu"];
+                $_SESSION["tipousu"] = $fila["id_tip_usu"];
+                $_SESSION['nombres'] = $fila['nombres'];
+                $_SESSION["apellido"] = $fila["apellidos"];
                 header("location: ../usuarios/instructores/instru.html");
                 exit();
             }
-    
-    
+
+
         }else{
-            // si son incorrectos lo va a mandar a un error 
-            header("location: ../index.html");
-            exit();
-        }  
-    }
+//
+        }
+
 ?>
 
 

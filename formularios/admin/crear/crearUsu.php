@@ -19,7 +19,14 @@ $titulo = mysqli_query($bdmysqli,$sql3);
 $sql4 = "SELECT * from especializacion";
 $especial = mysqli_query($bdmysqli,$sql4);
 ?>
+<?php
+session_start();
+$validar = $_SESSION["id_user"];
 
+if ($validar == "" || $validar == null){
+    header("location: ../../index.html");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +65,7 @@ $especial = mysqli_query($bdmysqli,$sql4);
 
                 <div class="salir">
                     <ul>
-                        <li><a href=""> CERRAR SESION</a></li>
+                        <li><a href="../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -70,7 +77,7 @@ $especial = mysqli_query($bdmysqli,$sql4);
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"> DIANA LUCIA</p>
+                <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
                 <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
@@ -78,8 +85,8 @@ $especial = mysqli_query($bdmysqli,$sql4);
                     <li ><a class="activ" href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="crearUsu.php" class="active"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../eliminar/EliminarUsu.html" ><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../modificar/ModifiUsu.html"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../eliminar/EliminarUsu.php" ><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>
@@ -88,8 +95,8 @@ $especial = mysqli_query($bdmysqli,$sql4);
                 <ul class="acor">                    
                     <li><a href="#">AMBIENTES</a>
                         <ul class="sub">
-                          <li><a href=""><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                          <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                           <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>

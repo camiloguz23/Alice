@@ -10,8 +10,8 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../../php/conexion.php");
 
-$consulta = "SELECT usuario.docu,usuario.nombres,usuario.apellidos,usuario.direccion,tipousu.nom_tip_usu,titul_academ.nom_titu,especializacion.nom_esp from usuario LEFT JOIN tipousu on usuario.id_tip_usu=tipousu.id_tip_usu LEFT JOIN detalle_p_e on detalle_p_e.docu = usuario.docu left JOIN titul_academ on titul_academ.id_titu = detalle_p_e.id_titu LEFT JOIN especializacion on especializacion.id_esp = detalle_p_e.id_esp";
-$delete = mysqli_query($bdmysqli,$consulta);
+$ambi = "select id_amb,nom_amb,nom_nave from ambiente,naves where ambiente.id_naves=naves.id_naves";
+$consul = mysqli_query($bdmysqli,$ambi);
 ?>
 
 
@@ -20,7 +20,7 @@ $delete = mysqli_query($bdmysqli,$consulta);
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
-        <link rel="stylesheet" href="eliminar.css">
+        <link rel="stylesheet" href="ElimiAmbi.css">
         <link rel="shortcut icon" href="../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
@@ -52,7 +52,7 @@ $delete = mysqli_query($bdmysqli,$consulta);
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
+                        <li><a href=""> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -66,24 +66,26 @@ $delete = mysqli_query($bdmysqli,$consulta);
                 <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
-                <ul class="acorh">
-                    <li><a class="activ" href="#">INSTRUCTORES</a>
+                <ul class="acor">
+                    <li><a  href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="EliminarUsu.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
                 </ul>
 
-                <ul class="acor">                    
-                    <li><a href="#">AMBIENTES</a>
+                <ul class="acorh">                    
+                    <li><a class="activ"  href="#">AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href="eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                          <li><a href="eliminarAmbi.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="" ><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
+                </ul>
+                <ul class="acor">
                     <li><a href="#">CLASES</a>
                         <ul class="sub">
                           <li><a href=""><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
@@ -99,48 +101,43 @@ $delete = mysqli_query($bdmysqli,$consulta);
             
         </div>
 
-        
         <div class="form">
-           <p>ELIMINAR USUARIO</p>
 
-                        <table class="tabla">
-                            <thead>
-                            <tr>
-                                <th>Documento</th>
-                                <th>Nombre  y apellido</th>
-                                <th>Direccion</th>
-                                <th>Tipo de usuario</th>
-                                <th>Titulo Academico</th>
-                                <th>Especializacion</th>
-                                <th>Eliminar</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($delete as $elim){
-                                ?> <tr>
-                                    <td><?=$elim["docu"]?></td>
-                                    <td><?=$elim["nombres"]?> <?=$elim["apellidos"]?></td>
-                                    <td><?=$elim["direccion"]?></td>
-                                    <td><?=$elim["nom_tip_usu"]?></td>
-                                    <td><?=$elim["nom_titu"]?></td>
-                                    <td><?=$elim["nom_esp"]?></td>
-                                    <td><form action="bdeliminar.php" method="POST">
-                                            <input type="hidden" value="<?=$elim["docu"]?>" name="docueli">
-                                            <button type="submit">Eliminar</button>
-                                        </form> </td>
-                                </tr>
-                            <?php
-                            }
-                            ?>
-                            </tbody>
-                        </table>
+                <p>ELIMINAR AMBIENTES</p>
 
+            <table class="tabla">
+                <thead>
+                <tr>
+                    <th>N° Ambiente</th>
+                    <th>Nombre del ambiente</th>
+                    <th>Nave</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                foreach ($consul as $ambiente){
+                    ?> <tr>
+                        <td><?=$ambiente["id_amb"]?></td>
+                        <td><?=$ambiente["nom_amb"]?></td>
+                        <td><?=$ambiente["nom_nave"]?></td>
+                        <td><form action="eliminaramb.php" method="POST">
+                                <input type="hidden" value="<?=$ambiente["id_amb"]?>" name="datoeli">
+                                <button type="submit">Eliminar</button>
+                            </form> </td>
+                    </tr>
+                <?php
+                }
+                ?>
+                </tbody>
+            </table>
+  
 
 
         </div>
+                
 
-    
+
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>

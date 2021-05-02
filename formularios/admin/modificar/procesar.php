@@ -14,7 +14,7 @@ include ("conexion.php");
     $resultado = mysqli_query($conexion, $actualizar);
 
     if ($resultado) {
-        header("location: modifiusu.php");
+        header("location: edicion.php");
     } else{
         echo 'no se pudo actualizar';
     }

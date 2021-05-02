@@ -53,7 +53,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
 
                 <div class="salir">
                     <ul>
-                        <li><a href=""> CERRAR SESION</a></li>
+                        <li><a href="../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -63,7 +63,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"> DIANA LUCIA</p>
+                <p class= "admin"> <?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
                 <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">

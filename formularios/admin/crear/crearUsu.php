@@ -19,7 +19,14 @@ $titulo = mysqli_query($bdmysqli,$sql3);
 $sql4 = "SELECT * from especializacion";
 $especial = mysqli_query($bdmysqli,$sql4);
 ?>
+<?php
+session_start();
+$validar = $_SESSION["id_user"];
 
+if ($validar == "" || $validar == null){
+    header("location: ../../index.html");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +77,7 @@ $especial = mysqli_query($bdmysqli,$sql4);
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"> DIANA LUCIA</p>
+                <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
                 <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">

@@ -62,7 +62,7 @@ $delete = mysqli_query($bdmysqli,$consulta);
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"> DIANA LUCIA</p>
+                <p class= "admin"> <?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
                 <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">

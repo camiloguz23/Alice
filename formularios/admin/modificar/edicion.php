@@ -2,6 +2,14 @@
 include ('conexion.php');
 $usuarios = "SELECT * FROM usuario"
 ?>
+<?php
+session_start();
+$validar = $_SESSION["id_user"];
+
+if ($validar == "" || $validar == null){
+    header("location: ../../index.html");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,7 +47,7 @@ $usuarios = "SELECT * FROM usuario"
 
                 <div class="salir">
                     <ul>
-                        <li><a href=""> CERRAR SESION</a></li>
+                        <li><a href="../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -49,7 +57,7 @@ $usuarios = "SELECT * FROM usuario"
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"> DIANA LUCIA</p>
+                <p class= "admin"> <?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
                 <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">

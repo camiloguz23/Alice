@@ -325,8 +325,8 @@ input{
     background: white;
     
     display: grid;
-    margin-top: 70px;
-    grid-template-columns: repeat(9, 17%);
+    margin-top: 60px;
+    grid-template-columns: repeat(9, 15%);
     grid-auto-rows: 40px;
 }
 
@@ -338,13 +338,22 @@ input{
 
 .table__header{
     font-weight: bold;
-    font-size: 8px;
+    font-size: 12px;
     color: #fc7323;
+    border: 1px solid black;
+    height: 1px;
+    height: 100%;
+    border-left: 1px solid black;
+
 }
 
 .table__item{
     padding: 1px;
-    font-size: 8px;
+    font-size: 10px;
+    border: 1px solid black;
+    height: 1px;
+    height: 90%;
+    border-left: 1px solid black;
 }
 
 a.title_edit{
@@ -356,9 +365,11 @@ a.title_edit{
 }
 
 .container container--edit{
-    grid-template-columns: repeat(10, 17%);
+    grid-template-columns: repeat(10, 15%);
     min-width: 900px;
     grid-template-rows: 20px;
+    padding: 90px;
+
 }
 
 .table__title--edit{

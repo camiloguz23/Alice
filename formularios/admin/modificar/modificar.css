@@ -358,7 +358,7 @@ a.title_edit{
 .container container--edit{
     grid-template-columns: repeat(10, 17%);
     min-width: 900px;
-    grid-template-rows: 50px;
+    grid-template-rows: 20px;
 }
 
 .table__title--edit{
@@ -369,7 +369,7 @@ a.title_edit{
 .table__input{
     display: block;
     padding-left: 10px;
-    margin-left: 80px;
+    margin-left: 60px;
 }
 .container container--edit.container-submit{
     padding: 0;

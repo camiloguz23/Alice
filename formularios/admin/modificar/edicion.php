@@ -96,59 +96,52 @@ if ($validar == "" || $validar == null){
 
         <div class="form">
             <form class="formula" action="" method="POST">
-                  <p>MODIFICAR USUARIO</p>
-                    <div class="contenedor">
-                        <div>
-                            <label for="" class="texto">Documento</label><br>
-                            <input type="text"><i class="fas fa-search"></i>
+                <p>MODIFICAR USUARIO</p>
+    
 
-        
-                        </div>
-                    </div>
+                <table class="tabla">
+                <thead>
+                <tr>
+                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Celular</th>
+                    <th>fijo</th>
+                    <th>Direccion</th>
+                    <th>Gmail</th>
+                    <th>Contraseña</th>
+                    <th>OPERACION</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php $resultado = mysqli_query($conexion, $usuarios);
+                while($row=mysqli_fetch_assoc($resultado))  {?>
+                <tr>
+                    <td><?php echo $row["docu"];?></td>
+                    <td><?php echo $row["nombres"];?></td>
+                    <td><?php echo $row["apellidos"];?></td>
+                    <td><?php echo $row["edad"];?></td>
+                    <td><?php echo $row["celular"];?></td>
+                    <td><?php echo $row["fijo"];?></td>
+                    <td><?php echo $row["direccion"];?></td>
+                    <td><?php echo $row["email"];?></td>
+                    <td><?php echo $row["contra_seguridad"];?></td>
+                <td class="table_item">
+                    <a href="actualizar.php?id=<?php echo $row["docu"];?>" class="table_item">EDITAR</a>
+                </td>
+                </tr>
+                </tbody>
+                    <!--<td><form action="actualizar.php" method="POST">
+                        <input type="hidden" value="<?php //echo $row["docu"];?>" name="docuedit">
+                        <button type="submit">EDITAR</button>-->
+                                            
+                <?php } mysqli_free_result($resultado) ?> 
 
-        <div class="container container--edit">
-            <div class="table__title--edit"></div>
+            </form>
+        </div>
 
-            <table class="table">
-            <thead>
-             <tr>
-                <th class="table__header">Documento</th>
-                <th class="table__header">Nombre</th>
-                <th class="table__header">Apellido</th>
-                <th class="table__header">Edad</th>
-                <th class="table__header">Celular</th>
-                <th class="table__header">fijo</th>
-                <th class="table__header">Direccion</th>
-                <th class="table__header">Gmail</th>
-                <th class="table__header">Contraseña</th>
-                <th class="table__header">OPERACION</th>
-             </tr>
-            </thead>
-            <tbody>
-            <?php $resultado = mysqli_query($conexion, $usuarios);
-            while($row=mysqli_fetch_assoc($resultado))  {?>
-            <tr>
-                <td class="table__item"><?php echo $row["docu"];?></td>
-                <td class="table__item"><?php echo $row["nombres"];?></td>
-                <td class="table__item"><?php echo $row["apellidos"];?></td>
-                <td class="table__item"><?php echo $row["edad"];?></td>
-                <td class="table__item"><?php echo $row["celular"];?></td>
-                <td class="table__item"><?php echo $row["fijo"];?></td>
-                <td class="table__item"><?php echo $row["direccion"];?></td>
-                <td class="table__item"><?php echo $row["email"];?></td>
-                <td class="table__item"><?php echo $row["contra_seguridad"];?></td>
-            <td class="table_item">
-                <a href="actualizar.php?id=<?php echo $row["docu"];?>" class="table_item">EDITAR</a>
-            </td>
-            </tr>
-            </tbody>
-         <!--<td><form action="actualizar.php" method="POST">
-                    <input type="hidden" value="<?php //echo $row["docu"];?>" name="docuedit">
-                    <button type="submit">EDITAR</button>-->
-                                        
-            <?php } mysqli_free_result($resultado) ?> 
-
-          </div>
+           
 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 

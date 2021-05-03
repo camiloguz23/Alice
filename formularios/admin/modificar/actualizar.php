@@ -66,8 +66,8 @@ if ($validar == "" || $validar == null){
                     <li><a class="activ" href="#">INSTRUCTORES</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../eliminar/EliminarUsu.html"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="modificar/ModifiUsu.html" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="edicion.php" class="active"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
                 </ul>
@@ -75,8 +75,8 @@ if ($validar == "" || $validar == null){
                 <ul class="acor">                    
                     <li><a href="#">AMBIENTES</a>
                         <ul class="sub">
-                          <li><a href=""><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                          <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                          <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                           <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>

@@ -108,6 +108,7 @@ if ($validar == "" || $validar == null){
 
         <div class="container container--edit">
             <div class="table__title--edit"></div>
+
             <table class="table">
             <thead>
              <tr>
@@ -146,9 +147,12 @@ if ($validar == "" || $validar == null){
                     <button type="submit">EDITAR</button>-->
                                         
             <?php } mysqli_free_result($resultado) ?> 
+
           </div>
 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>
+
 </html>
+

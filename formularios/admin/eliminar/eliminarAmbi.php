@@ -1,4 +1,5 @@
 
+
 <?php
 session_start();
 $validar = $_SESSION["id_user"];

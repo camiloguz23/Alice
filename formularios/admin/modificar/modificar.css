@@ -254,7 +254,7 @@ ul.acor li a:hover {
 
 
 .form{
-    width:70%; 
+    width:75%; 
     height: 530px;
     color: rgb(7, 7, 7);
     background: white;
@@ -387,4 +387,33 @@ a.title_edit{
     margin: 0;
     font-size: 9px;
     width: 100%;
+}
+
+.tabla{
+
+    text-align: center;
+    border: 1px solid #fc7323;
+    border-collapse: collapse;
+}
+.tabla th{
+    padding: 9px 7px  5px 5px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid #000000;
+    background-color: #238276;
+    color: #ffffff;
+}
+
+.tabla td {
+    padding: 5px 5px  0px 0px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid #000000;
+}
+
+.tabla .table_item a{
+    background: #fc7323;
+    padding: 0 10px 0 20px ;
+    text-decoration: none;
+    color: #ffffff;
 }

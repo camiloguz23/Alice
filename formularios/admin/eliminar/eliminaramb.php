@@ -1,4 +1,5 @@
 
+
 <?php
 require_once ("../../../php/conexion.php");
 
@@ -12,3 +13,4 @@ if ($consultaAmb){
 }
 
 ?>
+

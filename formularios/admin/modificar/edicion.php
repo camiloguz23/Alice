@@ -108,34 +108,51 @@ if ($validar == "" || $validar == null){
 
         <div class="container container--edit">
             <div class="table__title--edit"></div>
-        <div class="table__header">Documento</div>
-        <div class="table__header">Nombre</div>
-        <div class="table__header">Apellido</div>
-        <div class="table__header">Edad</div>
-        <div class="table__header">Celular</div>
-        <div class="table__header">fijo</div>
-        <div class="table__header">Direccion</div>
-        <div class="table__header">Gmail</div>
-        <div class="table__header">Contraseña</div>
-        <div class="table__header">OPERACION</div>
-        <?php $resultado = mysqli_query($conexion, $usuarios);
-        while($row=mysqli_fetch_assoc($resultado))  {?>
-            <div class="table__item"><?php echo $row["docu"];?></div>
-            <div class="table__item"><?php echo $row["nombres"];?></div>
-            <div class="table__item"><?php echo $row["apellidos"];?></div>
-            <div class="table__item"><?php echo $row["edad"];?></div>
-            <div class="table__item"><?php echo $row["celular"];?></div>
-            <div class="table__item"><?php echo $row["fijo"];?></div>
-            <div class="table__item"><?php echo $row["direccion"];?></div>
-            <div class="table__item"><?php echo $row["email"];?></div>
-            <div class="table__item"><?php echo $row["contra_seguridad"];?></div>
-            <div class="table__item">
-                <a href="actualizar.php?id=<?php echo $row["docu"];?>" class="table__iteam__link">EDITAR</a>
-            </div>
-            <?php } mysqli_free_result($resultado) ?>
+
+            <table class="table">
+            <thead>
+             <tr>
+                <th class="table__header">Documento</th>
+                <th class="table__header">Nombre</th>
+                <th class="table__header">Apellido</th>
+                <th class="table__header">Edad</th>
+                <th class="table__header">Celular</th>
+                <th class="table__header">fijo</th>
+                <th class="table__header">Direccion</th>
+                <th class="table__header">Gmail</th>
+                <th class="table__header">Contraseña</th>
+                <th class="table__header">OPERACION</th>
+             </tr>
+            </thead>
+            <tbody>
+            <?php $resultado = mysqli_query($conexion, $usuarios);
+            while($row=mysqli_fetch_assoc($resultado))  {?>
+            <tr>
+                <td class="table__item"><?php echo $row["docu"];?></td>
+                <td class="table__item"><?php echo $row["nombres"];?></td>
+                <td class="table__item"><?php echo $row["apellidos"];?></td>
+                <td class="table__item"><?php echo $row["edad"];?></td>
+                <td class="table__item"><?php echo $row["celular"];?></td>
+                <td class="table__item"><?php echo $row["fijo"];?></td>
+                <td class="table__item"><?php echo $row["direccion"];?></td>
+                <td class="table__item"><?php echo $row["email"];?></td>
+                <td class="table__item"><?php echo $row["contra_seguridad"];?></td>
+            <td class="table_item">
+                <a href="actualizar.php?id=<?php echo $row["docu"];?>" class="table_item">EDITAR</a>
+            </td>
+            </tr>
+            </tbody>
+         <!--<td><form action="actualizar.php" method="POST">
+                    <input type="hidden" value="<?php //echo $row["docu"];?>" name="docuedit">
+                    <button type="submit">EDITAR</button>-->
+                                        
+            <?php } mysqli_free_result($resultado) ?> 
+
           </div>
 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>
+
 </html>
+

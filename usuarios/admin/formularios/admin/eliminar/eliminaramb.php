@@ -1,7 +1,7 @@
 
 
 <?php
-require_once ("../../../php/conexion.php");
+require_once ("../../../../../php/conexion.php");
 
 $dato = $_POST["datoeli"];
 

@@ -10,7 +10,7 @@ if ($validar == "" || $validar == null){
 ?>
 
 <?php
-require_once ("../../../php/conexion.php");
+require_once ("../../../../../php/conexion.php");
 
 $ambi = "select id_amb,nom_amb,nom_nave from ambiente,naves where ambiente.id_naves=naves.id_naves";
 $consul = mysqli_query($bdmysqli,$ambi);
@@ -23,7 +23,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="ElimiAmbi.css">
-        <link rel="shortcut icon" href="../../../assets/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -33,7 +33,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
                
                 
                 <div class="logo">
-                    <img  height="60px" width="60px" src="../../../assets/img/logo_calendar.png" alt="">
+                    <img  height="60px" width="60px" src="../../../../../assets/img/logo_calendar.png" alt="">
                 </div>
                 <a class="nombre">ADMINISTRADOR</a>
 
@@ -54,7 +54,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
+                        <li><a href="../../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -65,11 +65,11 @@ $consul = mysqli_query($bdmysqli,$ambi);
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"> <?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
+                <img  height="70px" widih="70px" src= "../../../../../ssets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
                 <ul class="acor">
-                    <li><a  href="#">INSTRUCTORES</a>
+                    <li><a  href="#">USUARIOS</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>

@@ -16,7 +16,7 @@ if ($validar == "" || $validar == null){
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="modificar.css">
-        <link rel="shortcut icon" href="../../../assets/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -26,7 +26,7 @@ if ($validar == "" || $validar == null){
                
                 
                 <div class="logo">
-                    <img  height="60px" width="60px" src="../../../assets/img/logo_calendar.png" alt="">
+                    <img  height="60px" width="60px" src="../../../../../assets/img/logo_calendar.png" alt="">
                 </div>
                 <a class="nombre">ADMINISTRADOR</a>
 
@@ -47,7 +47,7 @@ if ($validar == "" || $validar == null){
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
+                        <li><a href="../../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -58,11 +58,11 @@ if ($validar == "" || $validar == null){
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"> <?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
+                <img  height="70px" widih="70px" src= "../../../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">
-                    <li><a class="activ" href="#">INSTRUCTORES</a>
+                    <li><a class="activ" href="#">USUARIOS</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>

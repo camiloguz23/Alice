@@ -1,71 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/estils.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" media="screen and (max-width: 768px)" href="../css/mobile.css">
     <title>SOBRE NOSOTROS | ALICE</title>
+    <link rel="stylesheet" href="../css/estils.css">
 </head>
 <body>
-    <div class="header">
-        <a href="#default" class="logo"><img src="" alt=""></a>
-        <div class="header-right">
-          <a href="../index.html">INICIO</a>
-          <a class="active" href="about.html">ACERCA DE</a>
-          <a href="contact.html">CONTACTENOS</a>
+
+    <header id="header">
+        <nav class="menu">
+            <div class="logo">
+                <img width="60" height="60" src="../assets/img/logo.png" alt="Logo Sena" class="logosena">
+                <img width="150" height="55" src="../assets/img/ashleylogo2.png" alt="Logo Proyecto" class="logoproyecto">
+            </div>
+
+            <div class="list-container">
+
+                <ul class="lists">
+                    <li class="A"><a href="../index.html" >INICIO</a></li><br>    
+                    <li ><a class="activo" href="about.html">ACERCA DE</a></li> <br>
+                    <li class="A"><a href="contact.html">CONTACTENOS</a></li> <br>
+                </ul>
+
+                <ul>
+                    <li class="botones">
+                        <p class="fecha" href="#">
+                            <script>
+                            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                            var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+                            var f=new Date();
+                            document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+                            </script>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header> 
+
+    <div class="contenedor2">
+      <div class="tarjetas">
+          <div class="card">
+              <img  src="../assets/img/jeyson.jpeg" alt="">
+              <h4>JEYSON CAMILO GUZMAN</h4>
+              <p>CARGO: lider</p>
+              <p>jcguzman8548@misena.edu.co</p>
+          </div>
+          <div class="card">
+              <img  src="../assets/img/jose.jpeg" alt="">
+              <h4>JOSE MANUEL PEPRILLA</h4>
+              <p>CARGO: Desarrollador</p>
+              <p>jmperilla0@misena.edu.co</p>
+          </div>
+          <div class="card">
+              <img src="../assets/img/ashley.jpeg" alt="">
+              <h4>ASHLEY XIOMARA AGUDELO</h4>
+              <p>CARGO: Diseñadora</p>
+              <p>axagudelo@misena.edu.co</p>
+          </div>
+          <div class="card">
+            <img src="../assets/img/danie.jpeg" alt="">
+            <h4>DANIEL ALEJANDOR BASTIDAS</h4>
+            <P>CARGO: Desarrollador</P>
+            <p>dabastidas9@misena.edu.co</p>
         </div>
+        <div class="card">
+          <img src="../assets/img/jhon.jpeg" alt="">
+          <h4>JHON FREDY HERRERA</h4>
+          <p>CARGO: Desarrollador</p>
+          <p>jfherrera921@misena.edu.co</p>
       </div>
-      <section id="portfolio">
-        <div class="container">
-          <div class="portfolio-content">
-            <div class="box">
-              <a href="mailto:jmperilla0@misena.edu.co">
-                <img src="../assets/img/portfolio/1-green.png" alt="">
-              </a>
+      </div>
+  </div>
+
+
+
+    <div class="pagina">
+        <footer class="pie">
+            <img  height="70px" width="70px" src="../assets/img/logopie.png" alt="">
+            <div class="info">
+                <p>CENTRO DE INDUSTRIA Y CONTRUCCION</p>
+                <p>SENA</p>
+                <p>IBAGUE-TOLIMA</p>
             </div>
-            <div class="box">
-              <a href="mailto:jcguzman8548@misena.edu.co ">
-                <img src="../assets/img/portfolio/2-blue.png" alt="">
-              </a>
+            <div class="column2">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
             </div>
-            <div class="box">
-              <a href="mailto:axagudelo4@misena.edu.co">
-                <img src="../assets/img/portfolio/3-green.png" alt="">
-              </a>
-            </div>
-          </div>
-          <div class="portfolio-content">
-            <div class="box">
-              <a href="mailto:jfherrera921@misena.edu.co">
-                <img src="../assets/img/portfolio/4-purple.png" alt="">
-              </a>
-            </div>
-            <div class="box">
-              <a href="mailto:dabastidas9@misena.edu.co">
-                <img src="../assets/img/portfolio/5-green.png" alt="">
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <hr>
-    
-      <footer id="main-footer">
-        <div class="container">
-          <p class="small">ALICE SENA 2021 &copy;</p>
-          <!-- <div class="social"> -->
-            <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-          <!-- </div> -->
-        </div>
-      </footer>
-</body>
-</html>
+           
+        </footer>  
+    </div>    
+
+    <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>

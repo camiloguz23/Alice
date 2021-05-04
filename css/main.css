@@ -1,3 +1,4 @@
+
 *{
     padding: 0px;
     margin: 0px;
@@ -73,15 +74,13 @@ body
     top: 10%;
     margin-left: 17%;
 }
-.login-box {
-    background-color: rgba(255, 255, 255, 0.705);
-    border-radius: 10px;
-    border: #fc7323 3px solid;
+.contactenos{
+    text-align: center;
     width: 350px;
     height: 420px;
-    color: #fc7323;
+    color:  rgb(89, 181, 72);
     top: 50%;
-    left: 25%;
+    left: 15%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
@@ -90,87 +89,77 @@ body
     
 }
 
-.login-box h1 {
-    margin: 0;
+.contactenos h3{
     padding: 0 0 50px;
-    text-align: center;
     font-size: 22px;
 }
 
-.login-box label {
-    margin: 0;
-    padding: 0;
-    display: block;
-    color: black;
-    margin-left: 20px;
+.contactenos .uno{
+    width: 190%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.contactenos .dos{
+    width: 180%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:5px;
 }
 
-.login-box input {
-    width: 90%;
-    margin-bottom: 20px;
-    margin-left: 10px;
+.contactenos .tres{
+    width: 173%;
+    height: 160px;
+    display: grid;
+    grid-template-columns: 1fr;
 }
-
-.login-box input[type="text"],
-.login-box input[type="password"] {
+.contactenos .mensaje{
     text-decoration: none;
-    border: 1px solid #070707 ;
-    background: transparent;
+    border: 2px solid rgb(89, 181, 72) ;
+    background: white;
     color: rgb(0, 0, 0);
     font-size: 16px;
-    border-radius: 10px;
+}
+
+.contactenos input {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.contactenos input[type="text"],
+.contactenos input[type="email"],
+.contactenos input[type="tel"]{
+    text-decoration: none;
+    border: 2px solid  rgb(89, 181, 72) ;
+    background: white;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
     height: 25px;
 }
 
 
-
-.login-box input[type="submit"] {
-    border-radius: 10px;
+.contactenos input[type="submit"] {
     outline: none;
     height: 30px;
     width: 50%;
-    margin-top: 40px;
-    background-color: transparent;
+    margin-top: 20px;
+    background-color:transparent;
     color:  rgb(255, 255, 255);
     font-size: 18px;
-    background-color:#fc7323;
-    margin-left: 25%;
+    background-color: rgb(89, 181, 72);
+    margin-left: 60%;
     border-style: none;
 
 }
 
 
 
-.login-box input[type="submit"]:hover {
+.contactenos input[type="submit"]:hover {
     cursor: pointer;
     background:#238276 ;
     color: rgb(255, 255, 255);
     border-style: none;
 }
 
-.login-box a{
-    text-decoration: none;
-    outline: none;;
-    color: rgb(0, 0, 0);
-    font-size: 13px;
-}
-
-.login-box a:hover{
-    cursor: pointer;
-    text-decoration: none;
-    outline: none;;
-    color: #fc7323;
-    font-size: 13px;
-}
-
-
-.a1{
-    margin-left: 60px;
-    
-}
-.a2{
-    margin-left: 20px;
-}
 
 .logo{
     margin-left: 770px;
@@ -225,4 +214,4 @@ body
 .column2 {
      margin-left: 700px;
 }
-   
+

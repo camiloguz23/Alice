@@ -1,19 +1,15 @@
-
 <?php
-# database connection
+  $hostname="localhost";
+  $userName="root";
+  $password= "";
+  $database="alice";
+  $bdmysqli = new mysqli($hostname,$userName,$password,$database);
 
-$bdmysql = mysqli_connect("localhost","root","","alice");
-
-
-
-?>
-
-<?php
-# database connection
-
-$bdmysql = mysqli_connect("localhost","root","","alice");
-
-
+  if($bdmysqli ->connect_errno)
+  {
+    die("fallo la conexion con la base de datos $database" . mysqli_connect_errno());
+  }
+  
 
 ?>
 

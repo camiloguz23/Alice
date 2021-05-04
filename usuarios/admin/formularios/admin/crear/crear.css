@@ -1,0 +1,357 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body
+{   
+    background-color: rgb(230, 230, 230); 
+    font-family:Verdana;  
+
+}
+
+
+.header{
+    position: absolute;
+    width: 100%;
+
+}
+.menu{
+    border-bottom: 1px solid #000;
+    position: absolute;
+    background-color: #ffffff;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    margin-left: 0px;
+}
+.menu .logo
+{
+    margin-left: 25px;
+    margin-top: 10px;   
+}
+.nombre
+{
+    color: #238276;
+    margin-top: 5px;
+    margin-right: auto;
+    font-size: 25px;
+    
+
+}
+/* menu  */
+
+.menu .list-container
+{
+    margin: 0px -13%;
+    margin-top: 30px;
+    
+}
+.menu .list-container ul
+{
+    display: inline-flex;
+
+}
+.menu .list-container ul
+{
+    list-style: none;
+}
+.menu .list-container ul  a {
+    margin-left: 25px;
+    text-decoration: none;
+    padding: 7px 20px;
+    color: black;
+    transition: 0.3s;
+    font-size: 15px;
+}
+.menu .list-container li:hover > ul{
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+
+
+}
+.menu .list-container ul li a:hover
+{
+    background:#fc7323 ;
+    color: #ffffff;
+    
+}
+.menu .salir {
+    padding: 0px 50px;
+    margin-top: -25px;
+}
+.menu .salir ul{
+    list-style: none;
+}
+.menu .salir a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+
+.admin{
+    color: #ffffff;
+    font-size: 17px;
+    margin-left: 45%;
+    margin-top: 40px;
+
+}
+.uno img{
+    margin-top: -40%;
+    margin-left: 20px;
+    
+}
+
+.menu2{
+    border-right: 1px solid black;
+    margin-top:78px;
+    margin-left: -10px;
+    width: 20%;
+    height: 582px;
+    background-color: rgb(255, 255, 255);
+    
+}
+.uno{
+    padding: 1px;
+    background-color:#238276;
+    border-bottom: 1px solid black;
+}
+.menu2 li{
+    list-style: none;
+}
+ul.acorh,
+ul.acorh * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ul.acorh {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-size: 16px;
+}
+ul.acorh li {
+    list-style: none;
+
+}
+ul.acorh li a {
+    display: block;
+    padding: 10px 10px 15px 40px;
+    background: rgb(255, 255, 255);
+    color: rgb(10, 10, 10);
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+ul.acorh li ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: .3s all ease-in;
+}
+ul.acorh li li a {
+    padding: 10px 10px 10px 40px;
+    background:  #ffffff;
+    color: #000;
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid rgb(117, 117, 117);
+    box-sizing: border-box;
+}
+ul.acorc li li:last-child a {
+    border-bottom: 0;
+}
+ul.acorh li:hover ul {
+    max-height: 300px;
+    transition: .7s all ease-in;
+    display: block;
+}
+ul.acorh .sub li a:hover {
+    background: #238276;
+    color: #fff;
+}
+ul.acorh li a:hover {
+    background-color: #fc7323;
+    color: #fff;
+
+}
+ul.acorh li a.active{
+    background-color: #238276;
+    color: #fff;
+}
+ul.acorh li a.activ{
+    background-color: #fc7323;
+    color: #fff;
+}
+
+ul.acor,
+ul.acor * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ul.acor {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-size: 16px;
+}
+ul.acor li {
+    list-style: none;
+
+}
+ul.acor li a {
+    display: block;
+    padding: 10px 10px 15px 40px;
+    background: rgb(255, 255, 255);
+    color: rgb(10, 10, 10);
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+ul.acor li ul {
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: .3s all ease-in;
+}
+ul.acor li li a {
+    padding: 10px 10px 10px 40px;
+    background:  #ffffff;
+    color: #000;
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid rgb(117, 117, 117);
+    box-sizing: border-box;
+}
+ul.acorc li li:last-child a {
+    border-bottom: 0;
+}
+ul.acor li:hover ul {
+    max-height: 300px;
+    transition: .7s all ease-in;
+    display: block;
+}
+ul.acor .sub li a:hover {
+    background: #238276;
+    color: #fff;
+}
+ul.acor li a:hover {
+    background-color: #fc7323;
+    color: #fff;
+
+}
+
+/*formulario*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:5px;
+
+}
+.contened{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:5px;
+}
+.direccion input{
+    width: 94%;
+}
+.conten{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+  
+}
+.tipo{
+    align-content: center;
+}
+.conte{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+}
+.conte input{
+    width: 88%;
+}
+.cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+}
+.form{
+    width:70%; 
+    height: 530px;
+    color: rgb(7, 7, 7);
+    background: white;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 50px;
+    margin-left: 130px;
+
+    
+}
+
+.form p{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+label.texto{
+    font-family: Verdana;
+    font-size: 16px;
+    margin-left: 3%;
+}
+    
+input{
+    margin: 10px;
+    padding: 3px;
+    margin-top: 10px;
+    width: 81%;
+}
+
+select{
+    margin: 10px;
+    padding: 3px;
+    margin-top: 10px;
+    width: 90%;
+}
+
+.form input[type="submit"] {
+    outline: none;
+    height: 25px;
+    width: 20%;
+    background-color: transparent;
+    color:  rgb(255, 255, 255);
+    font-size: 18px;
+    background-color:#fc7323;
+    margin-left: 40%;
+    font-family: 'Julius Sans One', sans-serif;  
+    border-style: none;
+
+}
+
+.form input[type="submit"]:hover {
+    cursor: pointer;
+    background:#238276;
+    color: rgb(255, 255, 255);
+    border-style: none;
+}
+
+    

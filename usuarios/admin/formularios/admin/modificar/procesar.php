@@ -18,4 +18,5 @@ include ("conexion.php");
     } else{
         echo 'no se pudo actualizar';
     }
+
 ?>

@@ -102,19 +102,29 @@ if ($validar == "" || $validar == null){
         <?php $resultado = mysqli_query($conexion, $usuarios);
         while($row=mysqli_fetch_assoc($resultado))  {?>
             <input type="hidden" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
+            <label for="nombre">Nombre</label>
             <input type="text" class="table__input" value="<?php echo $row["nombres"];?>" name="nombre" disabled="disabled">
+            <label for="nombre">Apellido</label>
             <input type="text" class="table__input" value="<?php echo $row["apellidos"];?>" name="apellido" disabled="disabled">
-            <input type="text" class="table__input" value="<?php echo $row["edad"];?>" name="edad">
-            <input type="text" class="table__input" value="<?php echo $row["celular"];?>" name="celular">
-            <input type="text" class="table__input" value="<?php echo $row["fijo"];?>" name="fijo">
-            <input type="text" class="table__input" value="<?php echo $row["direccion"];?>" name="direccion">
-            <input type="text" class="table__input" value="<?php echo $row["email"];?>" name="email">
-            <input type="text" class="table__input" value="<?php echo $row["contra_seguridad"];?>" name="contraseña" disabled="disabled">
+            <label for="nombre">Edad</label>
+            <input type="number" class="table__input" value="<?php echo $row["edad"];?>" name="edad" required max=100 min="18">
+            <label for="nombre">Celular</label>
+            <input type="number" id="celuko" class="table__input" min="3000000000" max="3999999999" value="<?php echo $row["celular"];?>" name="celular" required>
+            <span class="error" aria-live="polite"></span>
+            <label for="nombre">Fijo</label>
+            <input type="number" class="table__input" min="2000000" max="6999999" value="<?php echo $row["fijo"];?>" name="fijo" required>
+            <span class="error" aria-live="polite"></span>
+            <label for="nombre">Dirección</label>
+            <input type="text" class="table__input" value="<?php echo $row["direccion"];?>" name="direccion" required>
+            <label for="nombre">e-mail</label>
+            <input type="email" id="email" class="table__input" value="<?php echo $row["email"];?>" name="email" required>
+            <span class="error" aria-live="polite"></span>
+            <input type="hidden" class="table__input" value="<?php echo $row["contra_seguridad"];?>" name="contraseña" disabled="disabled">
             <?php } mysqli_free_result($resultado);?>
             <input type="submit" value="Actualizar" class="container-submit">
         </form>
 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
+        <script src="validar.js"></script>
 
-    </body>
-</html>
+    </body

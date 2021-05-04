@@ -118,7 +118,7 @@ if ($validar == "" || $validar == null){
 
                 <div class=" tipo">
                     <label for="" class="texto">Tipo Usuario</label><br>
-                    <select  name="tipousu">
+                    <select  name="tipousu" required >
                         <option >Seleccione </option>
                         <?php
                         foreach ($usuario as $tipoUsu){
@@ -133,7 +133,7 @@ if ($validar == "" || $validar == null){
 
                 <div>
                     <label  class="texto">Tipo Documento</label><br>
-                    <select name="tipodocu">
+                    <select name="tipodocu" required >
                         <option >Seleccione </option>
                         <?php
                         foreach ($documen as $tipDocu){
@@ -152,36 +152,36 @@ if ($validar == "" || $validar == null){
             <div class="contenedor">
                 <div>
                     <label for="" class="texto">Documento</label><br>
-                    <input type="number" name="documento">
+                    <input type="number" name="documento" required >
     
                 </div>
                 <div>
                     <label  class="texto">Nombre</label><br>
-                    <input type="text" name="nombre">
+                    <input type="text" name="nombre" required >
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Apellido</label><br>
-                    <input type="text" name="apellido">
+                    <input type="text" name="apellido" required >
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Edad</label><br>
-                    <input type="number" name="edad">
+                    <input type="number" name="edad" required>
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="number" name="celular">
+                    <input type="number" name="celular" min="3000000000" max="3999999999" required>
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Fijo</label><br>
-                    <input type="number" name="fijo">
+                    <input type="number" name="fijo" min="2000000" max="6999999" required>
     
                 </div> 
 
@@ -190,7 +190,7 @@ if ($validar == "" || $validar == null){
             <div class="contened">
                 <div class="direccion">
                     <label for="" class="texto">Direccion</label><br>
-                    <input type="text" name="direccion">
+                    <input type="text" name="direccion" required>
     
                 </div>
 
@@ -201,13 +201,14 @@ if ($validar == "" || $validar == null){
             <div class="conte">
                 <div>
                     <label for="" class="texto">Correo</label><br>
-                    <input type="email" name="correo" >
+                    <input id="email" type="email" name="correo" required>
+                    <span class="error" aria-live="polite"></span>
     
                 </div>
     
                 <div>
                     <label  class="texto">Clave de seguridad</label><br>
-                    <input type="password" name="clave">
+                    <input type="password" name="clave" required>
     
                 </div>
             </div>
@@ -215,11 +216,11 @@ if ($validar == "" || $validar == null){
             <div class="cont">
                 <div>
                     <label  class="texto">titulo academico</label><br>
-                    <select name="tituloacade" >
+                    <select required name="tituloacade" >
                         <option >Seleccione </option>
                         <?php
                         foreach ($titulo as $titulacad){
-                            ?> <option value="<?=$titulacad['id_titu']?>"><?=$titulacad['nom_titu']?>/option>
+                            ?> <option value="<?=$titulacad['id_titu']?>"><?=$titulacad['nom_titu']?></option>
                         <?php
                         }
                         ?>
@@ -229,7 +230,7 @@ if ($validar == "" || $validar == null){
                 </div>
                 <div>
                     <label  class="texto">Especializacion</label><br>
-                    <select name="especializacion" >
+                    <select name="especializacion" required>
                         <option value="" >Seleccione </option>
                         <?php
                         foreach ($especial as $especializacion){
@@ -248,7 +249,7 @@ if ($validar == "" || $validar == null){
         </form>
   </div>
         
-    
+        <script src="../modificar/validar.js"></script>
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>

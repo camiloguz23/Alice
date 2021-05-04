@@ -301,6 +301,7 @@ input{
     margin-left: 40%;
     font-family: 'Julius Sans One', sans-serif;  
     border-style: none;
+    margin-block: 0px;
 
 }
 
@@ -417,3 +418,44 @@ a.title_edit{
     text-decoration: none;
     color: #ffffff;
 }
+
+label {
+    font : .8em "typewriter", sans-serif;
+    margin-left: 70px;
+  }
+
+  input:invalid {
+    border: 2px dashed orangered;
+  }
+  
+  input:valid {
+    border: 2px solid black;
+  }
+  
+  
+  /* Este es nuestro diseño para los campos no válidos */
+  input:invalid{
+    border-color: #900;
+    background-color: #FDD;
+  }
+  
+  input:focus:invalid {
+    outline: none;
+  }
+  
+  /* Este es el diseño para nuestros mensajes de error */
+  .error {
+    width : 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }

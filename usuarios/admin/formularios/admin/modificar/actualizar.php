@@ -127,5 +127,4 @@ if ($validar == "" || $validar == null){
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
         <script src="validar.js"></script>
 
-    </body>
-</html>
+    </body

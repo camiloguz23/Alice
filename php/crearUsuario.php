@@ -42,7 +42,7 @@ if ($insertar){
     if ($consulta){
 
         echo '<script>alert ("se ingresaron los datos con exito");</script>';
-        echo '<script>window.location="../formularios/admin/crear/crearUsu.php"</script>';        
+        echo '<script>window.location="../usuarios/admin/formularios/admin/crear/crearUsu.php"</script>';        
 
     }
 }

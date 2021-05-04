@@ -11,13 +11,13 @@ $naves = $_POST["nave"];
     if($inseta){
 
         echo '<script>alert ("se ingresaron los datos con exito");</script>';
-        echo '<script>window.location="../formularios/admin/crear/crearAmbien.php"</script>';        
+        echo '<script>window.location="../usuarios/admin/formularios/admin/crear/crearAmbien.php"</script>';        
 
 
     }else{
 
         echo '<script>alert ("Campos vacios no ingreso  todos los datos");</script>';
-        echo '<script>window.location="../formularios/admin/crear/crearAmbien.php"</script>';        
+        echo '<script>window.location="../usuarios/admin/formularios/admin/crear/crearAmbien.php"</script>';        
 
 
     }

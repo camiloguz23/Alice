@@ -109,7 +109,7 @@ if ($validar == "" || $validar == null){
                     <th>Celular</th>
                     <th>fijo</th>
                     <th>Direccion</th>
-                    <th>Gmail</th>
+                    <th>Correo Misena</th>
                     <th>Contraseña</th>
                     <th>OPERACION</th>
                 </tr>

@@ -108,13 +108,13 @@ $ambien = mysqli_query($bdmysqli,$sqli);
             <div class="contenedor">
                 <div>
                     <label for="" class="texto"> Ambiente de formacion</label><br>
-                    <input name="ambiente" type="text">
+                    <input name="ambiente" type="text"  autocomplete="off" require style="text-transform:uppercase;">
     
                 </div>  
 
                 <div class=" tipo">
                     <label for="" class="texto"> Nave</label><br>
-                    <select name="nave">   
+                    <select name="nave" require>   
                         <option >Seleccione </option> 
                         <?php
                         foreach ($ambien as $naves){

@@ -152,36 +152,36 @@ if ($validar == "" || $validar == null){
             <div class="contenedor">
                 <div>
                     <label for="" class="texto">Documento</label><br>
-                    <input type="number" name="documento" required >
+                    <input type="number" name="documento" required  autocomplete="off">
     
                 </div>
                 <div>
                     <label  class="texto">Nombre</label><br>
-                    <input type="text" name="nombre" required >
+                    <input type="text" name="nombre" required  autocomplete="off">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Apellido</label><br>
-                    <input type="text" name="apellido" required >
+                    <input type="text" name="apellido" required  autocomplete="off">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Edad</label><br>
-                    <input type="number" name="edad" required>
+                    <input type="number" name="edad" required  autocomplete="off">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="number" name="celular" min="3000000000" max="3999999999" required>
+                    <input type="number" name="celular" min="3000000000" max="3999999999" required  autocomplete="off">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Fijo</label><br>
-                    <input type="number" name="fijo" min="2000000" max="6999999" required>
+                    <input type="number" name="fijo" min="2000000" max="6999999" required  autocomplete="off">
     
                 </div> 
 
@@ -190,7 +190,7 @@ if ($validar == "" || $validar == null){
             <div class="contened">
                 <div class="direccion">
                     <label for="" class="texto">Direccion</label><br>
-                    <input type="text" name="direccion" required>
+                    <input type="text" name="direccion" required  autocomplete="off">
     
                 </div>
 
@@ -201,14 +201,14 @@ if ($validar == "" || $validar == null){
             <div class="conte">
                 <div>
                     <label for="" class="texto">Correo</label><br>
-                    <input id="email" type="email" name="correo" required>
+                    <input id="email" type="email" name="correo" required  autocomplete="off">
                     <span class="error" aria-live="polite"></span>
     
                 </div>
     
                 <div>
                     <label  class="texto">Clave de seguridad</label><br>
-                    <input type="password" name="clave" required>
+                    <input type="password" name="clave" required  autocomplete="off">
     
                 </div>
             </div>

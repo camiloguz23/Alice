@@ -119,7 +119,7 @@ if ($validar == "" || $validar == null){
                 <div class=" tipo">
                     <label for="" class="texto">Tipo Usuario</label><br>
                     <select  name="tipousu" required >
-                        <option >Seleccione </option>
+                        <option value="">Seleccione </option>
                         <?php
                         foreach ($usuario as $tipoUsu){
                             ?> <option value="<?=$tipoUsu['id_tip_usu']?>"><?=$tipoUsu['nom_tip_usu']?></option>
@@ -134,7 +134,7 @@ if ($validar == "" || $validar == null){
                 <div>
                     <label  class="texto">Tipo Documento</label><br>
                     <select name="tipodocu" required >
-                        <option >Seleccione </option>
+                        <option value="">Seleccione </option>
                         <?php
                         foreach ($documen as $tipDocu){
                             ?> <option value="<?=$tipDocu['id_tip_docu']?>"><?=$tipDocu['nom_tip_docu']?></option>
@@ -169,19 +169,19 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Edad</label><br>
-                    <input type="number" name="edad" required  autocomplete="off">
+                    <input type="number" name="edad" min="17" max="100" required  autocomplete="off">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="number" name="celular" min="3000000000" max="3999999999" required  autocomplete="off">
+                    <input type="text" name="celular" minlength="10" maxlength="10" required  autocomplete="off">
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Fijo</label><br>
-                    <input type="number" name="fijo" min="2000000" max="6999999" required  autocomplete="off">
+                    <input type="text" name="fijo" minlength="8" maxlength="10" required  autocomplete="off">
     
                 </div> 
 
@@ -217,7 +217,7 @@ if ($validar == "" || $validar == null){
                 <div>
                     <label  class="texto">titulo academico</label><br>
                     <select required name="tituloacade" >
-                        <option >Seleccione </option>
+                        <option value="">Seleccione </option>
                         <?php
                         foreach ($titulo as $titulacad){
                             ?> <option value="<?=$titulacad['id_titu']?>"><?=$titulacad['nom_titu']?></option>

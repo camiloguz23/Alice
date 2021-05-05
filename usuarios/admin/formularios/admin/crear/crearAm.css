@@ -263,6 +263,13 @@ ul.acor li a:hover {
     
 
 }
+.tipo_ambiente{
+    margin: 10px;
+    padding: 0px 0px 0px 100px;
+    margin-top: -1px;
+    width: 120%;  
+    
+}
 .tipo{
     align-content: center;
     margin-left: 50%;

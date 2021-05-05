@@ -108,9 +108,23 @@ $ambien = mysqli_query($bdmysqli,$sqli);
             <div class="contenedor">
                 <div>
                     <label for="" class="texto"> Ambiente de formacion</label><br>
-                    <input name="ambiente" type="text"  autocomplete="off" require style="text-transform:uppercase;">
-    
-                </div>  
+                    <input name="ambiente" type="number"  autocomplete="off" require style="text-transform:uppercase;" pattern="[0-4]">
+                    <?php
+                    if(isset($_POST['ambiente'])){
+                        $tipo = $_POST['ambiente'];
+                        if($tipo > 8){
+                            echo"solo se permiten 4 caracteres";
+                        }
+                    }
+                    ?>
+                </div> 
+                </div> 
+
+                <div class="tipo_ambiente">
+                <div>
+                    <label for="" class="texto">Tipo Ambiente</label><br>
+                    <input name="tipo_ambiente" type="text"  require  autocomplete="off">
+                    
 
                 <div class=" tipo">
                     <label for="" class="texto"> Nave</label><br>

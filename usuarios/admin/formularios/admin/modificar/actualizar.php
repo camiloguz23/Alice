@@ -8,7 +8,7 @@ session_start();
 $validar = $_SESSION["id_user"];
 
 if ($validar == "" || $validar == null){
-    header("location: ../../index.html");
+    header("location: ../../../../../index.html");
 }
 ?>
 <!DOCTYPE html>

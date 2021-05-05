@@ -15,6 +15,12 @@ require_once ("../../../../../php/conexion.php");
 $sqli = "SELECT * from naves";
 $ambien = mysqli_query($bdmysqli,$sqli);
 ?>
+<?php
+require_once ("../../../../../php/conexion.php");
+
+$consul = "SELECT * from formacion";
+$formacion = mysqli_query($bdmysqli,$consul);
+?>
 
 
 <!DOCTYPE html>
@@ -108,38 +114,40 @@ $ambien = mysqli_query($bdmysqli,$sqli);
             <div class="contenedor">
                 <div>
                     <label for="" class="texto"> Ambiente de formacion</label><br>
-                    <input name="ambiente" type="number"  autocomplete="off" require style="text-transform:uppercase;" pattern="[0-4]">
-                    <?php
-                    if(isset($_POST['ambiente'])){
-                        $tipo = $_POST['ambiente'];
-                        if($tipo > 4){
-                            echo"solo se permiten 4 caracteres";
-                        }
-                    }
-                    ?>
+                    <input name="ambiente" type="number"  autocomplete="off"   require >
                 </div> 
-                </div> 
-
-                <div >
-                <div class="tipo_ambiente">
-                    <label for="" class="texto">Tipo Ambiente</label><br>
-                    <input class="nave" name="tipo_ambiente" type="text"  require style="text-transform:uppercase;" autocomplete="off">
-                    
-
-                <div class=" tipo">
-                    <label for="" class="texto"> Nave</label><br>
-                    <select name="nave" require>   
-                        <option >Seleccione </option> 
-                        <?php
-                        foreach ($ambien as $naves){
-                            ?> <option value="<?=$naves['id_naves']?>"><?=$naves['nom_nave']?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>    
-                </div>                        
-
             </div>
+
+            <div class="conten">
+
+                <div class="tipo_ambiente">
+                        <label for="" class="texto">Tipo Ambiente</label><br>
+                        <select name="tipo_amb" require>   
+                            <option >Seleccione </option> 
+                            <?php
+                            foreach ($formacion as $formaci){
+                                ?> <option value="<?=$formaci['id_form']?>"><?=$formaci['nom_form']?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>   
+                    </div>
+
+                    <div class=" tipo">
+                        <label for="" class="texto"> Nave</label><br>
+                        <select name="nave" require>   
+                            <option >Seleccione </option> 
+                            <?php
+                            foreach ($ambien as $naves){
+                                ?> <option value="<?=$naves['id_naves']?>"><?=$naves['nom_nave']?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>    
+                    </div>  
+                
+                </div>
+
               
             <input type="submit" class="enviar" name="enviar" value="Enviar">
             

@@ -10,7 +10,7 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../../../../php/conexion.php");
 
-$ambi = "select id_amb,nom_amb,nom_nave from ambiente,naves where ambiente.id_naves=naves.id_naves";
+$ambi = "select id_amb,nom_form,nom_nave from ambiente,formacion,naves where ambiente.id_form = formacion.id_form and ambiente.id_naves=naves.id_naves";
 $consul = mysqli_query($bdmysqli,$ambi);
 ?>
 
@@ -119,7 +119,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
                 foreach ($consul as $ambiente){
                     ?> <tr>
                         <td><?=$ambiente["id_amb"]?></td>
-                        <td><?=$ambiente["nom_amb"]?></td>
+                        <td><?=$ambiente["nom_form"]?></td>
                         <td><?=$ambiente["nom_nave"]?></td>
                         <td><form action="eliminaramb.php" method="POST">
                                 <input type="hidden" value="<?=$ambiente["id_amb"]?>" name="datoeli">

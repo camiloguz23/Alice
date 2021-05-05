@@ -122,8 +122,8 @@ $formacion = mysqli_query($bdmysqli,$consul);
 
                 <div class="tipo_ambiente">
                         <label for="" class="texto">Tipo Ambiente</label><br>
-                        <select name="tipo_amb" require>   
-                            <option >Seleccione </option> 
+                        <select name="tipo_amb" required>   
+                            <option value="">Seleccione </option> 
                             <?php
                             foreach ($formacion as $formaci){
                                 ?> <option value="<?=$formaci['id_form']?>"><?=$formaci['nom_form']?></option>
@@ -135,8 +135,8 @@ $formacion = mysqli_query($bdmysqli,$consul);
 
                     <div class=" tipo">
                         <label for="" class="texto"> Nave</label><br>
-                        <select name="nave" require>   
-                            <option >Seleccione </option> 
+                        <select name="nave" required>   
+                            <option value="">Seleccione </option> 
                             <?php
                             foreach ($ambien as $naves){
                                 ?> <option value="<?=$naves['id_naves']?>"><?=$naves['nom_nave']?></option>

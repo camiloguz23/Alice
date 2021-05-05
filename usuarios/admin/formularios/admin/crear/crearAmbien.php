@@ -113,8 +113,8 @@ $formacion = mysqli_query($bdmysqli,$consul);
 
             <div class="contenedor">
                 <div>
-                    <label for="" class="texto"> Ambiente de formacion</label><br>
-                    <input name="ambiente" type="number"  autocomplete="off"   require >
+                    <label for="" class="texto"> Nº Ambiente de formacion</label><br>
+                    <input name="ambiente" type="text" minlength="4" maxlength="4" required autocomplete="off" >
                 </div> 
             </div>
 

@@ -73,7 +73,7 @@
                     </li>
                     <li><a href="#">CLASES</a>
                         <ul class="sub">
-                          <li><a href=""><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
+                          <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
                           <li><a href=""><i class="fas fa-pen-square"></i>.Modificar </a></li>
                         </ul>
                     </li>
@@ -94,7 +94,7 @@
                     $buscar = $_REQUEST['buscar'];
                     if(empty($buscar))
                     {
-                        header("location: lista_usuario.php")
+                        header("location: lista_usuario.php");
                     }
                 ?>
                   <p>MODIFICAR USUARIO</p>

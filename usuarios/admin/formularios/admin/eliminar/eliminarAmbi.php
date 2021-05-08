@@ -88,7 +88,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
                 <ul class="acor">
                     <li><a href="#">CLASES</a>
                         <ul class="sub">
-                          <li><a href=""><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
+                          <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
                           <li><a href=""><i class="fas fa-pen-square"></i>.Modificar </a></li>
                         </ul>
                     </li>

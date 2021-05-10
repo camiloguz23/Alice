@@ -24,6 +24,12 @@ $correo = $_POST["correo"];
 
 $clave = $_POST["clave"];
 
+$fotousu = $_FILES['foto'] ['name'];
+$ruta = $_FILES['foto'] ['tmp_name'];
+$destino = "../usuarios/foto/".$fotousu;
+copy($ruta,$destino);
+
+
 
 $titulo = $_POST["tituloacade"];
 $especializacion  = $_POST["especializacion"];
@@ -31,7 +37,8 @@ $especializacion  = $_POST["especializacion"];
 
 
 
-$crear = "INSERT INTO usuario (docu,id_tip_usu,id_tip_docu,nombres,apellidos,edad,celular,fijo,direccion,email,contra_seguridad,codigo_barras) values ('$documento','$tipoUsuario','$tipoDocu','$nombre','$apelido','$edad','$celular','$fijo','$direccion','$correo','$clave','')";
+
+$crear = "INSERT INTO usuario (docu,id_tip_usu,id_tip_docu,nombres,apellidos,edad,celular,fijo,direccion,email,contra_seguridad,codigo_barras,foto) values ('$documento','$tipoUsuario','$tipoDocu','$nombre','$apelido','$edad','$celular','$fijo','$direccion','$correo','$clave','','$fotousu')";
 $insertar= mysqli_query($bdmysqli,$crear);
 
 if ($insertar){
@@ -45,6 +52,8 @@ if ($insertar){
         echo '<script>window.location="../usuarios/admin/formularios/admin/crear/crearUsu.php"</script>';        
 
     }
+}else {
+    echo "error".$ruta;
 }
 
 

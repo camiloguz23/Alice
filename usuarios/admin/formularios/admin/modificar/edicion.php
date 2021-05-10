@@ -16,7 +16,7 @@ if ($validar == "" || $validar == null){
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="modificar.css">
-        <link rel="shortcut icon" href="../../../../../assets/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../../img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -58,7 +58,7 @@ if ($validar == "" || $validar == null){
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"> <?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" src= "../../../../../assets/img/logo_usuar.png" alt="">
+                <img  height="70px" widih="70px" src= "../../../../foto/<?=$_SESSION['foto']?>" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">
@@ -110,7 +110,7 @@ if ($validar == "" || $validar == null){
                     <th>fijo</th>
                     <th>Direccion</th>
                     <th>Correo Misena</th>
-                    <th>Contraseña</th>
+
                     <th>OPERACION</th>
                 </tr>
                 </thead>
@@ -126,7 +126,7 @@ if ($validar == "" || $validar == null){
                     <td><?php echo $row["fijo"];?></td>
                     <td><?php echo $row["direccion"];?></td>
                     <td><?php echo $row["email"];?></td>
-                    <td><?php echo $row["contra_seguridad"];?></td>
+
                 <td class="table_item">
                     <a href="actualizar.php?id=<?php echo $row["docu"];?>" class="table_item">EDITAR</a>
                 </td>

@@ -13,7 +13,7 @@ if ($validar == "" || $validar == null){
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="admin.css">
-        <link rel="shortcut icon" href="../../assets/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -54,7 +54,7 @@ if ($validar == "" || $validar == null){
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" src= "../../assets/img/logo_usuar.png" alt="">
+                <img  height="70px" widih="70px" src= "../foto/<?=$_SESSION['foto']?>" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">

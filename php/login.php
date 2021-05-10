@@ -26,6 +26,7 @@
                 $_SESSION["tipousu"] = $fila["id_tip_usu"];
                 $_SESSION["nombre"] = $fila['nombres'];
                 $_SESSION["apellido"] = $fila["apellidos"];
+                $_SESSION['foto'] = $fila['foto'];
                 header("location: ../usuarios/admin/admin.php");
                 exit();
             } elseif($fila["id_tip_usu"] == 2){
@@ -46,7 +47,7 @@
 
 
         }else{
-//
+            echo "mala la cnsulta";
         }
 
 ?>

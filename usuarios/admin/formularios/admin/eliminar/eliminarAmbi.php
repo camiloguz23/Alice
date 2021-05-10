@@ -21,7 +21,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="ElimiAmbi.css">
-        <link rel="shortcut icon" href="../../../../../assets/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../../img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         

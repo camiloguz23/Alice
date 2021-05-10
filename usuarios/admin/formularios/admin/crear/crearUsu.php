@@ -34,7 +34,7 @@ if ($validar == "" || $validar == null){
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="crear.css">
-        <link rel="shortcut icon" href="../../../../../assets/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../../img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -112,7 +112,7 @@ if ($validar == "" || $validar == null){
             
         </div>
         <div class="form">
-          <form class="formula" action="../../../../../php/crearUsuario.php" method="POST">
+          <form class="formula" action="../../../../../php/crearUsuario.php" method="POST" enctype="multipart/form-data">
             <p>NUEVO USUARIO</p>
             <div class="conten">
 
@@ -215,7 +215,7 @@ if ($validar == "" || $validar == null){
 
             <div class="cont">
                 <div>
-                    <label  class="texto">titulo academico</label><br>
+                    <label  class="texto">Titulo academico</label><br>
                     <select required name="tituloacade" >
                         <option value="">Seleccione </option>
                         <?php
@@ -241,7 +241,11 @@ if ($validar == "" || $validar == null){
                     </select>                            
 
     
-                </div> 
+                </div>
+                <div>
+                    <label>Foto</label><br>
+                    <input type="file" name="foto">
+                </div>
 
             </div>
               

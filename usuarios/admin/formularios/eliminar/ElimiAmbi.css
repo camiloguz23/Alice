@@ -166,6 +166,13 @@ ul.acorh li li a {
     border-bottom: 1px solid rgb(117, 117, 117);
     box-sizing: border-box;
 }
+ul.acorh .sub li a {
+    padding: 10px 10px 10px 60px;
+}
+ul.acor .sub li a {
+    padding: 10px 10px 10px 60px;
+}
+
 ul.acorc li li:last-child a {
     border-bottom: 0;
 }
@@ -251,44 +258,6 @@ ul.acor li a:hover {
     color: #fff;
 
 }
-
-/*formulario*/
-.contenedor{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap:5px;
-
-}
-.contened{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap:5px;
-}
-.direccion input{
-    width: 94%;
-}
-.conten{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap:5px;
-  
-}
-.tipo{
-    align-content: center;
-}
-.conte{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap:5px;
-}
-.conte input{
-    width: 88%;
-}
-.cont{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap:5px;
-}
 .form{
     width:70%; 
     height: 530px;
@@ -313,79 +282,42 @@ ul.acor li a:hover {
     text-decoration: underline;
     font-weight: 700;
 }
-label.texto{
-    font-family: Verdana;
-    font-size: 16px;
-    margin-left: 3%;
-}
-    
-input{
-    margin: 10px;
-    padding: 3px;
-    margin-top: 10px;
-    width: 81%;
-}
 
-select{
-    margin: 10px;
-    padding: 3px;
-    margin-top: 10px;
-    width: 90%;
-}
-
-.form input[type="submit"] {
+button[type="submit"] {
     outline: none;
-    height: 25px;
-    width: 20%;
+    height: 16px;
+    width: 70%;
     background-color: transparent;
     color:  rgb(255, 255, 255);
-    font-size: 18px;
-    background-color:#fc7323;
-    margin-left: 40%;
-    font-family: 'Julius Sans One', sans-serif;  
+    font-size: 14px;
+    background-color:#238276;
+    margin-left: 10%;
     border-style: none;
 
 }
 
-.form input[type="submit"]:hover {
+button[type="submit"]:hover {
     cursor: pointer;
-    background:#238276;
+    background-color: rgb(89, 181, 72);
     color: rgb(255, 255, 255);
     border-style: none;
 }
 
-input:invalid {
-    border: 2px dashed orangered;
-  }
-  
-  input:valid {
-    border: 2px solid black;
-  }
-  
-  
-  /* Este es nuestro diseño para los campos no válidos */
-  input:invalid{
-    border-color: #900;
-    background-color: #FDD;
-  }
-  
-  input:focus:invalid {
-    outline: none;
-  }
-  
-  /* Este es el diseño para nuestros mensajes de error */
-  .error {
-    width : 100%;
-    padding: 0;
-  
-    font-size: 80%;
-    color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-  
-    box-sizing: border-box;
-  }
-  
-  .error.active {
-    padding: 0.3em;
-  }
+
+.tabla{
+    margin-left: 10%;
+    border: 1px solid #238276;
+    border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid black;
+}
+
+.tabla th{
+    background:#238276;
+    padding: 0 10px 5px 20px ;
+}

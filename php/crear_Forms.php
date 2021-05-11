@@ -12,7 +12,7 @@ $fila = mysqli_fetch_assoc($sqli);
 
 if($fila['no_ficha'] === $numficha){
 echo"<script>alert('el numero de ficha ya existe')</script>";
-echo "<script>window.location='../usuarios/admin/formularios/admin/crear/crearAmbien.php'</script>";
+echo "<script>window.location='../usuarios/admin/formularios/crear/crearFormacion.php'</script>";
 }
 else
 {
@@ -24,7 +24,7 @@ else
     if($sqli2)
     {
         echo "<script>alert('los datos fueron guardados exitosamente')</script>";
-        echo "<script>window.location='../usuarios/admin/formularios/admin/crear/crearAmbien.php'</script>";
+        echo "<script>window.location='../usuarios/admin/formularios/crear/crearFormacion.php'</script>";
 
 
     }

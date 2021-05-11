@@ -15,7 +15,7 @@ $fila= mysqli_fetch_assoc($con);
 if ($fila['id_amb'] == $ambiente){
 
     echo '<script>alert ("EL AMBIENTE YA EXISTE ");</script>';
-    echo '<script>window.location="../usuarios/admin/formularios/admin/crear/crearAmbien.php"</script>';        
+    echo '<script>window.location="../usuarios/admin/formularios/crear/crearAmbien.php"</script>';        
 
 } 
 else{
@@ -25,7 +25,7 @@ else{
     if($inseta){
 
         echo '<script>alert ("se ingresaron los datos con exito");</script>';
-        echo '<script>window.location="../usuarios/admin/formularios/admin/crear/crearAmbien.php"</script>';        
+        echo '<script>window.location="../usuarios/admin/formularios/crear/crearAmbien.php"</script>';        
 
 
     }

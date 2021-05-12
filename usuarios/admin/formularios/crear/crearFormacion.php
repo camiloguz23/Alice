@@ -108,57 +108,16 @@ if ($validar == "" || $validar == null){
             
         </div>
         <div class="form">
-            <form class="formula" action="../../../../php/crear_Forms.php" method="POST">
+            <form class="formula" id="formulario" method="POST">
                 <p>NUEVA FORMACION</p>
-                <div class="conten">
-
-                    <div class=" tipo">
-                        <label for="" class="texto">Tipo de Formacion</label><br>
-                        <select  name="id_tip_form" required >
-                            <option value="">Seleccione </option>
-                            <?php
-                            foreach ($tipoform as $forma){
-                                ?> <option value="<?=$forma['id_tip_form']?>"><?=$forma['nom_tip_form']?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>                            
-
-
-                    </div>
-
-                    <div>
-                        <label  class="texto">Ambiente de formacion</label><br>
-                        <select name="id_amb" required >
-                            <option value="">Seleccione </option>
-                            <?php
-                            foreach ($detalform as $form){
-                                ?> <option value="<?=$form['id_amb']?>"><?=$form['id_amb']?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>                            
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="contenedor">
-                    <div>
-                        <label for="" class="texto">Numero de Ficha</label><br>
-                        <input type="number" name="ficha" required  minlength="09" maxlength="09"  autocomplete="off">
-        
-                    </div>
-                    
-                </div>
-                
-                <input type="submit" class="enviar" name="enviar" value="Enviar">
+                <label>Nombre de la formacion</label><br>
+                <input type="text" name="formacion" class="inputForm">
+                <button type="submit" id="enviar">Enviar</button>
             </form>
         </div>
         
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
+    <script src="../../../../javascript/app.js"></script>
 
     </body>
 </html>

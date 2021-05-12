@@ -10,7 +10,7 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../../../php/conexion.php");
 
-$consul = "SELECT detalform.no_ficha, ambiente.id_amb,formacion.nom_form,naves.nom_nave, tipo_formacion.nom_tip_form FROM detalform LEFT JOIN ambiente ON detalform.id_amb=ambiente.id_amb LEFT JOIN formacion ON ambiente.id_form=formacion.id_form LEFT JOIN naves ON ambiente.id_naves=naves.id_naves LEFT JOIN tipo_formacion ON detalform.id_tip_form=tipo_formacion.id_tip_form";
+$consul = "select * from formacion";
 $dele = mysqli_query($bdmysqli,$consul);
 ?>
 
@@ -111,27 +111,23 @@ $dele = mysqli_query($bdmysqli,$consul);
                         <table class="tabla">
                             <thead>
                             <tr>
-                                <th>N° ficha</th>
-                                <th>Aula</th>
-                                <th>Ambiente</th>
-                                <th>Tipo de formacion</th>
-                                <th>Nave</th>
+                                <th>Nombre de la formacion</th>
                                 <th>Eliminar</th>
+
                             </tr>
                             </thead>
                             <tbody>
                             <?php
                             foreach ($dele as $eli){
                                 ?> <tr>
-                                    <td><?=$eli["no_ficha"]?></td>
-                                    <td><?=$eli["id_amb"]?></td>
                                     <td><?=$eli["nom_form"]?></td>
-                                    <td><?=$eli["nom_tip_form"]?></td>
-                                    <td><?=$eli["nom_nave"]?></td>
-                                    <td><form action="../../../../php/eliminaform.php" method="POST">
-                                            <input type="hidden" value="<?=$eli["no_ficha"]?>" name="ficha">
-                                            <button type="submit">Eliminar</button>
-                                        </form> </td>
+                                    <td>
+                                        <form action="../../../../php/eliminaform.php" method="post">
+                                            <input type="hidden" name="form_eli" value="<?=$eli['id_form']?>">
+                                            <button type="submit" >Eliminar</button>
+                                        </form>
+                                    </td>
+
                                 </tr>
                             <?php
                             }

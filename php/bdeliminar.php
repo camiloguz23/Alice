@@ -10,7 +10,7 @@ if ($consulta){
     $consulta2 = mysqli_query($bdmysqli,$titulos);
 
     if ($consulta2){
-        header("location:../usuario/admin/formularios/modificar/edicion.php");
+        header("location: ../usuarios/admin/formularios/modificar/edicion.php");
     }
 }
 

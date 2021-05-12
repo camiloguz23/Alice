@@ -2,17 +2,17 @@
 <?php
 require_once ("conexion.php");
 
-$da = $_POST["ficha"];
+$da = $_POST["form_eli"];
 
-$eliminForm = "DELETE FROM detalform WHERE no_ficha = $da";
+$eliminForm = "DELETE FROM formacion WHERE id_form = $da";
 $forma = mysqli_query($bdmysqli,$eliminForm);
 
 if ($forma){
-    echo '<script>window.location="../usuarios/admin/formularios/eliminar/EliminForma.php"</script>'; 
+    header("location: ../usuarios/admin/formularios/eliminar/EliminForma.php");
 }
 else{
-    echo '<script>alert ("yuca no insertan");</script>';
-    echo '<script>window.location="../usuarios/admin/formularios/eliminar/EliminForma.php"</script>'; 
+    echo '<script>alert ("No Elimino");</script>';
+    echo '<script>window.location="../usuarios/admin/formularios/eliminar/EliminForma.php"</script>';
 }
 
 ?>

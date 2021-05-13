@@ -2,6 +2,9 @@
 const formulario = document.getElementById("formulario")
 const enviar = document.getElementById("enviar")
 
+
+validar()
+enviar.disabled = true
 enviar.addEventListener("click", (e) => {
     e.preventDefault()
 
@@ -14,3 +17,18 @@ enviar.addEventListener("click", (e) => {
         alert(info)
     })
 })
+
+function validar() {
+    const campo = document.getElementById("campo")
+
+    campo.addEventListener("keyup", () => {
+        let dato = campo.value
+
+        if (dato.length >= 4){
+            enviar.disabled = false
+        }else {
+            enviar.disabled = true
+        }
+    })
+    
+}

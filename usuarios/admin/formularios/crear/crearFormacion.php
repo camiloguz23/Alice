@@ -111,7 +111,7 @@ if ($validar == "" || $validar == null){
             <form class="formula" id="formulario" method="POST">
                 <p>NUEVA FORMACION</p>
                 <label>Nombre de la formacion</label><br>
-                <input type="text" name="formacion" class="inputForm">
+                <input type="text" name="formacion" class="inputForm" id="campo">
                 <button type="submit" id="enviar">Enviar</button>
             </form>
         </div>

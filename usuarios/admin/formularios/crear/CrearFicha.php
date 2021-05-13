@@ -10,7 +10,7 @@ $tipoform  = mysqli_query($bdmysqli,$sql2);
 
 <?php
 require_once ("../../../../php/conexion.php");
-$sq = "SELECT * from ambiente";
+$sq = "SELECT * from ambiente where id_estado = 1";
 $detaform = mysqli_query($bdmysqli,$sq);
 ?>
 

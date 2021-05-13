@@ -19,7 +19,7 @@ if ($fila['id_amb'] == $ambiente){
 
 } 
 else{
-    $sqlrr= "INSERT INTO ambiente (id_amb, id_form, id_naves) values ( '$ambiente', '$formaci','$naves')";
+    $sqlrr= "INSERT INTO ambiente (id_amb, id_form, id_naves, id_estado) values ( '$ambiente', '$formaci','$naves', '1')";
     $inseta= mysqli_query($bdmysqli,$sqlrr);
 
     if($inseta){

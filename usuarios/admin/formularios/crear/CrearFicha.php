@@ -3,6 +3,18 @@ require_once ("../../../../php/conexion.php");
 ?>
 
 <?php
+require_once ("../../../../php/conexion.php");
+$sql2 = "SELECT * from tipo_formacion ";
+$tipoform  = mysqli_query($bdmysqli,$sql2);
+?>
+
+<?php
+require_once ("../../../../php/conexion.php");
+$sq = "SELECT * from ambiente";
+$detaform = mysqli_query($bdmysqli,$sq);
+?>
+
+<?php
 session_start();
 $validar = $_SESSION["id_user"];
 
@@ -16,7 +28,7 @@ if ($validar == "" || $validar == null){
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
-        <link rel="stylesheet" href="crearForma.css">
+        <link rel="stylesheet" href="CrearFicha.css">
         <link rel="shortcut icon" href="../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
@@ -85,9 +97,9 @@ if ($validar == "" || $validar == null){
                 <ul class="acorh">
                     <li><a class="activ"  href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                       <ul class="sub">
-                        <li><a href="crearFormacion.php" class="active"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
+                        <li><a href="crearFormacion.php" ><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                         <li><a href="../eliminar/eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="CrearFicha.php"><i class="fas fa-plus-square"></i>.Agregar Grupo Formativo</a></li>
+                        <li><a href="formularios/crear/" class="active"><i class="fas fa-plus-square"></i>.Agregar Grupo Formativo</a></li>
                         <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Grupo </a></li>
 
                       </ul>
@@ -99,16 +111,54 @@ if ($validar == "" || $validar == null){
             
         </div>
         <div class="form">
-            <form class="formula" id="formulario" method="POST">
-                <p>NUEVA FORMACION</p>
-                <label class="texto">Nombre de la formacion</label><br>
-                <input type="text" name="formacion" class="inputForm">
-                <button type="submit" id="enviar">Enviar</button>
+            <form class="formula" action="../../../../php/CrearFicha.php" method="POST">
+                <p>NUEVO GRUPO FORMATIVO|<i class="far fa-address-card"></i></p>
+
+                <div class="contenedor">
+                    <div>
+                        <label for="" class="texto"> Nº Ficha</label><br>
+                        <input name="ficha" type="number" minlength="7" maxlength="10" required autocomplete="off" >
+                    </div> 
+                </div>
+
+                <div class="conten">
+
+                    <div >
+                        <label for="" class="texto">Ambiente de formacion</label><br>
+                        <select name="amb" required>   
+                            <option value="">Seleccione </option> 
+                            <?php
+                            foreach ($detaform as $amb){
+                                ?> <option value="<?=$amb['id_amb']?>"><?=$amb['id_amb']?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>   
+                    </div>
+
+                    <div >
+                        <label for="" class="texto"> Programa de formacion </label><br>
+                        <select name="forma" required>   
+                            <option value="">Seleccione </option> 
+                            <?php
+                            foreach ($tipoform as $programa){
+                                ?> <option value="<?=$programa['id_tip_form']?>"><?=$programa['nom_tip_form']?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>    
+                    </div>  
+                    
+                    </div>
+                    <input type="submit" class="enviar" name="enviar" value="Enviar">
+
+                </div>  
+                
             </form>
         </div>
+
+       
         
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
-    <script src="../../../../javascript/app.js"></script>
-
     </body>
 </html>

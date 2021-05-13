@@ -97,6 +97,9 @@ $formacion = mysqli_query($bdmysqli,$consul);
                       <ul class="sub">
                         <li><a href="crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                         <li><a href="../eliminar/eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="CrearFicha.php"><i class="fas fa-plus-square"></i>.Agregar Grupo Formativo</a></li>
+                        <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Grupo </a></li>
+
                       </ul>
                     </li>
                 </ul>
@@ -106,51 +109,51 @@ $formacion = mysqli_query($bdmysqli,$consul);
             
         </div>
         <div class="form">
-          <form class="formula" action="../../../../php/crearAmbiente.php" method="POST">
-            <p>NUEVO AMBIENTE DE FORMACION</p>
+            <form class="formula" action="../../../../php/crearAmbiente.php" method="POST">
+                <p>NUEVO AMBIENTE DE FORMACION</p>
 
-            <div class="contenedor">
-                <div>
-                    <label for="" class="texto"> Nº Ambiente de formacion</label><br>
-                    <input name="ambiente" type="text" minlength="4" maxlength="4" required autocomplete="off" >
-                </div> 
-            </div>
-
-            <div class="conten">
-
-                <div class="tipo_ambiente">
-                        <label for="" class="texto">Tipo Ambiente</label><br>
-                        <select name="tipo_amb" required>   
-                            <option value="">Seleccione </option> 
-                            <?php
-                            foreach ($formacion as $formaci){
-                                ?> <option value="<?=$formaci['id_form']?>"><?=$formaci['nom_form']?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>   
-                    </div>
-
-                    <div class=" tipo">
-                        <label for="" class="texto"> Nave</label><br>
-                        <select name="nave" required>   
-                            <option value="">Seleccione </option> 
-                            <?php
-                            foreach ($ambien as $naves){
-                                ?> <option value="<?=$naves['id_naves']?>"><?=$naves['nom_nave']?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>    
-                    </div>  
-                
+                <div class="contenedor">
+                    <div>
+                        <label for="" class="texto"> Nº Ambiente de formacion</label><br>
+                        <input name="ambiente" type="text" minlength="4" maxlength="4" required autocomplete="off" >
+                    </div> 
                 </div>
 
-              
-            <input type="submit" class="enviar" name="enviar" value="Enviar">
-            
-        </form>
-  </div>
+                <div class="conten">
+
+                    <div class="tipo_ambiente">
+                            <label for="" class="texto">Tipo Ambiente</label><br>
+                            <select name="tipo_amb" required>   
+                                <option value="">Seleccione </option> 
+                                <?php
+                                foreach ($formacion as $formaci){
+                                    ?> <option value="<?=$formaci['id_form']?>"><?=$formaci['nom_form']?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>   
+                        </div>
+
+                        <div class=" tipo">
+                            <label for="" class="texto"> Nave</label><br>
+                            <select name="nave" required>   
+                                <option value="">Seleccione </option> 
+                                <?php
+                                foreach ($ambien as $naves){
+                                    ?> <option value="<?=$naves['id_naves']?>"><?=$naves['nom_nave']?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>    
+                        </div>  
+                    
+                    </div>
+                    <input type="submit" class="enviar" name="enviar" value="Enviar">
+
+                </div>  
+                
+            </form>
+        </div>
         
     
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>

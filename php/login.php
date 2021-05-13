@@ -47,7 +47,8 @@
 
 
         }else{
-            echo "mala la cnsulta";
+            echo '<script>alert ("INGRESO DATOS INCORRECTOS");</script>';
+            echo '<script>window.location="../index.html"</script>';  
         }
 
 ?>

@@ -2,25 +2,34 @@
 
 require_once("conexion.php");
 
-$ambiente = $_POST["ambiente"];
+$ambiente = $_POST['ambiente'];
+$formaci = $_POST['tipo_amb'];
 $naves = $_POST["nave"];
 
-    $sqlrr= "INSERT INTO ambiente (id_amb, nom_amb, id_naves) values ( NULL , '$ambiente','$naves')";
+
+$sql ="SELECT * FROM ambiente where id_amb = '$ambiente'";
+$con = mysqli_query($bdmysqli,$sql);
+$fila= mysqli_fetch_assoc($con);
+
+
+if ($fila['id_amb'] == $ambiente){
+
+    echo '<script>alert ("EL AMBIENTE YA EXISTE ");</script>';
+    echo '<script>window.location="../usuarios/admin/formularios/crear/crearAmbien.php"</script>';        
+
+} 
+else{
+    $sqlrr= "INSERT INTO ambiente (id_amb, id_form, id_naves) values ( '$ambiente', '$formaci','$naves')";
     $inseta= mysqli_query($bdmysqli,$sqlrr);
 
     if($inseta){
 
         echo '<script>alert ("se ingresaron los datos con exito");</script>';
-        echo '<script>window.location="../usuarios/admin/formularios/admin/crear/crearAmbien.php"</script>';        
-
-
-    }else{
-
-        echo '<script>alert ("Campos vacios no ingreso  todos los datos");</script>';
-        echo '<script>window.location="../usuarios/admin/formularios/admin/crear/crearAmbien.php"</script>';        
+        echo '<script>window.location="../usuarios/admin/formularios/crear/crearAmbien.php"</script>';        
 
 
     }
+}
 
 ?>
          

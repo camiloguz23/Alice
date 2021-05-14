@@ -183,3 +183,72 @@ ul.acorh li a:hover {
     background-color: #fc7323;
     color: #fff;
 }
+
+ul.acorh li a.activ{
+    background-color: #fc7323;
+    color: rgb(255, 255, 255);
+}
+
+#main-container{
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    height:200px ;
+    margin-left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-left: 130px;
+    top: 50%;
+    left: 50%;
+
+}
+.ins{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+table{
+    border-collapse: collapse;
+
+}
+ th,  td {
+    font-family: verdana;
+    font-style: italic;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid rgb(168, 168, 168);
+}
+td{
+    font-size: 10px;
+}
+
+th{
+    background:#238276;
+    padding: 0 10px 5px 20px ;
+
+}
+
+thead{
+    font-size: 12px;
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: rgb(192, 189, 189);
+}
+
+tr:hover td{
+	background-color: #b4b1b1;
+	color: white;
+}
+
+
+

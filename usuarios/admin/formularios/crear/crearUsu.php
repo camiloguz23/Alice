@@ -158,14 +158,60 @@ if ($validar == "" || $validar == null){
                 </div>
                 <div>
                     <label  class="texto">Nombre</label><br>
-                    <input type="text" name="nombre" required  autocomplete="off">
+                    <input type="text" name="nombre" required  autocomplete="off" onkeypress="return sololetras(event)" >
+                    <script>
+        function sololetras(e){
+            key=e.keyCode || e.which;
+
+            teclado=String.fromCharCode(key).toLowerCase();
+
+            letras="abcdefghijklmnñopqrstuvwxyz";
+
+            especiales="8-37-38-46-164";
+
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;break;
+                }
+            }
+            if(letras.indexOf(teclado)==-1 && !teclado_especial){
+                    return false;
+            }
+        }
+
+        </script>
     
                 </div>
     
                 <div>
                     <label for="" class="texto">Apellido</label><br>
-                    <input type="text" name="apellido" required  autocomplete="off">
-    
+                    <input type="text" name="apellido" required  autocomplete="off" onkeypress="return  soloapellidos (event)" >
+                    
+                    <script>
+
+            function soloapellidos(e){
+            key=e.keyCode || e.which;
+
+            teclado=String.fromCharCode(key).toLowerCase();
+
+            letras="abcdefghijklmnñopqrstuvwxyz";
+
+            especiales="8-37-38-46-164";
+
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;break;
+                }
+            }
+            if(letras.indexOf(teclado)==-1 && !teclado_especial){
+                    return false;
+            }
+        }
+        </script>
                 </div>
     
                 <div>

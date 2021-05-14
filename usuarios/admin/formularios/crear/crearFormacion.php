@@ -99,11 +99,12 @@ if ($validar == "" || $validar == null){
             
         </div>
         <div class="form">
-            <form class="formula" id="formulario" method="POST">
+            <form class="formula" id="formulario" method="POST" autocomplete="off">
                 <p>NUEVA FORMACION</p>
 
                 <label class="texto">Nombre de la formacion</label><br>
-                <input type="text" name="formacion" class="inputForm" id="campo">
+                <input type="text" name="formacion" class="inputForm" id="campo"><br>
+                <span id="span"></span><br>
 
                 <button type="submit" id="enviar">Enviar</button>
             </form>

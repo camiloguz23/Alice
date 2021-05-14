@@ -1,10 +1,13 @@
 // js file
 const formulario = document.getElementById("formulario")
 const enviar = document.getElementById("enviar")
+const span = document.getElementById("span")
 
 
 validar()
 enviar.disabled = true
+enviar.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+
 enviar.addEventListener("click", (e) => {
     e.preventDefault()
 
@@ -22,12 +25,30 @@ function validar() {
     const campo = document.getElementById("campo")
 
     campo.addEventListener("keyup", () => {
-        let dato = campo.value
+        let dat = campo.value
+
+
+        for (i=0;i<dat.length;i++) {
+            let dato = dat[i]
+            if (dato == 1 || dato == 2 || dato == 3 || dato == 4 || dato == 5 || dato == 6 || dato == 7 || dato == 8 || dato == 9 || dato == 0) {
+
+                alert("No es permitido digitos")
+                window.location = "crearFormacion.php"
+            }
+        }
+
+
 
         if (dato.length >= 4){
             enviar.disabled = false
+            span.style.display = "none"
+            enviar.style.backgroundColor = "rgb(89, 181, 72)"
         }else {
+            let falto = 4 - dato.length
+            span.innerText = `Te faltan ${falto} letras para que sea valido`
             enviar.disabled = true
+            span.style.display = "block"
+            enviar.style.backgroundColor = "hsla(0,100%,50%,0.5)"
         }
     })
     

@@ -39,12 +39,12 @@ function validar() {
 
 
 
-        if (dato.length >= 4){
+        if (dat.length >= 4){
             enviar.disabled = false
             span.style.display = "none"
             enviar.style.backgroundColor = "rgb(89, 181, 72)"
         }else {
-            let falto = 4 - dato.length
+            let falto = 4 - dat.length
             span.innerText = `Te faltan ${falto} letras para que sea valido`
             enviar.disabled = true
             span.style.display = "block"

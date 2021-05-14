@@ -65,6 +65,8 @@ if ($validar == "" || $validar == null){
             </div>
             <div class="listaa">
                 <ul class="acor">
+                    <li><a  href="../../admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
+
                     <li ><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
                       <ul class="sub">
                         <li><a href="crearUsu.php" ><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>

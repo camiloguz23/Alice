@@ -45,7 +45,8 @@
                     <!--USERNAME INPUT-->
                     <label for="username">DOCUMENTO</label>
 
-                    <input  name= "usuario" type="text" placeholder="" required>
+                    <input  name= "usuario" type="text" placeholder="" required pattern="[0-9]{9,12}"
+                    title="SOLO números. Tamaño mínimo: 9. Tamaño máximo: 12">
                     <!--PASSWORD INPUT-->
                     <label for="password">CLAVE</label>
                     <input name= "clave" type="password" placeholder="" required>

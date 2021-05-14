@@ -75,7 +75,7 @@ if ($validar == "" || $validar == null){
                       <ul class="sub">
                         <li><a href="formularios/crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                         <li><a href="formularios/eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="formularios/crear/"><i class="fas fa-plus-square"></i>.Agregar grupo de formacion</a></li>
+                        <li><a href="formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Agregar grupo de formacion</a></li>
                       </ul>
                     </li>
                   </ul>

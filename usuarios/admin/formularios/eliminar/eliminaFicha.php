@@ -86,8 +86,8 @@ $elimi = mysqli_query($bdmysqli,$co);
                       <ul class="sub">
                         <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                         <li><a href="eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                        <li><a href="eliminaFicha.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
+                        <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Agregar Grupo Formativo</a></li>
+                        <li><a href="eliminaFicha.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar Grupo </a></li>
 
                       </ul>
                     </li>

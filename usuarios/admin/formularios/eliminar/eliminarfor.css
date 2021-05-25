@@ -285,23 +285,15 @@ ul.acor li a:hover {
 
 button[type="submit"] {
     outline: none;
-    height: 16px;
-    width: 70%;
     background-color: transparent;
-    color:  rgb(255, 255, 255);
-    font-size: 14px;
-    background-color:#238276;
+    color:  rgb(0, 0, 0);
+    font-size: 17px;
     margin-left: 10%;
     border-style: none;
-
-}
-
-button[type="submit"]:hover {
     cursor: pointer;
-    background-color: rgb(89, 181, 72);
-    color: rgb(255, 255, 255);
-    border-style: none;
+
 }
+
 
 
 .tabla{

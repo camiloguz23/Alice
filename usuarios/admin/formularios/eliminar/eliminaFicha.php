@@ -126,7 +126,7 @@ $elimi = mysqli_query($bdmysqli,$co);
                             <td>
                                 <form action="../../../../php/eliminaFicha.php" method="POST">
                                     <input type="hidden" value="<?=$eli["no_ficha"]?>" name="ficha">
-                                    <button type="submit">Eliminar</button>
+                                    <button type="submit"><i class="fas fa-trash"></i></button>
                                 </form> 
                             </td>
 

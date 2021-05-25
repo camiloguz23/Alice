@@ -27,12 +27,6 @@ $dia = mysqli_query($bdmysqli,$sq);
 ?>
 
 <?php
-require_once ("../../../../php/conexion.php");
-$sq = "SELECT * FROM usuario WHERE id_tip_usu = 3";
-$usuario = mysqli_query($bdmysqli,$sq);
-?>
-
-<?php
 session_start();
 $validar = $_SESSION["id_user"];
 
@@ -170,7 +164,7 @@ if ($validar == "" || $validar == null){
                     </div>  
 
                     <div >
-                        <label for="" class="texto"> Horario de clases </label><br>
+                        <label for="" class="texto"> Horario </label><br>
                         <select name="hora" required>   
                             <option value="">Seleccione </option> 
                             <?php
@@ -180,10 +174,10 @@ if ($validar == "" || $validar == null){
                             }
                             ?>
                         </select>    
-                    </div>
+                    </div> 
 
                     <div >
-                        <label for="" class="texto"> Dias de clases </label><br>
+                        <label for="" class="texto"> Dias </label><br>
                         <select name="dia" required>   
                             <option value="">Seleccione </option> 
                             <?php
@@ -193,20 +187,7 @@ if ($validar == "" || $validar == null){
                             }
                             ?>
                         </select>    
-                    </div>
-
-                    <div >
-                        <label for="" class="texto"> Instructor </label><br>
-                        <select name="instru" required>   
-                            <option value="">Seleccione </option> 
-                            <?php
-                            foreach ($usuario as $programa){
-                                ?> <option value="<?=$programa['docu']?>"><?=$programa['nombres']?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>    
-                    </div>
+                    </div> 
                     
                     </div>
                     <input type="submit" class="enviar" name="enviar" value="Enviar">

@@ -90,8 +90,8 @@ $consul = mysqli_query($bdmysqli,$ambi);
                         <ul class="sub">
                           <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                           <li><a href="../eliminar/eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Agregar Grupo Formativo</a></li>
-                          <li><a href="eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Grupo </a></li>
+                          <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                          <li><a href="eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
                         </ul>
                     </li>
                 </ul>
@@ -125,7 +125,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
                         <td><?=$ambiente["nom_nave"]?></td>
                         <td><form action="../../../../php/eliminaramb.php" method="POST">
                                 <input type="hidden" value="<?=$ambiente["id_amb"]?>" name="datoeli">
-                                <button type="submit">Eliminar</button>
+                                <button type="submit"><i class="fas fa-trash"></i></button>
                             </form> </td>
                     </tr>
                 <?php

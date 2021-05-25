@@ -128,7 +128,7 @@ $dele = mysqli_query($bdmysqli,$consul);
                                     <td>
                                         <form action="../../../../php/eliminaform.php" method="post">
                                             <input type="hidden" name="form_eli" value="<?=$eli['id_form']?>">
-                                            <button type="submit" >Eliminar</button>
+                                            <button type="submit" ><i class="fas fa-trash"></i></button>
                                         </form>
                                     </td>
 

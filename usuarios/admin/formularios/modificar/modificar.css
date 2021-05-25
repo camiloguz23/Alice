@@ -398,9 +398,9 @@ a.title_edit{
 }
 
 .tabla{
-
+    margin-left: 10%;
+    align-content: center;
     text-align: center;
-    border: 1px solid #fc7323;
     border-collapse: collapse;
 }
 .tabla th{
@@ -418,64 +418,23 @@ a.title_edit{
     font-size: 12px;
     border:1px solid #000000;
 }
+.tabla .table_item{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
+}
 .tabla .table_item a{
-    background: #fc7323;
-    padding: 0 10px 0 20px ;
+    font-size: 18px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
 }
 .tabla .table_item button[type="submit"] {
     margin: 4px 0 4px 0;
     outline: none;
-    height: 16px;
-    width: 72%;
     background-color: transparent;
-    color:  rgb(255, 255, 255);
-    font-size: 11px;
-    background-color:#fc7323;
+    color:  rgb(0, 0, 0);
+    font-size: 18px;
     border-style: none;
+    cursor: pointer;
 
 }
-
-
-label {
-    font : .8em "typewriter", sans-serif;
-    margin-left: 70px;
-  }
-
-  input:invalid {
-    border: 2px dashed orangered;
-  }
-  
-  input:valid {
-    border: 2px solid black;
-  }
-  
-  
-  /* Este es nuestro diseño para los campos no válidos */
-  input:invalid{
-    border-color: #900;
-    background-color: #FDD;
-  }
-  
-  input:focus:invalid {
-    outline: none;
-  }
-  
-  /* Este es el diseño para nuestros mensajes de error */
-  .error {
-    width : 100%;
-    padding: 0;
-  
-    font-size: 80%;
-    color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-  
-    box-sizing: border-box;
-  }
-  
-  .error.active {
-    padding: 0.3em;
-  }

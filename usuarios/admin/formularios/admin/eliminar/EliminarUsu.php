@@ -3,15 +3,15 @@ session_start();
 $validar = $_SESSION["id_user"];
 
 if ($validar == "" || $validar == null){
-    header("location: ../../../../index.html");
+    header("location: ../../../../../index.html");
 }
 ?>
 
 <?php
-require_once ("../../../../php/conexion.php");
+require_once ("../../../../../php/conexion.php");
 
-$consul = "select * from formacion";
-$dele = mysqli_query($bdmysqli,$consul);
+$consulta = "SELECT usuario.docu,usuario.nombres,usuario.apellidos,usuario.direccion,tipousu.nom_tip_usu,titul_academ.nom_titu,especializacion.nom_esp from usuario LEFT JOIN tipousu on usuario.id_tip_usu=tipousu.id_tip_usu LEFT JOIN detalle_p_e on detalle_p_e.docu = usuario.docu left JOIN titul_academ on titul_academ.id_titu = detalle_p_e.id_titu LEFT JOIN especializacion on especializacion.id_esp = detalle_p_e.id_esp";
+$delete = mysqli_query($bdmysqli,$consulta);
 ?>
 
 
@@ -20,8 +20,8 @@ $dele = mysqli_query($bdmysqli,$consul);
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
-        <link rel="stylesheet" href="eliminarfor.css">
-        <link rel="shortcut icon" href="../../../../assects/img/ashleylogo.png" type="image/x-icon">
+        <link rel="stylesheet" href="eliminar.css">
+        <link rel="shortcut icon" href="../../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -31,7 +31,7 @@ $dele = mysqli_query($bdmysqli,$consul);
                
                 
                 <div class="logo">
-                    <img  height="60px" width="60px" src="../../../../assets/img/logo_calendar.png" alt="">
+                    <img  height="60px" width="60px" src="../../../../../assets/img/logo_calendar.png" alt="">
                 </div>
                 <a class="nombre">ADMINISTRADOR</a>
 
@@ -52,7 +52,7 @@ $dele = mysqli_query($bdmysqli,$consul);
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
+                        <li><a href="../../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -63,16 +63,14 @@ $dele = mysqli_query($bdmysqli,$consul);
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"> <?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../../../foto/<?=$_SESSION['foto']?>" alt="">
+                <img  height="70px" widih="70px" src= "../../../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
-                <ul class="acor">
-                    <li><a  href="../../admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
-
-                    <li><a  href="#">USUARIOS</a>
+                <ul class="acorh">
+                    <li><a class="activ" href="#">USUARIOS</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="EliminarUsu.php" ><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="EliminarUsu.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
@@ -86,20 +84,13 @@ $dele = mysqli_query($bdmysqli,$consul);
                           <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
-                </ul>
-                <ul class="acorh">
-                    <li><a class="activ" href="#"><i class="fas fa-users-class">FORMACION</a>
+                    <li><a href="#">CLASES</a>
                         <ul class="sub">
-                          <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                          <li><a class="active" href="EliminFicha.php"><i class="fas fa-pen-square"></i>.Eliminar</a></li>
-                          <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                          <li><a href="eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
+                          <li><a href=""><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
+                          <li><a href=""><i class="fas fa-pen-square"></i>.Modificar </a></li>
                         </ul>
                     </li>
-
                 </ul>
-                   
-                
                     
 
                   
@@ -110,28 +101,34 @@ $dele = mysqli_query($bdmysqli,$consul);
 
         
         <div class="form">
-           <p>ELIMINAR FORMACION</p>
+           <p>ELIMINAR USUARIO</p>
 
                         <table class="tabla">
                             <thead>
                             <tr>
-                                <th>Nombre de la formacion</th>
+                                <th>Documento</th>
+                                <th>Nombre  y apellido</th>
+                                <th>Direccion</th>
+                                <th>Tipo de usuario</th>
+                                <th>Titulo Academico</th>
+                                <th>Especializacion</th>
                                 <th>Eliminar</th>
-
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            foreach ($dele as $eli){
+                            foreach ($delete as $elim){
                                 ?> <tr>
-                                    <td><?=$eli["nom_form"]?></td>
-                                    <td>
-                                        <form action="../../../../php/eliminaform.php" method="post">
-                                            <input type="hidden" name="form_eli" value="<?=$eli['id_form']?>">
-                                            <button type="submit" ><i class="fas fa-trash"></i></button>
-                                        </form>
-                                    </td>
-
+                                    <td><?=$elim["docu"]?></td>
+                                    <td><?=$elim["nombres"]?> <?=$elim["apellidos"]?></td>
+                                    <td><?=$elim["direccion"]?></td>
+                                    <td><?=$elim["nom_tip_usu"]?></td>
+                                    <td><?=$elim["nom_titu"]?></td>
+                                    <td><?=$elim["nom_esp"]?></td>
+                                    <td><form action="bdeliminar.php" method="POST">
+                                            <input type="hidden" value="<?=$elim["docu"]?>" name="docueli">
+                                            <button type="submit">Eliminar</button>
+                                        </form> </td>
                                 </tr>
                             <?php
                             }

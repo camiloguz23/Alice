@@ -86,8 +86,8 @@ $asignacion = mysqli_query($bdmysqli,$asigna);
                       <ul class="sub">
                         <li><a href="formularios/crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                         <li><a href="formularios/eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Agregar grupo de formacion</a></li>
-                        <li><a href="formularios/eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Grupo </a></li>
+                        <li><a href="formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                        <li><a href="formularios/eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
 
                     </ul>
                     </li>

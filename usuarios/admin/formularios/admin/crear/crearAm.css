@@ -167,13 +167,6 @@ ul.acorh li li a {
     border-bottom: 1px solid rgb(117, 117, 117);
     box-sizing: border-box;
 }
-ul.acorh .sub li a {
-    padding: 10px 10px 10px 60px;
-}
-ul.acor .sub li a {
-    padding: 10px 10px 10px 60px;
-}
-
 ul.acorc li li:last-child a {
     border-bottom: 0;
 }
@@ -306,7 +299,7 @@ label.texto{
     margin-left: 3%;
 }
     
-.form input[type="text"]{
+input{
     margin: 10px;
     padding: 3px;
     margin-top: 10px;
@@ -320,7 +313,7 @@ select{
     width: 83%;
 }
 
-.form .formula .enviar {
+.form input[type="submit"] {
     outline: none;
     height: 25px;
     width: 20%;
@@ -335,7 +328,7 @@ select{
 
 }
 
-.form .formula .enviar:hover {
+.form input[type="submit"]:hover {
     cursor: pointer;
     background:#238276;
     color: rgb(255, 255, 255);
@@ -377,11 +370,4 @@ input:invalid {
   
   .error.active {
     padding: 0.3em;
-  }
-
-  .conte-formacion {
-      border: solid 1px red;
-      position: absolute;
-      top: 100px;
-      left: 650px;
   }

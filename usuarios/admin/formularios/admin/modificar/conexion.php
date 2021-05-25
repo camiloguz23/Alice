@@ -4,5 +4,8 @@
       echo 'error al conectarse a la base de datos';
   }
   
-
+  else {
+      echo 'conectado a la base de datos';
+  }
+  ?>
 ?>

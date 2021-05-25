@@ -125,7 +125,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
                         <td><?=$ambiente["nom_nave"]?></td>
                         <td><form action="../../../../php/eliminaramb.php" method="POST">
                                 <input type="hidden" value="<?=$ambiente["id_amb"]?>" name="datoeli">
-                                <button type="submit">Eliminar</button>
+                                <button type="submit"><i class="fas fa-trash"></i></button>
                             </form> </td>
                     </tr>
                 <?php

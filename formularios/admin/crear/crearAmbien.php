@@ -1,4 +1,13 @@
 <?php
+session_start();
+$validar = $_SESSION["id_user"];
+
+if ($validar == "" || $validar == null){
+    header("location: ../../index.html");
+}
+?>
+
+<?php
 require_once ("../../../php/conexion.php");
 
 $sqli = "SELECT * from naves";

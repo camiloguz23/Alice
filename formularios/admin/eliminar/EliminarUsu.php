@@ -1,4 +1,13 @@
 <?php
+session_start();
+$validar = $_SESSION["id_user"];
+
+if ($validar == "" || $validar == null){
+    header("location: ../../index.html");
+}
+?>
+
+<?php
 require_once ("../../../php/conexion.php");
 
 $consulta = "SELECT usuario.docu,usuario.nombres,usuario.apellidos,usuario.direccion,tipousu.nom_tip_usu,titul_academ.nom_titu,especializacion.nom_esp from usuario,tipousu,titul_academ,especializacion,detalle_p_e WHERE usuario.id_tip_usu=tipousu.id_tip_usu and usuario.docu = detalle_p_e.docu and detalle_p_e.id_titu=titul_academ.id_titu and detalle_p_e.id_esp= especializacion.id_esp";
@@ -116,8 +125,8 @@ $delete = mysqli_query($bdmysqli,$consulta);
                                     <td><?=$elim["nom_tip_usu"]?></td>
                                     <td><?=$elim["nom_titu"]?></td>
                                     <td><?=$elim["nom_esp"]?></td>
-                                    <td><form action="" method="POST">
-                                            <input type="hidden" value="<?=$elim["docu"]?>">
+                                    <td><form action="bdeliminar.php" method="POST">
+                                            <input type="hidden" value="<?=$elim["docu"]?>" name="docueli">
                                             <button type="submit">Eliminar</button>
                                         </form> </td>
                                 </tr>

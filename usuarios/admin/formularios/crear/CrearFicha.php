@@ -113,8 +113,12 @@ if ($validar == "" || $validar == null){
                       <ul class="sub">
                         <li><a href="crearFormacion.php" ><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                         <li><a href="../eliminar/eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+
                         <li><a href="formularios/crear/" class="active"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
+
+                        <li><a href="formularios/crear/" class="active"><i class="fas fa-plus-square"></i>.Agregar Grupo Formativo</a></li>
+                        <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Grupo </a></li>
 
                       </ul>
                     </li>
@@ -126,7 +130,11 @@ if ($validar == "" || $validar == null){
         </div>
         <div class="form">
             <form class="formula" action="../../../../php/CrearFicha.php" method="POST">
+
                 <p>FORMACION FORMATIVO|<i class="far fa-address-card"></i></p>
+
+                <p>NUEVO GRUPO FORMATIVO|<i class="far fa-address-card"></i></p>
+
 
                 <div class="contenedor">
                     <div>
@@ -161,6 +169,7 @@ if ($validar == "" || $validar == null){
                             }
                             ?>
                         </select>    
+
                     </div> 
 
                     <div >
@@ -188,6 +197,9 @@ if ($validar == "" || $validar == null){
                             ?>
                         </select>    
                     </div>
+
+                    </div>  
+
                     
                     </div>
                     <input type="submit" class="enviar" name="enviar" value="Enviar">

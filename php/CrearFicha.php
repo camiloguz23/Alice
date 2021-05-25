@@ -21,6 +21,7 @@ if ($ila['no_ficha'] == $ficha){
   
 }else{
     $sqlrr= "INSERT INTO detalform (no_ficha, id_amb, id_tip_form, Id_dia, Id_horario) values ( '$ficha', '$ambi','$forma','$dia','$hora')";
+    $sqlrr= "INSERT INTO detalform (no_ficha, id_amb, id_tip_form) values ( '$ficha', '$ambi','$forma')";
     $inseta= mysqli_query($bdmysqli,$sqlrr);
 
     if($inseta){

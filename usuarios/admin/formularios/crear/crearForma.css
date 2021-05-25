@@ -1,4 +1,3 @@
-
 *{
     padding: 0px;
     margin: 0px;
@@ -71,7 +70,7 @@ body
 }
 .menu .list-container li:hover > ul{
     position: fixed;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border-radius: 10px;
 
 
@@ -152,7 +151,6 @@ ul.acorh li a {
     box-sizing: border-box;
 }
 ul.acorh li ul {
-    max-height: 0;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -168,12 +166,20 @@ ul.acorh li li a {
     border-bottom: 1px solid rgb(117, 117, 117);
     box-sizing: border-box;
 }
+ul.acorh .sub li a {
+    padding: 10px 10px 10px 60px;
+}
+ul.acor .sub li a {
+    padding: 10px 10px 10px 60px;
+}
+
 ul.acorc li li:last-child a {
     border-bottom: 0;
 }
 ul.acorh li:hover ul {
     max-height: 300px;
     transition: .7s all ease-in;
+    display: block;
 }
 ul.acorh .sub li a:hover {
     background: #238276;
@@ -182,28 +188,131 @@ ul.acorh .sub li a:hover {
 ul.acorh li a:hover {
     background-color: #fc7323;
     color: #fff;
-}
 
+}
+ul.acorh li a.active{
+    background-color: #238276;
+    color: #fff;
+}
 ul.acorh li a.activ{
     background-color: #fc7323;
-    color: rgb(255, 255, 255);
+    color: #fff;
 }
 
-#main-container{
-    overflow-y: scroll;
-    margin-bottom: 30px;
-    height:200px ;
-    margin-left: 10%;
+ul.acor,
+ul.acor * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ul.acor {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-size: 16px;
+}
+ul.acor li {
+    list-style: none;
+
+}
+ul.acor li a {
+    display: block;
+    padding: 10px 10px 15px 40px;
+    background: rgb(255, 255, 255);
+    color: rgb(10, 10, 10);
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+ul.acor li ul {
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: .3s all ease-in;
+}
+ul.acor li li a {
+    padding: 10px 10px 10px 40px;
+    background:  #ffffff;
+    color: #000;
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid rgb(117, 117, 117);
+    box-sizing: border-box;
+}
+ul.acorc li li:last-child a {
+    border-bottom: 0;
+}
+ul.acor li:hover ul {
+    max-height: 300px;
+    transition: .7s all ease-in;
+    display: block;
+}
+ul.acor .sub li a:hover {
+    background: #238276;
+    color: #fff;
+}
+ul.acor li a:hover {
+    background-color: #fc7323;
+    color: #fff;
+
+}
+
+/*formulario*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:5px;
+
+}
+.contened{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:5px;
+}
+.direccion input{
+    width: 94%;
+}
+.conten{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+  
+}
+.tipo{
+    align-content: center;
+}
+.conte{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+}
+.conte input{
+    width: 88%;
+}
+.cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+}
+.form{
+    width:70%; 
+    height: 260px;
+    color: rgb(7, 7, 7);
+    background: white;
+    top: 55%;
+    left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 10px 50px;
     margin-left: 130px;
-    top: 50%;
-    left: 50%;
 
+    
 }
-.ins{
+
+.form p{
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
@@ -211,44 +320,41 @@ ul.acorh li a.activ{
     text-decoration: underline;
     font-weight: 700;
 }
-
-table{
-    border-collapse: collapse;
-
-}
- th,  td {
-    font-family: verdana;
-    font-style: italic;
-    height: 20px;
-    text-align: center;
-    font-size: 12px;
-    border:1px solid rgb(168, 168, 168);
-}
-td{
-    font-size: 10px;
+label.texto{
+    font-family: Verdana;
+    font-size: 16px;
+    margin-left:3%;
 }
 
-th{
+.form input[type="text"]{
+    width: 97%;
+}  
+
+input {
+    margin: 10px;
+    padding: 4px;
+    margin-top: 10px;
+    width: 81%;
+}
+
+.form button{
+    outline: none;
+    height: 25px;
+    width: 20%;
+    background-color: transparent;
+    color:  rgb(255, 255, 255);
+    font-size: 18px;
+    background-color:#fc7323;
+    margin-left: 40%;
+    font-family: 'Julius Sans One', sans-serif;  
+    border-style: none;
+
+}
+
+.form button:hover {
+    cursor: pointer;
     background:#238276;
-    padding: 0 10px 5px 20px ;
-
+    color: rgb(255, 255, 255);
+    border-style: none;
 }
-
-thead{
-    font-size: 12px;
-	background-color: #246355;
-	border-bottom: solid 5px #0F362D;
-	color: white;
-}
-
-tr:nth-child(even){
-	background-color: rgb(192, 189, 189);
-}
-
-tr:hover td{
-	background-color: #b4b1b1;
-	color: white;
-}
-
-
 

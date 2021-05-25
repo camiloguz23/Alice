@@ -17,36 +17,35 @@
 
         if($resultado)
         {
-            // si el usuario es correcto creamos las variables
-
-            // dependiendo del tipo de USuario redireccionamos
-            //si es un aprendiz
+            $_SESSION["id_user"] = $fila["docu"];
+            $_SESSION["tipousu"] = $fila["id_tip_usu"];
+            $_SESSION["nombre"] = $fila['nombres'];
+            $_SESSION["apellido"] = $fila["apellidos"];
+            $_SESSION['foto'] = $fila['foto'];
+            
             if($fila["id_tip_usu"] == 1){
-                $_SESSION["id_user"] = $fila["docu"];
-                $_SESSION["tipousu"] = $fila["id_tip_usu"];
-                $_SESSION["nombre"] = $fila['nombres'];
-                $_SESSION["apellido"] = $fila["apellidos"];
+               
                 header("location: ../usuarios/admin/admin.php");
                 exit();
             } elseif($fila["id_tip_usu"] == 2){
-                $_SESSION["id_coordinador"] = $fila["docu"];
-                $_SESSION["tipousu"] = $fila["id_tip_usu"];
-                $_SESSION['nombres'] = $fila['nombres'];
-                $_SESSION["apellido"] = $fila["apellidos"];
+               
                 header("location: ../usuarios/coordinador/coordinador.html");
                 exit();
-            } elseif($fila["id_tip_usu"] == 3){
-                $_SESSION["id_instructor"] = $fila["docu"];
-                $_SESSION["tipousu"] = $fila["id_tip_usu"];
-                $_SESSION['nombres'] = $fila['nombres'];
-                $_SESSION["apellido"] = $fila["apellidos"];
+            } elseif($fila["id_tip_usu"] == 3){  
+
                 header("location: ../usuarios/instructores/instru.html");
                 exit();
+
+            }else{
+                echo'<script type="text/javascript">
+                alert("Documento y/o contraseña incorrecta, por favor revise los datos ingresados");
+                window.location.href="../index.html";
+                </script>';
             }
 
 
         }else{
-//
+           
         }
 
 ?>

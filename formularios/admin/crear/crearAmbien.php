@@ -63,7 +63,7 @@ $ambien = mysqli_query($bdmysqli,$sqli);
         <hr>
         <div class="menu2"> 
             <div class="uno">
-                <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
+                <p class= "admin">ASHLEY AGUDELO</p>
                 <img  height="70px" widih="70px" src= "../../../assets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
@@ -72,7 +72,7 @@ $ambien = mysqli_query($bdmysqli,$sqli);
                       <ul class="sub">
                         <li><a href="crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../eliminar/EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../modificar/ModifiUsu.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
 
                       </ul>
                     </li>
@@ -81,7 +81,7 @@ $ambien = mysqli_query($bdmysqli,$sqli);
                     <li ><a class="activ" href="#">AMBIENTES</a>
                       <ul class="sub">
                         <li><a href="crearAmbien.php"  class="active"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                        <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../modificar/modificarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>

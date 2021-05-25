@@ -5,6 +5,8 @@ require_once("conexion.php");
 $ficha = $_POST['ficha'];
 $forma = $_POST['forma'];
 $ambi = $_POST["amb"];
+$hora = $_POST["hora"];
+$dia = $_POST["dia"];
 
 
 $formacion ="SELECT * FROM detalform where no_ficha = '$ficha'";
@@ -18,6 +20,7 @@ if ($ila['no_ficha'] == $ficha){
     echo '<script>window.location="../usuarios/admin/formularios/crear/CrearFicha.php"</script>';  
   
 }else{
+    $sqlrr= "INSERT INTO detalform (no_ficha, id_amb, id_tip_form, Id_dia, Id_horario) values ( '$ficha', '$ambi','$forma','$dia','$hora')";
     $sqlrr= "INSERT INTO detalform (no_ficha, id_amb, id_tip_form) values ( '$ficha', '$ambi','$forma')";
     $inseta= mysqli_query($bdmysqli,$sqlrr);
 

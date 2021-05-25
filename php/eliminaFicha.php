@@ -4,6 +4,7 @@ require_once ("conexion.php");
 $ficha = $_POST["ficha"];
 
 $eliminFo = "DELETE FROM detalform WHERE no_ficha = $ficha";
+$form = mysqli_query($bdmysqli,$eliminFo);
 $form = mysqli_query($bdmysqli,$eliminF);
 
 if ($form){

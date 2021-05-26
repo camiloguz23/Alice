@@ -10,8 +10,11 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../php/conexion.php");
 
-$asigna = "SELECT asignacion_t.id_asig, usuario.docu, usuario.nombres,usuario.apellidos,detalform.no_ficha,ambiente.id_amb,formacion.nom_form,asignacion_t.hora_entrada,asignacion_t.fecha_entrada,asignacion_t.hora_salida,asignacion_t.fecha_salida,materias.nom_materia FROM asignacion_t LEFT JOIN usuario ON asignacion_t.docu=usuario.docu LEFT JOIN detalform ON  asignacion_t.no_ficha=detalform.no_ficha LEFT JOIN ambiente ON detalform.id_amb=ambiente.id_amb LEFT JOIN formacion ON ambiente.id_form=formacion.id_form LEFT JOIN materias ON asignacion_t.id_materia=materias.id_materia";
+$asigna = "SELECT no_ficha,detalform.docu,nombres,apellidos,id_amb,nom_tip_form,Nom_horario,Nom_dia,fecha_inico,fecha_final from detalform LEFT JOIN usuario on detalform.docu=usuario.docu LEFT JOIN tipo_formacion on detalform.id_tip_form=tipo_formacion.id_tip_form LEFT JOIN horario on detalform.Id_horario=horario.Id_horario LEFT JOIN dias on detalform.Id_dia=dias.Id_dia";
 $asignacion = mysqli_query($bdmysqli,$asigna);
+
+$traversal = "SELECT asignacion_t.docu,nombres,apellidos,asignacion_t.no_ficha,detalform.id_amb,nom_materia,Nom_dia,horario_inicio,horario_fin,asignacion_t.fecha_inico,asignacion_t.fecha_final,nom_form FROM `asignacion_t` LEFT JOIN materias ON asignacion_t.id_materia=materias.id_materia LEFT JOIN dias ON asignacion_t.Id_dia=dias.Id_dia LEFT JOIN usuario ON asignacion_t.docu=usuario.docu LEFT JOIN detalform ON asignacion_t.no_ficha=detalform.no_ficha LEFT JOIN ambiente ON detalform.id_amb=ambiente.id_amb LEFT JOIN formacion ON ambiente.id_form=formacion.id_form";
+$consultrave = mysqli_query($bdmysqli,$traversal);
 
 
 ?>
@@ -98,40 +101,77 @@ $asignacion = mysqli_query($bdmysqli,$asigna);
         </div>
 
         <div id="main-container">
-           <p class="ins">INSTRUCTORES ASIGNADOS</p>
+           <p class="ins">Asiganciones formaciones tituladas</p>
             <table >
                 <thead>
                     <tr>
-                        <th>Asignacion</th>
+                        <th>Numero de ficha</th>
                         <th>Documento instructor</th>                        
-                        <th>Nombre instructor</th>
-                        <th>N° ficha</th>
-                        <th>Aula</th>
+                        <th>Nombre y apellido instructor</th>
                         <th>Ambiente</th>
-                        <th>hora de inicio</th>
+                        <th>Tipo de formacion</th>
+                        <th>Horario</th>
+                        <th>Dia</th>
                         <th>fecha de inicio</th>
-                        <th>hora final</th>
                         <th>fecha final </th>
-                        <th>materia a dictar</th>
-
-
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     foreach ($asignacion as $asig){
                         ?><tr>
-                            <td><?=$asig["id_asig"]?></td>
-                            <td><?=$asig["docu"]?></td>
-                            <td><?=$asig["nombres"]?><?=$asig["apellidos"]?></td>
                             <td><?=$asig["no_ficha"]?></td>
+                            <td><?=$asig["docu"]?></td>
+                            <td><?=$asig["nombres"]?> <?=$asig["apellidos"]?></td>
                             <td><?=$asig["id_amb"]?></td>
-                            <td><?=$asig["nom_form"]?></td>
-                            <td><?=$asig["hora_entrada"]?></td>
-                            <td><?=$asig["fecha_entrada"]?></td>
-                            <td><?=$asig["hora_salida"]?></td>
-                            <td><?=$asig["fecha_salida"]?></td>
-                            <td><?=$asig["nom_materia"]?></td>
+                            <td><?=$asig["nom_tip_form"]?></td>
+                            <td><?=$asig["Nom_horario"]?></td>
+                            <td><?=$asig["Nom_dia"]?></td>
+                            <td><?=$asig["fecha_inico"]?></td>
+                            <td><?=$asig["fecha_final"]?></td>
+                           
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="traversal">
+           <p class="ins">Asiganciones Trasversales</p>
+            <table >
+                <thead>
+                    <tr>
+                        <th>Numero de ficha</th>
+                        <th>Documento instructor</th>                        
+                        <th>Nombre y apellido instructor</th>
+                        <th>Ambiente</th>
+                        <th>Formacion</th>
+                        <th>Traversal</th>
+                        <th>Dia</th>
+                        <th>Hora de inicio</th>
+                        <th>Hora de finalizacion</th>
+                        <th>Fecha de inicio</th>
+                        <th>Fecha de finalizacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($consultrave as $traver){
+                        ?><tr>
+                            <td><?=$traver["no_ficha"]?></td>
+                            <td><?=$traver["docu"]?></td>
+                            <td><?=$traver["nombres"]?> <?=$asig["apellidos"]?></td>
+                            <td><?=$traver["id_amb"]?></td>
+                            <td><?=$traver["nom_form"]?></td>
+                            <td><?=$traver["nom_materia"]?></td>
+                            <td><?=$traver["Nom_dia"]?></td>
+                            <td><?=$traver["horario_inicio"]?></td>
+                            <td><?=$traver["horario_fin"]?></td>
+                            <th><?=$traver["fecha_inico"]?></th>
+                            <td><?=$traver["fecha_final"]?></td>
+                           
                         </tr>
                     <?php
                     }

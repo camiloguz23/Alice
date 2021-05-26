@@ -3,6 +3,7 @@
 require_once("conexion.php");
 
 $ficha = $_POST['ficha'];
+$instru = $_POST['instru'];
 $forma = $_POST['forma'];
 $ambi = $_POST["amb"];
 $hora = $_POST["hora"];
@@ -22,7 +23,7 @@ if ($ila['no_ficha'] == $ficha){
     echo '<script>window.location="../usuarios/admin/formularios/crear/CrearFicha.php"</script>';  
   
 }else{
-    $sqlrr= "INSERT INTO detalform (no_ficha, id_amb, id_tip_form, Id_dia, Id_horario,fecha_inico,fecha_final) values ( '$ficha', '$ambi','$forma','$dia','$hora','$fecha','$fechaF')";
+    $sqlrr= "INSERT INTO detalform (no_ficha, docu, id_amb, id_tip_form, Id_horario, Id_dia,fecha_inico,fecha_final) values ( '$ficha','$instru', '$ambi','$forma','$hora','$dia','$fecha','$fechaF')";
     $inseta= mysqli_query($bdmysqli,$sqlrr);
 
     if($inseta){
@@ -31,14 +32,13 @@ if ($ila['no_ficha'] == $ficha){
         $actualiza= mysqli_query($bdmysqli,$estado);
     
         if ($actualiza) {
-            echo '<script>alert ("se ingresaron los datos con exito");</script>';
-            echo '<script>window.location="../usuarios/admin/formularios/crear/CrearFicha.php"</script>';            
+            echo "<script>alert('Se asigno la formacion correctamente ')</script>";
+            echo "<script>window.location='../usuarios/admin/formularios/crear/CrearFicha.css'";
+
+
+                      
         }
-        else{
-            echo '<script>alert ("yuca datos");</script>';
-            echo '<script>window.location="../usuarios/admin/formularios/crear/CrearFicha.php"</script>';        
-    
-        }
+        
 
     }
     else {

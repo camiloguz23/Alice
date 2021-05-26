@@ -12,6 +12,7 @@
         $consul= "SELECT * FROM usuario where docu = '$Docu' AND contra_seguridad = '$clave'";
         $resultado = mysqli_query($bdmysqli, $consul);
         $fila= mysqli_fetch_assoc($resultado);
+        
 
 
 

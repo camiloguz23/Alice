@@ -35,6 +35,11 @@ if ($validar == "" || $validar == null){
 }
 ?>
 
+<?php
+$instructor = "SELECT *  from usuario where id_tip_usu = 3";
+$instru = mysqli_query($bdmysqli,$instructor);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -137,10 +142,24 @@ if ($validar == "" || $validar == null){
 
                 <div class="conten">
 
+                    <div>
+                        <label>Instructor</label>
+                        <select name="instru">
+                        <option>Seleccione uan opcion</option>
+                        <?php
+                        foreach ($instru as $ins) {
+                            ?> <option value="<?=$ins['docu']?>"><?=$ins['nombres']?> <?=$ins['apellidos']?></option>
+                        <?php
+                        }
+                        ?>
+
+                        </select>
+                    </div>
+
                     <div >
                         <label for="" class="texto">Ambiente de formacion</label><br>
                         <select name="amb" required>   
-                            <option value="">Seleccione </option> 
+                            <option >Seleccione </option> 
                             <?php
                             foreach ($detaform as $amb){
                                 ?> <option value="<?=$amb['id_amb']?>"><?=$amb['id_amb']?></option>

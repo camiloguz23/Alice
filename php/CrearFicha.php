@@ -32,8 +32,9 @@ if ($ila['no_ficha'] == $ficha){
         $actualiza= mysqli_query($bdmysqli,$estado);
     
         if ($actualiza) {
-            echo "<script>alert('Se asigno la formacion correctamente ')</script>";
-            echo "<script>window.location='../usuarios/admin/formularios/crear/CrearFicha.css'";
+            #header("location : ../usuarios/admin/formularios/crear/CrearFicha.php");
+            echo "<script>alert('Formacion asignada aL instructor')</script>";
+            echo "<script>window.location='../usuarios/admin/formularios/crear/CrearFicha.php'</script>";
 
 
                       

@@ -199,7 +199,7 @@ ul.acorh li a.activ{
     box-sizing: border-box;
     padding: 10px 20px;
     margin-left: 130px;
-    top: 50%;
+    top: 35%;
     left: 50%;
 
 }
@@ -251,4 +251,16 @@ tr:hover td{
 }
 
 
-
+.traversal{
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    height:200px ;
+    margin-left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-left: 130px;
+    top: 70%;
+    left: 50%;
+}

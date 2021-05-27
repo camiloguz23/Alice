@@ -401,3 +401,19 @@ input:invalid {
   .form input[type="date"]{
     width: 85%;
 }
+
+.hora_fecha{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+}
+ .boton button {
+     padding: 5px;
+     width: 60%;
+     border-radius: 10px;
+     cursor: pointer;
+ }

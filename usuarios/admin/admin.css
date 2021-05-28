@@ -192,14 +192,14 @@ ul.acorh li a.activ{
 #main-container{
     overflow-y: scroll;
     margin-bottom: 30px;
-    height:200px ;
+    height:400px ;
     margin-left: 10%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 10px 20px;
     margin-left: 130px;
-    top: 35%;
+    top: 55%;
     left: 50%;
 
 }
@@ -254,13 +254,33 @@ tr:hover td{
 .traversal{
     overflow-y: scroll;
     margin-bottom: 30px;
-    height:200px ;
+    height:400px ;
     margin-left: 10%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 10px 20px;
     margin-left: 130px;
-    top: 70%;
-    left: 50%;
+    top: 50%;
+    left: 48%;
+}
+
+#main-container td {
+    font-size: 16px;
+    padding: 2px 10px ;
+}
+
+#main-container th {
+    font-size: 16px;
+    padding: 2px 10px;
+}
+
+.traversal td {
+    font-size: 14px;
+    padding: 2px 10px ;
+}
+
+.traversal th {
+    font-size: 14px;
+    padding: 2px 10px;
 }

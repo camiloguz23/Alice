@@ -93,6 +93,7 @@ $dele = mysqli_query($bdmysqli,$consul);
                           <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                           <li><a class="active" href="EliminFicha.php"><i class="fas fa-pen-square"></i>.Eliminar</a></li>
                           <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                          <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
                           <li><a href="eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
                         </ul>
                     </li>

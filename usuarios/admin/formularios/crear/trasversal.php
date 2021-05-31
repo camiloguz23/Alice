@@ -100,7 +100,7 @@ $consultadia = mysqli_query($bdmysqli,$dias);
                     <li><a class="activ"  href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                       <ul class="sub">
                         <li><a href="crearFormacion.php" ><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                        <li><a href="../eliminar/eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="formularios/crear/" class="active"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
 
@@ -112,7 +112,7 @@ $consultadia = mysqli_query($bdmysqli,$dias);
             </div>   
             
         </div>
-        <div class="form">
+        <div class="trans">
             <form method="POST" action="" autocomplete="off" id="transversal">
                 <label>Instructor</label><br>
                 <select name="docu" id="docu">

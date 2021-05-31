@@ -34,7 +34,7 @@
                 exit();
             } elseif($fila["id_tip_usu"] == 3){  
 
-                header("location: ../usuarios/instructores/instru.html");
+                header("location: ../usuarios/instructores/instructor.php");
                 exit();
 
             }else{

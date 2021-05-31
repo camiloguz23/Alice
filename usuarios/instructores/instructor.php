@@ -21,8 +21,9 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
     <head>
         <meta charset="UTF-8">
         <title>INSTRUCTOR</title>
-        <link rel="stylesheet" href="transver.css">
+       
         <link rel="shortcut icon" href="../../img/" type="image/x-icon">
+        <link rel="stylesheet" href="../admin/admin.css">
     </head>
     <body>
         

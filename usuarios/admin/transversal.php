@@ -69,7 +69,7 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
                 <ul class="acorh">
                     <li><a class="activ" href="admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
 
-                    <li><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
+                    <li><a href="formulario/"><i class="fas fa-users-cog"></i>USUARIOS</a>
                       <ul class="sub">
                         <li><a href="formularios/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="formularios/modificar/edicion.php"><i class="fas fa-pen-square"></i>.Edicion</a></li>

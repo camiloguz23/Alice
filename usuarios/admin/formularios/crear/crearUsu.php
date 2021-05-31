@@ -105,6 +105,7 @@ if ($validar == "" || $validar == null){
                           <li><a href="crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                           <li><a href="../eliminar/eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                           <li><a href="CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                          <li><a href="trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
                           <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
 
                         </ul>

@@ -168,7 +168,7 @@ if ($validar == "" || $validar == null){
 
             teclado=String.fromCharCode(key).toLowerCase();
 
-            letras="abcdefghijklmnñopqrstuvwxyz";
+            letras="abcdefghijklmnñopqrstuvwxyz ";
 
             especiales="8-37-38-46-164";
 
@@ -182,6 +182,7 @@ if ($validar == "" || $validar == null){
             if(letras.indexOf(teclado)==-1 && !teclado_especial){
                     return false;
             }
+            
         }
 
         </script>
@@ -199,7 +200,7 @@ if ($validar == "" || $validar == null){
 
             teclado=String.fromCharCode(key).toLowerCase();
 
-            letras="abcdefghijklmnñopqrstuvwxyz";
+            letras="abcdefghijklmnñopqrstuvwxyz ";
 
             especiales="8-37-38-46-164";
 

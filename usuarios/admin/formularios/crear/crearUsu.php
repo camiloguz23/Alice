@@ -168,7 +168,7 @@ if ($validar == "" || $validar == null){
 
             teclado=String.fromCharCode(key).toLowerCase();
 
-            letras="abcdefghijklmnñopqrstuvwxyz";
+            letras="abcdefghijklmnñopqrstuvwxyz ";
 
             especiales="8-37-38-46-164";
 
@@ -199,7 +199,7 @@ if ($validar == "" || $validar == null){
 
             teclado=String.fromCharCode(key).toLowerCase();
 
-            letras="abcdefghijklmnñopqrstuvwxyz";
+            letras="abcdefghijklmnñopqrstuvwxyz ";
 
             especiales="8-37-38-46-164";
 

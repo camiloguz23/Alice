@@ -286,9 +286,35 @@ tr:hover td{
 }
 
 .perfil_instructor{
-    border: red solid 2px;
+    border: black solid 2px;
     position: absolute;
-    top: 30%;
-    left: 40%;
+    top: 45%;
+    left: 50%;
+    width: 300px;
+    height: 350px;
+    border-radius: 20px;
+}
+.foto{
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    
+}
+
+.perfil_instructor p  {
+    margin-left: 7%;
+    margin-top: 16px;
+    padding: 5px;
+}
+.boton{
+    margin-top: 45px;
+    margin-left: 40%;
+    font-size: 20px;
+    background-color: #fc7323;
+    border-radius: 30px;
+    width: 80px;
 }
 

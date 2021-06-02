@@ -68,54 +68,16 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
             </div>
             <div class="listaa">
                 <ul class="acorh">
-                    <li><a class="activ" href="#"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
+                    <li><a class="activ" href="instructor.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
 
-                    <li><a href="perfilIns.php"><i class="fas fa-users-cog"></i>PERFIL</a>
+                    <li><a href="#"><i class="fas fa-users-cog"></i>PERFIL</a>
                       <ul class="sub">
+            </div>
+
         </div>
-
         
-
-        <div class="traversal">
-           <p class="ins">Asignaciones Trasversales de la formacion <?=$num_ficha?></p>
-            <table >
-                <thead>
-                    <tr>
-                        <th>Numero de ficha</th>
-                        <th>Documento instructor</th>                        
-                        <th>Nombre y apellido instructor</th>
-                        <th>Ambiente</th>
-                        <th>Formacion</th>
-                        <th>Traversal</th>
-                        <th>Dia</th>
-                        <th>Hora de inicio</th>
-                        <th>Hora de finalizacion</th>
-                        <th>Fecha de inicio</th>
-                        <th>Fecha de finalizacion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($consultrave as $traver){
-                        ?><tr>
-                            <td><?=$traver["no_ficha"]?></td>
-                            <td><?=$traver["docu"]?></td>
-                            <td><?=$traver["nombres"]?> <?=$traver["apellidos"]?></td>
-                            <td><?=$traver["id_amb"]?></td>
-                            <td><?=$traver["nom_form"]?></td>
-                            <td><?=$traver["nom_materia"]?></td>
-                            <td><?=$traver["Nom_dia"]?></td>
-                            <td><?=$traver["horario_inicio"]?></td>
-                            <td><?=$traver["horario_fin"]?></td>
-                            <th><?=$traver["fecha_inico"]?></th>
-                            <td><?=$traver["fecha_final"]?></td>
-                           
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
+        <div class="perfil_instructor">
+            jsahdsajhskaj
         </div>
 
     
@@ -123,4 +85,3 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
 
     </body>
 </html>
-

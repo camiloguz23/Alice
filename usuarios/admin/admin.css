@@ -323,3 +323,50 @@ tr:hover td{
     height: 30px;
 }
 
+.tecnico_instru {
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    height:200px ;
+    margin-left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-left: 130px;
+    top: 35%;
+    left: 50%;
+}
+
+.tecnico_instru th{
+    font-size: 16px;
+    padding: 2px 10px;
+}
+
+.tecnico_instru td {
+    font-size: 16px;
+    padding: 2px 10px ;
+}
+
+.transversal_instru {
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    height:200px ;
+    margin-left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-left: 130px;
+    top: 75%;
+    left: 50%;
+}
+
+.transversal_instru th {
+    font-size: 13px;
+    padding: 2px 10px;
+}
+
+.transversal_instru td {
+    font-size: 13px;
+    padding: 2px 10px ;
+}

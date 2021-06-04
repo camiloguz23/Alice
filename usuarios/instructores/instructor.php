@@ -7,14 +7,6 @@ if ($validar == "" || $validar == null){
 }
 ?>
 
-<?php
-require_once ("../../php/conexion.php");
-
-$num_ficha = $_POST['ficha'];
-$traversal = "SELECT asignacion_t.docu,nombres,apellidos,asignacion_t.no_ficha,detalform.id_amb,nom_materia,Nom_dia,horario_inicio,horario_fin,asignacion_t.fecha_inico,asignacion_t.fecha_final,nom_form FROM `asignacion_t` LEFT JOIN materias ON asignacion_t.id_materia=materias.id_materia LEFT JOIN dias ON asignacion_t.Id_dia=dias.Id_dia LEFT JOIN usuario ON asignacion_t.docu=usuario.docu LEFT JOIN detalform ON asignacion_t.no_ficha=detalform.no_ficha LEFT JOIN ambiente ON detalform.id_amb=ambiente.id_amb LEFT JOIN formacion ON ambiente.id_form=formacion.id_form where detalform.no_ficha = $num_ficha order by detalform.no_ficha";
-$consultrave = mysqli_query($bdmysqli,$traversal);
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +14,7 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
         <meta charset="UTF-8">
         <title>INSTRUCTOR</title>
        
-        <link rel="shortcut icon" href="../../img/" type="image/x-icon">
+        <link rel="shortcut icon" href="../../img/ashleylogo.png" type="image/x-icon">
         <link rel="stylesheet" href="../admin/admin.css">
     </head>
     <body>
@@ -60,22 +52,22 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
             </nav> 
         
         </header> 
-        <hr>
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/?=$_SESSION['foto']?>" alt="">
+                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">
                     <li><a class="activ" href="#"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
+                    <li><a href="perfilIns.php"><i class="fas fa-users-cog"></i>PERFIL</a>
+                </ul>
+                
+            </div>   
+            
+        </div>      
 
-                    <li><a href="#"><i class="fas fa-users-cog"></i>PERFIL</a>
-                      <ul class="sub">
-        </div>
-
-        
-
+<!--
         <div class="traversal">
            <p class="ins">Asignaciones Trasversales de la formacion <?=$num_ficha?></p>
             <table >
@@ -117,7 +109,7 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
                 </tbody>
             </table>
         </div>
-
+-->
     
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 

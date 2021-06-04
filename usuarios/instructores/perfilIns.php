@@ -81,6 +81,17 @@ if ($validar == "" || $validar == null){
 
         </div>
         
+        </div>
+        <img src="../../assets/img/jhon.jpeg" alt="" class="foto">
+        <div class="perfil_instructor">
+            <b> <p>Apellidos</p></b>
+            <b> <p>Edad</p></b>
+            <b> <p>Formacion</p></b>
+            <b> <p>Correo</p></b>
+            <b><p>Telefono</p></b>
+                <button  class="boton" >Editar</button>
+        </div>
+        
     
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 

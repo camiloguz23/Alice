@@ -79,13 +79,12 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
         </div>
         <img src="../../assets/img/jhon.jpeg" alt="" class="foto">
         <div class="perfil_instructor">
-        <b><p>Nombres</p></b>
-        <b> <p>Apellidos</p></b>
-        <b> <p>Edad</p></b>
-        <b> <p>Formacion</p></b>
-        <b> <p>Correo</p></b>
-        <b><p>Telefono</p></b>
-            <button  class="boton" >Editar</button>
+            <b> <p>Apellidos</p></b>
+            <b> <p>Edad</p></b>
+            <b> <p>Formacion</p></b>
+            <b> <p>Correo</p></b>
+            <b><p>Telefono</p></b>
+                <button  class="boton" >Editar</button>
         </div>
         
     

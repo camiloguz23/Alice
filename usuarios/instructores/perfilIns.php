@@ -56,11 +56,11 @@ if ($validar == "" || $validar == null){
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
+                <img  height="70px" widih="70px" style=" border-radius: 50%;width:30%;" src= "../foto/<?=$_SESSION['foto']?>" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">
-                    <li><a  href="#"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
+                    <li><a  href="instructor.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
                     <li><a class="activ" href="perfilIns.php"><i class="fas fa-users-cog"></i>PERFIL</a>
                 </ul>
                 
@@ -82,7 +82,7 @@ if ($validar == "" || $validar == null){
         </div>
         
         </div>
-        <img src="../../assets/img/jhon.jpeg" alt="" class="foto">
+        <img src="../foto/<?=$_SESSION['foto']?>" alt="" class="foto">
         <div class="perfil_instructor">
             <b> <p>Apellidos</p></b>
             <b> <p>Edad</p></b>

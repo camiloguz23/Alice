@@ -7,6 +7,19 @@ if ($validar == "" || $validar == null){
 }
 ?>
 
+<?php
+require_once ("../../php/conexion.php");
+
+$docu = $_SESSION['id_user'];
+
+$asigna = "SELECT no_ficha,detalform.docu,nombres,apellidos,id_amb,nom_tip_form,Nom_horario,Nom_dia,fecha_inico,fecha_final from detalform LEFT JOIN usuario on detalform.docu=usuario.docu LEFT JOIN tipo_formacion on detalform.id_tip_form=tipo_formacion.id_tip_form LEFT JOIN horario on detalform.Id_horario=horario.Id_horario LEFT JOIN dias on detalform.Id_dia=dias.Id_dia WHERE detalform.docu = $docu order by  no_ficha";
+$asignacion = mysqli_query($bdmysqli,$asigna);
+
+
+$traversal = "SELECT asignacion_t.docu,nombres,apellidos,asignacion_t.no_ficha,detalform.id_amb,nom_materia,Nom_dia,horario_inicio,horario_fin,asignacion_t.fecha_inico,asignacion_t.fecha_final,nom_form FROM `asignacion_t` LEFT JOIN materias ON asignacion_t.id_materia=materias.id_materia LEFT JOIN dias ON asignacion_t.Id_dia=dias.Id_dia LEFT JOIN usuario ON asignacion_t.docu=usuario.docu LEFT JOIN detalform ON asignacion_t.no_ficha=detalform.no_ficha LEFT JOIN ambiente ON detalform.id_amb=ambiente.id_amb LEFT JOIN formacion ON ambiente.id_form=formacion.id_form where asignacion_t.docu = $docu and asignacion_t.fecha_final > NOW() order by detalform.no_ficha";
+$consultrave = mysqli_query($bdmysqli,$traversal);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +68,7 @@ if ($validar == "" || $validar == null){
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
+                <img  height="70px" widih="70px" style=" border-radius: 100%; width:30%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">
@@ -65,10 +78,48 @@ if ($validar == "" || $validar == null){
                 
             </div>   
             
-        </div>      
+        </div>  
+        
+        <div class="tecnico_instru">
+            <p class="ins">Asignaciones formaciones tituladas</p>
+            <table >
+                <thead>
+                    <tr>
+                        <th>Numero de ficha</th>
+                        <th>Documento instructor</th>                        
+                        <th>Nombre y apellido instructor</th>
+                        <th>Ambiente</th>
+                        <th>Tipo de formacion</th>
+                        <th>Horario</th>
+                        <th>Dia</th>
+                        <th>Fecha de inicio</th>
+                        <th>Fecha final </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($asignacion as $asig){
+                        ?><tr>
+                            <td><?=$asig["no_ficha"]?></td>
+                            <td><?=$asig["docu"]?></td>
+                            <td><?=$asig["nombres"]?> <?=$asig["apellidos"]?></td>
+                            <td><?=$asig["id_amb"]?></td>
+                            <td><?=$asig["nom_tip_form"]?></td>
+                            <td><?=$asig["Nom_horario"]?></td>
+                            <td><?=$asig["Nom_dia"]?></td>
+                            <td><?=$asig["fecha_inico"]?></td>
+                            <td><?=$asig["fecha_final"]?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
 
-<!--
-        <div class="traversal">
+
+        <div class="transversal_instru">
            <p class="ins">Asignaciones Trasversales de la formacion <?=$num_ficha?></p>
             <table >
                 <thead>
@@ -109,7 +160,7 @@ if ($validar == "" || $validar == null){
                 </tbody>
             </table>
         </div>
--->
+
     
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 

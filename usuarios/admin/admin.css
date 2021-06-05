@@ -5,7 +5,7 @@
 }
 body
 {   
-    background-color: rgb(230, 230, 230); 
+    background-color: rgb(223, 219, 219); 
     font-family:Verdana;  
 
 }
@@ -182,4 +182,191 @@ ul.acorh .sub li a:hover {
 ul.acorh li a:hover {
     background-color: #fc7323;
     color: #fff;
+}
+
+ul.acorh li a.activ{
+    background-color: #fc7323;
+    color: rgb(255, 255, 255);
+}
+
+#main-container{
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    height:400px ;
+    margin-left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-left: 130px;
+    top: 55%;
+    left: 50%;
+
+}
+.ins{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+table{
+    border-collapse: collapse;
+
+}
+ th,  td {
+    font-family: verdana;
+    font-style: italic;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid rgb(168, 168, 168);
+}
+td{
+    font-size: 10px;
+}
+
+th{
+    background:#238276;
+    padding: 0 10px 5px 20px ;
+
+}
+
+thead{
+    font-size: 12px;
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: rgb(192, 189, 189);
+}
+
+tr:hover td{
+	background-color: #b4b1b1;
+	color: white;
+}
+
+
+.traversal{
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    height:400px ;
+    margin-left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-left: 130px;
+    top: 50%;
+    left: 48%;
+}
+
+#main-container td {
+    font-size: 16px;
+    padding: 2px 10px ;
+}
+
+#main-container th {
+    font-size: 16px;
+    padding: 2px 10px;
+}
+
+.traversal td {
+    font-size: 14px;
+    padding: 2px 10px ;
+}
+
+.traversal th {
+    font-size: 14px;
+    padding: 2px 10px;
+}
+
+.perfil_instructor{
+    background-color: #ffffff;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+}
+.foto{
+    position: absolute;
+    top: 17%;
+    left: 56%;
+    border-radius: 50%;
+    width: 145px;
+    height: 150px;
+    
+}
+
+.perfil_instructor p  {
+    margin-left: 7%;
+    margin-top: 16px;
+    padding: 5px;
+}
+.boton{
+    border-style: none;
+    margin-top: 35px;
+    margin-left: 35%;
+    font-size: 13px;
+    background:#fc7323;
+	color:#fff;
+	display:inline-block;
+	font-size:1.25em;
+	text-align:center;
+	width:100px;
+    height: 30px;
+}
+
+.tecnico_instru {
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    height:200px ;
+    margin-left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-left: 130px;
+    top: 35%;
+    left: 50%;
+}
+
+.tecnico_instru th{
+    font-size: 16px;
+    padding: 2px 10px;
+}
+
+.tecnico_instru td {
+    font-size: 16px;
+    padding: 2px 10px ;
+}
+
+.transversal_instru {
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    height:200px ;
+    margin-left: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-left: 130px;
+    top: 75%;
+    left: 50%;
+}
+
+.transversal_instru th {
+    font-size: 13px;
+    padding: 2px 10px;
+}
+
+.transversal_instru td {
+    font-size: 13px;
+    padding: 2px 10px ;
 }

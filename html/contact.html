@@ -1,55 +1,86 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CONTACTENOS</title>
+    <title>INGRESO</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <div class="header">
-        <a href="#default" class="logo"><img src="" alt=""></a>
-        <div class="header-right">
-          <a href="../index.html">INICIO</a>
-          <a href="about.html">ACERCA DE</a>
-          <a class="active" href="contact.html">CONTACTENOS</a>
-        </div>
-      </div>
 
-<div class="content">
-    <div class="logo">
-          <img src="../assets/img/ashleylogo.png" alt="">
-          <h1>CALENDARIO SISTEMA PARA ASIGNACION
-            INSTRUCTORES A LOS AMBIENTES DE FORMACION</h1>
-    </div> 
+    <header id="header">
+        <nav class="menu">
+            <div class="logo">
+                <img width="60" height="60" src="../assets/img/logo.png" alt="Logo Sena" class="logosena">
+                <img width="150" height="55" src="../assets/img/ashleylogo2.png" alt="Logo Proyecto" class="logoproyecto">
+            </div>
+
+            <div class="list-container">
+
+                <ul class="lists">
+                    <li><a href="../index.html" >INICIO</a></li><br>    
+                    <li><a href="about.html">ACERCA DE</a></li> <br>
+                    <li><a href="contact.html">CONTACTENOS</a></li> <br>
+                </ul>
+
+                <ul>
+                    <li class="botones">
+                        <p class="fecha" href="#">
+                            <script>
+                            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                            var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+                            var f=new Date();
+                            document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+                            </script>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <div class="contactenos">
-                <form action="">
-                    <h3>DEJANOS TUS DUDAS:</h3>
-                        <input type="text" name="fullname" placeholder="NOMBRE">
-                        <input type="email" name="email" placeholder="DIRECCION DE CORREO">
-                        <input type="tel" name="phone" placeholder="TELEFONO">
-                        <textarea name="message" rows="3" placeholder="MENSAJE"></textarea>
-                        <input type="button" value="ENVIAR" class="button">
-                </form>
-        </div>  
-</div>
-<footer>
-    <div class="container">
-        <div class="column1">
-        <p>CENTRO DE INDUSTRIA Y CONTRUCCION</p>
-        <p>SENA</p>
-        <p>IBAGUE-TOLIMA</p>
+            <form action="">
+                <h3>DEJANOS TUS DUDAS:</h3>
+                <div class="uno">
+                    <input type="text" name="fullname" placeholder="NOMBRE">
+                </div>
+                <div class="dos">
+                    <input class="correo" type="email" name="email" placeholder="DIRECCION DE CORREO" autocomplete="off"> 
+                    <input type="tel" name="phone" placeholder="TELEFONO"  autocomplete="off">
+                </div>
+                <div class="tres">
+                    <textarea class="mensaje" name="message" rows="3" placeholder="MENSAJE"></textarea>
+                </div>
+                <input type="submit" value="ENVIAR" class="button">
+            </form>
+        </div> 
+
+
+        <div class="logo">
+            <img src="../assets/img/ashleylogo.png" alt="">
+            <p>CALENDARIO SISTEMATICO PARA ASIGNACION DE INSTRUCTORES A LOS AMBIENTES DE FORMACION</p>
         </div>
 
-        <div class="column2">
-            <img src="../assets/img/facebook.png">
-            <img src="../assets/img/twitter.png">
-            <img src="../assets/img/instagram.png">
-            <img src="../assets/img/youtube.png">
-        </div>
-    </div>
-    </footer>
+    </header> 
+
+    <div class="pagina">
+        <footer class="pie">
+            <img  height="70px" width="70px" src="../assets/img/logopie.png" alt="">
+            <div class="info">
+                <p>CENTRO DE INDUSTRIA Y CONTRUCCION</p>
+                <p>SENA</p>
+                <p>IBAGUE-TOLIMA</p>
+            </div>
+            <div class="column2">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+           
+        </footer>  
+    </div>    
+
+    <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -89,7 +89,9 @@ if ($validar == "" || $validar == null){
             <b> <p>Formacion</p></b>
             <b> <p>Correo</p></b>
             <b><p>Telefono</p></b>
-                <button  class="boton" >Editar</button>
+            <td class="table_item">
+                <a href="editinstru.php">Editar <i class="fas fa-edit"></i></button>
+            </td>
         </div>
         
     

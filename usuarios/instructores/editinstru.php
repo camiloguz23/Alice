@@ -1,14 +1,14 @@
 <?php
 include ('../admin/formularios/modificar/conexion.php');
-$docu = $_GET["id"];
-$usuarios = "SELECT * FROM usuario WHERE docu = '$docu'";
+$docu = $_GET["usuario"];
+$usuarios = "SELECT * FROM usuario WHERE id_tip_usu = 3";
 ?>
 <?php
 session_start();
 $validar = $_SESSION["id_user"];
 
 if ($validar == "" || $validar == null){
-    header("location: ../../../../../index.html");
+    header("location: ../../../../index.html");
 }
 ?>
 <!DOCTYPE html>
@@ -17,19 +17,18 @@ if ($validar == "" || $validar == null){
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="../admin/formularios/modificar/modificar.css">
-        <link rel="shortcut icon" href="../../../../../assets/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
-        <header id="header">
+    <header id="header">
             
             <nav class="menu">
                
-                
                 <div class="logo">
-                    <img  height="60px" width="60px" src="../../../../../assets/img/logo_calendar.png" alt="">
+                    <img  height="60px" width="60px" src="../../assets/img/logo_calendar.png" alt="">
                 </div>
-                <a class="nombre">ADMINISTRADOR</a>
+                <a class="nombre">INSTRUCTOR</a>
 
                 
 
@@ -48,52 +47,55 @@ if ($validar == "" || $validar == null){
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
+                        <li><a href="../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
             </nav> 
         
         </header> 
-        <hr>
+        
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
+                <img  height="70px" widih="70px" style=" border-radius: 50%;width:30%;" src= "../foto/<?=$_SESSION['foto']?>" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">
-                    <li><a  href="#"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
+                    <li><a  href="instructor.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
                     <li><a class="activ" href="perfilIns.php"><i class="fas fa-users-cog"></i>PERFIL</a>
                 </ul>
                 
             </div>   
             
-        </div>     
-
-
+        </div>   
+            
+        </div>
         <div class="form">
-            <form class="formula" action="procesar.php" method="post">
-                  <p>MODIFICAR DATOS</p>
-        <form class="container container--edit" action="procesar.php" method="post">
-            <div class="table__title--edit"></div>
+            <form class="formula" action="editar.php" method="post">
+                  <p>MODIFICAR USUARIO</p>
+        <form class="container container--edit" action="editar.php" method="post">
+            <div class="table__title--edit"></div> 
+        <?php $resultado = mysqli_query($conexion, $usuarios);
+        while($row=mysqli_fetch_assoc($resultado))  {?>
             <input type="hidden" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
             <label for="nombre">Nombre</label>
-            <input type="text" class="table__input" value="" name="nombre" disabled="disabled">
+            <input type="text" class="table__input" value="<?php echo $row["nombres"];?>" name="nombre">
             <label for="nombre">Apellido</label>
-            <input type="text" class="table__input" value="" name="apellido" disabled="disabled">
+            <input type="text" class="table__input" value="<?php echo $row["apellidos"];?>" name="apellido">
             <label for="nombre">Edad</label>
-            <input type="number" class="table__input" value="" name="edad" required max=100 min="18">
-            <label for="nombre">Formacion</label>
-            <input type="text" class="table__input" value="" name="nombre">
+            <input type="number" class="table__input" value="<?php echo $row["edad"];?>" name="edad" required max=100 min="18">
             <label for="nombre">Celular</label>
-            <input type="number" id="celuko" class="table__input" min="3000000000" max="3999999999" value="" name="celular" required>
+            <input type="number" id="celuko" class="table__input" min="3000000000" max="3999999999" value="<?php echo $row["celular"];?>" name="celular" required>
             <span class="error" aria-live="polite"></span>
+            <label for="nombre">Formacion</label>
+            <input type="text" id="formacion" class="table__input" value="" name="formacion" required>
             <span class="error" aria-live="polite"></span>
-            <label for="nombre">e-mail</label>
-            <input type="email" id="email" class="table__input" value="" name="email" required>
+            <label for="nombre">Dirección</label>
+            <input type="text" class="table__input" value="<?php echo $row["direccion"];?>" name="direccion" required>
             <span class="error" aria-live="polite"></span>
             <input type="hidden" class="table__input" value="" name="contraseña" disabled="disabled">
+            <?php } mysqli_free_result($resultado);?>
             <input type="submit" value="Actualizar" class="container-submit">
         </form>
 

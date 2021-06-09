@@ -23,6 +23,10 @@
             $_SESSION["nombre"] = $fila['nombres'];
             $_SESSION["apellido"] = $fila["apellidos"];
             $_SESSION['foto'] = $fila['foto'];
+            $_SESSION['edad'] = $fila['edad'];
+            $_SESSION['correo'] = $fila['email'];
+            $_SESSION['celular'] = $fila['celular'];
+            $_SESSION['direccion'] = $fila['direccion'];
             
             if($fila["id_tip_usu"] == 1){
                

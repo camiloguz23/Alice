@@ -192,3 +192,4 @@ $consultadia = mysqli_query($bdmysqli,$dias);
         <script src="../../../../javascript/transversal.js"></script>
     </body>
 </html>
+

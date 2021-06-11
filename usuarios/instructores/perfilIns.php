@@ -1,4 +1,5 @@
 <?php
+require_once('../../php/conexion.php');
 session_start();
 $validar = $_SESSION["id_user"];
 
@@ -56,11 +57,11 @@ if ($validar == "" || $validar == null){
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
+                <img  height="70px" widih="70px" style=" border-radius: 50%;width:30%;" src= "../foto/<?=$_SESSION['foto']?>" alt="">
             </div>
             <div class="listaa">
                 <ul class="acorh">
-                    <li><a  href="#"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
+                    <li><a  href="instructor.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
                     <li><a class="activ" href="perfilIns.php"><i class="fas fa-users-cog"></i>PERFIL</a>
                 </ul>
                 
@@ -70,27 +71,17 @@ if ($validar == "" || $validar == null){
         <div>
             <img  src= "../foto/<?=$_SESSION['foto']?>" alt="" class="foto">
             <div class="perfil_instructor">
-                <b><p>Nombres</p></b>
-                <b> <p>Apellidos</p></b>
-                <b> <p>Edad</p></b>
-                <b> <p>Formacion</p></b>
-                <b> <p>Correo</p></b>
-                <b><p>Telefono</p></b>
-                <button class="boton"><i class="fas fa-pen-square"></i> Editar</button>
+                <b><p>Nombres: </b><?php echo $_SESSION['nombre']?></p>
+                <b> <p>Apellidos: </b> <?php echo $_SESSION['apellido']?></p>
+                <b> <p>Edad:</b>  <?php echo $_SESSION['edad']?></p>
+                <b> <p>Correo: </b>  <?php echo $_SESSION['correo']?></p>
+                <b><p>Telefono: </b>  <?php echo $_SESSION['celular']?></p>
+                <button class="boton"><a href="editinstru.php"><i class="fas fa-pen-square"></i> Editar</button>
             </div>
 
         </div>
         
-        </div>
-        <img src="../../assets/img/jhon.jpeg" alt="" class="foto">
-        <div class="perfil_instructor">
-            <b> <p>Apellidos</p></b>
-            <b> <p>Edad</p></b>
-            <b> <p>Formacion</p></b>
-            <b> <p>Correo</p></b>
-            <b><p>Telefono</p></b>
-                <button  class="boton" >Editar</button>
-        </div>
+       
         
     
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>

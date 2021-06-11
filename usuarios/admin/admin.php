@@ -10,7 +10,7 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../php/conexion.php");
 
-$asigna = "SELECT no_ficha,detalform.docu,nombres,apellidos,id_amb,nom_tip_form,Nom_horario,Nom_dia,fecha_inico,fecha_final from detalform LEFT JOIN usuario on detalform.docu=usuario.docu LEFT JOIN tipo_formacion on detalform.id_tip_form=tipo_formacion.id_tip_form LEFT JOIN horario on detalform.Id_horario=horario.Id_horario LEFT JOIN dias on detalform.Id_dia=dias.Id_dia order by no_ficha";
+$asigna = "SELECT no_ficha,detalform.docu,nombres,apellidos,id_amb,nom_tip_form,Nom_horario,Nom_dia,fecha_inico,fecha_final from detalform LEFT JOIN usuario on detalform.docu=usuario.docu LEFT JOIN tipo_formacion on detalform.id_tip_form=tipo_formacion.id_tip_form LEFT JOIN horario on detalform.Id_horario=horario.Id_horario LEFT JOIN dias on detalform.Id_dia=dias.Id_dia where fecha_final >= CURDATE() order by no_ficha";
 $asignacion = mysqli_query($bdmysqli,$asigna);
 
 ?>

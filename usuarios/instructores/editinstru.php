@@ -73,29 +73,26 @@ if ($validar == "" || $validar == null){
         </div>
         <div class="form">
             <form class="formula" action="editar.php" method="post">
-                  <p>MODIFICAR USUARIO</p>
+                  <p>MODIFICAR DATOS</p>
         <form class="container container--edit" action="editar.php" method="post">
             <div class="table__title--edit"></div> 
         <?php $resultado = mysqli_query($conexion, $usuarios);
         while($row=mysqli_fetch_assoc($resultado))  {?>
+        <?php } mysqli_free_result($resultado);?>
             <input type="hidden" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
             <label for="nombre">Nombre</label>
-            <input type="text" class="table__input" value="<?php echo $row["nombres"];?>" name="nombre">
+            <input type="text" class="table__input" value="<?php echo $_SESSION['nombre']?>" name="nombre">
             <label for="nombre">Apellido</label>
-            <input type="text" class="table__input" value="<?php echo $row["apellidos"];?>" name="apellido">
+            <input type="text" class="table__input" value="<?php echo $_SESSION['apellido']?>" name="apellido">
             <label for="nombre">Edad</label>
-            <input type="number" class="table__input" value="<?php echo $row["edad"];?>" name="edad" required max=100 min="18">
-            <label for="nombre">Celular</label>
-            <input type="number" id="celuko" class="table__input" min="3000000000" max="3999999999" value="<?php echo $row["celular"];?>" name="celular" required>
+            <input type="number" class="table__input" value="<?php echo $_SESSION['edad']?>" name="edad" required max=100 min="18">
+            <label for="nombre">Telefono</label>
+            <input type="number" id="celuko" class="table__input" min="3000000000" max="3999999999" value="<?php echo $_SESSION['celular']?>" name="celular" required>
             <span class="error" aria-live="polite"></span>
-            <label for="nombre">Formacion</label>
-            <input type="text" id="formacion" class="table__input" value="" name="formacion" required>
-            <span class="error" aria-live="polite"></span>
-            <label for="nombre">Dirección</label>
-            <input type="text" class="table__input" value="<?php echo $row["direccion"];?>" name="direccion" required>
+            <label for="nombre">Correo</label>
+            <input type="text" class="table__input" value="<?php echo $_SESSION['correo']?>" name="direccion" required>
             <span class="error" aria-live="polite"></span>
             <input type="hidden" class="table__input" value="" name="contraseña" disabled="disabled">
-            <?php } mysqli_free_result($resultado);?>
             <input type="submit" value="Actualizar" class="container-submit">
         </form>
 

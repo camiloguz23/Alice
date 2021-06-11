@@ -1,4 +1,5 @@
 <?php
+require_once('../../php/conexion.php');
 session_start();
 $validar = $_SESSION["id_user"];
 
@@ -70,29 +71,17 @@ if ($validar == "" || $validar == null){
         <div>
             <img  src= "../foto/<?=$_SESSION['foto']?>" alt="" class="foto">
             <div class="perfil_instructor">
-                <b><p>Nombres</p></b>
-                <b> <p>Apellidos</p></b>
-                <b> <p>Edad</p></b>
-                <b> <p>Formacion</p></b>
-                <b> <p>Correo</p></b>
-                <b><p>Telefono</p></b>
-                <button class="boton"><i class="fas fa-pen-square"></i> Editar</button>
+                <b><p>Nombres: </b><?php echo $_SESSION['nombre']?></p>
+                <b> <p>Apellidos: </b> <?php echo $_SESSION['apellido']?></p>
+                <b> <p>Edad:</b>  <?php echo $_SESSION['edad']?></p>
+                <b> <p>Correo: </b>  <?php echo $_SESSION['correo']?></p>
+                <b><p>Telefono: </b>  <?php echo $_SESSION['celular']?></p>
+                <button class="boton"><a href="editinstru.php"><i class="fas fa-pen-square"></i> Editar</button>
             </div>
 
         </div>
         
-        </div>
-        <img src="../foto/<?=$_SESSION['foto']?>" alt="" class="foto">
-        <div class="perfil_instructor">
-            <b> <p>Apellidos</p></b>
-            <b> <p>Edad</p></b>
-            <b> <p>Formacion</p></b>
-            <b> <p>Correo</p></b>
-            <b><p>Telefono</p></b>
-            <td class="table_item">
-                <a href="editinstru.php">Editar <i class="fas fa-edit"></i></button>
-            </td>
-        </div>
+       
         
     
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>

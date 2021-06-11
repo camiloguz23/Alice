@@ -16,7 +16,7 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
 
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html>php
 <html lang="en">
     <head>
         <meta charset="UTF-8">

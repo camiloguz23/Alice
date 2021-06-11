@@ -76,7 +76,9 @@ if ($validar == "" || $validar == null){
                 <b> <p>Edad:</b>  <?php echo $_SESSION['edad']?></p>
                 <b> <p>Correo: </b>  <?php echo $_SESSION['correo']?></p>
                 <b><p>Telefono: </b>  <?php echo $_SESSION['celular']?></p>
-                <button class="boton"><i class="fas fa-pen-square"></i> Editar</button>
+
+                <button class="boton"><a href="editinstru.php"><i class="fas fa-pen-square"></i> Editar</button>
+
             </div>
 
         </div>

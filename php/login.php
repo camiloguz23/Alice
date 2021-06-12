@@ -19,7 +19,6 @@
         if($resultado)
         {
             $_SESSION["id_user"] = $fila["docu"];
-            $_SESSION["tipousu"] = $fila["id_tip_usu"];
             $_SESSION["nombre"] = $fila['nombres'];
             $_SESSION["apellido"] = $fila["apellidos"];
             $_SESSION['foto'] = $fila['foto'];
@@ -27,6 +26,7 @@
             $_SESSION['correo'] = $fila['email'];
             $_SESSION['celular'] = $fila['celular'];
             $_SESSION['direccion'] = $fila['direccion'];
+            $_SESSION['contra'] = $fila['contra_seguridad'];
             
             if($fila["id_tip_usu"] == 1){
                

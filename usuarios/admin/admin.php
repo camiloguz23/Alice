@@ -59,88 +59,91 @@ $asignacion = mysqli_query($bdmysqli,$asigna);
         
         </header> 
         <hr>
-        <div class="menu2"> 
-            <div class="uno">
-                <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
-            </div>
-            <div class="listaa">
-                <ul class="acorh">
-                    <li><a class="activ" href="admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
+        <div class="containereall">
+            <div class="menu2"> 
+                <div class="uno">
+                    <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
+                    <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
+                </div>
+                <div class="listaa">
+                    <ul class="acorh">
+                        <li><a class="activ" href="admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
 
-                    <li><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
-                      <ul class="sub">
-                        <li><a href="formularios/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="formularios/modificar/edicion.php"><i class="fas fa-pen-square"></i>.Edicion</a></li>
+                        <li><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
+                        <ul class="sub">
+                            <li><a href="formularios/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+                            <li><a href="formularios/modificar/edicion.php"><i class="fas fa-pen-square"></i>.Edicion</a></li>
 
-                      </ul>
-                    </li>
-                    <li><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
-                      <ul class="sub">
-                        <li><a href="formularios/crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                        <li><a href="formularios/eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#"><i class="fas fa-address-book"></i>FORMACIONES</a>
-                      <ul class="sub">
-                        <li><a href="formularios/crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                        <li><a href="formularios/eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                        <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
-                        <li><a href="formularios/eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
+                        <ul class="sub">
+                            <li><a href="formularios/crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                            <li><a href="formularios/eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#"><i class="fas fa-address-book"></i>FORMACIONES</a>
+                        <ul class="sub">
+                            <li><a href="formularios/crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
+                            <li><a href="formularios/eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                            <li><a href="formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                            <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
+                            <li><a href="formularios/eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
 
+                        </ul>
+                        </li>
                     </ul>
-                    </li>
-                </ul>
+                    
+                </div>   
                 
-            </div>   
-            
-        </div>
+            </div>
 
-        <div id="main-container">
-            <p class="ins">Asignaciones formaciones tituladas</p>
-            <table >
-                <thead>
-                    <tr>
-                        <th>Numero de ficha</th>
-                        <th>Documento instructor</th>                        
-                        <th>Nombre y apellido instructor</th>
-                        <th>Ambiente</th>
-                        <th>Tipo de formacion</th>
-                        <th>Horario</th>
-                        <th>Dia</th>
-                        <th>Fecha de inicio</th>
-                        <th>Fecha final </th>
-                        <th>Transversal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($asignacion as $asig){
-                        ?><tr>
-                            <td><?=$asig["no_ficha"]?></td>
-                            <td><?=$asig["docu"]?></td>
-                            <td><?=$asig["nombres"]?> <?=$asig["apellidos"]?></td>
-                            <td><?=$asig["id_amb"]?></td>
-                            <td><?=$asig["nom_tip_form"]?></td>
-                            <td><?=$asig["Nom_horario"]?></td>
-                            <td><?=$asig["Nom_dia"]?></td>
-                            <td><?=$asig["fecha_inico"]?></td>
-                            <td><?=$asig["fecha_final"]?></td>
-                            <td>
-                            <form method="post" action="transversal.php">
-                                <input type="hidden" name="ficha" value="<?=$asig['no_ficha']?>">
-                                <button type="submit">Ver transversales</button>
-                            </form>
-                            </td>
-                           
+            <div id="main-container">
+                <p class="ins">Asignaciones formaciones tituladas</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Numero de ficha</th>
+                            <th>Documento instructor</th>                        
+                            <th>Nombre y apellido instructor</th>
+                            <th>Ambiente</th>
+                            <th>Tipo de formacion</th>
+                            <th>Horario</th>
+                            <th>Dia</th>
+                            <th>Fecha de inicio</th>
+                            <th>Fecha final </th>
+                            <th>Transversal</th>
                         </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($asignacion as $asig){
+                            ?><tr>
+                                <td><?=$asig["no_ficha"]?></td>
+                                <td><?=$asig["docu"]?></td>
+                                <td><?=$asig["nombres"]?> <?=$asig["apellidos"]?></td>
+                                <td><?=$asig["id_amb"]?></td>
+                                <td><?=$asig["nom_tip_form"]?></td>
+                                <td><?=$asig["Nom_horario"]?></td>
+                                <td><?=$asig["Nom_dia"]?></td>
+                                <td><?=$asig["fecha_inico"]?></td>
+                                <td><?=$asig["fecha_final"]?></td>
+                                <td>
+                                <form method="post" action="transversal.php">
+                                    <input type="hidden" name="ficha" value="<?=$asig['no_ficha']?>">
+                                    <button type="submit">Ver transversales</button>
+                                </form>
+                                </td>
+                            
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
+     
 
         
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>

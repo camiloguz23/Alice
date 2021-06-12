@@ -438,3 +438,18 @@ a.title_edit{
     cursor: pointer;
 
 }
+
+/* ************************ PAGINA DE MODIFICACION DE USUARIO ********************** */
+
+.foto_edicion {
+    width: 130px;
+    border-radius: 50%;
+    
+   
+}
+
+.conte_foto{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}

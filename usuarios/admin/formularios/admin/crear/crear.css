@@ -1,4 +1,3 @@
-
 *{
     padding: 0px;
     margin: 0px;
@@ -9,6 +8,7 @@ body
     font-family:Verdana;  
 
 }
+
 
 .header{
     position: absolute;
@@ -93,6 +93,8 @@ body
     color: rgb(0, 0, 0);
     font-size: 14px;
 }
+
+
 .admin{
     color: #ffffff;
     font-size: 17px;
@@ -164,13 +166,6 @@ ul.acorh li li a {
     border-bottom: 1px solid rgb(117, 117, 117);
     box-sizing: border-box;
 }
-ul.acorh .sub li a {
-    padding: 10px 10px 10px 60px;
-}
-ul.acor .sub li a {
-    padding: 10px 10px 10px 60px;
-}
-
 ul.acorc li li:last-child a {
     border-bottom: 0;
 }
@@ -256,76 +251,47 @@ ul.acor li a:hover {
     color: #fff;
 
 }
-button[type="submit"] {
-    outline: none;
-    height: 16px;
-    width: 70%;
-    background-color: transparent;
-    color:  rgb(255, 255, 255);
-    font-size: 14px;
-    background-color:#238276;
-    margin-left: 10%;
-    border-style: none;
+
+/*formulario*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:5px;
 
 }
-
-button[type="submit"] {
-    outline: none;
-    background-color: transparent;
-    color:  rgb(0, 0, 0);
-    font-size: 17px;
-    margin-left: 10%;
-    border-style: none;
-    cursor: pointer;
-
+.contened{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:5px;
 }
-
-
-.formula{
-    width:70%; 
-    color: rgb(7, 7, 7);
-    background: white;
-    top: 55%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 10px 50px;
-    margin-left: 130px;
-
-    
+.direccion input{
+    width: 94%;
 }
-
-.formula p{
-    margin: 0;
-    padding: 10px 0 ;
-    text-align: center;
-    font-size: 30px;
-    text-decoration: underline;
-    font-weight: 700;
+.conten{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+  
 }
-
-
-.table{
-    font-family: verdana;
-    border: 1px solid #238276;
-    border-collapse: collapse;
+.tipo{
+    align-content: center;
 }
-
-.table th, .table td {
-    font-family: verdana;
-    height: 20px;
-    text-align: center;
-    font-size: 12px;
-    border:1px solid black;
+.conte{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
 }
-
-.table th{
-    background:#238276;
-    padding: 0 10px 3px 20px ;
+.conte input{
+    width: 88%;
+}
+.cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
 }
 .form{
     width:70%; 
+    height: 530px;
     color: rgb(7, 7, 7);
     background: white;
     top: 55%;
@@ -347,33 +313,79 @@ button[type="submit"] {
     text-decoration: underline;
     font-weight: 700;
 }
+label.texto{
+    font-family: Verdana;
+    font-size: 16px;
+    margin-left: 3%;
+}
+    
+input{
+    margin: 10px;
+    padding: 3px;
+    margin-top: 10px;
+    width: 81%;
+}
 
-button[type="submit"] {
+select{
+    margin: 10px;
+    padding: 3px;
+    margin-top: 10px;
+    width: 90%;
+}
+
+.form input[type="submit"] {
     outline: none;
+    height: 25px;
+    width: 20%;
     background-color: transparent;
-    color:  rgb(0, 0, 0);
-    font-size: 17px;
-    margin-left: 10%;
+    color:  rgb(255, 255, 255);
+    font-size: 18px;
+    background-color:#fc7323;
+    margin-left: 40%;
+    font-family: 'Julius Sans One', sans-serif;  
     border-style: none;
+
+}
+
+.form input[type="submit"]:hover {
     cursor: pointer;
-
-}
-
-
-.tabla{
-    margin-left: 10%;
-    border: 1px solid #238276;
-    border-collapse: collapse;
-}
-
-.tabla th, .tabla td {
-    height: 20px;
-    text-align: center;
-    font-size: 12px;
-    border:1px solid black;
-}
-
-.tabla th{
     background:#238276;
-    padding: 0 10px 5px 20px ;
+    color: rgb(255, 255, 255);
+    border-style: none;
 }
+
+input:invalid {
+    border: 2px dashed orangered;
+  }
+  
+  input:valid {
+    border: 2px solid black;
+  }
+  
+  
+  /* Este es nuestro diseño para los campos no válidos */
+  input:invalid{
+    border-color: #900;
+    background-color: #FDD;
+  }
+  
+  input:focus:invalid {
+    outline: none;
+  }
+  
+  /* Este es el diseño para nuestros mensajes de error */
+  .error {
+    width : 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }

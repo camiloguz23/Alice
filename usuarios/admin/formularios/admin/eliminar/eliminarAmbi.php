@@ -3,12 +3,12 @@ session_start();
 $validar = $_SESSION["id_user"];
 
 if ($validar == "" || $validar == null){
-    header("location: ../../../../index.html");
+    header("location: ../../../../../index.html");
 }
 ?>
 
 <?php
-require_once ("../../../../php/conexion.php");
+require_once ("../../../../../php/conexion.php");
 
 $ambi = "select id_amb,nom_form,nom_nave from ambiente,formacion,naves where ambiente.id_form = formacion.id_form and ambiente.id_naves=naves.id_naves";
 $consul = mysqli_query($bdmysqli,$ambi);
@@ -20,8 +20,8 @@ $consul = mysqli_query($bdmysqli,$ambi);
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
-        <link rel="stylesheet" href="eliminaFicha.css">
-        <link rel="shortcut icon" href="../../../../img/ashleylogo.png" type="image/x-icon">
+        <link rel="stylesheet" href="ElimiAmbi.css">
+        <link rel="shortcut icon" href="../../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -31,7 +31,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
                
                 
                 <div class="logo">
-                    <img  height="60px" width="60px" src="../../../../assets/img/logo_calendar.png" alt="">
+                    <img  height="60px" width="60px" src="../../../../../assets/img/logo_calendar.png" alt="">
                 </div>
                 <a class="nombre">ADMINISTRADOR</a>
 
@@ -52,7 +52,7 @@ $consul = mysqli_query($bdmysqli,$ambi);
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
+                        <li><a href="../../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -63,38 +63,33 @@ $consul = mysqli_query($bdmysqli,$ambi);
         <div class="menu2"> 
             <div class="uno">
                 <p class= "admin"> <?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../../../foto/<?=$_SESSION['foto']?>" alt="">
+                <img  height="70px" widih="70px" src= "../../../../../ssets/img/logo_usuar.png" alt="">
             </div>
             <div class="listaa">
                 <ul class="acor">
-                    <li><a  href="../../admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
-
-                    <li><a  href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
+                    <li><a  href="#">USUARIOS</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Editar</a></li>
+                        <li><a href="EliminarUsu.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
                       </ul>
                     </li>
                 </ul>
 
                 <ul class="acorh">                    
-                    <li><a class="activ"  href="#"><i class="fas fa-building"></i>AMBIENTES</a>
+                    <li><a class="activ"  href="#">AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="eliminarAmbi.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="" ><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="acor">
-                    <li><a href="#"><i class="fas fa-users-class"></i>FORMACION</a>
+                    <li><a href="#">CLASES</a>
                         <ul class="sub">
-                          <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                          <li><a href="../eliminar/eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                          <li><a href="../modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
-                          <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
-                          <li><a href="../modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
-                          <li><a href="eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
+                          <li><a href=""><i class="fas fa-plus-square"></i>.Asignar clases</a></li>
+                          <li><a href=""><i class="fas fa-pen-square"></i>.Modificar </a></li>
                         </ul>
                     </li>
                 </ul>
@@ -126,9 +121,9 @@ $consul = mysqli_query($bdmysqli,$ambi);
                         <td><?=$ambiente["id_amb"]?></td>
                         <td><?=$ambiente["nom_form"]?></td>
                         <td><?=$ambiente["nom_nave"]?></td>
-                        <td><form action="../../../../php/eliminaramb.php" method="POST">
+                        <td><form action="eliminaramb.php" method="POST">
                                 <input type="hidden" value="<?=$ambiente["id_amb"]?>" name="datoeli">
-                                <button type="submit"><i class="fas fa-trash"></i></button>
+                                <button type="submit">Eliminar</button>
                             </form> </td>
                     </tr>
                 <?php

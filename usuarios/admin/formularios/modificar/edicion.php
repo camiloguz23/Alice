@@ -81,11 +81,11 @@ if ($validar == "" || $validar == null){
                     </li>
                     <li><a href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                         <ul class="sub">
-                          <li><a href=""><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
+                          <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                           <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar </a></li>
                           <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                           <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
-                          <li><a href="eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
+                          <li><a href="eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -130,15 +130,16 @@ if ($validar == "" || $validar == null){
                     <td><?php echo $row["direccion"];?></td>
                     <td><?php echo $row["email"];?></td>
 
-
-                <td class="table_item">
-                    <a href="actualizar.php?id=<?php echo $row["docu"];?>"><i class="fas fa-edit"></i></a>
-                   <form  action="../../../../php/bdeliminar.php" method="POST">
-                        <input type="hidden" value="<?=$row["docu"]?>" name="docueli">
-                        <button type="submit"><i class="fas fa-trash"></i></button>
-                    </form> 
-                    
-                </td>
+                
+                    <td>
+                        <div class="table-item">
+                            <a href="actualizar.php?id=<?php echo $row["docu"];?>"><i class="fas fa-edit"></i></a>
+                            <form  action="../../../../php/bdeliminar.php" method="POST">
+                                <input type="hidden" value="<?=$row["docu"]?>" name="docueli">
+                                <button type="submit"><i class="fas fa-trash"></i></button>
+                            </form> 
+                        </div>  
+                    </td>
                 </tr>
                 </tbody>
                     <!--<td><form action="actualizar.php" method="POST">

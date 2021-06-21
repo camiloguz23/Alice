@@ -297,8 +297,7 @@ ul.acor li a:hover {
     gap:5px;
 }
 .form{
-    width:78%; 
-    height: 410px;
+    width:69%; 
     color: rgb(7, 7, 7);
     background: white;
     top: 50%;
@@ -419,8 +418,7 @@ input:invalid {
  }
 
  .trans{
-    width:78%; 
-    height: 480px;
+    width:69%; 
     color: rgb(7, 7, 7);
     background: white;
     top: 55%;

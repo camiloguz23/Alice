@@ -120,7 +120,7 @@ $instru = mysqli_query($bdmysqli,$instructor);
                         <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="formularios/crear/" class="active"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
-                        <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
+                        <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 
                       </ul>
                     </li>
@@ -132,7 +132,7 @@ $instru = mysqli_query($bdmysqli,$instructor);
         </div>
         <div class="form">
             <form class="formula" action="../../../../php/CrearFicha.php" method="POST">
-                <p>FORMACION FORMATIVO|<i class="far fa-address-card"></i></p>
+                <p>FORMACION TITULADA</p>
 
                 <div class="contenedor">
                     <div>

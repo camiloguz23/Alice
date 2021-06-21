@@ -20,7 +20,7 @@ $dele = mysqli_query($bdmysqli,$consul);
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
-        <link rel="stylesheet" href="eliminarfor.css">
+        <link rel="stylesheet" href="eliminaFicha.css">
         <link rel="shortcut icon" href="../../../../assects/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
@@ -39,7 +39,7 @@ $dele = mysqli_query($bdmysqli,$consul);
 
                 <div class="list-container">
 
-                    <ul class="lists">
+                    <ul  class="lists">
                         <i class="fas fa-search"></i>
                         <li><a href="" >DIA</a></li><br>    
                         <li><a href="#">SEMANA</a></li> <br>
@@ -94,7 +94,7 @@ $dele = mysqli_query($bdmysqli,$consul);
                           <li><a class="active" href="EliminFicha.php"><i class="fas fa-pen-square"></i>.Eliminar</a></li>
                           <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                           <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
-                          <li><a href="eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
+                          <li><a href="eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos </a></li>
                         </ul>
                     </li>
 
@@ -113,38 +113,34 @@ $dele = mysqli_query($bdmysqli,$consul);
         <div class="form">
            <p>ELIMINAR FORMACION</p>
 
-                        <table class="tabla">
-                            <thead>
-                            <tr>
-                                <th>Nombre de la formacion</th>
-                                <th>Eliminar</th>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre de la formacion</th>
+                        <th>Eliminar</th>
 
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($dele as $eli){
-                                ?> <tr>
-                                    <td><?=$eli["nom_form"]?></td>
-                                    <td>
-                                        <form action="../../../../php/eliminaform.php" method="post">
-                                            <input type="hidden" name="form_eli" value="<?=$eli['id_form']?>">
-                                            <button type="submit" ><i class="fas fa-trash"></i></button>
-                                        </form>
-                                    </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($dele as $eli){
+                    ?> <tr>
+                    <td><?=$eli["nom_form"]?></td>
+                    <td>
+                        <form action="../../../../php/eliminaform.php" method="post">
+                            <input type="hidden" name="form_eli" value="<?=$eli['id_form']?>">
+                            <button type="submit" ><i class="fas fa-trash"></i></button>
+                        </form>
+                    </td>
 
-                                </tr>
-                            <?php
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-
-
-
+                </tr>
+                <?php
+                }
+                ?>
+                </tbody>
+            </table>
         </div>
-
-    
+ 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>

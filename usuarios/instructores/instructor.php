@@ -120,7 +120,7 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
 
 
         <div class="transversal_instru">
-           <p class="ins">Asignaciones Trasversales de la formacion <?=$num_ficha?></p>
+           <p class="ins">Asignaciones Trasversales de la formacion</p>
             <table >
                 <thead>
                     <tr>
@@ -129,10 +129,10 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
                         <th>Nombre y apellido instructor</th>
                         <th>Ambiente</th>
                         <th>Formacion</th>
-                        <th>Traversal</th>
+                        <th>Traversal</th> 
                         <th>Dia</th>
                         <th>Hora de inicio</th>
-                        <th>Hora de finalizacion</th>
+                        <th>Hora de finalizacion</th>                                                                              
                         <th>Fecha de inicio</th>
                         <th>Fecha de finalizacion</th>
                     </tr>

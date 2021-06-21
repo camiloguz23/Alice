@@ -86,11 +86,12 @@ $consul = mysqli_query($bdmysqli,$ambi);
                     </li>
                 </ul>
                 <ul class="acor">
-                    <li><a href="#"><i class="fas fa-users-class"></i>FORMACION</a>
+                    <li><a href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                         <ul class="sub">
                           <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                           <li><a href="../eliminar/eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                           <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+
                           <li><a href="../modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
                           <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
                           <li><a href="../modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>

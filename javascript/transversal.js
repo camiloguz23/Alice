@@ -8,7 +8,11 @@ let d = 0
 let m = 0
 
 boton.disabled= true
-boton.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+boton.style.backgroundColor = "rgb(255, 0, 0, 0.8)"
+boton.style.color = "rgb(255, 255, 255)"
+boton.style.fontFamily = "verdana"
+boton.style.fontSize = "15px"
+boton.style.border = "none"
 
 validar()
 
@@ -42,7 +46,7 @@ function validar() {
         }else{
             alert("Seleccione un instructor")
             boton.disabled= true
-            boton.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+            boton.style.backgroundColor = "rgb(255,0,0,0.9)"
             confi = confi - 1 
             active(confi)
         }
@@ -67,7 +71,7 @@ function validar() {
         }else {
             alert("Seleccione un ficha de formacion")
             boton.disabled= true
-            boton.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+            boton.style.backgroundColor = "rgb(255,0,0,0.8)"
             confi = confi - 1 
             active(confi)
         }
@@ -92,7 +96,7 @@ function validar() {
         }else {
             alert("Seleccione una materia")
             boton.disabled= true
-            boton.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+            boton.style.backgroundColor = "rgb(255,0,0,0.8)"
             confi = confi - 1 
             active(confi)
         }
@@ -117,7 +121,7 @@ function validar() {
         }else{
             alert("Seleccione una hora o fecha")
             boton.disabled= true
-            boton.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+            boton.style.backgroundColor = "rgb(255,0,0,0.8)"
             confi = confi - 1 
             active(confi)
         }
@@ -172,7 +176,7 @@ boton.addEventListener("click", (e) =>{
             alert("La transversal ya esta asignada a la formacion")
             formu.reset() 
             boton.disabled= true
-            boton.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+            boton.style.backgroundColor = "rgb(255,0,0,0.8)"
             a = 0
             b = 0
             c = 0
@@ -185,7 +189,7 @@ boton.addEventListener("click", (e) =>{
             alert("No se asigno correctamente la transversal a la formacion")
             formu.reset()
             boton.disabled= true
-            boton.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+            boton.style.backgroundColor = "rgb(255,0,0,0.8)"
             a = 0
             b = 0
             c = 0
@@ -196,7 +200,7 @@ boton.addEventListener("click", (e) =>{
             alert(info)
             formu.reset()
             boton.disabled= true
-            boton.style.backgroundColor = "hsla(0,100%,50%,0.5)"
+            boton.style.backgroundColor = "rgb(255,0,0,0.8)"
             a = 0
             b = 0
             c = 0

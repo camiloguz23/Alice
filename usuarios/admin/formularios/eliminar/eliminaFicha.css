@@ -283,7 +283,6 @@ button[type="submit"] {
 
 .formula{
     width:70%; 
-    height: 300px;
     color: rgb(7, 7, 7);
     background: white;
     top: 55%;
@@ -309,7 +308,6 @@ button[type="submit"] {
 
 .table{
     font-family: verdana;
-    margin-left: 15%;
     border: 1px solid #238276;
     border-collapse: collapse;
 }
@@ -323,6 +321,59 @@ button[type="submit"] {
 }
 
 .table th{
+    background:#238276;
+    padding: 0 10px 3px 20px ;
+}
+.form{
+    width:70%; 
+    color: rgb(7, 7, 7);
+    background: white;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 50px;
+    margin-left: 130px;
+
+    
+}
+
+.form p{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+button[type="submit"] {
+    outline: none;
+    background-color: transparent;
+    color:  rgb(0, 0, 0);
+    font-size: 17px;
+    margin-left: 10%;
+    border-style: none;
+    cursor: pointer;
+
+}
+
+
+.tabla{
+    margin-left: 10%;
+    border: 1px solid #238276;
+    border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid black;
+}
+
+.tabla th{
     background:#238276;
     padding: 0 10px 5px 20px ;
 }

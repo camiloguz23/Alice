@@ -102,8 +102,10 @@ $consultadia = mysqli_query($bdmysqli,$dias);
                         <li><a href="crearFormacion.php" ><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                         <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="CrearFicha.php" ><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                        <li><a href="../modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
                         <li><a href="trasversal.php" class="active"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
-                        <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Formacion Titulada </a></li>
+                        <li><a href="../modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
+                        <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 
                       </ul>
                     </li>
@@ -115,6 +117,8 @@ $consultadia = mysqli_query($bdmysqli,$dias);
         </div>
         <div class="trans">
             <form method="POST" action="" autocomplete="off" id="transversal">
+            <p>FORMACION TRANSVERSAL</p>
+
                 <label>Instructor</label><br>
                 <select name="docu" id="docu">
                 <option value="">Seleccione una opcion</option>
@@ -192,3 +196,4 @@ $consultadia = mysqli_query($bdmysqli,$dias);
         <script src="../../../../javascript/transversal.js"></script>
     </body>
 </html>
+

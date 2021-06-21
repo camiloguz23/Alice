@@ -1,7 +1,6 @@
 <?php
 include ('../admin/formularios/modificar/conexion.php');
-$docu = $_GET["usuario"];
-$usuarios = "SELECT * FROM usuario WHERE id_tip_usu = 3";
+
 ?>
 <?php
 session_start();
@@ -72,31 +71,32 @@ if ($validar == "" || $validar == null){
             
         </div>
         <div class="form">
-            <form class="formula" action="editar.php" method="post">
-                  <p>MODIFICAR DATOS</p>
-        <form class="container container--edit" action="editar.php" method="post">
-            <div class="table__title--edit"></div> 
-        <?php $resultado = mysqli_query($conexion, $usuarios);
-        while($row=mysqli_fetch_assoc($resultado))  {?>
-        <?php } mysqli_free_result($resultado);?>
-            <input type="hidden" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="table__input" value="<?php echo $_SESSION['nombre']?>" name="nombre">
-            <label for="nombre">Apellido</label>
-            <input type="text" class="table__input" value="<?php echo $_SESSION['apellido']?>" name="apellido">
-            <label for="nombre">Edad</label>
-            <input type="number" class="table__input" value="<?php echo $_SESSION['edad']?>" name="edad" required max=100 min="18">
-            <label for="nombre">Telefono</label>
-            <input type="number" id="celuko" class="table__input" min="3000000000" max="3999999999" value="<?php echo $_SESSION['celular']?>" name="celular" required>
-            <span class="error" aria-live="polite"></span>
-            <label for="nombre">Correo</label>
-            <input type="text" class="table__input" value="<?php echo $_SESSION['correo']?>" name="direccion" required>
-            <span class="error" aria-live="polite"></span>
-            <input type="hidden" class="table__input" value="" name="contraseña" disabled="disabled">
-            <input type="submit" value="Actualizar" class="container-submit">
-        </form>
+        <form class="formula" action="../../php/editar.php" method="POST" enctype="multipart/form-data">
+            <p>MODIFICAR DATOS</p>
+            <div class="conte_foto">
+                <img src="../foto/<?=$_SESSION['foto']?>" alt="foto" class="foto_edicion">
+                <div>
+                    <label for="">Cambiar foto</label>
+                    <input type="file" name="foto" id=""><br>
+                </div>
+                
+            </div>
+            
+            <label for="">Celular</label><br>
+            <input type="number" name="celular" id="" value="<?=$_SESSION['celular']?>"><br>
+            <label for="">Correo</label><br>
+            <input type="email" name="correo" id="" value="<?=$_SESSION['correo']?>"><br>
+            <label for="">Direccion</label><br>
+            <input type="text" name="direccion" id="" value="<?=$_SESSION['direccion']?>"><br>
+            <label for="">contraseña</label><br>
+            <input type="password" name="clave" id="" value="<?= $_SESSION['contra']?>"><br>
+            <input type="hidden" name="documento" value="<?=$_SESSION['id_user']?>">
+            <input type="submit" value="Enviar">
 
+            
+        </form>
+       
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
         <script src="validar.js"></script>
-
-    </body
+        
+    </body>

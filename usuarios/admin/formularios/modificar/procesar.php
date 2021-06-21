@@ -2,11 +2,11 @@
 include ("conexion.php");
 
     $id = $_POST['documento']; 
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
     $edad = $_POST['edad'];
     $celular = $_POST['celular'];
+    $fijo = $_POST['fijo'];
     $direccion = $_POST['direccion'];
+    $email = $_POST['email'];
 
     $actualizar = "UPDATE usuario SET edad='$edad', celular='$celular', fijo='$fijo', 
     direccion='$direccion', email='$email' WHERE docu='$id'";

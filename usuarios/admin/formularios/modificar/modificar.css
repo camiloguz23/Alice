@@ -262,7 +262,6 @@ ul.acor li a:hover {
 
 .form{
     width:75%; 
-    height: 530px;
     color: rgb(7, 7, 7);
     background: white;
     top: 57%;
@@ -398,7 +397,7 @@ a.title_edit{
 }
 
 .tabla{
-    margin-left: 10%;
+    margin-left: 0%;
     align-content: center;
     text-align: center;
     border-collapse: collapse;
@@ -418,17 +417,19 @@ a.title_edit{
     font-size: 12px;
     border:1px solid #000000;
 }
-.tabla .table_item{
+.tabla .table-item{
+
     display: grid;
     grid-template-columns: 1fr 1fr;
 
 }
-.tabla .table_item a{
+.tabla  a{
     font-size: 18px;
     text-decoration: none;
     color: #000000;
+
 }
-.tabla .table_item button[type="submit"] {
+.tabla  button[type="submit"] {
     margin: 4px 0 4px 0;
     outline: none;
     background-color: transparent;
@@ -437,4 +438,19 @@ a.title_edit{
     border-style: none;
     cursor: pointer;
 
+}
+
+/* ************************ PAGINA DE MODIFICACION DE USUARIO ********************** */
+
+.foto_edicion {
+    width: 130px;
+    border-radius: 50%;
+    
+   
+}
+
+.conte_foto{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
 }

@@ -180,7 +180,7 @@ $consultadia = mysqli_query($bdmysqli,$dias);
                     </div>
                 </div>
                 <div class="boton">
-                    <button type="bottom" id="btn_trans">Enviar</button>
+                    <button type="bottom" id="btn_trans">ASIGNAR</button>
                 </div>
 
                 

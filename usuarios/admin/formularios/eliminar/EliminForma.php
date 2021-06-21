@@ -15,13 +15,15 @@ $dele = mysqli_query($bdmysqli,$consul);
 ?>
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="eliminaFicha.css">
-        <link rel="shortcut icon" href="../../../../assects/img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -39,7 +41,7 @@ $dele = mysqli_query($bdmysqli,$consul);
 
                 <div class="list-container">
 
-                    <ul  class="lists">
+                    <ul class="lists">
                         <i class="fas fa-search"></i>
                         <li><a href="" >DIA</a></li><br>    
                         <li><a href="#">SEMANA</a></li> <br>
@@ -69,51 +71,40 @@ $dele = mysqli_query($bdmysqli,$consul);
                 <ul class="acor">
                     <li><a  href="../../admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
 
-                    <li><a  href="#">USUARIOS</a>
+                    <li><a  href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
                       <ul class="sub">
                         <li><a href="../crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="EliminarUsu.php" ><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Modificar</a></li>
+                        <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Editar</a></li>
                       </ul>
                     </li>
                 </ul>
 
                 <ul class="acor">                    
-                    <li><a href="#">AMBIENTES</a>
+                    <li><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                          <li><a href=""><i class="fas fa-pen-square"></i>.Modificar</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="acorh">
-                    <li><a class="activ" href="#"><i class="fas fa-users-class">FORMACION</a>
+                    <li><a class="activ"  href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                         <ul class="sub">
                           <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                          <li><a class="active" href="EliminFicha.php"><i class="fas fa-pen-square"></i>.Eliminar</a></li>
+                          <li><a href="../eliminar/eliminForma.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                           <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                          <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
-                          <li><a href="eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos </a></li>
+                          <li><a href="../crear/trasversal.php" ><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
+                          <li><a href="eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
                         </ul>
                     </li>
-
                 </ul>
-                   
-                
-                    
-
-                  
-
-            </div>   
-            
+            </div>               
         </div>
 
-        
         <div class="form">
-           <p>ELIMINAR FORMACION</p>
+            <p>ELIMINAR FORMACION</p>
 
-            <table class="tabla">
+            <table class="tablaa">
                 <thead>
                     <tr>
                         <th>Nombre de la formacion</th>
@@ -133,14 +124,17 @@ $dele = mysqli_query($bdmysqli,$consul);
                         </form>
                     </td>
 
-                </tr>
-                <?php
-                }
-                ?>
+                    </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
- 
+
+                
+
+
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 
     </body>

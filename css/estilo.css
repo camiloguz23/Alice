@@ -71,7 +71,16 @@ body
     font-family: Verdana;
     color: #EB5C00;
     top: 10%;
-    margin-left: 17%;
+    margin-left: 12%;
+}
+.version{
+    font-size: 12px;
+    position: absolute;
+    font-family: Verdana;
+    color: #EB5C00;
+    top: 69%;
+    margin-left: 23%;
+
 }
 .login-box {
     background-color: rgba(255, 255, 255, 0.705);
@@ -225,4 +234,127 @@ body
 .column2 {
      margin-left: 700px;
 }
+
+/*ACERCA DE*/
    
+.contenedor2{
+    width: 90%;
+    margin: 90px 40px -34px 40px;
+    overflow: hidden;
+  
+  }
+  
+  .tarjetas {
+    width: 100%;      
+    display: flex;         
+    flex-wrap: wrap;      
+    justify-content: space-around;  
+    color: #3a0000;     
+  }
+  
+  .card {
+    margin: 30px 10px;    
+    width: 25%;        
+    text-align: center;   
+    border: 3px solid #EB5C00 ;      
+  }
+  
+  .tarjetas img {
+    border: 2px solid #db6a00;
+    width: 90px;       
+    height: 90px;        
+    object-fit: cover;       
+    border-radius: 100%;        
+  }
+  
+  .card h4{
+    margin-top: 2%;
+  }
+  
+/*contactenos*/
+
+  .contactenos{
+    text-align: center;
+    width: 350px;
+    height: 420px;
+    color:  rgb(89, 181, 72);
+    top: 50%;
+    left: 15%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 40px 30px;
+    margin-left: 20px;
+    
+}
+
+.contactenos h3{
+    padding: 0 0 50px;
+    font-size: 22px;
+}
+
+.contactenos .uno{
+    width: 190%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.contactenos .dos{
+    width: 180%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:5px;
+}
+
+.contactenos .tres{
+    width: 173%;
+    height: 160px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.contactenos .mensaje{
+    text-decoration: none;
+    border: 2px solid rgb(89, 181, 72) ;
+    background: white;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+.contactenos input {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.contactenos input[type="text"],
+.contactenos input[type="email"],
+.contactenos input[type="tel"]{
+    text-decoration: none;
+    border: 2px solid  rgb(89, 181, 72) ;
+    background: white;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    height: 25px;
+}
+
+
+.contactenos input[type="submit"] {
+    outline: none;
+    height: 30px;
+    width: 50%;
+    margin-top: 20px;
+    background-color:transparent;
+    color:  rgb(255, 255, 255);
+    font-size: 18px;
+    background-color: rgb(89, 181, 72);
+    margin-left: 60%;
+    border-style: none;
+
+}
+
+
+
+.contactenos input[type="submit"]:hover {
+    cursor: pointer;
+    background:#238276 ;
+    color: rgb(255, 255, 255);
+    border-style: none;
+}

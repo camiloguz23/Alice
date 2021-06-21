@@ -105,6 +105,7 @@ $consultadia = mysqli_query($bdmysqli,$dias);
                         <li><a href="../modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
                         <li><a href="trasversal.php" class="active"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
                         <li><a href="../modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
+
                         <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 
                       </ul>

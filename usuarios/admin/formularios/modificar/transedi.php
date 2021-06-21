@@ -1,6 +1,7 @@
 <?php
 include ('conexion.php');
-$usuarios = "SELECT * FROM usuario"
+$docu = $_GET["id"];
+$usuarios = "SELECT * FROM asignacion_t WHERE id_asig = '$docu'";
 ?>
 <?php
 session_start();
@@ -16,7 +17,7 @@ if ($validar == "" || $validar == null){
         <meta charset="UTF-8">
         <title>ADIMINSTRADOR</title>
         <link rel="stylesheet" href="modificar.css">
-        <link rel="shortcut icon" href="../../../../img/ashleylogo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
     <body>
         
@@ -82,12 +83,9 @@ if ($validar == "" || $validar == null){
                     <li><a href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                         <ul class="sub">
                           <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                          <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar </a></li>
-                          <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                          <li><a href="edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
-                          <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
-                          <li><a href="../modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
-                          <li><a href="eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
+                          <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Agregar Grupo Formativo</a></li>
+                          <li><a href="eliminaFicha.php"><i class="fas fa-minus-square"></i>.Eliminar Grupo </a></li>
                         </ul>
                     </li>
                 </ul>
@@ -98,65 +96,38 @@ if ($validar == "" || $validar == null){
             </div>   
             
         </div>
-
         <div class="form">
-            <form class="formula" action="" method="POST">
-                <p>MODIFICAR USUARIO</p>
-    
-
-                <table class="tabla">
-                <thead>
-                <tr>
-                    <th>Documento</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Edad</th>
-                    <th>Celular</th>
-                    <th>fijo</th>
-                    <th>Direccion</th>
-                    <th>Correo Misena</th>
-
-                    <th>OPERACION</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php $resultado = mysqli_query($conexion, $usuarios);
-                while($row=mysqli_fetch_assoc($resultado))  {?>
-                <tr>
-                    <td><?php echo $row["docu"];?></td>
-                    <td><?php echo $row["nombres"];?></td>
-                    <td><?php echo $row["apellidos"];?></td>
-                    <td><?php echo $row["edad"];?></td>
-                    <td><?php echo $row["celular"];?></td>
-                    <td><?php echo $row["fijo"];?></td>
-                    <td><?php echo $row["direccion"];?></td>
-                    <td><?php echo $row["email"];?></td>
-
-                
-                    <td>
-                        <div class="table-item">
-                            <a href="actualizar.php?id=<?php echo $row["docu"];?>"><i class="fas fa-edit"></i></a>
-                            <form  action="../../../../php/bdeliminar.php" method="POST">
-                                <input type="hidden" value="<?=$row["docu"]?>" name="docueli">
-                                <button type="submit"><i class="fas fa-trash"></i></button>
-                            </form> 
-                        </div>  
-                    </td>
-                </tr>
-                </tbody>
-                    <!--<td><form action="actualizar.php" method="POST">
-                        <input type="hidden" value="<?php //echo $row["docu"];?>" name="docuedit">
-                        <button type="submit">EDITAR</button>-->
-                                            
-                <?php } mysqli_free_result($resultado) ?> 
-
-            </form>
-        </div>
-
-           
+            <form class="formula" action="procesar2.php" method="post">
+                  <p>MODIFICAR TITULADA</p>
+        <form class="container container--edit" action="procesar2.php" method="post">
+            <div class="table__title--edit"></div>      
+        <?php $resultado = mysqli_query($conexion, $usuarios);
+        while($row=mysqli_fetch_assoc($resultado))  {?>
+            <input type="hidden" class="table__input" value="<?php echo $row["id_asig"];?>" name="id_asig">
+            <label for="nombre">Documento</label>
+            <input type="text" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
+            <label for="nombre">Numero Ficho</label>
+            <input type="text" class="table__input" value="<?php echo $row["no_ficha"];?>" name="ficha">
+            <label for="nombre">Materia</label>
+            <input type="number" class="table__input" value="<?php echo $row["id_materia"];?>" name="materia" required>
+            <label for="nombre">Dia</label>
+            <input type="number" id="celuko" class="table__input" value="<?php echo $row["Id_dia"];?>" name="dia" required>
+            <span class="error" aria-live="polite"></span>
+            <label for="nombre">Horario inicio</label>
+            <input type="time" class="table__input" value="<?php echo $row["horario_inicio"];?>" name="hora-inicio" required>
+            <span class="error" aria-live="polite"></span>
+            <label for="nombre">Horario fin</label>
+            <input type="time" class="table__input" value="<?php echo $row["horario_fin"];?>" name="hora-fin" required>
+            <label for="nombre">fecha inicio</label>
+            <input type="date" id="email" class="table__input" value="<?php echo $row["fecha_inico"];?>" name="fecha-ini" required>
+            <span class="error" aria-live="polite"></span>
+            <label for="nombre">fecha fin</label>
+            <input type="date" class="table__input" value="<?php echo $row["fecha_final"];?>" name="fecha-fin" required>
+            <?php } mysqli_free_result($resultado);?>
+            <input type="submit" value="Actualizar" class="container-submit">
+        </form>
 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
+        <script src="validar.js"></script>
 
-    </body>
-
-</html>
+    </body

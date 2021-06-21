@@ -412,13 +412,14 @@ input:invalid {
 }
  .boton button {
      padding: 5px;
-     width: 40%;
+     width: 60%;
+     border-radius: 10px;
      cursor: pointer;
  }
 
  .trans{
     width:69%; 
-    color: rgb(0, 0, 0);
+    color: rgb(7, 7, 7);
     background: white;
     top: 55%;
     left: 50%;

@@ -1,4 +1,3 @@
-
 *{
     padding: 0px;
     margin: 0px;
@@ -10,6 +9,7 @@ body
 
 }
 
+
 .header{
     position: absolute;
     width: 100%;
@@ -18,7 +18,7 @@ body
 .menu{
     border-bottom: 1px solid #000;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #ffffff00;
     top:0;
     left: 0;
     width: 100%;
@@ -70,7 +70,7 @@ body
 }
 .menu .list-container li:hover > ul{
     position: fixed;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.055);
     border-radius: 10px;
 
 
@@ -93,6 +93,8 @@ body
     color: rgb(0, 0, 0);
     font-size: 14px;
 }
+
+
 .admin{
     color: #ffffff;
     font-size: 17px;
@@ -164,13 +166,6 @@ ul.acorh li li a {
     border-bottom: 1px solid rgb(117, 117, 117);
     box-sizing: border-box;
 }
-ul.acorh .sub li a {
-    padding: 10px 10px 10px 60px;
-}
-ul.acor .sub li a {
-    padding: 10px 10px 10px 60px;
-}
-
 ul.acorc li li:last-child a {
     border-bottom: 0;
 }
@@ -256,76 +251,10 @@ ul.acor li a:hover {
     color: #fff;
 
 }
-button[type="submit"] {
-    outline: none;
-    height: 16px;
-    width: 70%;
-    background-color: transparent;
-    color:  rgb(255, 255, 255);
-    font-size: 14px;
-    background-color:#238276;
-    margin-left: 10%;
-    border-style: none;
 
-}
-
-button[type="submit"] {
-    outline: none;
-    background-color: transparent;
-    color:  rgb(0, 0, 0);
-    font-size: 17px;
-    margin-left: 10%;
-    border-style: none;
-    cursor: pointer;
-
-}
-
-
-.formula{
-    width:70%; 
-    color: rgb(7, 7, 7);
-    background: white;
-    top: 55%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 10px 50px;
-    margin-left: 130px;
-
-    
-}
-
-.formula p{
-    margin: 0;
-    padding: 10px 0 ;
-    text-align: center;
-    font-size: 30px;
-    text-decoration: underline;
-    font-weight: 700;
-}
-
-
-.table{
-    font-family: verdana;
-    border: 1px solid #238276;
-    border-collapse: collapse;
-}
-
-.table th, .table td {
-    font-family: verdana;
-    height: 20px;
-    text-align: center;
-    font-size: 12px;
-    border:1px solid black;
-}
-
-.table th{
-    background:#238276;
-    padding: 0 10px 3px 20px ;
-}
 .form{
     width:70%; 
+    height: 530px;
     color: rgb(7, 7, 7);
     background: white;
     top: 55%;
@@ -350,30 +279,37 @@ button[type="submit"] {
 
 button[type="submit"] {
     outline: none;
+    height: 16px;
+    width: 70%;
     background-color: transparent;
-    color:  rgb(0, 0, 0);
-    font-size: 17px;
+    color:  rgb(255, 255, 255);
+    font-size: 14px;
+    background-color:#fc7323;
     margin-left: 10%;
     border-style: none;
-    cursor: pointer;
 
+}
+
+button[type="submit"]:hover {
+    cursor: pointer;
+    background:#238276;
+    color: rgb(255, 255, 255);
+    border-style: none;
 }
 
 
 .tabla{
-    margin-left: 10%;
-    border: 1px solid #238276;
+    border: 1px solid #fc7323;
     border-collapse: collapse;
 }
 
 .tabla th, .tabla td {
-    height: 20px;
     text-align: center;
     font-size: 12px;
     border:1px solid black;
 }
 
 .tabla th{
-    background:#238276;
-    padding: 0 10px 5px 20px ;
+    background: #fc7323;
+    padding: 0 10px 0 20px ;
 }

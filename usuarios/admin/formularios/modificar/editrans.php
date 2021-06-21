@@ -1,6 +1,6 @@
 <?php
 include ('conexion.php');
-$usuarios = "SELECT * FROM usuario"
+$usuarios = "SELECT * FROM asignacion_t"
 ?>
 <?php
 session_start();
@@ -84,9 +84,8 @@ if ($validar == "" || $validar == null){
                           <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                           <li><a href=""><i class="fas fa-minus-square"></i>.Eliminar </a></li>
                           <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                          <li><a href="edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
-                          <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
-                          <li><a href="../modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
+                          <li><a href="formularios/modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
+                          <li><a href="modificar/editrans.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
                           <li><a href="eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
                         </ul>
                     </li>
@@ -101,20 +100,19 @@ if ($validar == "" || $validar == null){
 
         <div class="form">
             <form class="formula" action="" method="POST">
-                <p>MODIFICAR USUARIO</p>
+                <p>MODIFICAR TRANSVERSAL</p>
     
 
                 <table class="tabla">
                 <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Documento</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Edad</th>
-                    <th>Celular</th>
-                    <th>fijo</th>
-                    <th>Direccion</th>
-                    <th>Correo Misena</th>
+                    <th>N de ficha</th>
+                    <th>Horario inicio</th>
+                    <th>Horario Fin</th>
+                    <th>Fecha inicio</th>
+                    <th>Fecha Final</th>
 
                     <th>OPERACION</th>
                 </tr>
@@ -123,21 +121,20 @@ if ($validar == "" || $validar == null){
                 <?php $resultado = mysqli_query($conexion, $usuarios);
                 while($row=mysqli_fetch_assoc($resultado))  {?>
                 <tr>
+                    <td><?php echo $row["id_asig"];?></td>
                     <td><?php echo $row["docu"];?></td>
-                    <td><?php echo $row["nombres"];?></td>
-                    <td><?php echo $row["apellidos"];?></td>
-                    <td><?php echo $row["edad"];?></td>
-                    <td><?php echo $row["celular"];?></td>
-                    <td><?php echo $row["fijo"];?></td>
-                    <td><?php echo $row["direccion"];?></td>
-                    <td><?php echo $row["email"];?></td>
+                    <td><?php echo $row["no_ficha"];?></td>
+                    <td><?php echo $row["horario_inicio"];?></td>
+                    <td><?php echo $row["horario_fin"];?></td>
+                    <td><?php echo $row["fecha_inico"];?></td>
+                    <td><?php echo $row["fecha_final"];?></td>
 
                 
                     <td>
                         <div class="table-item">
-                            <a href="actualizar.php?id=<?php echo $row["docu"];?>"><i class="fas fa-edit"></i></a>
+                            <a href="transedi.php?id=<?php echo $row["id_asig"];?>"><i class="fas fa-edit"></i></a>
                             <form  action="../../../../php/bdeliminar.php" method="POST">
-                                <input type="hidden" value="<?=$row["docu"]?>" name="docueli">
+                                <input type="hidden" value="<?=$row["id_asig"]?>" name="docueli">
                                 <button type="submit"><i class="fas fa-trash"></i></button>
                             </form> 
                         </div>  

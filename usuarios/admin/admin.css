@@ -115,7 +115,7 @@ body
     border-right: 1px solid black;
     margin-top:78px;
     margin-left: 0;
-    width: 22%;
+    width: 20%;
     height: 87vh;/* arreglo */
     background-color: rgb(255, 255, 255);
     
@@ -192,6 +192,7 @@ ul.acorh li a.activ{
 }
 
 .containereall{
+    border: 1px solid red;/* ------------------------------------------------------------------------- */
     width: 100%;
     display: inline-flex;
     grid-template-columns: 33% 67%;
@@ -200,13 +201,18 @@ ul.acorh li a.activ{
 
 #main-container{
     overflow-y: scroll;
-    margin-top: 0px;
+    margin-top: 20px;
+ /*    margin-bottom: 30px; */
+
+
+ /*    position: absolute; */
     border: 1px solid green;
     
     
 }
 .ins{
-    margin: 10%;
+    margin: 0;
+    padding: 0 0 20px;
     text-align: center;
     font-size: 30px;
     text-decoration: underline;
@@ -261,10 +267,10 @@ tr:hover td{
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 0px 20px;
-    margin-left: 130px;
-    top: 30%;
-    left: 48%;
+    padding: 10px 0px;
+    margin-left: 150px;
+    top: 43%;
+    left: 50%;
 }
 
 #main-container td,#main-container th {

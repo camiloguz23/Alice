@@ -328,7 +328,7 @@ button[type="submit"] {
     width:70%; 
     color: rgb(7, 7, 7);
     background: white;
-    top: 55%;
+    top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -365,6 +365,12 @@ button[type="submit"] {
     border: 1px solid #238276;
     border-collapse: collapse;
 }
+.tablaa{
+    margin-left: 23%;
+    border: 1px solid #238276;
+    border-collapse: collapse;
+}
+
 
 .tabla th, .tabla td {
     height: 20px;
@@ -374,6 +380,17 @@ button[type="submit"] {
 }
 
 .tabla th{
+    background:#238276;
+    padding: 0 10px 5px 20px ;
+}
+.tablaa th, .tablaa td {
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid black;
+}
+
+.tablaa th{
     background:#238276;
     padding: 0 10px 5px 20px ;
 }

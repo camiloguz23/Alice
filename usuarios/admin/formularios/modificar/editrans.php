@@ -1,6 +1,7 @@
 <?php
 include ('conexion.php');
-$usuarios = "SELECT * FROM asignacion_t"
+$usuarios = "SELECT id_asig,usuario.nombres,usuario.apellidos,asignacion_t.no_ficha, detalform.id_amb,materias.nom_materia, dias.Nom_dia,horario_inicio,horario_fin,asignacion_t.fecha_inico,asignacion_t.fecha_final FROM asignacion_t, usuario, materias, dias, detalform WHERE asignacion_t.docu=usuario.docu and asignacion_t.id_materia=materias.id_materia and asignacion_t.Id_dia=dias.Id_dia and asignacion_t.no_ficha=detalform.no_ficha and asignacion_t.fecha_final >= CURDATE()";
+$resultado = mysqli_query($conexion, $usuarios)
 ?>
 <?php
 session_start();
@@ -106,35 +107,41 @@ if ($validar == "" || $validar == null){
                 <table class="tabla">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
                     <th>N de ficha</th>
-                    <th>Horario inicio</th>
-                    <th>Horario Fin</th>
-                    <th>Fecha inicio</th>
-                    <th>Fecha Final</th>
+                    <th>Ambiente</th>
+                    <th>Transversal</th>
+                    <th>Dia</th>
+                    <th>Hora de inicio</th>
+                    <th>Hora de terminacion</th>
+                    <th>Fecha de inicio</th>
+                    <th>Fecha de terminacion</th>
 
                     <th>OPERACION</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php $resultado = mysqli_query($conexion, $usuarios);
-                while($row=mysqli_fetch_assoc($resultado))  {?>
+                <?php
+                foreach ($resultado as $form_trasn) {?>
                 <tr>
-                    <td><?php echo $row["id_asig"];?></td>
-                    <td><?php echo $row["docu"];?></td>
-                    <td><?php echo $row["no_ficha"];?></td>
-                    <td><?php echo $row["horario_inicio"];?></td>
-                    <td><?php echo $row["horario_fin"];?></td>
-                    <td><?php echo $row["fecha_inico"];?></td>
-                    <td><?php echo $row["fecha_final"];?></td>
+                    <td><?=$form_trasn['nombres']?></td>
+                    <td><?=$form_trasn['apellidos']?></td>
+                    <td><?=$form_trasn['no_ficha']?></td>
+                    <td><?=$form_trasn['id_amb']?></td>
+                    <td><?=$form_trasn['nom_materia']?></td>
+                    <td><?=$form_trasn['Nom_dia']?></td>
+                    <td><?=$form_trasn['horario_inicio']?></td>
+                    <td><?=$form_trasn['horario_fin']?></td>
+                    <td><?=$form_trasn['fecha_inico']?></td>
+                    <td><?=$form_trasn['fecha_final']?></td>
 
                 
                     <td>
                         <div class="table-item">
-                            <a href="transedi.php?id=<?php echo $row["id_asig"];?>"><i class="fas fa-edit"></i></a>
+                            <a href="transedi.php?id=<td><?=$form_trasn['id_asig']?></td>"><i class="fas fa-edit"></i></a>
                             <form  action="../../../../php/bdeliminar.php" method="POST">
-                                <input type="hidden" value="<?=$row["id_asig"]?>" name="docueli">
+                                <input type="hidden" value="<?=$form_trasn['id_asig']?>" name="docueli">
                                 <button type="submit"><i class="fas fa-trash"></i></button>
                             </form> 
                         </div>  

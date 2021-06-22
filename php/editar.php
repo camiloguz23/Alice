@@ -7,7 +7,7 @@ require_once("conexion.php");
     $email = $_POST['correo'];
     $clave = $_POST['clave'];
 
-    $foto = $_FILES['foto'] ['name'];
+    $foto = $_FILES['foto'] ['name']; # nombre de la foto: imag.jpg
     
   
 
@@ -28,7 +28,7 @@ require_once("conexion.php");
 
         
 
-        $ruta = $_FILES['foto'] ['tmp_name'];
+        $ruta = $_FILES['foto'] ['tmp_name']; 
         $destino = "../usuarios/foto/".$foto;
         copy($ruta,$destino);
         $actualizar = "UPDATE usuario SET foto='$foto',celular='$celular',direccion='$direccion', email='$email',contra_seguridad = '$clave' WHERE docu='$id'";

@@ -21,6 +21,7 @@ $direccion = $_POST["direccion"];
 $tipoUsuario = $_POST["tipousu"];
 
 $tipoDocu = $_POST["tipodocu"];
+$titulada = $_POST['titulada'];
 
 $correo = $_POST["correo"];
 
@@ -40,22 +41,19 @@ $especializacion  = $_POST["especializacion"];
 
 
 
-$crear = "INSERT INTO usuario (docu,id_tip_usu,id_tip_docu,nombres,apellidos,edad,celular,fijo,direccion,email,contra_seguridad,codigo_barras,foto) values (''$titulada',$documento','$tipoUsuario','$tipoDocu','$nombre','$apelido','$edad','$celular','$fijo','$direccion','$correo','$clave','','$fotousu')";
+$crear = "INSERT INTO usuario (docu,id_tip_usu,id_tip_docu,id_titulada,nombres,apellidos,edad,celular,fijo,direccion,email,contra_seguridad,foto) values ('$documento','$tipoUsuario','$tipoDocu','$titulada','$nombre','$apelido','$edad','$celular','$fijo','$direccion','$correo','$clave','$fotousu')";
 $insertar= mysqli_query($bdmysqli,$crear);
 
 if ($insertar){
-    echo "aqui estoy";
-    $titulos = "insert into detalle_p_e (docu,id_titu,id_esp) values ('$documento','$titulo','$especializacion')";
-    $consulta = mysqli_query($bdmysqli,$titulos);
+    
+    
 
-    if ($consulta){
+    echo '<script>alert ("se ingresaron los datos con exito");</script>';
+    echo '<script>window.location="../usuarios/admin/formularios/crear/crearUsu.php"</script>';        
 
-        echo '<script>alert ("se ingresaron los datos con exito");</script>';
-        echo '<script>window.location="../usuarios/admin/formularios/crear/crearUsu.php"</script>';        
-
-    }
+    
 }else {
-    echo "error".$ruta;
+    echo "error".$ruta; 
 }
 
 

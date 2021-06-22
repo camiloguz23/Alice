@@ -1,6 +1,6 @@
 <?php
 include ('conexion.php');
-$usuarios = "SELECT * FROM detalform"
+
 ?>
 <?php
 session_start();
@@ -9,6 +9,9 @@ $validar = $_SESSION["id_user"];
 if ($validar == "" || $validar == null){
     header("location: ../../../../index.html");
 }
+
+$titul = "SELECT no_ficha,usuario.nombres,usuario.apellidos,id_amb,tipo_formacion.nom_tip_form,horario.Nom_horario,dias.Nom_dia,fecha_inico,fecha_final FROM detalform,usuario, tipo_formacion,horario,dias WHERE detalform.docu=usuario.docu and detalform.id_tip_form=tipo_formacion.id_tip_form and detalform.Id_horario=horario.Id_horario and detalform.Id_dia=dias.Id_dia and fecha_final >= CURDATE()";
+$titulado = mysqli_query($conexion,$titul);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,41 +111,48 @@ if ($validar == "" || $validar == null){
                 <thead>
                 <tr>
                     <th>Numero ficha</th>
-                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
                     <th>Ambiente</th>
-                    <th>Fecha Inicio</th>
-                    <th>Fecha final</th>
+                    <th>Formacion</th>
+                    <th>Horario</th>
+                    <th>Dias</th>
+                    <th>Fecha de inicio</th>
+                    <th>Fecha de terminacion</th>
 
                     <th>OPERACION</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php $resultado = mysqli_query($conexion, $usuarios);
-                while($row=mysqli_fetch_assoc($resultado))  {?>
-                <tr>
-                    <td><?php echo $row["no_ficha"];?></td>
-                    <td><?php echo $row["docu"];?></td>
-                    <td><?php echo $row["id_amb"];?></td>
-                    <td><?php echo $row["fecha_inico"];?></td>
-                    <td><?php echo $row["fecha_final"];?></td>
+                <?php
+                foreach ($titulado as $titulada) {
+                    ?>
+                        <tr>
+                            <td><?=$titulada['no_ficha']?></td>
+                            <td><?=$titulada['nombres']?></td>
+                            <td><?=$titulada['apellidos']?></td>
+                            <td><?=$titulada['id_amb']?></td>
+                            <td><?=$titulada['nom_tip_form']?></td>
+                            <td><?=$titulada['Nom_horario']?></td>
+                            <td><?=$titulada['Nom_dia']?></td>
+                            <td><?=$titulada['fecha_inico']?></td>
+                            <td><?=$titulada['fecha_final']?></td>
 
-                
-                    <td>
-                        <div class="table-item">
-                            <a href="tituedi.php?id=<?php echo $row["no_ficha"];?>"><i class="fas fa-edit"></i></a>
-                            <form  action="../../../../php/bdeliminar.php" method="POST">
-                                <input type="hidden" value="<?=$row["no_ficha"]?>" name="docueli">
-                                <button type="submit"><i class="fas fa-trash"></i></button>
-                            </form> 
-                        </div>  
-                    </td>
-                </tr>
-                </tbody>
-                    <!--<td><form action="actualizar.php" method="POST">
-                        <input type="hidden" value="<?php //echo $row["docu"];?>" name="docuedit">
-                        <button type="submit">EDITAR</button>-->
+                        
+                            <td>
+                                <div class="table-item">
+                                    <a href="tituedi.php?id=<?=$titulada['no_ficha']?>"><i class="fas fa-edit"></i></a>
+                                    <form  action="../../../../php/bdeliminar.php" method="POST">
+                                        <input type="hidden" value="<?=$titulada['no_ficha']?>" name="docueli">
+                                        <button type="submit"><i class="fas fa-trash"></i></button>
+                                    </form> 
+                                </div>  
+                            </td>
+                        </tr>
+                        </tbody>
+                    
                                             
-                <?php } mysqli_free_result($resultado) ?> 
+                <?php } ?> 
 
             </form>
         </div>

@@ -1,5 +1,7 @@
 const email = document.getElementById("email");
-
+const usuario = document.getElementById("usuario")
+const titulada = document.getElementById("titulada")
+/* 
 email.addEventListener("input", function (event) {
   if (email.validity.typeMismatch) {
     email.setCustomValidity("¡Se esperaba una dirección de correo electrónico !");
@@ -64,4 +66,17 @@ celuko.addEventListener("input", function (event) {
     } else {
       celuko.setCustomValidity("");
     }
-  });
+  }); */
+
+
+// MOSTRAR CAMPO O EL SELECT DEL FORMULARIO CREAR  USUARIO 
+
+usuario.addEventListener("blur", () => {
+  let dato = usuario.value 
+  console.log(dato)
+  if (dato == 3) {
+    titulada.style.display = "block"
+  }else {
+    titulada.style.display = "none"
+  }
+})

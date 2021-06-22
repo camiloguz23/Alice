@@ -4,6 +4,8 @@ require_once("conexion.php");
 
 $documento = $_POST["documento"];
 
+
+
 $nombre = $_POST["nombre"];
 
 $apelido = $_POST["apellido"];
@@ -38,7 +40,7 @@ $especializacion  = $_POST["especializacion"];
 
 
 
-$crear = "INSERT INTO usuario (docu,id_tip_usu,id_tip_docu,nombres,apellidos,edad,celular,fijo,direccion,email,contra_seguridad,codigo_barras,foto) values ('$documento','$tipoUsuario','$tipoDocu','$nombre','$apelido','$edad','$celular','$fijo','$direccion','$correo','$clave','','$fotousu')";
+$crear = "INSERT INTO usuario (docu,id_tip_usu,id_tip_docu,nombres,apellidos,edad,celular,fijo,direccion,email,contra_seguridad,codigo_barras,foto) values (''$titulada',$documento','$tipoUsuario','$tipoDocu','$nombre','$apelido','$edad','$celular','$fijo','$direccion','$correo','$clave','','$fotousu')";
 $insertar= mysqli_query($bdmysqli,$crear);
 
 if ($insertar){

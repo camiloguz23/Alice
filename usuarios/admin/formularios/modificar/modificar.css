@@ -287,6 +287,7 @@ label.texto{
     font-family: Verdana;
     font-size: 16px;
     margin-left: 3%;
+    margin-top: 20px;
 }
     
 input{
@@ -298,7 +299,7 @@ input{
 
 .form input[type="submit"] {
     outline: none;
-    height: 25px;
+    height: 45px;
     width: 30%;
     background-color: transparent;
     color:  rgb(255, 255, 255);
@@ -423,6 +424,14 @@ a.title_edit{
     grid-template-columns: 1fr 1fr;
 
 }
+
+select {
+    margin: 30px;
+    padding: 3px;
+    margin-top: 10px;
+    width: 90%;
+}
+
 .tabla  a{
     font-size: 18px;
     text-decoration: none;

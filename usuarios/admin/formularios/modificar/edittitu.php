@@ -110,9 +110,6 @@ if ($validar == "" || $validar == null){
                     <th>Numero ficha</th>
                     <th>Documento</th>
                     <th>Ambiente</th>
-                    <th>Tipo de informacion</th>
-                    <th>Horario</th>
-                    <th>Dia</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha final</th>
 
@@ -126,9 +123,6 @@ if ($validar == "" || $validar == null){
                     <td><?php echo $row["no_ficha"];?></td>
                     <td><?php echo $row["docu"];?></td>
                     <td><?php echo $row["id_amb"];?></td>
-                    <td><?php echo $row["id_tip_form"];?></td>
-                    <td><?php echo $row["Id_horario"];?></td>
-                    <td><?php echo $row["Id_dia"];?></td>
                     <td><?php echo $row["fecha_inico"];?></td>
                     <td><?php echo $row["fecha_final"];?></td>
 

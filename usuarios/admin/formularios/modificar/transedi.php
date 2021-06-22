@@ -2,6 +2,12 @@
 include ('conexion.php');
 $docu = $_GET["id"];
 $usuarios = "SELECT * FROM asignacion_t WHERE id_asig = '$docu'";
+
+$sql = "SELECT * from dias";
+$dia = mysqli_query($conexion,$sql);
+
+$sql = "SELECT * from materias";
+$mater = mysqli_query($conexion,$sql);
 ?>
 <?php
 session_start();
@@ -98,20 +104,35 @@ if ($validar == "" || $validar == null){
         </div>
         <div class="form">
             <form class="formula" action="procesar2.php" method="post">
-                  <p>MODIFICAR TITULADA</p>
+                  <p>MODIFICAR TRANSVERSAL</p>
         <form class="container container--edit" action="procesar2.php" method="post">
             <div class="table__title--edit"></div>      
         <?php $resultado = mysqli_query($conexion, $usuarios);
         while($row=mysqli_fetch_assoc($resultado))  {?>
             <input type="hidden" class="table__input" value="<?php echo $row["id_asig"];?>" name="id_asig">
-            <label for="nombre">Documento</label>
-            <input type="text" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
-            <label for="nombre">Numero Ficho</label>
+            <input type="hidden" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
+            <label for="nombre">Numero Ficha</label>
             <input type="text" class="table__input" value="<?php echo $row["no_ficha"];?>" name="ficha">
-            <label for="nombre">Materia</label>
-            <input type="number" class="table__input" value="<?php echo $row["id_materia"];?>" name="materia" required>
-            <label for="nombre">Dia</label>
-            <input type="number" id="celuko" class="table__input" value="<?php echo $row["Id_dia"];?>" name="dia" required>
+            <label for="nombre">Materias</label>
+            <select  name="materia" required >
+                        <option value="">Seleccione </option>
+                        <?php
+                        foreach ($mater as $Materia){
+                            ?> <option value="<?=$Materia['id_materia']?>"><?=$Materia['nom_materia']?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+            <label for="nombre">Dias</label>
+            <select  name="dia" required >
+                        <option value="">Seleccione </option>
+                        <?php
+                        foreach ($dia as $dias){
+                            ?> <option value="<?=$dias['Id_dia']?>"><?=$dias['Nom_dia']?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
             <span class="error" aria-live="polite"></span>
             <label for="nombre">Horario inicio</label>
             <input type="time" class="table__input" value="<?php echo $row["horario_inicio"];?>" name="hora-inicio" required>

@@ -6,6 +6,11 @@ $usuario = mysqli_query($bdmysqli,$sql);
 ?>
 
 <?php
+$titu = "SELECT * from titulada";
+$tit = mysqli_query($bdmysqli,$titu);
+?>
+
+<?php
 $sql2 = "SELECT * from tipodocu";
 $documen = mysqli_query($bdmysqli,$sql2);
 ?>
@@ -154,6 +159,16 @@ if ($validar == "" || $validar == null){
 
             </div>
 
+            <label  class="">Titulada</label><br>
+                    <select name="titulada" required >
+                        <option value="">Seleccione</option>
+                        <?php
+                        foreach ($tit as $titula){
+                            ?> <option value=""><?=$titula['nom_titulada']?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>             
 
             <div class="contenedor">
                 <div>
@@ -281,20 +296,7 @@ if ($validar == "" || $validar == null){
 
     
                 </div>
-                <div>
-                    <label  class="texto">Especializacion</label><br>
-                    <select name="especializacion" required>
-                        <option value="" >Seleccione </option>
-                        <?php
-                        foreach ($especial as $especializacion){
-                            ?> <option value="<?=$especializacion['id_esp']?>"><?=$especializacion['nom_esp']?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>                            
-
-    
-                </div>
+                
 
             </div>
 

@@ -141,9 +141,7 @@ if ($validar == "" || $validar == null){
                     </td>
                 </tr>
                 </tbody>
-                    <!--<td><form action="actualizar.php" method="POST">
-                        <input type="hidden" value="<?php //echo $row["docu"];?>" name="docuedit">
-                        <button type="submit">EDITAR</button>-->
+                   
                                             
                 <?php } mysqli_free_result($resultado) ?> 
 

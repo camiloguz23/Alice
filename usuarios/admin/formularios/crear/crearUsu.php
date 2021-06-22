@@ -21,10 +21,6 @@ $titulo = mysqli_query($bdmysqli,$sql3);
 ?>
 
 <?php
-$sql4 = "SELECT * from especializacion";
-$especial = mysqli_query($bdmysqli,$sql4);
-?>
-<?php
 session_start();
 $validar = $_SESSION["id_user"];
 
@@ -129,7 +125,7 @@ if ($validar == "" || $validar == null){
 
                 <div class=" tipo">
                     <label for="" class="texto">Tipo Usuario</label><br>
-                    <select  name="tipousu" required >
+                    <select  name="tipousu" required id="usuario">
                         <option value="">Seleccione </option>
                         <?php
                         foreach ($usuario as $tipoUsu){
@@ -159,16 +155,20 @@ if ($validar == "" || $validar == null){
 
             </div>
 
-            <label  class="">Titulada</label><br>
-                    <select name="titulada" required >
-                        <option value="">Seleccione</option>
-                        <?php
-                        foreach ($tit as $titula){
-                            ?> <option value=""><?=$titula['nom_titulada']?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>             
+            <div id="titulada">
+                <label  class="">Titulada</label><br>
+                        <select name="titulada" required >
+                            <option value="">Seleccione</option>
+                            <?php
+                            foreach ($tit as $titula){
+                                ?> <option value="<?=$titula['id_titulada']?>"><?=$titula['nom_titulada']?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>    
+            </div>
+
+                     
 
             <div class="contenedor">
                 <div>

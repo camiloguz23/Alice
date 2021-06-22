@@ -14,7 +14,7 @@ if ($validar == "" || $validar == null){
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>ADIMINSTRADOR</title>
+        <title>INSTRUCTOR</title>
         <link rel="stylesheet" href="../admin/formularios/modificar/modificar.css">
         <link rel="shortcut icon" href="../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
@@ -80,18 +80,21 @@ if ($validar == "" || $validar == null){
                     <input type="file" name="foto" id=""><br>
                 </div>
                 
+            </div class="info">
+                <label for="">Celular</label><br>
+                <input type="number" name="celular" id="" value="<?=$_SESSION['celular']?>"><br>
+                <label for="">Correo</label><br>
+                <input type="email" name="correo" id="" value="<?=$_SESSION['correo']?>"><br>
+                <label for="">Direccion</label><br>
+                <input type="text" name="direccion" id="" value="<?=$_SESSION['direccion']?>"><br>
+                <label for="">contraseña</label><br>
+                <input type="password" name="clave" id="" value="<?= $_SESSION['contra']?>"><br>
+                <input type="hidden" name="documento" value="<?=$_SESSION['id_user']?>">
+                <input type="submit" value="Enviar">
+
+            <div>
+
             </div>
-            
-            <label for="">Celular</label><br>
-            <input type="number" name="celular" id="" value="<?=$_SESSION['celular']?>"><br>
-            <label for="">Correo</label><br>
-            <input type="email" name="correo" id="" value="<?=$_SESSION['correo']?>"><br>
-            <label for="">Direccion</label><br>
-            <input type="text" name="direccion" id="" value="<?=$_SESSION['direccion']?>"><br>
-            <label for="">contraseña</label><br>
-            <input type="password" name="clave" id="" value="<?= $_SESSION['contra']?>"><br>
-            <input type="hidden" name="documento" value="<?=$_SESSION['id_user']?>">
-            <input type="submit" value="Enviar">
 
             
         </form>

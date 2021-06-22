@@ -68,7 +68,7 @@ if ($validar == "" || $validar == null){
             </div>   
             
         </div>      
-        <div>
+        <div class = "perfil">
             <img  src= "../foto/<?=$_SESSION['foto']?>" alt="" class="foto">
             <div class="perfil_instructor">
                 <b><p>Nombres: </b><?php echo $_SESSION['nombre']?></p>
@@ -78,9 +78,8 @@ if ($validar == "" || $validar == null){
                 <b><p>Telefono: </b>  <?php echo $_SESSION['celular']?></p>
 
                 <button class="boton"><a href="editinstru.php"><i class="fas fa-pen-square"></i> Editar</button>
-
             </div>
-
+            <br>
         </div>
         
        

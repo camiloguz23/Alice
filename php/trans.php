@@ -22,6 +22,12 @@ if ($ficha == $info['no_ficha'] & $materia == $info['id_materia']) {
     $insertar = "INSERT INTO asignacion_t (docu,no_ficha,id_materia,id_dia,horario_inicio,horario_fin,fecha_inico,fecha_final) values ('$documento','$ficha','$materia','$dias','$hora_inicio','$hora_fin','$fecha_inicio','$fecha_fin')";
     $sql = mysqli_query($bdmysqli,$insertar);
 
+    if ($sql) {
+        echo "Se asigno existosamente";
+    }else {
+        echo "No fue existoso";
+    }
+
     
 }
 ?>

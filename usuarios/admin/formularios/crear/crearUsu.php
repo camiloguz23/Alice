@@ -197,7 +197,6 @@ if ($validar == "" || $validar == null){
         }
         </script>
 
-    
                 </div>
                 <div>
                     <label  class="texto">Nombre</label><br>
@@ -283,13 +282,17 @@ if ($validar == "" || $validar == null){
         }
         </script>
 
+
     
+
                 </div>
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="text" name="celular" minlength="10" maxlength="10" required  autocomplete="off">
-    
+                    <input type="text" name="celular" minlength="10" maxlength="10" required    autocomplete="off">
+
+                   
+
                 </div>
     
                 <div>

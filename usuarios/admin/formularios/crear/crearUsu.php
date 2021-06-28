@@ -173,7 +173,30 @@ if ($validar == "" || $validar == null){
             <div class="contenedor">
                 <div>
                     <label for="" class="texto">Documento</label><br>
-                    <input type="number" name="documento" required  autocomplete="off">
+                    <input type="text" name="documento" onkeypress="return soloNumeros(event)" onpaste="return false"   minlength="10" maxlength="12" required  autocomplete="of"  >
+                    <script>
+                    function soloNumeros(e){
+            key=e.keyCode || e.which;
+
+            teclado=String.fromCharCode(key);
+
+            numeros="12345678910";
+
+            especiales="8-37-38-46";
+
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;
+                }
+            }
+            if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+                    return false;
+            }
+        }
+        </script>
+
     
                 </div>
                 <div>
@@ -236,7 +259,30 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Edad</label><br>
-                    <input type="number" name="edad" min="17" max="100" required  autocomplete="off">
+                    <input type="text" name="edad" minlength="02" maxlength="02" onkeypress="return soloNumero (event)" onpaste="return false" required  autocomplete="off">
+                    <script>
+                    function soloNumero(e){
+            key=e.keyCode || e.which;
+
+            teclado=String.fromCharCode(key);
+
+            numero="012345678910";
+
+            especiales="8-37-38-46";
+
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;
+                }
+            }
+            if(numero.indexOf(teclado)==-1 && !teclado_especial){
+                    return false;
+            }
+        }
+        </script>
+
     
                 </div>
     

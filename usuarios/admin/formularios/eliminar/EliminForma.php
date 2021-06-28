@@ -88,11 +88,11 @@ $dele = mysqli_query($bdmysqli,$consul);
                     <li><a class="activ"  href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                       <ul class="sub">
                         <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                        <li><a href="eliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="eliminForma.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="../modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
                         <li><a href="../crear/trasversal.php" ><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
-                        <li><a href="eliminaFicha.php" class="active"><i class="fas fa-users"></i>.Grupos Formativos </a></li>
+                        <li><a href="eliminaFicha.php" ><i class="fas fa-users"></i>.Grupos Formativos </a></li>
 
                       </ul>
                     </li>

@@ -19,7 +19,7 @@ $asignacion = mysqli_query($bdmysqli,$asigna);
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>ADIMINSTRADOR</title>
+        <title>ADMINSTRADOR</title>
         <link rel="stylesheet" href="admin.css">
         <link rel="shortcut icon" href="../../img/ashleylogo.png" type="image/x-icon">
     </head>

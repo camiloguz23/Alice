@@ -44,7 +44,7 @@ $instru = mysqli_query($bdmysqli,$instructor);
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>ADIMINSTRADOR</title>
+        <title>ADMINSTRADOR</title>
         <link rel="stylesheet" href="CrearFicha.css">
         <link rel="shortcut icon" href="../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>
@@ -147,7 +147,7 @@ $instru = mysqli_query($bdmysqli,$instructor);
                     <div>
                         <label>Instructor</label>
                         <select name="instru">
-                        <option>Seleccione uan opcion</option>
+                        <option>Seleccione una opción</option>
                         <?php
                         foreach ($instru as $ins) {
                             ?> <option value="<?=$ins['docu']?>"><?=$ins['nombres']?> <?=$ins['apellidos']?></option>
@@ -161,7 +161,7 @@ $instru = mysqli_query($bdmysqli,$instructor);
                     <div >
                         <label for="" class="texto">Ambiente de formacion</label><br>
                         <select name="amb" required>   
-                            <option >Seleccione </option> 
+                            <option >Seleccione una opción </option> 
                             <?php
                             foreach ($detaform as $amb){
                                 ?> <option value="<?=$amb['id_amb']?>"><?=$amb['id_amb']?></option>

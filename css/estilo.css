@@ -359,3 +359,10 @@ body
     color: rgb(255, 255, 255);
     border-style: none;
 }
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;
+}

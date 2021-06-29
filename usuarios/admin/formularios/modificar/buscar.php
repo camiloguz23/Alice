@@ -6,7 +6,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>ADIMINSTRADOR</title>
+        <title>ADMINSTRADOR</title>
         <link rel="stylesheet" href="modificar.css">
         <link rel="shortcut icon" href="../../../../assets/img/ashleylogo.png" type="image/x-icon">
     </head>

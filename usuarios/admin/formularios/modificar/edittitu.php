@@ -17,7 +17,7 @@ $titulado = mysqli_query($conexion,$titul);
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>ADIMINSTRADOR</title>
+        <title>ADMINSTRADOR</title>
         <link rel="stylesheet" href="modificar.css">
         <link rel="shortcut icon" href="../../../../img/ashleylogo.png" type="image/x-icon">
     </head>

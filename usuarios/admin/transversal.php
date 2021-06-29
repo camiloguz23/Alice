@@ -69,7 +69,7 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
                 <ul class="acorh">
                     <li><a class="activ" href="admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
 
-                    <li><a href="formulario/"><i class="fas fa-users-cog"></i>USUARIOS</a>
+                    <li><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
                       <ul class="sub">
                         <li><a href="formularios/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="formularios/modificar/edicion.php"><i class="fas fa-pen-square"></i>.Edicion</a></li>
@@ -84,11 +84,11 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
                     </li>
                     <li><a href="#"><i class="fas fa-address-book"></i>FORMACIONES</a>
                       <ul class="sub">
-                        <li><a href="formularios/crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                        <li><a href="formularios/eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                        <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
-                        <li><a href="formularios/eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
+                        <li><a href="../admin/formularios/crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
+                        <li><a href="../admin/formularios/eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="../admin/formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                        <li><a href="../admin/formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
+                        <li><a href="../admin/formularios/eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 
                     </ul>
                     </li>

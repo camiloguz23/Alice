@@ -87,8 +87,16 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1"))
                 <div class="login-box">
                     <div class="inicioSesion" id="inicioSesion">
                         <h1>RECUPERAR CLAVE</h1>
-            
-                        <form  method="POST" name="form1" id="form1" autocomplete="off">
+                        <div id="msg"></div>
+ 
+                        <!-- Mensajes de Verificación -->
+                        <div id="error" class="alert alert-danger ocultar" role="alert">
+                            Las Contraseñas no coinciden, vuelve a intentar !
+                        </div>
+                        <div id="ok" class="alert alert-success ocultar" role="alert">
+                            Las Contraseñas coinciden ! (Procesando formulario ... )
+                        </div>
+                        <form  method="POST" name="form1" id="form1" onsubmit= "verificarPasswords(); return false" autocomplete="off">
                             <!--USERNAME INPUT-->
                             <label for="username">NUEVA CLAVE</label>
 
@@ -101,6 +109,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1"))
                             <input type="hidden" name="MM_update" value="form1"/>
 
                         </form>
+                        <script src="../javascript/claves.js"></script>
                     </div>             
                 </div>
 

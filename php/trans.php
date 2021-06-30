@@ -21,7 +21,7 @@ if ($ficha == $info['no_ficha'] & $materia == $info['id_materia']) {
     echo "La asignacion ya existe en la formacion";
 }else{
 
-    $insertar = "INSERT INTO asignacion_t (ficha_trans,docu,no_ficha,id_materia,id_amb,id_dia,horario_inicio,horario_fin,fecha_inico,fecha_final) values (''$fichatrans',$documento','$ficha','$materia','$ambiente','$dias','$hora_inicio','$hora_fin','$fecha_inicio','$fecha_fin')";
+    $insertar = "INSERT INTO asignacion_t (ficha_trans,docu,no_ficha,id_materia,id_amb,id_dia,horario_inicio,horario_fin,fecha_inico,fecha_final) values ('$fichatrans',$documento','$ficha','$materia','$ambiente','$dias','$hora_inicio','$hora_fin','$fecha_inicio','$fecha_fin')";
     $sql = mysqli_query($bdmysqli,$insertar);
 
     if ($sql) {

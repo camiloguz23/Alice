@@ -21,6 +21,7 @@ function validar() {
     const ficha = document.getElementById("ficha")
     const materia = document.getElementById("materia")
     const dias = document.getElementById("dias")
+    const ambi = document.getElementById("ambi")
 
 
     let confi = 0
@@ -32,7 +33,7 @@ function validar() {
         
         if (dato != "") {
 
-            if (confi < 0 || confi > 4) {
+            if (confi < 0 || confi > 5) {
                 confi = 0
             }
             
@@ -58,7 +59,7 @@ function validar() {
 
         if (dato2 != "") {
             
-            if (confi < 0 || confi > 4) {
+            if (confi < 0 || confi > 5) {
                 confi = 0
             }
             
@@ -83,7 +84,7 @@ function validar() {
 
         if (dato3 != "") {
 
-            if (confi < 0 || confi > 4) {
+            if (confi < 0 || confi > 5) {
                 confi = 0
             }
 
@@ -108,7 +109,7 @@ function validar() {
 
         if (dato4 != "") {
 
-            if (confi < 0 || confi > 4) {
+            if (confi < 0 || confi > 5) {
                 confi = 0
             }
 
@@ -120,6 +121,31 @@ function validar() {
             
         }else{
             alert("Seleccione una hora o fecha")
+            boton.disabled= true
+            boton.style.backgroundColor = "rgb(255,0,0,0.8)"
+            confi = confi - 1 
+            active(confi)
+        }
+    })
+
+    ambi.addEventListener("blur", () => {
+
+        let dato5 = ambi.value
+
+        if (dato5 != "") {
+
+            if (confi < 0 || confi > 5) {
+                confi = 0
+            }
+
+            if (d == 0) {
+                confi = confi + 1
+                d = 1
+                active(confi)
+            }
+            
+        }else{
+            alert("Seleccione el ambiente de formacion")
             boton.disabled= true
             boton.style.backgroundColor = "rgb(255,0,0,0.8)"
             confi = confi - 1 

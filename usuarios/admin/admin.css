@@ -338,8 +338,9 @@ tr:hover td{
 .tecnico_instru {
     overflow-y: scroll;
     margin-bottom: 30px;
-    height:200px ;
+    height:300px ;
     margin-left: 10%;
+    width: 1000px;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
@@ -350,13 +351,13 @@ tr:hover td{
 }
 
 .tecnico_instru th{
-    font-size: 16px;
+    font-size: 12px;
     padding: 2px 10px;
 }
 
 .tecnico_instru td {
-    font-size: 16px;
-    padding: 2px 10px ;
+    font-size: 10px;
+    padding: -2px 0px ;
 }
 
 .transversal_instru {
@@ -369,7 +370,7 @@ tr:hover td{
     box-sizing: border-box;
     padding: 10px 20px;
     margin-left: 130px;
-    top: 75%;
+    top: 35%;
     left: 50%;
 }
 

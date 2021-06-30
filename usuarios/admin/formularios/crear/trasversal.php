@@ -21,6 +21,13 @@ $consultamateria = mysqli_query($bdmysqli,$material);
 
 $dias = "SELECT * from dias";
 $consultadia = mysqli_query($bdmysqli,$dias);
+
+$cons="SELECT * from asignacion_t";
+$asigna= mysqli_query($bdmysqli,$cons);
+
+$ambiente="SELECT * from ambiente";
+$amb= mysqli_query($bdmysqli,$ambiente);
+
 ?>
 
 <!DOCTYPE html>
@@ -159,6 +166,46 @@ $consultadia = mysqli_query($bdmysqli,$dias);
                 }
                 ?>
                 </select><br>
+
+                <div>
+                <label>Ficha Transversal</label><br>
+                <input type="text" name="trans" id="trans" minlength="08" maxlength="08"   onkeypress="return fichaTrans (event)" onpaste="return false" required  autocomplete="off">
+                </div>
+                <script>
+                    function fichaTrans(e){
+            key=e.keyCode || e.which;
+
+            teclado=String.fromCharCode(key);
+
+            numero="012345678";
+
+            especiales="8-37-38-46";
+
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;
+                }
+            }
+            if(numero.indexOf(teclado)==-1 && !teclado_especial){
+                    return false;
+            }
+        }
+        </script>
+               
+               </select><br>
+                <label>Numero Ambiente</label><br>
+                <select name="ambi" id="ambi">
+                <option value="">Seleccione una opcion</option>
+                <?php
+                foreach ($amb as $ambie) {
+                    ?> <option value="<?=$ambie['id_amb']?>"></option>
+                <?php
+                }
+                ?>
+                </select><br>
+               
                 <div class="hora_fecha">
                     <div>
                         <label>Hora de inicio</label><br>

@@ -258,10 +258,13 @@ ul.acor li a:hover {
     color: #fff;
 
 }
-
+.table{
+    overflow-y: scroll;
+    margin-top: 5px;
+}
 
 .form{
-    width:68%; 
+    width:73%; 
     color: rgb(7, 7, 7);
     background: white;
     top: 57%;
@@ -398,6 +401,9 @@ a.title_edit{
 }
 
 .tabla{
+    overflow-y: scroll;
+    margin-top: 20px;
+
     margin-left: 0%;
     align-content: center;
     text-align: center;
@@ -406,7 +412,7 @@ a.title_edit{
 .tabla th{
     padding: 9px 7px  5px 5px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     border:1px solid #000000;
     background-color: #238276;
     color: #ffffff;
@@ -415,7 +421,7 @@ a.title_edit{
 .tabla td {
     padding: 5px 5px  0px 0px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     border:1px solid #000000;
 }
 .tabla .table-item{

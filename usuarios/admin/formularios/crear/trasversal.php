@@ -129,7 +129,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
             <div class="conten">
                 <div>
                     <label>Ficha Transversal</label><br>
-                    <input type="text" name="trans" id="trans" minlength="08" maxlength="08"   onkeypress="return fichaTrans (event)" onpaste="return false" required  autocomplete="off">
+                    <input type="number" name="trans" id="trans" minlength="08" maxlength="08"   >
                 </div>
                 <script>
                     function fichaTrans(e){

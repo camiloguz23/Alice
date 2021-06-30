@@ -60,88 +60,92 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
         
         </header> 
         <hr>
-        <div class="menu2"> 
-            <div class="uno">
-                <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
-                <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
-            </div>
-            <div class="listaa">
-                <ul class="acorh">
-                    <li><a class="activ" href="admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
+        <div class="containereall">
+            <div class="menu2"> 
+                <div class="uno">
+                    <p class= "admin"><?=$_SESSION["nombre"]?> <?=$_SESSION["apellido"]?></p>
+                    <img  height="70px" widih="70px" style=" border-radius: 100%" src= "../foto/<?=$_SESSION['foto']?>" alt="">
+                </div>
+                <div class="listaa">
+                    <ul class="acorh">
+                        <li><a class="activ" href="admin.php"><i class="fas fa-chalkboard-teacher"></i>ASIGNACIONES</a></li>
 
-                    <li><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
-                      <ul class="sub">
-                        <li><a href="formularios/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
-                        <li><a href="formularios/modificar/edicion.php"><i class="fas fa-pen-square"></i>.Edicion</a></li>
+                        <li><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
+                        <ul class="sub">
+                            <li><a href="formularios/crear/crearUsu.php"><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+                            <li><a href="formularios/modificar/edicion.php"><i class="fas fa-pen-square"></i>.Edicion</a></li>
 
-                      </ul>
-                    </li>
-                    <li><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
-                      <ul class="sub">
-                        <li><a href="formularios/crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
-                        <li><a href="formularios/eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#"><i class="fas fa-address-book"></i>FORMACIONES</a>
-                      <ul class="sub">
-                        <li><a href="../admin/formularios/crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                        <li><a href="../admin/formularios/eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../admin/formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                        <li><a href="../admin/formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
-                        <li><a href="../admin/formularios/eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
+                        <ul class="sub">
+                            <li><a href="formularios/crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                            <li><a href="formularios/eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#"><i class="fas fa-address-book"></i>FORMACIONES</a>
+                        <ul class="sub">
+                            <li><a href="formularios/crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
+                            <li><a href="formularios/eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                            <li><a href="formularios/crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                            <li><a href="formularios/modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
+                            <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
+                            <li><a href="formularios/modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
+                            <li><a href="formularios/eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos </a></li>
 
+
+                        </ul>
+                        </li>
                     </ul>
-                    </li>
-                </ul>
+                    
+                </div>   
                 
-            </div>   
+            </div>
+
             
-        </div>
 
-        
-
-        <div class="traversal">
-           <p class="ins">Asignaciones Trasversales de la formacion <?=$num_ficha?></p>
-            <table >
-                <thead>
-                    <tr>
-                        <th>Numero de ficha</th>
-                        <th>Documento instructor</th>                        
-                        <th>Nombre y apellido instructor</th>
-                        <th>Ambiente</th>
-                        <th>Formacion</th>
-                        <th>Traversal</th>
-                        <th>Dia</th>
-                        <th>Hora de inicio</th>
-                        <th>Hora de finalizacion</th>
-                        <th>Fecha de inicio</th>
-                        <th>Fecha de finalizacion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($consultrave as $traver){
-                        ?><tr>
-                            <td><?=$traver["no_ficha"]?></td>
-                            <td><?=$traver["docu"]?></td>
-                            <td><?=$traver["nombres"]?> <?=$traver["apellidos"]?></td>
-                            <td><?=$traver["id_amb"]?></td>
-                            <td><?=$traver["nom_form"]?></td>
-                            <td><?=$traver["nom_materia"]?></td>
-                            <td><?=$traver["Nom_dia"]?></td>
-                            <td><?=$traver["horario_inicio"]?></td>
-                            <td><?=$traver["horario_fin"]?></td>
-                            <th><?=$traver["fecha_inico"]?></th>
-                            <td><?=$traver["fecha_final"]?></td>
-                           
+            <div class="traversal">
+            <p class="ins">Asignaciones Trasversales de la formacion <?=$num_ficha?></p>
+                <table >
+                    <thead>
+                        <tr>
+                            <th>Numero de ficha</th>
+                            <th>Documento instructor</th>                        
+                            <th>Nombre y apellido instructor</th>
+                            <th>Ambiente</th>
+                            <th>Formacion</th>
+                            <th>Traversal</th>
+                            <th>Dia</th>
+                            <th>Hora de inicio</th>
+                            <th>Hora de finalizacion</th>
+                            <th>Fecha de inicio</th>
+                            <th>Fecha de finalizacion</th>
                         </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($consultrave as $traver){
+                            ?><tr>
+                                <td><?=$traver["no_ficha"]?></td>
+                                <td><?=$traver["docu"]?></td>
+                                <td><?=$traver["nombres"]?> <?=$traver["apellidos"]?></td>
+                                <td><?=$traver["id_amb"]?></td>
+                                <td><?=$traver["nom_form"]?></td>
+                                <td><?=$traver["nom_materia"]?></td>
+                                <td><?=$traver["Nom_dia"]?></td>
+                                <td><?=$traver["horario_inicio"]?></td>
+                                <td><?=$traver["horario_fin"]?></td>
+                                <td class="ini"><?=$traver["fecha_inico"]?></td>
+                                <td><?=$traver["fecha_final"]?></td>
+                            
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
     
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
 

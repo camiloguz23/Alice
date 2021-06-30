@@ -192,7 +192,6 @@ ul.acorh li a.activ{
 }
 
 .containereall{
-    border: 1px solid red;/* ------------------------------------------------------------------------- */
     width: 100%;
     display: inline-flex;
     grid-template-columns: 33% 67%;
@@ -202,11 +201,6 @@ ul.acorh li a.activ{
 #main-container{
     overflow-y: scroll;
     margin-top: 20px;
- /*    margin-bottom: 30px; */
-
-
- /*    position: absolute; */
-    border: 1px solid green;
     
     
 }
@@ -225,25 +219,23 @@ table{
 }
  th,  td {
     font-family: verdana;
-    font-style: italic;
     height: 20px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     border:1px solid rgb(168, 168, 168);
 }
 td{
     font-size: 10px;
 }
 
-th{
+.ini{
     background:#238276;
-    padding: 0 10px 5px 20px ;
 
 }
 
 thead{
 
-    font-size: 12px;
+    font-size: 11px;
 	background-color: #246355;
 	border-bottom: solid 5px #0F362D;
 	color: white;
@@ -261,16 +253,8 @@ tr:hover td{
 
 .traversal{
     overflow-y: scroll;
-    margin-bottom: 30px;
-    height:400px ;
-    margin-left: 10%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding: 10px 0px;
-    margin-left: 150px;
-    top: 43%;
-    left: 50%;
+    margin-top: 20px;
+
 }
 
 #main-container td,#main-container th {
@@ -285,13 +269,13 @@ tr:hover td{
 
 
 .traversal td {
-    font-size: 14px;
-    padding: 2px 10px ;
+    font-size: 11px;
+    padding: 5px 6px ;
 }
 
 .traversal th {
-    font-size: 14px;
-    padding: 2px 10px;
+    font-size: 11px;
+    padding: 2px 6px;
 }
 .perfil{
     background-color: #ffffff;

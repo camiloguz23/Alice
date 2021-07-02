@@ -428,6 +428,7 @@ a.title_edit{
     display: block;
     padding-left: 10px;
     width: 84%;
+
 }
 .table__inpu{
     display: block;
@@ -472,7 +473,12 @@ a.title_edit{
     grid-template-columns: 1fr 1fr;
 
 }
-
+.titu{
+    padding: 3px;
+    margin-top: 8px;
+    width: 94%;
+    margin-left: 13px;
+}
 select {
     padding: 2px;
     margin-top: 8px;

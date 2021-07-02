@@ -8,6 +8,9 @@ $dia = mysqli_query($conexion,$sql);
 
 $sql = "SELECT * from materias";
 $mater = mysqli_query($conexion,$sql);
+
+$sql = "SELECT * from detalform";
+$titula = mysqli_query($conexion,$sql);
 ?>
 <?php
 session_start();
@@ -116,11 +119,23 @@ if ($validar == "" || $validar == null){
             <div></div>      
         <?php $resultado = mysqli_query($conexion, $usuarios);
         while($row=mysqli_fetch_assoc($resultado))  {?>
-            <input type="hidden" class="table__input" value="<?php echo $row["ficha_trans"];?>" name="id_asig">
+            <input type="hidden" class="table__input" value="<?php echo $row["ficha_trans"];?>" name="transficha">
             <input type="hidden" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
 
         <div class="contened">
             <div>
+                <label for="nombre">Numero Ficha transversal</label>
+                <input type="text" class="table__inpu" value="<?php echo $row["ficha_trans"];?>" name="transverficha">
+                <label for="nombre">Ficha Titulada</label>
+                <select class="titu" name="titulada">
+                    <option value="<?php echo $row["no_ficha"];?>">Seleccione</option>
+                    <?php
+                    foreach ($titula as $titulada){
+                        ?> <option value="<?=$titulada['no_ficha']?>"><?=$titulada['no_ficha']?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
                 <label for="nombre">Numero Ficha</label>
                 <input type="text" class="table__inpu" value="<?php echo $row["no_ficha"];?>" name="ficha">
 
@@ -133,7 +148,7 @@ if ($validar == "" || $validar == null){
             <div>
                 <label for="nombre">Materias</label>
                 <select  name="materia">
-                    <option value="">Seleccione </option>
+                    <option value="<?php echo $row["id_materia"];?>">Seleccione </option>
                     <?php
                     foreach ($mater as $Materia){
                         ?> <option value="<?=$Materia['id_materia']?>"><?=$Materia['nom_materia']?></option>
@@ -145,7 +160,7 @@ if ($validar == "" || $validar == null){
             <div>
                 <label for="nombre">Dias</label><br>
                 <select  name="dia" >
-                            <option value="">Seleccione </option>
+                            <option value="<?php echo $row["Id_dia"];?>">Seleccione </option>
                             <?php
                             foreach ($dia as $dias){
                                 ?> <option value="<?=$dias['Id_dia']?>"><?=$dias['Nom_dia']?></option>

@@ -146,8 +146,8 @@ $titulado = mysqli_query($conexion,$titul);
                                 <td>
                                     <div class="table-item">
                                         <a href="tituedi.php?id=<?=$titulada['no_ficha']?>"><i class="fas fa-edit"></i></a>
-                                        <form  action="../../../../php/bdeliminar.php" method="POST">
-                                            <input type="hidden" value="<?=$titulada['no_ficha']?>" name="docueli">
+                                        <form  action="../../../../php/eliminatitu.php" method="POST">
+                                            <input type="hidden" value="<?=$titulada['no_ficha']?>" name="titulada">
                                             <button type="submit"><i class="fas fa-trash"></i></button>
                                         </form> 
                                     </div>  

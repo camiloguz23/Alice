@@ -136,6 +136,8 @@ if ($validar == "" || $validar == null){
                     }
                     ?>
                 </select>
+                <label for="nombre">Numero Ficha</label>
+                <input type="text" class="table__inpu" value="<?php echo $row["no_ficha"];?>" name="ficha">
 
             </div>
 

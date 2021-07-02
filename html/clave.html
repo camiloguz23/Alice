@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>INGRESO</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 
     <header id="header">
         <nav class="menu">
             <div class="logo">
-                <img width="60" height="60" src="assets/img/logo.png" alt="Logo Sena" class="logosena">
-                <img width="150" height="55" src="assets/img/ashleylogo2.png" alt="Logo Proyecto" class="logoproyecto">
+                <img width="60" height="60" src="../assets/img/logo.png" alt="Logo Sena" class="logosena">
+                <img width="150" height="55" src="../assets/img/ashleylogo2.png" alt="Logo Proyecto" class="logoproyecto">
             </div>
 
             <div class="list-container">
 
                 <ul class="lists">
-                    <li><a href="" >INICIO</a></li><br>    
-                    <li><a href="html/about.html">ACERCA DE</a></li> <br>
-                    <li><a href="html/contact.html">CONTACTENOS</a></li> <br>
+                    <li><a href="../index.html" >INICIO</a></li><br>    
+                    <li><a href="about.html">ACERCA DE</a></li> <br>
+                    <li><a href="contact.html">CONTACTENOS</a></li> <br>
                 </ul>
 
                 <ul>
@@ -40,35 +40,33 @@
 
         <div class="login-box">
             <div class="inicioSesion" id="inicioSesion">
-                <h1>INICIO SESION</h1>
+                <h1>RECUPERAR CLAVE</h1>
     
-                <form action="php/login.php" method="POST" name="formulario" autocomplete="off">
+                <form action="../php/recuperarclave.php" method="POST" autocomplete="off">
                     <!--USERNAME INPUT-->
                     <label for="username">DOCUMENTO</label>
 
-                    <input  name= "usuario" type="text" placeholder="" required pattern="[0-9]{9,12}"
+                    <input  name= "docu" type="text" placeholder="" required pattern="[0-9]{9,12}"
                     title="SOLO números. Tamaño mínimo: 9. Tamaño máximo: 12">
                     <!--PASSWORD INPUT-->
-                    <label for="password">CLAVE</label>
-                    <input name= "clave" type="password" placeholder="" required>
+                    <label for="email">CORREO</label>
+                    <input name= "email" type="email" placeholder="" required>
 
-
-                    <input type="submit" name="inicio" id="inicio" value="ingresar">
-                    <a href="html/clave.html" class="a1"><i class="fas fa-key"></i>¿Olvide mi Contraseña?</a> <br>
+                    <input type="submit" name="iniciar" id="iniciar" value="Validar">
                 </form>
             </div>             
         </div>
 
 
         <div class="logo">
-            <img src="assets/img/ashleylogo.png" alt="">
+            <img src="../assets/img/ashleylogo.png" alt="">
             <p>CALENDARIO SISTEMATICO PARA ASIGNACION DE INSTRUCTORES A LOS AMBIENTES DE FORMACION</p>
         </div>
     </header> 
 
     <div class="pagina">
         <footer class="pie">
-            <img  height="70px" width="70px" src="assets/img/logopie.png" alt="">
+            <img  height="70px" width="70px" src="../assets/img/logopie.png" alt="">
             <div class="info">
                 <p>CENTRO DE INDUSTRIA Y CONTRUCCION</p>
                 <p>SENA REGIONAL-TOLIMA</p>

@@ -145,8 +145,8 @@ if ($validar == "" || $validar == null){
                         <td>
                             <div class="table-item">
                                 <a href="transedi.php?id=<?=$form_trasn['ficha_trans']?>"><i class="fas fa-edit"></i></a>
-                                <form  action="../../../../php/bdeliminar.php" method="POST">
-                                    <input type="hidden" value="<?=$form_trasn['ficha_trans']?>" name="docueli">
+                                <form  action="../../../../php/eliminatrans.php" method="POST">
+                                    <input type="hidden" value="<?=$form_trasn['ficha_trans']?>" name="transversal">
                                     <button type="submit"><i class="fas fa-trash"></i></button>
                                 </form> 
                             </div>  

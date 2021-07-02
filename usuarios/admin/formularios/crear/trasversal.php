@@ -21,6 +21,13 @@ $consultamateria = mysqli_query($bdmysqli,$material);
 
 $dias = "SELECT * from dias";
 $consultadia = mysqli_query($bdmysqli,$dias);
+
+$cons="SELECT * from asignacion_t";
+$asigna= mysqli_query($bdmysqli,$cons);
+
+$ambiente="SELECT * from ambiente";
+$amb= mysqli_query($bdmysqli,$ambiente);
+
 ?>
 
 <!DOCTYPE html>
@@ -119,46 +126,100 @@ $consultadia = mysqli_query($bdmysqli,$dias);
             <form method="POST" action="" autocomplete="off" id="transversal">
             <p>FORMACION TRANSVERSAL</p>
 
-                <label>Instructor</label><br>
-                <select name="docu" id="docu">
-                <option value="">Seleccione una opcion</option>
-                <?php
-                foreach ($consultausu as $usu){
-                    ?> <option value="<?=$usu['docu']?>"><?=$usu['nombres']?> <?=$usu['apellidos']?></option>
-                <?php
+            <div class="conten">
+                <div>
+                    <label>Ficha Transversal</label><br>
+                    <input type="number" name="trans" id="trans" minlength="08" maxlength="08"   >
+                </div>
+                <script>
+                    function fichaTrans(e){
+                    key=e.keyCode || e.which;
+                    teclado=String.fromCharCode(key);
+                    numero="012345678";
+                    especiales="8-37-38-46";
+                    teclado_especial=false;
+                    for(var i in especiales){
+                        if(key==especiales[i]){
+                        teclado_especial=true;
+                        }
+                    }
+                    if(numero.indexOf(teclado)==-1 && !teclado_especial){
+                        return false;
+                    }
                 }
-                ?>
-                </select><br>
-                <label>Formacion</label><br>
-                <select name="ficha" id="ficha">
-                <option value="">Seleccione una opcion</option>
-                <?php
-                foreach ($consultaform as $ficha){
-                    ?> <option value="<?=$ficha['no_ficha']?>"><?=$ficha['no_ficha']?> <?=$ficha['nom_form']?></option>
-                <?php
-                }
-                ?>
-                </select><br>
-                <label>Transversal</label><br>
-                <select name="materia" id="materia">
-                <option value="">Seleccione una opcion</option>
-                <?php
-                foreach ($consultamateria as $mat ) {
-                    ?> <option value="<?=$mat['id_materia']?>"><?=$mat['nom_materia']?></option>
-                <?php
-                }
-                ?>
-                </select><br>
-                <label>Dia</label><br>
-                <select name="dias" id="dias">
-                <option value="">Seleccione una opcion</option>
-                <?php
-                foreach ($consultadia as $day) {
-                    ?> <option value="<?=$day['Id_dia']?>"><?=$day['Nom_dia']?></option>
-                <?php
-                }
-                ?>
-                </select><br>
+                </script>
+
+                <div>
+                    <label>Transversal</label><br>
+                    <select name="materia" id="materia">
+                    <option value="">Seleccione una opcion</option>
+                    <?php
+                    foreach ($consultamateria as $mat ) {
+                        ?> <option value="<?=$mat['id_materia']?>"><?=$mat['nom_materia']?></option>
+                    <?php
+                    }
+                    ?>
+                    </select>
+                </div>
+     
+            </div>
+            <div class="conte">
+                <div>
+                    <label>Instructor</label><br>
+                    <select name="docu" id="docu">
+                    <option value="">Seleccione una opcion</option>
+                    <?php
+                    foreach ($consultausu as $usu){
+                        ?> <option value="<?=$usu['docu']?>"><?=$usu['nombres']?> <?=$usu['apellidos']?></option>
+                    <?php
+                    }
+                    ?>
+                    </select>
+                </div>
+                <div>
+                    <label>Formacion</label><br>
+                    <select name="ficha" id="ficha">
+                    <option value="">Seleccione una opcion</option>
+                    <?php
+                    foreach ($consultaform as $ficha){
+                        ?> <option value="<?=$ficha['no_ficha']?>"><?=$ficha['no_ficha']?> <?=$ficha['nom_form']?></option>
+                    <?php
+                    }
+                    ?>
+                    </select>
+                </div>
+            
+            </div>
+
+            <div class="cont">
+                <div>
+                    <label>Ambiente</label><br>
+                    <select name="ambi" id="ambi">
+                    <option value="">Seleccione una opcion</option>
+                    <?php
+                    foreach ($amb as $ambie) {
+                        ?> <option value="<?=$ambie['id_amb']?>"><?=$ambie['id_amb']?></option>
+                    <?php
+                    }
+                    ?>
+                    </select>
+                </div>
+            
+                <div>
+                    <label>Dia</label><br>
+                    <select name="dias" id="dias">
+                    <option value="">Seleccione una opcion</option>
+                    <?php
+                    foreach ($consultadia as $day) {
+                        ?> <option value="<?=$day['Id_dia']?>"><?=$day['Nom_dia']?></option>
+                    <?php
+                    }
+                    ?>
+                    </select>
+                </div>
+            </div>
+            
+        
                 <div class="hora_fecha">
                     <div>
                         <label>Hora de inicio</label><br>

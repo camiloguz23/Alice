@@ -1,13 +1,16 @@
 <?php
 include ('conexion.php');
 $docu = $_GET["id"];
-$usuarios = "SELECT * FROM asignacion_t WHERE id_asig = '$docu'";
+$usuarios = "SELECT * FROM asignacion_t WHERE ficha_trans = '$docu'";
 
 $sql = "SELECT * from dias";
 $dia = mysqli_query($conexion,$sql);
 
 $sql = "SELECT * from materias";
 $mater = mysqli_query($conexion,$sql);
+
+$sql = "SELECT * from detalform";
+$titula = mysqli_query($conexion,$sql);
 ?>
 <?php
 session_start();
@@ -73,7 +76,7 @@ if ($validar == "" || $validar == null){
 
                     <li ><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
                       <ul class="sub">
-                        <li><a href="crearUsu.php" ><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+                        <li><a href="../crear/crearUsu.php" ><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Editar</a></li>
 
                       </ul>
@@ -83,7 +86,7 @@ if ($validar == "" || $validar == null){
                 <ul class="acor">                    
                     <li><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
                         <ul class="sub">
-                          <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                          <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         </ul>
                     </li>
@@ -112,47 +115,98 @@ if ($validar == "" || $validar == null){
         <div class="form">
             <form class="formula" action="procesar2.php" method="post">
                   <p>MODIFICAR TRANSVERSAL</p>
-        <form class="container container--edit" action="procesar2.php" method="post">
-            <div class="table__title--edit"></div>      
+        <form  action="procesar2.php" method="post">
+            <div></div>      
         <?php $resultado = mysqli_query($conexion, $usuarios);
         while($row=mysqli_fetch_assoc($resultado))  {?>
-            <input type="hidden" class="table__input" value="<?php echo $row["id_asig"];?>" name="id_asig">
+            <input type="hidden" class="table__input" value="<?php echo $row["ficha_trans"];?>" name="transficha">
             <input type="hidden" class="table__input" value="<?php echo $row["docu"];?>" name="documento">
-            <label for="nombre">Numero Ficha</label>
-            <input type="text" class="table__input" value="<?php echo $row["no_ficha"];?>" name="ficha">
-            <label for="nombre">Materias</label>
-            <select  name="materia">
-                        <option value="">Seleccione </option>
-                        <?php
-                        foreach ($mater as $Materia){
-                            ?> <option value="<?=$Materia['id_materia']?>"><?=$Materia['nom_materia']?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>
-            <label for="nombre">Dias</label>
-            <select  name="dia" >
-                        <option value="">Seleccione </option>
-                        <?php
-                        foreach ($dia as $dias){
-                            ?> <option value="<?=$dias['Id_dia']?>"><?=$dias['Nom_dia']?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>
-            <span class="error" aria-live="polite"></span>
+
+        <div class="contened">
+            <div>
+                <label for="nombre">Numero Ficha transversal</label>
+                <input type="text" class="table__inpu" value="<?php echo $row["ficha_trans"];?>" name="transverficha">
+                <label for="nombre">Ficha Titulada</label>
+                <select class="titu" name="titulada">
+                    <option value="<?php echo $row["no_ficha"];?>">Seleccione</option>
+                    <?php
+                    foreach ($titula as $titulada){
+                        ?> <option value="<?=$titulada['no_ficha']?>"><?=$titulada['no_ficha']?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+
+            </div>
+
+        </div>
+        <div class="conten">
+            
+
+            <div>
+                <label for="nombre">Materias</label>
+                <select  name="materia">
+                    <option value="<?php echo $row["id_materia"];?>">Seleccione </option>
+                    <?php
+                    foreach ($mater as $Materia){
+                        ?> <option value="<?=$Materia['id_materia']?>"><?=$Materia['nom_materia']?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+            <div>
+                <label for="nombre">Dias</label><br>
+                <select  name="dia" >
+                            <option value="<?php echo $row["Id_dia"];?>">Seleccione </option>
+                            <?php
+                            foreach ($dia as $dias){
+                                ?> <option value="<?=$dias['Id_dia']?>"><?=$dias['Nom_dia']?></option>
+                            <?php
+                            }
+                            ?>
+                </select>    
+                <span class="error" aria-live="polite"></span>
+
+
+            </div>
+
+        </div>
+
+        <div class="conte">
+
+            <div>
             <label for="nombre">Horario inicio</label>
             <input type="time" class="table__input" value="<?php echo $row["horario_inicio"];?>" name="hora-inicio" required>
             <span class="error" aria-live="polite"></span>
-            <label for="nombre">Horario fin</label>
-            <input type="time" class="table__input" value="<?php echo $row["horario_fin"];?>" name="hora-fin" required>
-            <label for="nombre">fecha inicio</label>
-            <input type="date" id="email" class="table__input" value="<?php echo $row["fecha_inico"];?>" name="fecha-ini" required>
-            <span class="error" aria-live="polite"></span>
-            <label for="nombre">fecha fin</label>
-            <input type="date" class="table__input" value="<?php echo $row["fecha_final"];?>" name="fecha-fin" required>
+
+            </div>
+
+            <div>
+                <label for="nombre">Horario fin</label>
+                <input type="time" class="table__input" value="<?php echo $row["horario_fin"];?>" name="hora-fin" required>
+            </div>
+
+        </div>
+
+        <div class="cont">
+
+            <div>
+                <label for="nombre">fecha inicio</label>
+                <input type="date" id="email" class="table__input" value="<?php echo $row["fecha_inico"];?>" name="fecha-ini" required>
+                <span class="error" aria-live="polite"></span>
+            </div>
+            <div>
+                <label for="nombre">fecha fin</label>
+                <input type="date" class="table__input" value="<?php echo $row["fecha_final"];?>" name="fecha-fin" required>
+            </div>
+
+        </div>
+        <br>
+
             <?php } mysqli_free_result($resultado);?>
             <input type="submit" value="Actualizar" class="container-submit">
+            <br>
         </form>
 
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>

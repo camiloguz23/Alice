@@ -339,6 +339,43 @@ input{
     grid-template-columns: repeat(9, 15%);
     grid-auto-rows: 40px;
 }
+/*formulario*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:5px;
+
+}
+.contened{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:5px;
+}
+
+.conten{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+  
+}
+
+.conte{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+}
+
+.cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+}
+
+.co{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:5px;
+}
 
 
 .table__title, .container-table{
@@ -390,9 +427,14 @@ a.title_edit{
 .table__input{
     display: block;
     padding-left: 10px;
-    margin-left: 60px;
-    width: 94%;
+    width: 84%;
 }
+.table__inpu{
+    display: block;
+    padding-left: 10px;
+    width: 92%;
+}
+
 .container container--edit.container-submit{
     padding: 0;
     margin: 0;
@@ -432,11 +474,10 @@ a.title_edit{
 }
 
 select {
-    margin: 31px;
     padding: 2px;
     margin-top: 8px;
-    width: 94%;
-    margin-left: 57px;
+    width: 88%;
+    margin-left: 13px;
 }
 
 .tabla  a{

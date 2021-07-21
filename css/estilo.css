@@ -400,8 +400,8 @@ body {
         width: 350px;
         height: 420px;
         color: #fc7323;
-       /*  top: 50%;
-        left: 25%; */
+        top: 60%;
+       
         
         transform: translate(-50%, -50%);
         box-sizing: border-box;

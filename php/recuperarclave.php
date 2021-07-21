@@ -3,7 +3,8 @@ require_once("conexion.php");
 ?>
 <!--recuperar clave-->
 <?php
- session_start();
+session_start();
+  
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1"))
 {
     $clave = $_POST['clave'];
@@ -16,9 +17,9 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1"))
     else
     {
 
-        $doc = $_SESSION['docu'];
-        $emai = $_SESSION['email'];
-        $insertSQL =  "UPDATE usuario SET contra_seguridad = '$clave' WHERE docu = '$doc' and email = '$emai'";
+        $docu = $_SESSION['docu'];
+        $email = $_SESSION['email'];
+        $insertSQL = "UPDATE usuario SET contra_seguridad = '$clave' WHERE docu = '$docu' and email = '$email'";
         mysqli_query($bdmysqli, $insertSQL);
 
         echo '<script>alert ("El cambio de clave se realizo exitosamente");</script>';
@@ -39,7 +40,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1"))
 
     $recuperarclave= "SELECT * from usuario where docu = '$docu' and email = '$email'";
     $consul = mysqli_query($bdmysqli,$recuperarclave);
-    $fil=mysqli_fetch_assoc($consul);
+    $fil = mysqli_fetch_assoc($consul);
 
     if($fil){
         $_SESSION['docu'] = $fil['docu'];
@@ -109,7 +110,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1"))
                             <input type="hidden" name="MM_update" value="form1"/>
 
                         </form>
-                        <script src="../javascript/claves.js"></script>
+                        <!--<script src="../javascript/claves.js"></script>-->
                     </div>             
                 </div>
 

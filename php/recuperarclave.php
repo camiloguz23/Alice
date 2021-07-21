@@ -14,7 +14,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1"))
         echo '<script>alert ("Campos vacios no ingreso ningun dato");</script>';
         echo '<script>window.location="recuperarclave.php"</script>';
     }     
-    else
+    elseif($_POST['clave'] == $_POST['clave2'])
     {
 
         $docu = $_SESSION['docu'];
@@ -24,6 +24,9 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1"))
 
         echo '<script>alert ("El cambio de clave se realizo exitosamente");</script>';
         echo '<script>window.location="../index.html"</script>';
+    }else{
+        echo '<script>alert ("Error: Las contraseñas no coinciden");</script>';
+        echo '<script>window.location="../html/clave.html"</script>';
     }
 
 

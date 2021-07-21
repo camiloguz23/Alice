@@ -1,7 +1,7 @@
 <?php
-require_once ("conexion.php");
+include ('conexion.php');
+$trans = $_GET["ide"];
 
-$trans = $_POST["transversal"];
 
 $eliminartrans = "DELETE FROM asignacion_t WHERE ficha_trans = $trans";
 $consultatrans = mysqli_query($bdmysqli,$eliminartrans);

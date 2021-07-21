@@ -132,32 +132,26 @@ $titulado = mysqli_query($conexion,$titul);
                     foreach ($titulado as $titulada) {
                         ?>
                             <tr>
-                                <td><?=$titulada['no_ficha']?></td>
-                                <td><?=$titulada['nombres']?></td>
-                                <td><?=$titulada['apellidos']?></td>
-                                <td><?=$titulada['id_amb']?></td>
-                                <td><?=$titulada['nom_tip_form']?></td>
-                                <td><?=$titulada['Nom_horario']?></td>
-                                <td><?=$titulada['Nom_dia']?></td>
-                                <td><?=$titulada['fecha_inico']?></td>
-                                <td><?=$titulada['fecha_final']?></td>
+                                <td><?php echo $titulada['no_ficha']?></td>
+                                <td><?php echo $titulada['nombres']?></td>
+                                <td><?php echo $titulada['apellidos']?></td>
+                                <td><?php echo $titulada['id_amb']?></td>
+                                <td><?php echo $titulada['nom_tip_form']?></td>
+                                <td><?php echo $titulada['Nom_horario']?></td>
+                                <td><?php echo $titulada['Nom_dia']?></td>
+                                <td><?php echo $titulada['fecha_inico']?></td>
+                                <td><?php echo $titulada['fecha_final']?></td>
 
                             
                                 <td>
                                     <div class="table-item">
-                                        <a href="tituedi.php?id=<?=$titulada['no_ficha']?>"><i class="fas fa-edit"></i></a>
-                                        <form  action="../../../../php/eliminatitu.php" method="POST">
-                                            <input type="hidden" value="<?=$titulada['no_ficha']?>" name="titulada">
-                                            <button type="submit"><i class="fas fa-trash"></i></button>
-                                        </form> 
+                                        <a href="tituedi.php?id=<?php echo $titulada['no_ficha']?>"><i class="fas fa-edit"></i></a>
+                                        <a href="../../../php/eliminatitu.php?idd=<?php echo $titulada['no_ficha']?>"><i class="fas fa-trash"></i></a>
                                     </div>  
                                 </td>
                             </tr>
                             </tbody>
-                        
-                                                
-                    <?php } ?> 
-
+                            <?php } mysqli_free_result($titulado) ?>  
                 </div>
 
             </form>

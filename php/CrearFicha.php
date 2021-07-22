@@ -12,11 +12,11 @@ $fecha = $_POST["fecha"];
 $fechaF = $_POST["fechaF"];
 
 
-$order = "SELECT * FROM detalform WHERE fecha_final >= '$fechaF' And Id_horario = '$hora' And id_amb = '$ambi'";
+$order = "SELECT * FROM detalform WHERE fecha_final >= '$fecha' And Id_horario = '$hora' And id_amb = '$ambi'";
 $consula = mysqli_query($bdmysqli,$order);
 $fila= mysqli_fetch_assoc($consula);
 
-if($fila['fecha_final'] >= $fechaF AND $fila['Id_horario'] = $hora AND $fila['id_amb'] = $ambi){
+if($fila['fecha_final'] >= $fecha AND $fila['Id_horario'] = $hora AND $fila['id_amb'] = $ambi){
 
     echo '<script>alert ("EL HORARIO YA ESTA ASIGNADO ");</script>';
     echo '<script>window.location="../usuarios/admin/formularios/crear/CrearFicha.php"</script>';

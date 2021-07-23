@@ -107,7 +107,7 @@ $dele = mysqli_query($bdmysqli,$consul);
         <div class="form">
            <p>ELIMINAR FORMACION</p>
 
-            <table class="tabla">
+            <table class="tabl">
                 <thead>
                     <tr>
                         <th>Nombre de la formacion</th>

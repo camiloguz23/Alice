@@ -30,7 +30,7 @@ function validar() {
 
         for (i=0;i<dat.length;i++) {
             let dato = dat[i]
-            if (dato == 1 || dato == 2 || dato == 3 || dato == 4 || dato == 5 || dato == 6 || dato == 7 || dato == 8 || dato == 9 || dato == 0) {
+            if (dato == 1 || dato == 2 || dato == 3 || dato == 4 || dato == 5 || dato == 6 || dato == 7 || dato == 8 || dato == 9 || dato == 0 && dato != " ") {
 
                 alert("No es permitido digitos")
                 window.location = "crearFormacion.php"

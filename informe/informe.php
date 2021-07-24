@@ -19,6 +19,7 @@
         <div class="buscador">
             <input type="number" name="" id="" placeholder="Buscador por el documento">
         </div>
+        <a href="../usuarios/admin/admin.php"><img src="../img/salida.png" alt="salida" class="salida"></a>
     </header>
     <div id="contenido"></div>
 </body>

@@ -290,7 +290,7 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Fijo</label><br>
-                    <input type="text" name="fijo" minlength="8" maxlength="10" required  autocomplete="off">
+                    <input type="number" name="fijo" minlength="8" maxlength="10" required  autocomplete="off" id="fijo">
     
                 </div> 
 

@@ -10,7 +10,10 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../../../php/conexion.php");
 
-$usuario ="SELECT * from usuario where id_tip_usu = 3 and id_titulada = 3";
+$transversal = $_POST['materia'];
+
+//$usuario ="SELECT * from usuario where id_tip_usu = 3";
+$usuario = "SELECT usuario.nombres,detalle_materia.documento,materias.nom_materia FROM detalle_materia,materias,usuario WHERE detalle_materia.documento=usuario.docu AND detalle_materia.id_materia=materias.id_materia ";
 $consultausu = mysqli_query($bdmysqli,$usuario);
 
 $formacion = "SELECT no_ficha,nom_form from detalform, formacion,ambiente where detalform.id_amb=ambiente.id_amb and ambiente.id_form=formacion.id_form";
@@ -37,6 +40,10 @@ $amb= mysqli_query($bdmysqli,$ambiente);
         <title>ADMINSTRADOR</title>
         <link rel="stylesheet" href="CrearFicha.css">
         <link rel="shortcut icon" href="../../../../assets/img/ashleylogo.png" type="image/x-icon">
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     </head>
     <body>
         
@@ -129,7 +136,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
             <div class="conten">
                 <div>
                     <label>Ficha Transversal</label><br>
-                    <input type="text" name="trans" id="trans" onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="08" maxlength="09" required  autocomplete="of">
+                    <input type="text" name="trans" id="trans" onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="05" maxlength="06" required  autocomplete="off">
                 
                 <script>
                     function soloNumeros(e){
@@ -168,14 +175,14 @@ $amb= mysqli_query($bdmysqli,$ambiente);
                 </div>
      
             </div>
-            <div class="conte">
+            <div class="conte" id="select2lista">
                 <div>
                     <label>Instructor</label><br>
                     <select name="docu" id="docu">
                     <option value="">Seleccione una opcion</option>
                     <?php
                     foreach ($consultausu as $usu){
-                        ?> <option value="<?=$usu['docu']?>"><?=$usu['nombres']?> <?=$usu['apellidos']?></option>
+                        ?> <option value="<?=$usu['documento']?>"><?=$usu['nombres']?> - <?=$usu['nom_materia']?></option>
                     <?php
                     }
                     ?>
@@ -263,3 +270,25 @@ $amb= mysqli_query($bdmysqli,$ambiente);
     </body>
 </html>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#materia').val(1);
+		recargarLista();
+
+		$('#materia').change(function(){
+			recargarLista();
+		});
+	})
+</script>
+<script type="text/javascript">
+	function recargarLista(){
+		$.ajax({
+			type:"POST",
+			url:"datos.php",
+			data:"materia=" + $('#materia').val(),
+			success:function(r){
+				$('#docu').html(r);
+			}
+		});
+	}
+</script>

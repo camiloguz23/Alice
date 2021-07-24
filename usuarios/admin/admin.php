@@ -80,6 +80,9 @@ $asignacion = mysqli_query($bdmysqli,$asigna);
                         <ul class="sub">
                             <li><a href="formularios/crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                             <li><a href="formularios/eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                            <li><a href="formularios/crear/crearmateria.php"><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                            <li><a href="formularios/eliminar/eliminaMateria.php"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
                         </ul>
                         </li>
                         <li><a href="#"><i class="fas fa-address-book"></i>FORMACIONES</a>

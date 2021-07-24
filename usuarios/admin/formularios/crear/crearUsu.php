@@ -6,7 +6,7 @@ $usuario = mysqli_query($bdmysqli,$sql);
 ?>
 
 <?php
-$titu = "SELECT * from titulada";
+$titu = "SELECT * from materias";
 $tit = mysqli_query($bdmysqli,$titu);
 ?>
 
@@ -99,6 +99,9 @@ if ($validar == "" || $validar == null){
                         <ul class="sub">
                           <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="crearmateria.php"  class="active"><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                            <li><a href="../eliminar/eliminaMateria.php"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
                         </ul>
                     </li>
                     <li><a href="#"><i class="fas fa-address-book"></i>FORMACION</a>
@@ -114,7 +117,6 @@ if ($validar == "" || $validar == null){
                         </ul>
                     </li>
                 </ul>
-
             </div>   
             
         </div>
@@ -156,16 +158,7 @@ if ($validar == "" || $validar == null){
             </div>
 
             <div id="titulada">
-                <label  class="">Titulada</label><br>
-                        <select name="titulada" required >
-                            <option value="">Seleccione</option>
-                            <?php
-                            foreach ($tit as $titula){
-                                ?> <option value="<?=$titula['id_titulada']?>"><?=$titula['nom_titulada']?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>    
+                   
             </div>
 
                      
@@ -173,7 +166,7 @@ if ($validar == "" || $validar == null){
             <div class="contenedor">
                 <div>
                     <label for="" class="texto">Documento</label><br>
-                    <input type="text" name="documento" onkeypress="return soloNumeros(event)" onpaste="return false"   minlength="10" maxlength="12" required  autocomplete="of"  >
+                    <input type="text" name="documento" onkeypress="return soloNumeros(event)" onpaste="return false"   minlength="9" maxlength="10" required  autocomplete="of"  >
                     <script>
                     function soloNumeros(e){
             key=e.keyCode || e.which;
@@ -289,7 +282,7 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="text" name="celular" minlength="10" maxlength="10" required    autocomplete="off">
+                    <input type="number" name="celular" minlength="10" maxlength="10" required    autocomplete="off">
 
                    
 
@@ -297,7 +290,8 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Fijo</label><br>
-                    <input type="text" name="fijo" minlength="8" maxlength="10" required  autocomplete="off">
+                    <input type="number" name="fijo" minlength="8" maxlength="10" required  autocomplete="off" id="fijo">
+                    <span id="span"></span>
     
                 </div> 
 
@@ -353,7 +347,7 @@ if ($validar == "" || $validar == null){
                 <label>Foto</label><br>
                 <input  type="file" name="foto">
 
-                <input type="submit" class="enviar" name="enviar" value="Enviar">
+                <input type="submit"  name="enviar" value="Enviar" id="btn_enviar">
 
                 
             </div>

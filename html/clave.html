@@ -46,8 +46,30 @@
                     <!--USERNAME INPUT-->
                     <label for="username">DOCUMENTO</label>
 
-                    <input  name= "docu" type="text" placeholder="" required pattern="[0-9]{9,12}"
+                    <input  name= "docu" type="text"  onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="09" maxlength="12" placeholder="" required pattern="[0-9]{9,12}"
                     title="SOLO números. Tamaño mínimo: 9. Tamaño máximo: 12">
+                    <script>
+                        function soloNumeros(e){
+                key=e.keyCode || e.which;
+    
+                teclado=String.fromCharCode(key);
+    
+                numeros="123456789101112";
+    
+                especiales="8-37-38-46";
+    
+                teclado_especial=false;
+    
+                for(var i in especiales){
+                    if(key==especiales[i]){
+                        teclado_especial=true;
+                    }
+                }
+                if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+                        return false;
+                }
+            }
+            </script>
                     <!--PASSWORD INPUT-->
                     <label for="email">CORREO</label>
                     <input name= "email" type="email" placeholder="" required>

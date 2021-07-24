@@ -129,7 +129,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
             <div class="conten">
                 <div>
                     <label>Ficha Transversal</label><br>
-                    <input type="text" name="trans" id="trans" onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="08" maxlength="09" required  autocomplete="of">
+                    <input type="text" name="trans" id="trans" onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="05" maxlength="06" required  autocomplete="off">
                 
                 <script>
                     function soloNumeros(e){

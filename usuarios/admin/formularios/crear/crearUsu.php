@@ -176,7 +176,7 @@ if ($validar == "" || $validar == null){
             <div class="contenedor">
                 <div>
                     <label for="" class="texto">Documento</label><br>
-                    <input type="text" name="documento" onkeypress="return soloNumeros(event)" onpaste="return false"   minlength="10" maxlength="12" required  autocomplete="of"  >
+                    <input type="text" name="documento" onkeypress="return soloNumeros(event)" onpaste="return false"   minlength="9" maxlength="10" required  autocomplete="of"  >
                     <script>
                     function soloNumeros(e){
             key=e.keyCode || e.which;

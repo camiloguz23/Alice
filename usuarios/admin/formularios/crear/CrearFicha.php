@@ -110,6 +110,9 @@ $instru = mysqli_query($bdmysqli,$instructor);
                         <ul class="sub">
                           <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="crearmateria.php" ><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                          <li><a href="../eliminar/eliminaMateria.php"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
                         </ul>
                     </li>
                 </ul>

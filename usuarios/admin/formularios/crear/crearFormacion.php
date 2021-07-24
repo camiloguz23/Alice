@@ -48,7 +48,7 @@ if ($validar == "" || $validar == null){
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
+                        <li><a href="../../../../php/cerrar_sesion.php">CERRAR SESIÓN</a></li>
                     </ul>
                 </div>
 

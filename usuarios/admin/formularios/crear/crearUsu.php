@@ -291,6 +291,7 @@ if ($validar == "" || $validar == null){
                 <div>
                     <label for="" class="texto">Fijo</label><br>
                     <input type="number" name="fijo" minlength="8" maxlength="10" required  autocomplete="off" id="fijo">
+                    <span id="span"></span>
     
                 </div> 
 
@@ -346,7 +347,7 @@ if ($validar == "" || $validar == null){
                 <label>Foto</label><br>
                 <input  type="file" name="foto">
 
-                <input type="submit" class="enviar" name="enviar" value="Enviar">
+                <input type="submit"  name="enviar" value="Enviar" id="btn_enviar">
 
                 
             </div>

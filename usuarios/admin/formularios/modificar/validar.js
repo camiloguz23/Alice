@@ -2,6 +2,10 @@ const email = document.getElementById("email");
 const usuario = document.getElementById("usuario")
 const titulada = document.getElementById("titulada")
 const fijo = document.getElementById("fijo")
+const span = document.getElementById("span")
+const enviar = document.getElementById("btn_enviar")
+
+enviar.disabled = true
 
 
 //^ MOSTRAR CAMPO O EL SELECT DEL FORMULARIO CREAR  USUARIO 
@@ -28,9 +32,18 @@ usuario.addEventListener("blur", () => {
 fijo.addEventListener("keyup", () => {
   const cantidad =fijo.value
   const numero = cantidad.length
-  if (numero >= 7){
-    console.log("aceptado")
+  if (numero >= 7 && numero <= 8){
+    span.textContent= "cantidad valida"
+    enviar.disabled = false
+    enviar.classList.remove("enviar")
+  }else if (numero > 8 ){
+    span.textContent= "cantidad cantidad superior a la indicada 8 digitos"
+    enviar.disabled = true
+    enviar.classList.add("enviar")
+  }else {
+    span.textContent= "cantidad inferior de 7 o 8 digitos"
+    enviar.disabled = true
+    enviar.classList.add("enviar")
   }
   
-  console.log(numero)
 })

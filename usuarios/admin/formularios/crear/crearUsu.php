@@ -6,7 +6,7 @@ $usuario = mysqli_query($bdmysqli,$sql);
 ?>
 
 <?php
-$titu = "SELECT * from titulada";
+$titu = "SELECT * from materias";
 $tit = mysqli_query($bdmysqli,$titu);
 ?>
 
@@ -114,7 +114,6 @@ if ($validar == "" || $validar == null){
                         </ul>
                     </li>
                 </ul>
-
             </div>   
             
         </div>
@@ -156,16 +155,7 @@ if ($validar == "" || $validar == null){
             </div>
 
             <div id="titulada">
-                <label  class="">Titulada</label><br>
-                        <select name="titulada" required >
-                            <option value="">Seleccione</option>
-                            <?php
-                            foreach ($tit as $titula){
-                                ?> <option value="<?=$titula['id_titulada']?>"><?=$titula['nom_titulada']?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>    
+                   
             </div>
 
                      
@@ -289,7 +279,7 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="text" name="celular" minlength="10" maxlength="10" required    autocomplete="off">
+                    <input type="number" name="celular" minlength="10" maxlength="10" required    autocomplete="off">
 
                    
 

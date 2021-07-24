@@ -66,11 +66,7 @@ $instru = mysqli_query($bdmysqli,$instructor);
 
                     <ul class="lists">
                         <i class="fas fa-search"></i>
-                        <li><a href="" >DIA</a></li><br>    
-                        <li><a href="#">SEMANA</a></li> <br>
-                        <li><a href="#">MES</a></li> <br>
-                        <li><a href="#">AÑO</a></li><br>
-                        <li><a href="#">AGENDA</a></li><br>
+                        <li><a href="../../../../informe/informe.php">Informe</a></li><br>
                     </ul>
 
                 </div>

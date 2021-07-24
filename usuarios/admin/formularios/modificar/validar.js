@@ -37,9 +37,9 @@ fijo.addEventListener("keyup", () => {
     enviar.disabled = false
     enviar.classList.remove("enviar")
   }else if (numero > 8 ){
-    span.textContent= "cantidad cantidad superior a la indicada 8 digitos"
-    enviar.disabled = true
-    enviar.classList.add("enviar")
+    const longitud = cantidad.slice(0,8)
+    fijo.value = longitud
+    
   }else {
     span.textContent= "cantidad inferior de 7 o 8 digitos"
     enviar.disabled = true

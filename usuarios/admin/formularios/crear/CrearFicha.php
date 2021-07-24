@@ -120,7 +120,8 @@ $instru = mysqli_query($bdmysqli,$instructor);
                         <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="formularios/crear/" class="active"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="../modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
-                        <li><a href="trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
+                        <li><a href="trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>                        
+                        <li><a href="../modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
                         <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 
                       </ul>
@@ -138,7 +139,7 @@ $instru = mysqli_query($bdmysqli,$instructor);
                 <div class="contenedor">
                     <div>
                         <label for="" class="texto"> Nº Ficha</label><br>
-                        <input name="ficha" type="number" minlength="7" maxlength="10" required autocomplete="off" >
+                        <input name="ficha" type="number" minlength="5" maxlength="6" required autocomplete="off" >
                     </div> 
                 </div>
 

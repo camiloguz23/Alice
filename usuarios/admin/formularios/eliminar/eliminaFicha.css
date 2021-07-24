@@ -377,3 +377,40 @@ button[type="submit"] {
     background:#238276;
     padding: 0 10px 5px 20px ;
 }
+
+
+.tablaa{
+    margin-left: 30%;
+    border: 1px solid #238276;
+    border-collapse: collapse;
+}
+
+.tablaa th, .tablaa td {
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid black;
+}
+
+.tablaa th{
+    background:#238276;
+    padding: 0 10px 5px 20px ;
+}
+
+.tabl{
+    margin-left: 20%;
+    border: 1px solid #238276;
+    border-collapse: collapse;
+}
+
+.tabl th, .tabl td {
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border:1px solid black;
+}
+
+.tabl th{
+    background:#238276;
+    padding: 0 10px 5px 20px ;
+}

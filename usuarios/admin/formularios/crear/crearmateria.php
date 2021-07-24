@@ -48,7 +48,7 @@ if ($validar == "" || $validar == null){
 
                 <div class="salir">
                     <ul>
-                        <li><a href="../../../../php/cerrar_sesion.php">CERRAR SESIÓN</a></li>
+                        <li><a href="../../../../php/cerrar_sesion.php"> CERRAR SESION</a></li>
                     </ul>
                 </div>
 
@@ -76,18 +76,21 @@ if ($validar == "" || $validar == null){
                     </li>
                 </ul>
                   
-                <ul class="acor">                    
-                    <li><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
+                <ul class="acorh">                    
+                    <li><a  class="activ"  href="#"><i class="fas fa-building"></i>AMBIENTES</a>
                         <ul class="sub">
                           <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="crearmateria.php"  class="active"><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                            <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
                         </ul>
                     </li>
                 </ul>
-                <ul class="acorh">
-                    <li><a class="activ"  href="#"><i class="fas fa-address-book"></i>FORMACION</a>
+                <ul class="acor">
+                    <li><a href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                       <ul class="sub">
-                        <li><a href="crearFormacion.php" class="active"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
+                        <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
                         <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="../modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
@@ -105,18 +108,18 @@ if ($validar == "" || $validar == null){
         </div>
         <div class="form">
             <form class="formula" id="formulario" method="POST" autocomplete="off">
-                <p>NUEVA FORMACION</p>
+                <p>AÑADIR MATERIA</p>
 
-                <label class="texto">Nombre de la formacion</label><br>
-                <input type="text" name="formacion" class="inputForm" id="campo"><br>
-                <span id="span"></span><br>
+                <label class="texto">Nombre de la Materia</label><br>
+                <input type="text" name="materia" class="inputForm" id="campo"><br>
+                <span id="san"></span><br>
 
-                <button type="submit" id="enviar">Enviar</button>
+                <button type="submit" id="envia">Enviar</button>
             </form>
         </div>
         
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
-    <script src="../../../../javascript/app.js"></script>
+    <script src="../../../../javascript/materia.js"></script>
 
     </body>
 </html>

@@ -10,8 +10,8 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../../../php/conexion.php");
 
-$consul = "select * from formacion";
-$dele = mysqli_query($bdmysqli,$consul);
+$consu = "select * from materias";
+$del = mysqli_query($bdmysqli,$consu);
 ?>
 
 <!DOCTYPE html>
@@ -76,19 +76,22 @@ $dele = mysqli_query($bdmysqli,$consul);
                       </ul>
                     </li>
                 </ul>
-                <ul class="acor">
-                    <li ><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
+                <ul class="acorh">
+                    <li ><a class="activ" href="#"><i class="fas fa-building"></i>AMBIENTES</a>
                       <ul class="sub">
                         <li><a href="../crear/crearAmbien.php" ><i class="fas fa-plus-square"></i>.Añadir</a></li>
                         <li><a href="eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                      </ul>
+                        <li><a href="../crear/crearmateria.php" ><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                        <li><a href="eliminarMateria.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
+                    </ul>
                     </li>
                 </ul>
-                <ul class="acorh">
-                    <li><a class="activ"  href="#"><i class="fas fa-address-book"></i>FORMACION</a>
+                <ul class="acor">
+                    <li><a   href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                       <ul class="sub">
                         <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                        <li><a href="eliminForma.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                        <li><a href="eliminForma.php" ><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="../modificar/edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
                         <li><a href="../crear/trasversal.php" ><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
@@ -105,24 +108,24 @@ $dele = mysqli_query($bdmysqli,$consul);
         </div>
 
         <div class="form">
-           <p>ELIMINAR FORMACION</p>
+           <p>ELIMINAR MATERIAS</p>
 
-            <table class="tabl">
+            <table class="tablaa">
                 <thead>
                     <tr>
-                        <th>Nombre de la formacion</th>
+                        <th>Nombre de la Materia</th>
                         <th>Eliminar</th>
 
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($dele as $eli){
+                    foreach ($del as $elimin){
                     ?> <tr>
-                    <td><?=$eli["nom_form"]?></td>
+                    <td><?=$elimin["nom_materia"]?></td>
                     <td>
-                        <form action="../../../../php/eliminaform.php" method="post">
-                            <input type="hidden" name="form_eli" value="<?=$eli['id_form']?>">
+                        <form action="../../../../php/eliminamate.php" method="post">
+                            <input type="hidden" name="eli_mater" value="<?=$elimin['id_materia']?>">
                             <button type="submit" ><i class="fas fa-trash"></i></button>
                         </form>
                     </td>

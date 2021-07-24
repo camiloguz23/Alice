@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>INGRESO</title>
@@ -24,7 +24,7 @@
 
                 <ul>
                     <li class="botones">
-                        <p class="fecha" href="#">
+                        <p   class="fecha" href="#">
                             <script>
                             var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
                             var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
@@ -32,34 +32,58 @@
                             document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
                             </script>
                         </p>
+                        <p style="text-align: right;" class="version"> VERSION 1.0</p>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div class="contactenos">
-            <form method="POST" action="../correo/correo.php" autocomplete="off">
-                <h3>DEJANOS TUS DUDAS:</h3>
-                <div class="uno">
-                    <input type="text" name="fullname" placeholder="NOMBRE">
-                </div>
-                <div class="dos">
-                    <input class="correo" type="email" name="email" placeholder="DIRECCION DE CORREO" autocomplete="off"> 
-                    <input type="tel" name="phone" placeholder="TELEFONO"  autocomplete="off">
-                </div>
-                <div class="tres">
-                    <textarea class="mensaje" name="message" rows="3" placeholder="MENSAJE"></textarea>
-                </div>
-                <input type="submit" value="ENVIAR" class="button">
-            </form>
-        </div> 
+        <div class="login-box">
+            <div class="inicioSesion" id="inicioSesion">
+                <h1>RECUPERAR CLAVE</h1>
+    
+                <form action="../php/recuperarclave.php" method="POST" autocomplete="off">
+                    <!--USERNAME INPUT-->
+                    <label for="username">DOCUMENTO</label>
+
+                    <input  name= "docu" type="text"  onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="9" maxlength="10" placeholder="" required pattern="[0-9]{9,10}"
+                    title="SOLO números. Tamaño mínimo: 9. Tamaño máximo: 12">
+                    <script>
+                        function soloNumeros(e){
+                key=e.keyCode || e.which;
+    
+                teclado=String.fromCharCode(key);
+    
+                numeros="123456789101112";
+    
+                especiales="8-37-38-46";
+    
+                teclado_especial=false;
+    
+                for(var i in especiales){
+                    if(key==especiales[i]){
+                        teclado_especial=true;
+                    }
+                }
+                if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+                        return false;
+                }
+            }
+            </script>
+                    <!--PASSWORD INPUT-->
+                    <label for="email">CORREO</label>
+                    <input name= "email" type="email" placeholder="" required>
+
+                    <input type="submit" name="iniciar" id="iniciar" value="Validar">
+                </form>
+            </div>             
+        </div>
 
 
         <div class="logo">
             <img src="../assets/img/ashleylogo.png" alt="">
             <p>CALENDARIO SISTEMATICO PARA ASIGNACION DE INSTRUCTORES A LOS AMBIENTES DE FORMACION</p>
         </div>
-
     </header> 
 
     <div class="pagina">
@@ -67,8 +91,8 @@
             <img  height="70px" width="70px" src="../assets/img/logopie.png" alt="">
             <div class="info">
                 <p>CENTRO DE INDUSTRIA Y CONTRUCCION</p>
-                <p>SENA</p>
-                <p>IBAGUE-TOLIMA</p>
+                <p>SENA REGIONAL-TOLIMA</p>
+                <p>2021</p>
             </div>
             <div class="column2">
                 <i class="fab fa-facebook"></i>

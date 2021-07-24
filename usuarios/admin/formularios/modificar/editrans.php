@@ -1,7 +1,7 @@
 <?php
 include ('conexion.php');
-$usuarios = "SELECT id_asig,usuario.nombres,usuario.apellidos,asignacion_t.no_ficha, detalform.id_amb,materias.nom_materia, dias.Nom_dia,horario_inicio,horario_fin,asignacion_t.fecha_inico,asignacion_t.fecha_final FROM asignacion_t, usuario, materias, dias, detalform WHERE asignacion_t.docu=usuario.docu and asignacion_t.id_materia=materias.id_materia and asignacion_t.Id_dia=dias.Id_dia and asignacion_t.no_ficha=detalform.no_ficha and asignacion_t.fecha_final >= CURDATE()";
-$resultado = mysqli_query($conexion, $usuarios)
+$transconsul = "SELECT ficha_trans,usuario.nombres,usuario.apellidos,asignacion_t.no_ficha, detalform.id_amb,materias.nom_materia, dias.Nom_dia,horario_inicio,horario_fin,asignacion_t.fecha_inico,asignacion_t.fecha_final FROM asignacion_t, usuario, materias, dias, detalform WHERE asignacion_t.docu=usuario.docu and asignacion_t.id_materia=materias.id_materia and asignacion_t.Id_dia=dias.Id_dia and asignacion_t.no_ficha=detalform.no_ficha and asignacion_t.fecha_final >= CURDATE()";
+$resu = mysqli_query($conexion, $transconsul)
 ?>
 <?php
 session_start();
@@ -15,7 +15,7 @@ if ($validar == "" || $validar == null){
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>ADIMINSTRADOR</title>
+        <title>ADMINSTRADOR</title>
         <link rel="stylesheet" href="modificar.css">
         <link rel="shortcut icon" href="../../../../img/ashleylogo.png" type="image/x-icon">
     </head>
@@ -89,6 +89,7 @@ if ($validar == "" || $validar == null){
                         <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../crear/CrearFicha.php" ><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="../modificar/edittitu.php" ><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
+                        <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
                         <li><a href="../crear/trasversal.php" class="active"><i class="fas fa-plus-square"></i>.Editor transversal </a></li>
                         <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 
@@ -104,57 +105,56 @@ if ($validar == "" || $validar == null){
         </div>
 
         <div class="form">
+
             <form class="formula" action="" method="POST">
                 <p>MODIFICAR TRANSVERSAL</p>
-    
+                <div class="table">
+                    <table class="tabla">
+                    <thead>
+                    <tr>
+                        <th>Ficha transversal</th>
+                        <th>Nombre</th>
+                        <th>N de ficha</th>
+                        <th>Ambiente</th>
+                        <th>Transversal</th>
+                        <th>Dia</th>
+                        <th>Hora de inicio</th>
+                        <th>Hora de terminacion</th>
+                        <th>Fecha de inicio</th>
+                        <th>Fecha de terminacion</th>
 
-                <table class="tabla">
-                <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>N de ficha</th>
-                    <th>Ambiente</th>
-                    <th>Transversal</th>
-                    <th>Dia</th>
-                    <th>Hora de inicio</th>
-                    <th>Hora de terminacion</th>
-                    <th>Fecha de inicio</th>
-                    <th>Fecha de terminacion</th>
+                        <th>OPERACION</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($resu as $form_trasn) {?>
+                    <tr>
+                        <td><?=$form_trasn['ficha_trans']?></td>
+                        <td><?=$form_trasn['nombres']?> <?=$form_trasn['apellidos']?></td>
+                        <td><?=$form_trasn['no_ficha']?></td>
+                        <td><?=$form_trasn['id_amb']?></td>
+                        <td><?=$form_trasn['nom_materia']?></td>
+                        <td><?=$form_trasn['Nom_dia']?></td>
+                        <td><?=$form_trasn['horario_inicio']?></td>
+                        <td><?=$form_trasn['horario_fin']?></td>
+                        <td><?=$form_trasn['fecha_inico']?></td>
+                        <td><?=$form_trasn['fecha_final']?></td>
 
-                    <th>OPERACION</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                foreach ($resultado as $form_trasn) {?>
-                <tr>
-                    <td><?=$form_trasn['nombres']?></td>
-                    <td><?=$form_trasn['apellidos']?></td>
-                    <td><?=$form_trasn['no_ficha']?></td>
-                    <td><?=$form_trasn['id_amb']?></td>
-                    <td><?=$form_trasn['nom_materia']?></td>
-                    <td><?=$form_trasn['Nom_dia']?></td>
-                    <td><?=$form_trasn['horario_inicio']?></td>
-                    <td><?=$form_trasn['horario_fin']?></td>
-                    <td><?=$form_trasn['fecha_inico']?></td>
-                    <td><?=$form_trasn['fecha_final']?></td>
+                    
+                        <td>
+                            <div class="table-item">
+                                <a href="transedi.php?id=<?=$form_trasn['ficha_trans']?>"><i class="fas fa-edit"></i></a>
+                                <a href="../../../../php/eliminatrans.php?ide=<?=$form_trasn['ficha_trans']?>"><i class="fas fa-trash"></i></a>
 
-                
-                    <td>
-                        <div class="table-item">
-                            <a href="transedi.php?id=<?=$form_trasn['id_asig']?>"><i class="fas fa-edit"></i></a>
-                            <form  action="../../../../php/bdeliminar.php" method="POST">
-                                <input type="hidden" value="<?=$form_trasn['id_asig']?>" name="docueli">
-                                <button type="submit"><i class="fas fa-trash"></i></button>
-                            </form> 
-                        </div>  
-                    </td>
-                </tr>
-                </tbody>
-                   
-                                            
-                <?php } mysqli_free_result($resultado) ?> 
+                            </div>  
+                        </td>
+                    </tr>
+                    </tbody>
+                    <?php } mysqli_free_result($resu) ?> 
+
+                </div>
+  
 
             </form>
         </div>

@@ -53,7 +53,7 @@ if ($insertar){
 
     
 }else {
-    echo "error".$ruta; 
+    echo "error consulta"; 
 }
 
 

@@ -1,7 +1,7 @@
 // js file
 const formulario = document.getElementById("formulario")
-const enviar = document.getElementById("enviar")
-const span = document.getElementById("span")
+const enviar = document.getElementById("envia")
+const span = document.getElementById("san")
 
 
 validar()
@@ -13,7 +13,7 @@ enviar.addEventListener("click", (e) => {
 
     const dato = new FormData(formulario)
 
-    fetch("../../../../php/crear_Forms.php", {
+    fetch("../../../../php/crearmateria.php", {
         method:"POST",
         body:dato
     }).then(res => res.text()).then(info => {
@@ -30,10 +30,11 @@ function validar() {
 
         for (i=0;i<dat.length;i++) {
             let dato = dat[i]
-            if (dato == 1 || dato == 2 || dato == 3 || dato == 4 || dato == 5 || dato == 6 || dato == 7 || dato == 8 || dato == 9 || dato == 0 && dato != " ") {
+            if (dato == 1 || dato == 2 || dato == 3 || dato == 4 || dato == 5 || dato == 6 || dato == 7 || dato == 8 || dato == 9 || dato == 0 && dato != " "){
 
                 alert("No es permitido digitos")
-                window.location = "crearFormacion.php"
+                window.location = "crearmateria.php"
+
             }
         }
 

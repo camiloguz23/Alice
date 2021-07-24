@@ -17,7 +17,7 @@ $titulado = mysqli_query($conexion,$titul);
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>ADIMINSTRADOR</title>
+        <title>ADMINSTRADOR</title>
         <link rel="stylesheet" href="modificar.css">
         <link rel="shortcut icon" href="../../../../img/ashleylogo.png" type="image/x-icon">
     </head>
@@ -91,7 +91,8 @@ $titulado = mysqli_query($conexion,$titul);
                         <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../crear/CrearFicha.php" ><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                         <li><a href="../modificar/edittitu.php" class="active"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
-                        <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
+                        <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>                        
+                        <li><a href="../modificar/editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
                         <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 
                       </ul>
@@ -109,53 +110,49 @@ $titulado = mysqli_query($conexion,$titul);
             <form class="formula" action="" method="POST">
                 <p>MODIFICAR TITULADA</p>
     
+                <div class="table">
+                    <table class="tabla">
+                    <thead>
+                    <tr>
+                        <th>Numero ficha</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Ambiente</th>
+                        <th>Formacion</th>
+                        <th>Horario</th>
+                        <th>Dias</th>
+                        <th>Fecha de inicio</th>
+                        <th>Fecha de terminacion</th>
 
-                <table class="tabla">
-                <thead>
-                <tr>
-                    <th>Numero ficha</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Ambiente</th>
-                    <th>Formacion</th>
-                    <th>Horario</th>
-                    <th>Dias</th>
-                    <th>Fecha de inicio</th>
-                    <th>Fecha de terminacion</th>
+                        <th>OPERACION</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($titulado as $titulada) {
+                        ?>
+                            <tr>
+                                <td><?php echo $titulada['no_ficha']?></td>
+                                <td><?php echo $titulada['nombres']?></td>
+                                <td><?php echo $titulada['apellidos']?></td>
+                                <td><?php echo $titulada['id_amb']?></td>
+                                <td><?php echo $titulada['nom_tip_form']?></td>
+                                <td><?php echo $titulada['Nom_horario']?></td>
+                                <td><?php echo $titulada['Nom_dia']?></td>
+                                <td><?php echo $titulada['fecha_inico']?></td>
+                                <td><?php echo $titulada['fecha_final']?></td>
 
-                    <th>OPERACION</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                foreach ($titulado as $titulada) {
-                    ?>
-                        <tr>
-                            <td><?=$titulada['no_ficha']?></td>
-                            <td><?=$titulada['nombres']?></td>
-                            <td><?=$titulada['apellidos']?></td>
-                            <td><?=$titulada['id_amb']?></td>
-                            <td><?=$titulada['nom_tip_form']?></td>
-                            <td><?=$titulada['Nom_horario']?></td>
-                            <td><?=$titulada['Nom_dia']?></td>
-                            <td><?=$titulada['fecha_inico']?></td>
-                            <td><?=$titulada['fecha_final']?></td>
-
-                        
-                            <td>
-                                <div class="table-item">
-                                    <a href="tituedi.php?id=<?=$titulada['no_ficha']?>"><i class="fas fa-edit"></i></a>
-                                    <form  action="../../../../php/bdeliminar.php" method="POST">
-                                        <input type="hidden" value="<?=$titulada['no_ficha']?>" name="docueli">
-                                        <button type="submit"><i class="fas fa-trash"></i></button>
-                                    </form> 
-                                </div>  
-                            </td>
-                        </tr>
-                        </tbody>
-                    
-                                            
-                <?php } ?> 
+                            
+                                <td>
+                                    <div class="table-item">
+                                        <a href="tituedi.php?id=<?php echo $titulada['no_ficha']?>"><i class="fas fa-edit"></i></a>
+                                        <a href="../../../php/eliminatitu.php?idd=<?php echo $titulada['no_ficha']?>"><i class="fas fa-trash"></i></a>
+                                    </div>  
+                                </td>
+                            </tr>
+                            </tbody>
+                            <?php } mysqli_free_result($titulado) ?>  
+                </div>
 
             </form>
         </div>

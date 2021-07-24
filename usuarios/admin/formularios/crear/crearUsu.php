@@ -99,6 +99,9 @@ if ($validar == "" || $validar == null){
                         <ul class="sub">
                           <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="crearmateria.php"  class="active"><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                            <li><a href="../eliminar/eliminaMateria.php"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
                         </ul>
                     </li>
                     <li><a href="#"><i class="fas fa-address-book"></i>FORMACION</a>
@@ -173,8 +176,30 @@ if ($validar == "" || $validar == null){
             <div class="contenedor">
                 <div>
                     <label for="" class="texto">Documento</label><br>
-                    <input type="number" name="documento" required  autocomplete="off">
-    
+                    <input type="text" name="documento" onkeypress="return soloNumeros(event)" onpaste="return false"   minlength="9" maxlength="10" required  autocomplete="of"  >
+                    <script>
+                    function soloNumeros(e){
+            key=e.keyCode || e.which;
+
+            teclado=String.fromCharCode(key);
+
+            numeros="12345678910";
+
+            especiales="8-37-38-46";
+
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;
+                }
+            }
+            if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+                    return false;
+            }
+        }
+        </script>
+
                 </div>
                 <div>
                     <label  class="texto">Nombre</label><br>
@@ -236,14 +261,41 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Edad</label><br>
-                    <input type="number" name="edad" min="17" max="100" required  autocomplete="off">
+                    <input type="text" name="edad" minlength="02" maxlength="02" onkeypress="return soloNumero (event)" onpaste="return false" required  autocomplete="off">
+                    <script>
+                    function soloNumero(e){
+            key=e.keyCode || e.which;
+
+            teclado=String.fromCharCode(key);
+
+            numero="012345678910";
+
+            especiales="8-37-38-46";
+
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;
+                }
+            }
+            if(numero.indexOf(teclado)==-1 && !teclado_especial){
+                    return false;
+            }
+        }
+        </script>
+
+
     
+
                 </div>
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="text" name="celular" minlength="10" maxlength="10" required  autocomplete="off">
-    
+                    <input type="text" name="celular" minlength="10" maxlength="10" required    autocomplete="off">
+
+                   
+
                 </div>
     
                 <div>

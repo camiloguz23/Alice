@@ -1,82 +1,49 @@
 const email = document.getElementById("email");
 const usuario = document.getElementById("usuario")
 const titulada = document.getElementById("titulada")
-/* 
-email.addEventListener("input", function (event) {
-  if (email.validity.typeMismatch) {
-    email.setCustomValidity("¡Se esperaba una dirección de correo electrónico !");
-  } else {
-    email.setCustomValidity("");
-  }
-});
+const fijo = document.getElementById("fijo")
+const span = document.getElementById("span")
+const enviar = document.getElementById("btn_enviar")
 
-const email = document.getElementById('email');
-const emailError = document.querySelector('#email + span.error');
-
-email.addEventListener('input', function (event) {
-  // Cada vez que el usuario escribe algo, verificamos si
-  // los campos del formulario son válidos.
-
-  if (email.validity.valid) {
-    // En caso de que haya un mensaje de error visible, si el campo
-    // es válido, eliminamos el mensaje de error.
-    emailError.innerHTML = ''; // Restablece el contenido del mensaje
-    emailError.className = 'error'; // Restablece el estado visual del mensaje
-  } else {
-    // Si todavía hay un error, muestra el error exacto
-    showError();
-  }
-});
-
-form.addEventListener('submit', function (event) {
-  // si el campo de correo electrónico es válido, dejamos que el formulario se envíe
-
-  if(!email.validity.valid) {
-    // Si no es así, mostramos un mensaje de error apropiado
-    showError();
-    // Luego evitamos que se envíe el formulario cancelando el evento
-    event.preventDefault();
-  }
-});
-
-function showError() {
-  if(email.validity.valueMissing) {
-    // Si el campo está vacío
-    // muestra el mensaje de error siguiente.
-    emailError.textContent = 'Debe introducir una dirección de correo electrónico.';
-  } else if(email.validity.typeMismatch) {
-    // Si el campo no contiene una dirección de correo electrónico
-    // muestra el mensaje de error siguiente.
-    emailError.textContent = 'El valor introducido debe ser una dirección de correo electrónico.';
-  } else if(email.validity.tooShort) {
-    // Si los datos son demasiado cortos
-    // muestra el mensaje de error siguiente.
-    emailError.textContent = 'El correo electrónico debe tener al menos ${ email.minLength } caracteres; ha introducido ${ email.value.length }.';
-  }
-
-  // Establece el estilo apropiado
-  emailError.className = 'error activo';
-}
-
-const celuko = document.getElementById("celuko");
-
-celuko.addEventListener("input", function (event) {
-    if (celuko.validity.typeMismatch) {
-      celuko.setCustomValidity("¡Se esperaba un número de teléfono!");
-    } else {
-      celuko.setCustomValidity("");
-    }
-  }); */
+enviar.disabled = true
 
 
-// MOSTRAR CAMPO O EL SELECT DEL FORMULARIO CREAR  USUARIO 
+//^ MOSTRAR CAMPO O EL SELECT DEL FORMULARIO CREAR  USUARIO 
 
 usuario.addEventListener("blur", () => {
   let dato = usuario.value 
   console.log(dato)
-  if (dato == 3) {
-    titulada.style.display = "block"
-  }else {
-    titulada.style.display = "none"
+  if (dato == 4) {
+    titulada.innerHTML = `  <label  class="">Materia</label><br>
+    <select name="materia" required >
+        <option value="">Seleccione</option>
+        <?php
+        foreach ($tit as $titula){
+            ?> <option value="<?=$titula['id_materia']?>"><?=$titula['nom_materia']?></option>
+        <?php
+        }
+        ?>
+    </select> `
+  }else{
+    titulada.innerHTML = ``
   }
+})
+
+fijo.addEventListener("keyup", () => {
+  const cantidad =fijo.value
+  const numero = cantidad.length
+  if (numero >= 7 && numero <= 8){
+    span.textContent= "cantidad valida"
+    enviar.disabled = false
+    enviar.classList.remove("enviar")
+  }else if (numero > 8 ){
+    span.textContent= "cantidad cantidad superior a la indicada 8 digitos"
+    enviar.disabled = true
+    enviar.classList.add("enviar")
+  }else {
+    span.textContent= "cantidad inferior de 7 o 8 digitos"
+    enviar.disabled = true
+    enviar.classList.add("enviar")
+  }
+  
 })

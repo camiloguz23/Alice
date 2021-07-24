@@ -38,20 +38,10 @@ if($fila['fecha_final'] >= $fecha AND $fila['Id_horario'] = $hora AND $fila['id_
 
         if($inseta){
 
-            
-
-            $estado= "UPDATE ambiente SET id_estado = 1 WHERE id_amb = '$ambi'";
-            $actualiza= mysqli_query($bdmysqli,$estado);
         
-            if ($actualiza) {
-                #header("location : ../usuarios/admin/formularios/crear/CrearFicha.php");
-                echo "<script>alert('Formacion asignada al instructor')</script>";
-                echo "<script>window.location='../usuarios/admin/formularios/crear/CrearFicha.php'</script>";
-
-
-                        
-            }
-            
+            #header("location : ../usuarios/admin/formularios/crear/CrearFicha.php");
+            echo "<script>alert('Formacion asignada al instructor')</script>";
+            echo "<script>window.location='../usuarios/admin/formularios/crear/CrearFicha.php'</script>";
 
         }
         else {

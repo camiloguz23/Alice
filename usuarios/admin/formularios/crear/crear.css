@@ -402,6 +402,13 @@ input:invalid {
     padding: 0.3em;
   }
 
-  #titulada {
-      display: none;
+  #span{
+      font-size: 12px;
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+  }
+
+  .enviar {
+      background-color: hsla(0,100%, 50%,0.5) !important; 
   }

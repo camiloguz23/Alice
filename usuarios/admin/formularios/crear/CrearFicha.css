@@ -417,12 +417,14 @@ input:invalid {
     display: flex;
     justify-content: center;
 }
- .boton button {
+.boton button {
      padding: 5px;
      width: 60%;
      border-radius: 10px;
+     background-color:#fc7323;
+     color:  rgb(255, 255, 255);
      cursor: pointer;
- }
+}
 
  .trans{
     width:69%; 

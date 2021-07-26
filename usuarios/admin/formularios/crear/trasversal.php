@@ -10,8 +10,6 @@ if ($validar == "" || $validar == null){
 <?php
 require_once ("../../../../php/conexion.php");
 
-$transversal = $_POST['materia'];
-
 //$usuario ="SELECT * from usuario where id_tip_usu = 3";
 $usuario = "SELECT usuario.nombres,detalle_materia.documento,materias.nom_materia FROM detalle_materia,materias,usuario WHERE detalle_materia.documento=usuario.docu AND detalle_materia.id_materia=materias.id_materia ";
 $consultausu = mysqli_query($bdmysqli,$usuario);
@@ -63,11 +61,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
 
                     <ul class="lists">
                         <i class="fas fa-search"></i>
-                        <li><a href="" >DIA</a></li><br>    
-                        <li><a href="#">SEMANA</a></li> <br>
-                        <li><a href="#">MES</a></li> <br>
-                        <li><a href="#">AÑO</a></li><br>
-                        <li><a href="#">AGENDA</a></li><br>
+                        <li><a href="../../../../informe/informe.php">Informe</a></li><br>
                     </ul>
 
                 </div>
@@ -107,6 +101,9 @@ $amb= mysqli_query($bdmysqli,$ambiente);
                         <ul class="sub">
                           <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="crearmateria.php" ><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                            <li><a href="../eliminar/eliminaMateria.php"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
                         </ul>
                     </li>
                 </ul>
@@ -130,13 +127,13 @@ $amb= mysqli_query($bdmysqli,$ambiente);
             
         </div>
         <div class="trans">
-            <form method="POST" action="" autocomplete="off" id="transversal">
+            <form method="POST" action="../../../../php/CrearTransver.php" id="transversal">
             <p>FORMACION TRANSVERSAL</p>
 
             <div class="conten">
                 <div>
                     <label>Ficha Transversal</label><br>
-                    <input type="text" name="trans" id="trans" onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="05" maxlength="06" required  autocomplete="off">
+                    <input type="text" name="trans" id="trans" onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="05" maxlength="06" required autocomplete="off">
                 
                 <script>
                     function soloNumeros(e){
@@ -163,7 +160,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
                 </div>
                 <div>
                     <label>Transversal</label><br>
-                    <select name="materia" id="materia">
+                    <select name="materia" id="materia" required>
                     <option value="">Seleccione una opcion</option>
                     <?php
                     foreach ($consultamateria as $mat ) {
@@ -178,7 +175,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
             <div class="conte" id="select2lista">
                 <div>
                     <label>Instructor</label><br>
-                    <select name="docu" id="docu">
+                    <select name="docu" id="docu" required>
                     <option value="">Seleccione una opcion</option>
                     <?php
                     foreach ($consultausu as $usu){
@@ -190,7 +187,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
                 </div>
                 <div>
                     <label>Formacion</label><br>
-                    <select name="ficha" id="ficha">
+                    <select name="ficha" id="ficha" required>
                     <option value="">Seleccione una opcion</option>
                     <?php
                     foreach ($consultaform as $ficha){
@@ -206,7 +203,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
             <div class="cont">
                 <div>
                     <label>Ambiente</label><br>
-                    <select name="ambi" id="ambi">
+                    <select name="ambi" id="ambi" required>
                     <option value="">Seleccione una opcion</option>
                     <?php
                     foreach ($amb as $ambie) {
@@ -219,7 +216,7 @@ $amb= mysqli_query($bdmysqli,$ambiente);
             
                 <div>
                     <label>Dia</label><br>
-                    <select name="dias" id="dias">
+                    <select name="dias" id="dias" required>
                     <option value="">Seleccione una opcion</option>
                     <?php
                     foreach ($consultadia as $day) {
@@ -235,11 +232,11 @@ $amb= mysqli_query($bdmysqli,$ambiente);
                 <div class="hora_fecha">
                     <div>
                         <label>Hora de inicio</label><br>
-                        <input type="time" name="hora_inicio" id="horai">
+                        <input type="time" name="hora_inicio" id="horai" required>
                     </div>
                     <div>
                         <label>Hora de terminacion</label><br>
-                        <input type="time" name="hora_fin" id="horaf">
+                        <input type="time" name="hora_fin" id="horaf" required>
 
                     </div>
                     
@@ -247,15 +244,15 @@ $amb= mysqli_query($bdmysqli,$ambiente);
                 <div class="hora_fecha">
                     <div>
                         <label>Fecha de inicio</label><br>
-                        <input type="date" name="fecha_inicio" id="fechai">
+                        <input type="date" name="fecha_inicio" id="fechai" required>
                     </div>
                     <div> 
                         <label>Fecha de terminacion</label><br>
-                        <input type="date" name="fecha_fin" id="fechaf">
+                        <input type="date" name="fecha_fin" id="fechaf" required>
                     </div>
                 </div>
-                <div class="boton">
-                    <button type="bottom" id="btn_trans">Enviar</button>
+                <div>
+                    <input type="submit" class="enviar" name="enviar" value="Enviar">
                 </div>
 
                 
@@ -266,7 +263,6 @@ $amb= mysqli_query($bdmysqli,$ambiente);
        
         
         <script src="https://kit.fontawesome.com/7b875e4198.js" crossorigin="anonymous"></script>
-        <script src="../../../../javascript/transversal.js"></script>
     </body>
 </html>
 

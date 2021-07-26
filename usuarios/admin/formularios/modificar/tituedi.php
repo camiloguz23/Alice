@@ -47,11 +47,7 @@ if ($validar == "" || $validar == null){
 
                     <ul class="lists">
                         <i class="fas fa-search"></i>
-                        <li><a href="" >DIA</a></li><br>    
-                        <li><a href="#">SEMANA</a></li> <br>
-                        <li><a href="#">MES</a></li> <br>
-                        <li><a href="#">AÑO</a></li><br>
-                        <li><a href="#">AGENDA</a></li><br>
+                        <li><a href="../../../../informe/informe.php">Informe</a></li><br>
                     </ul>
 
                 </div>
@@ -77,7 +73,7 @@ if ($validar == "" || $validar == null){
 
                     <li ><a href="#"><i class="fas fa-users-cog"></i>USUARIOS</a>
                       <ul class="sub">
-                        <li><a href="crearUsu.php" ><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
+                        <li><a href="../crear/crearUsu.php" ><i class="fas fa-plus-square"></i>.Crear Nuevo</a></li>
                         <li><a href="../modificar/edicion.php"><i class="fas fa-pen-square"></i>.Editar</a></li>
 
                       </ul>
@@ -87,20 +83,24 @@ if ($validar == "" || $validar == null){
                 <ul class="acor">                    
                     <li><a href="#"><i class="fas fa-building"></i>AMBIENTES</a>
                         <ul class="sub">
-                          <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
+                          <li><a href="../crear/crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="../crear/crearmateria.php" ><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                          <li><a href="../eliminar/eliminarMateria.php"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
                         </ul>
                     </li>
                 </ul>
                 <ul class="acorh">
                     <li><a class="activ"  href="#"><i class="fas fa-address-book"></i>FORMACION</a>
                       <ul class="sub">
-                        <li><a href="crearFormacion.php" ><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
-                        <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
-                        <li><a href="../crear/CrearFicha.php" ><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
-                        <li><a href="../modificar/edittitu.php" class="active"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
-                        <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion transversal </a></li>
-                        <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
+                      <li><a href="../crear/crearFormacion.php"><i class="fas fa-plus-square"></i>.Añadir formacion</a></li>
+                          <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar </a></li>
+                          <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
+                          <li><a href="edittitu.php"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
+                          <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
+                          <li><a href="editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
+                          <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 
                       </ul>
                     </li>

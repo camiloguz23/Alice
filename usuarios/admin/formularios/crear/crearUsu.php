@@ -55,11 +55,7 @@ if ($validar == "" || $validar == null){
 
                     <ul class="lists">
                         <i class="fas fa-search"></i>
-                        <li><a href="" >DIA</a></li><br>    
-                        <li><a href="#">SEMANA</a></li> <br>
-                        <li><a href="#">MES</a></li> <br>
-                        <li><a href="#">AÑO</a></li><br>
-                        <li><a href="#">AGENDA</a></li><br>
+                        <li><a href="../../../../informe/informe.php">Informe</a></li><br>
                     </ul>
 
                 </div>
@@ -290,7 +286,7 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Fijo</label><br>
-                    <input type="number" name="fijo" minlength="8" maxlength="10" required  autocomplete="off" id="fijo">
+                    <input type="number" name="fijo" max="99999999" required  autocomplete="off" id="fijo">
                     <span id="span"></span>
     
                 </div> 

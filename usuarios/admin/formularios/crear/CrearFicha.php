@@ -66,11 +66,7 @@ $instru = mysqli_query($bdmysqli,$instructor);
 
                     <ul class="lists">
                         <i class="fas fa-search"></i>
-                        <li><a href="" >DIA</a></li><br>    
-                        <li><a href="#">SEMANA</a></li> <br>
-                        <li><a href="#">MES</a></li> <br>
-                        <li><a href="#">AÑO</a></li><br>
-                        <li><a href="#">AGENDA</a></li><br>
+                        <li><a href="../../../../informe/informe.php">Informe</a></li><br>
                     </ul>
 
                 </div>
@@ -110,6 +106,9 @@ $instru = mysqli_query($bdmysqli,$instructor);
                         <ul class="sub">
                           <li><a href="crearAmbien.php"><i class="fas fa-plus-square"></i>.Añadir</a></li>
                           <li><a href="../eliminar/eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
+                          <li><a href="crearmateria.php" ><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
+                          <li><a href="../eliminar/eliminaMateria.php"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+
                         </ul>
                     </li>
                 </ul>
@@ -139,7 +138,29 @@ $instru = mysqli_query($bdmysqli,$instructor);
                 <div class="contenedor">
                     <div>
                         <label for="" class="texto"> Nº Ficha</label><br>
-                        <input name="ficha" type="number" minlength="5" maxlength="6" required autocomplete="off" >
+                        <input class="miku" name="ficha" onkeypress="return soloNumeros(event)" onpaste="return false" type="text" minlength="5" maxlength="7" required autocomplete="off" >
+                        <script>
+                    function soloNumeros(e){
+            key=e.keyCode || e.which;
+
+            teclado=String.fromCharCode(key);
+
+            numeros="12345678910";
+
+            especiales="8-37-38-46";
+
+            teclado_especial=false;
+
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;
+                }
+            }
+            if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+                    return false;
+            }
+        }
+        </script>
                     </div> 
                 </div>
 

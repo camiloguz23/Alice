@@ -86,7 +86,11 @@ header .buscador {
     font-size: 1.2em;
 }
 
-#contenedorprincipal{
+#tecnicos{
+    display: none;
+}
+
+#transversal{
     display: none;
 }
 

@@ -23,10 +23,15 @@
             <li class="documento">Por documento</li>
         </ul>
         <div class="buscador">
-            <input type="number" name="" id="" placeholder="Buscador por el documento">
+        <input  type="text" name="termino" id="termino" placeholder="BUSCAR" aria-label="Search">
         </div>
         <a href="../usuarios/admin/admin.php"><img src="../img/salida.png" alt="salida" class="salida"></a>
     </header>
-    <div id="contenido"></div>
+    <div id="contenido">
+        
+    <div class="todo" id="tabla_resultados">
+				
+                </div>
+    </div>
 </body>
 </html>

@@ -113,6 +113,11 @@ header .buscador {
         right: 10px;
     }
 }
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 div.contenido{
     background-color: aqua;
 }
@@ -120,9 +125,10 @@ div.contenido{
 div.informe{
   margin-left: 100px;
   margin-top: 60px;
-  background-color: #238276;
+  background-color: var(--naranja);
 width: 800px;
 border-radius: 5%;
+border: solid black 1px;
 }
 div.informe p {
   font-size: 20px;

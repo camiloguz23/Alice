@@ -63,3 +63,19 @@ header .buscador {
         padding: 1px 15px;
     }
 }
+div.contenido{
+    background-color: aqua;
+}
+
+div.informe{
+  margin-left: 100px;
+  margin-top: 60px;
+  background-color: #238276;
+width: 800px;
+border-radius: 5%;
+}
+div.informe p {
+  font-size: 20px;
+  padding: 7px 40px  ;
+
+}

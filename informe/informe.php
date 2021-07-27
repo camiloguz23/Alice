@@ -27,11 +27,24 @@
         </div>
         <a href="../usuarios/admin/admin.php"><img src="../img/salida.png" alt="salida" class="salida"></a>
     </header>
-    <div id="contenido">
-        
-    <div class="todo" id="tabla_resultados">
-				
-                </div>
-    </div>
+    <body>
+        <div id="contenido">
+            
+        </div>
+        <div id="tecnicos">
+                    <?php $resultado = mysqli_query($bdmysqli,$titul);
+                    while($row=mysqli_fetch_assoc($resultado)) {?>
+                        <div class="main-container"> 
+                            <p class="table__item"> <b>FICHA:</b><?php echo $row["no_ficha"];?></p>
+                            <p class="table__item"> <b>DOCUMENTO:</b><?php echo $row["docu"];?></p>
+                            <p class="table__item"> <b>NOMBRE:</b><?php echo $row["nombres"];?></p>
+                            <p class="table__item"> <b>APELLIDO:</b><?php echo $row["apellidos"];?></p>
+                            <p class="table__item"> <b>EDAD:</b><?php echo $row["edad"];?></p>
+                            <p class="table__item"> <b>CELULAR:</b><?php echo $row["celular"];?></p>
+                            <p class="table__item"> <b>FIJO:</b><?php echo $row["fijo"];?></p>
+                            <p class="table__item"> <b>DIRECCION:</b><?php echo $row["direccion"];?></p>
+                        </div>
+                            <?php } mysqli_free_result($resultado); ?>
+            </div>
 </body>
 </html>

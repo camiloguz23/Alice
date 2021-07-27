@@ -33,7 +33,7 @@ require_once("conexion.php");
         copy($ruta,$destino);
         $actualizar = "UPDATE usuario SET foto='$foto',celular='$celular',direccion='$direccion', email='$email',contra_seguridad = '$clave' WHERE docu='$id'";
 
-        $resultado = mysqli_query($conexion, $actualizar);
+        $resultado = mysqli_query($bdmysqli, $actualizar);
 
         if ($resultado) {
             header("location: ../usuarios/instructores/perfilIns.php");

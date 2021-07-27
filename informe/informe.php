@@ -1,3 +1,13 @@
+<?php
+include ('../php/conexion.php');
+
+?>
+<?php
+$titul = "SELECT no_ficha,detalform.docu,nombres,apellidos,edad,celular,fijo,direccion from detalform,usuario where detalform.docu=usuario.docu AND id_tip_usu=3";
+$titulado = mysqli_query($bdmysqli,$titul);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +27,19 @@
 	 
 	 <img src="../img/ashleylogo.png" alt="" class="logo">
         <ul>
-            <li href="informetecnico.php" >Instructores Tecnicos</li>
-            <li href="informetecnico.php">Instructores Transversales</li>
-            <li href="informetecnico.php">informe general</li>
+        <li type="button" onclick="mostrarTecnicos();">Instructores Tecnicos</li>
+            <li>Instructores Transversales</li>
+            <li>Informe general</li>
             <li class="documento">Por documento</li>
         </ul>
+
+        <script type="text/javascript">
+		function mostrarTecnicos() {
+			document.getElementById('tecnicos').style.display = 'block';
+            document.getElementById('transversal').style.display = 'none';
+		}
+
+	    </script>
         <div class="buscador">
         <input  type="text" name="termino" id="termino" placeholder="BUSCAR" aria-label="Search">
         </div>
@@ -29,9 +47,7 @@
     </header>
     <body>
         <div id="contenido">
-            
-        </div>
-        <div id="tecnicos">
+            <div id="tecnicos">
                     <?php $resultado = mysqli_query($bdmysqli,$titul);
                     while($row=mysqli_fetch_assoc($resultado)) {?>
                         <div class="main-container"> 
@@ -46,5 +62,6 @@
                         </div>
                             <?php } mysqli_free_result($resultado); ?>
             </div>
+        </div>
 </body>
 </html>

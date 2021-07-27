@@ -3,11 +3,8 @@ include ('../php/conexion.php');
 
 ?>
 <?php
-$titul = "SELECT * FROM usuario WHERE id_tip_usu = 3";
+$titul = "SELECT no_ficha,detalform.docu,nombres,apellidos,edad,celular,fijo,direccion from detalform,usuario where detalform.docu=usuario.docu AND id_tip_usu=3";
 $titulado = mysqli_query($bdmysqli,$titul);
-
-$trans = "SELECT * FROM usuario WHERE id_tip_usu = 4";
-$transversal = mysqli_query($bdmysqli,$trans);
 
 ?>
 
@@ -25,7 +22,7 @@ $transversal = mysqli_query($bdmysqli,$trans);
         <img src="../img/ashleylogo.png" alt="" class="logo">
         <ul>
         <li type="button" onclick="mostrarTecnicos();">Instructores Tecnicos</li>
-            <li type="button" onclick="mostrarTransversal();">Instructores Transversales</li>
+            <li>Instructores Transversales</li>
             <li>Informe general</li>
             <li class="documento">Por documento</li>
         </ul>
@@ -34,10 +31,6 @@ $transversal = mysqli_query($bdmysqli,$trans);
 		function mostrarTecnicos() {
 			document.getElementById('tecnicos').style.display = 'block';
             document.getElementById('transversal').style.display = 'none';
-		}
-        function mostrarTransversal() {
-			document.getElementById('transversal').style.display = 'block';
-            document.getElementById('tecnicos').style.display = 'none';
 		}
 
 	    </script>
@@ -52,6 +45,7 @@ $transversal = mysqli_query($bdmysqli,$trans);
                     <?php $resultado = mysqli_query($bdmysqli,$titul);
                     while($row=mysqli_fetch_assoc($resultado)) {?>
                         <div class="main-container"> 
+                            <p class="table__item"> <b>FICHA:</b><?php echo $row["no_ficha"];?></p>
                             <p class="table__item"> <b>DOCUMENTO:</b><?php echo $row["docu"];?></p>
                             <p class="table__item"> <b>NOMBRE:</b><?php echo $row["nombres"];?></p>
                             <p class="table__item"> <b>APELLIDO:</b><?php echo $row["apellidos"];?></p>
@@ -61,23 +55,7 @@ $transversal = mysqli_query($bdmysqli,$trans);
                             <p class="table__item"> <b>DIRECCION:</b><?php echo $row["direccion"];?></p>
                         </div>
                             <?php } mysqli_free_result($resultado); ?>
-        
-        </div>
-
-        <div id="transversal">
-                    <?php $resulta = mysqli_query($bdmysqli,$trans);
-                    while($row=mysqli_fetch_assoc($resulta)) {?>
-                        <div class="main-container"> 
-                            <p class="table__item"> <b>DOCUMENTO:</b><?php echo $row["docu"];?></p>
-                            <p class="table__item"> <b>NOMBRE:</b><?php echo $row["nombres"];?></p>
-                            <p class="table__item"> <b>APELLIDO:</b><?php echo $row["apellidos"];?></p>
-                            <p class="table__item"> <b>EDAD:</b><?php echo $row["edad"];?></p>
-                            <p class="table__item"> <b>CELULAR:</b><?php echo $row["celular"];?></p>
-                            <p class="table__item"> <b>FIJO:</b><?php echo $row["fijo"];?></p>
-                            <p class="table__item"> <b>DIRECCION:</b><?php echo $row["direccion"];?></p>
-                        </div>
-                            <?php } mysqli_free_result($resulta); ?>
-        
+            </div>
         </div>
 </body>
 </html>

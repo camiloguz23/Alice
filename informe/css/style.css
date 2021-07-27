@@ -48,25 +48,12 @@ header .buscador {
     height: 50px;
 }
 .main-container{
-    width: 90%;
-    background: #ffffff;
+    width: 50%;
+    background: #246355;
+    color:white;
     margin: 50px auto;
     box-sizing: 0 0 100px;
-
-    grid-template-columns: repeat(7, 25%);
-}
-
-.table__title{
-    grid-column-start: 1;
-    grid-column-end: 7;
-
-    background: #fc7323;
-    color: wheat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.9em;
+    border-top: 4px solid black;
 }
 
 .table__header, .table__item{
@@ -83,7 +70,7 @@ header .buscador {
 
 .table__item{
     padding: 10px;
-    font-size: 1.2em;
+    font-size: 1.0em;
 }
 
 #tecnicos{

@@ -21,7 +21,6 @@ header ul {
     display: flex;
     list-style: none;
     justify-content: space-evenly;
-    border: solid 2px red;
     align-items: center;
   
 }
@@ -44,8 +43,54 @@ header .buscador {
 .logo {
     width: 70px;
 }
+.salida{
+    width: 50px;
+    height: 50px;
+}
+.main-container{
+    width: 90%;
+    background: #ffffff;
+    margin: 50px auto;
+    box-sizing: 0 0 100px;
 
-@media  screen and (max-width:600px) {
+    grid-template-columns: repeat(7, 25%);
+}
+
+.table__title{
+    grid-column-start: 1;
+    grid-column-end: 7;
+
+    background: #fc7323;
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.9em;
+}
+
+.table__header, .table__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table__header{
+    font-weight: bold;
+    background: #fc7323;
+    font-size: 1.5em;
+}
+
+.table__item{
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+#contenedorprincipal{
+    display: none;
+}
+
+@media  screen and (max-width:599px) {
     .documento{
         display: block;
     }
@@ -62,6 +107,11 @@ header .buscador {
     header ul li {
         padding: 1px 15px;
     }
+    .salida{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
 }
 div.contenido{
     background-color: aqua;
@@ -76,6 +126,5 @@ border-radius: 5%;
 }
 div.informe p {
   font-size: 20px;
-  padding: 7px 40px  ;
-
+  padding: 7px 40px ;
 }

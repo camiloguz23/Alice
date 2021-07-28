@@ -1,4 +1,5 @@
 
+
 $(obtener_registros());
 function obtener_registros(productos)
 {
@@ -26,6 +27,7 @@ $(document).on('keyup', '#termino', function()
 		obtener_registros();
 	}
 });
+
 
 
 

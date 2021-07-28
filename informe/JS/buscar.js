@@ -3,7 +3,7 @@ $(obtener_registros());
 function obtener_registros(productos)
 {
 	$.ajax({
-		url : '../php/conexion.php',
+		url : 'busqueda.php',
 		type : 'POST',
 		dataType : 'html',
 		data : { productos: productos },

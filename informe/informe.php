@@ -47,7 +47,11 @@ $titulado = mysqli_query($bdmysqli,$titul);
     </header>
     <body>
         <div id="contenido">
+        <div class="todo" id="tabla_resultados">
+				
+                </div>
             <div id="tecnicos">
+                
                     <?php $resultado = mysqli_query($bdmysqli,$titul);
                     while($row=mysqli_fetch_assoc($resultado)) {?>
                         <div class="main-container"> 

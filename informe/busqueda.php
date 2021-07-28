@@ -1,6 +1,6 @@
 <?php 
 
-require_once "conexion.php";
+require_once "../php/conexion.php";
 $tabla="";
 $consulta=" SELECT ambiente.id_amb, detalform.no_ficha, formacion.nom_form,usuario.docu, usuario.nombres, usuario.apellidos, dias.Nom_dia, tipo_formacion.nom_tip_form, horario.Nom_horario, detalform.fecha_inico, detalform.fecha_final FROM detalform INNER JOIN ambiente ON detalform.id_amb=ambiente.id_amb INNER JOIN formacion ON ambiente.id_form=formacion.id_form INNER JOIN usuario ON detalform.docu=usuario.docu INNER JOIN dias ON detalform.Id_dia=dias.Id_dia INNER JOIN tipo_formacion ON detalform.id_tip_form=tipo_formacion.id_tip_form INNER JOIN horario ON detalform.Id_horario=horario.Id_horario LIMIT 0";
 $termino= "";

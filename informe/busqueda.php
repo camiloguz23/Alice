@@ -36,12 +36,12 @@ if($consultaBD->num_rows>1){
 			
 			<p><b>FECHA DE INICIO: </b>".$fila['fecha_inico']."</p>
 			
-			<p><b>FECHA DE FIN:  </b>".$fila['fecha_final']."</p>
+			<p><b>FECHA DE FINAL:  </b>".$fila['fecha_final']."</p>
 			</div>";
 		}
 	
 
 }else{
-	echo "<center><h4>No hemos encotrado ningun registro con la palabra "."<strong class='text-uppercase'>".$termino."</strong><h4><center>";
+	echo "<center><h4>".$termino."</strong><h4><center>";
 }
 ?>

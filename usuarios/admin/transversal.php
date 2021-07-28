@@ -124,7 +124,7 @@ $consultrave = mysqli_query($bdmysqli,$traversal);
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($consultrave as $traver){
+                        foreach ($consultrave as $traversal){
                             ?><tr>
                                 <td><?=$traver["no_ficha"]?></td>
                                 <td><?=$traver["docu"]?></td>

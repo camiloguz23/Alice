@@ -11,21 +11,32 @@ $titulado = mysqli_query($bdmysqli,$titul);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Informe de las asignaciones</title>
+	<meta charset="UTF-8">
+	<title>INFORME</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script src="https://kit.fontawesome.com/18e932af55.js"></script>
+	<link rel="stylesheet" href="CSS/style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/buscar.js"></script>
+	
 </head>
 <body>
-    <header>
-        <img src="../img/ashleylogo.png" alt="" class="logo">
+	
+	<header>
+
+        
+	 
+	 <img src="../img/ashleylogo.png" alt="" class="logo">
         <ul>
         <li type="button" onclick="mostrarTecnicos();">Instructores Tecnicos</li>
             <li>Instructores Transversales</li>
             <li>Informe general</li>
             <li class="documento">Por documento</li>
         </ul>
+
+        <div class="buscador">
+        <input  type="text" name="termino" id="termino" placeholder="BUSCAR" aria-label="Search">
+        </div>	
 
         <script type="text/javascript">
 		function mostrarTecnicos() {
@@ -34,14 +45,19 @@ $titulado = mysqli_query($bdmysqli,$titul);
 		}
 
 	    </script>
-        <div class="buscador">
-            <input type="number" name="" id="" placeholder="Buscador por el documento">
-        </div>
+         
+        
         <a href="../usuarios/admin/admin.php"><img src="../img/salida.png" alt="salida" class="salida"></a>
     </header>
-    <body>
+    
         <div id="contenido">
-            <div id="tecnicos">
+    		
+			<div class="todo" id="tabla_resultados">
+            </div>
+				
+		</div>
+        
+        <div id="tecnicos">
                     <?php $resultado = mysqli_query($bdmysqli,$titul);
                     while($row=mysqli_fetch_assoc($resultado)) {?>
                         <div class="main-container"> 
@@ -55,7 +71,7 @@ $titulado = mysqli_query($bdmysqli,$titul);
                             <p class="table__item"> <b>DIRECCION:</b><?php echo $row["direccion"];?></p>
                         </div>
                             <?php } mysqli_free_result($resultado); ?>
-            </div>
         </div>
+    
 </body>
 </html>

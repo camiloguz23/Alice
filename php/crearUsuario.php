@@ -36,7 +36,7 @@ if ($insertar){
 
         
 
-        $detalleMateria = "INSERT INTO detalle_materia (documento,id_materia) values ($documento,'$materia')";
+        $detalleMateria = "INSERT INTO detalle_materia from (documento,id_materia) values ('$documento','$materia')";
         $consulta = mysqli_query($bdmysqli,$detalleMateria);
         
     } 

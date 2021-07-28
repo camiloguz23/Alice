@@ -115,12 +115,34 @@ if ($validar == "" || $validar == null){
             <label for="nombre">Apellido</label>
             <input type="text" class="table__input" value="<?php echo $row["apellidos"];?>" name="apellido" disabled="disabled">
             <label for="nombre">Edad</label>
-            <input type="number" class="table__input" value="<?php echo $row["edad"];?>" name="edad" required max=100 min="18">
+            <input type="text" class="table__input" value="<?php echo $row["edad"];?>" name="edad" required onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="2" maxlength="3">
             <label for="nombre">Celular</label>
-            <input type="number" id="celuko" class="table__input" min="3000000000" max="3999999999" value="<?php echo $row["celular"];?>" name="celular" required>
+            <input type="text" id="celuko" class="table__input" onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="10" maxlength="11" value="<?php echo $row["celular"];?>" name="celular" required>
             <span class="error" aria-live="polite"></span>
             <label for="nombre">Fijo</label>
-            <input type="number" class="table__input" min="2000000" max="6999999" value="<?php echo $row["fijo"];?>" name="fijo" required>
+            <input type="text" class="table__input" onkeypress="return soloNumeros(event)" onpaste="return false"  minlength="7" maxlength="7" value="<?php echo $row["fijo"];?>" name="fijo" required>
+            <script>
+                        function soloNumeros(e){
+                key=e.keyCode || e.which;
+    
+                teclado=String.fromCharCode(key);
+    
+                numeros="123456789101112";
+    
+                especiales="8-37-38-46";
+    
+                teclado_especial=false;
+    
+                for(var i in especiales){
+                    if(key==especiales[i]){
+                        teclado_especial=true;
+                    }
+                }
+                if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+                        return false;
+                }
+            }
+            </script>
             <span class="error" aria-live="polite"></span>
             <label for="nombre">Dirección</label>
             <input type="text" class="table__input" value="<?php echo $row["direccion"];?>" name="direccion" required>

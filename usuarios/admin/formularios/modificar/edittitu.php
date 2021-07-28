@@ -90,7 +90,7 @@ $titulado = mysqli_query($conexion,$titul);
                           <li><a href="../eliminar/EliminForma.php"><i class="fas fa-minus-square"></i>.Eliminar </a></li>
                           <li><a href="../crear/CrearFicha.php"><i class="fas fa-plus-square"></i>.Formacion Titulada</a></li>
                           <li><a href="edittitu.php" class="active"><i class="fas fa-plus-square"></i>.Editor titulada</a></li>
-                          <li><a href="formularios/crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
+                          <li><a href="../crear/trasversal.php"><i class="fas fa-plus-square"></i>.Asignacion trasversal</a></li>
                           <li><a href="editrans.php"><i class="fas fa-plus-square"></i>.Editor transversal</a></li>
                           <li><a href="../eliminar/eliminaFicha.php"><i class="fas fa-users"></i>.Grupos Formativos</a></li>
 

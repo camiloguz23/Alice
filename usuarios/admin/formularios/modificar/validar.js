@@ -1,11 +1,12 @@
 const email = document.getElementById("email");
 const usuario = document.getElementById("usuario");
-var titula = document.getElementById("tituladas");
+const titulada = document.getElementById("titulada");
 const fijo = document.getElementById("fijo");
 const span = document.getElementById("span");
 const enviar = document.getElementById("btn_enviar");
 
 enviar.disabled = true;
+titulada.style.display="none"
 
 
 //^ MOSTRAR CAMPO O EL SELECT DEL FORMULARIO CREAR  USUARIO 
@@ -14,18 +15,9 @@ usuario.addEventListener("blur", () => {
   let dato = usuario.value
   console.log(dato)
   if (dato == 4) {
-    titulada.innerHTML = `<label class="">Materia</label><br>
-    <select name="materia" required>
-        <option value="">Seleccione</option>
-        <?php
-        foreach ($tit as $titul){
-            ?> <option value="<?=$titul['id_materia']?>"><?=$titul['nom_materia']?></option>
-        <?php
-        }
-        ?>
-    </select> `
+    titulada.style.display="block"
   }else{
-    titulada.innerHTML = ``
+    titulada.style.display="none"
   }
 })
 

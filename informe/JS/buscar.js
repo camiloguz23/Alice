@@ -1,32 +1,20 @@
+const documento = document.getElementById("termino")
+const contenedor = document.getElementById("contenido")
 
+documento.addEventListener("keyup", (e) => {
 
-$(obtener_registros());
-function obtener_registros(productos)
-{
-	$.ajax({
-		url : 'busqueda.php',
-		type : 'POST',
-		dataType : 'html',
-		data : { productos: productos },
+	const dato = documento.value 
+
+	fetch("../php/informadocu.php",{
+		method:"POST",
+		body:JSON.stringify({
+			"docu":dato,
+			"accion":"documento"
+		})
+	}).then(res => res.text()).then(info => {
+		contenedor.innerHTML = `${info}`
 	})
-	.done(function(resultado){
-		$("#tabla_resultados").html(resultado);
-	})
-}
-
-$(document).on('keyup', '#termino', function()
-{
-	var valorBusqueda=$(this).val();
-	
-	if (valorBusqueda!="")
-	{
-		obtener_registros(valorBusqueda);
-	}
-	else
-	{
-		obtener_registros();
-	}
-});
+})
 
 
 

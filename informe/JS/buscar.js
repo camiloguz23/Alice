@@ -73,4 +73,3 @@ ficha.addEventListener("keyup", (e) => {
 
 
 
-

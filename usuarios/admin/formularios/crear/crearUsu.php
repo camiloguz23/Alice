@@ -287,8 +287,9 @@ if ($validar == "" || $validar == null){
     
                 <div>
                     <label for="" class="texto">Celular</label><br>
-                    <input type="number" name="celular" minlength="10" maxlength="10" required    autocomplete="off">
-
+                    <!---<input type="number" name="celular" minlength="10" maxlength="10" required    autocomplete="off">-->
+                    <input type="number" name="celular" max="9999999999" required  autocomplete="off" id="celular">
+                    <span id="span"></span>
                    
 
                 </div>

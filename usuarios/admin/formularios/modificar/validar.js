@@ -47,3 +47,21 @@ fijo.addEventListener("keyup", () => {
   }
   
 })
+celular.addEventListener("keyup", () => {
+  const cantidad =celular.value
+  const numero = cantidad.length
+  if (numero >= 10 && numero <= 10){
+    span.textContent= "cantidad valida"
+    enviar.disabled = false
+    enviar.classList.remove("enviar")
+  }else if (numero > 10 ){
+    const longitud = cantidad.slice(0,10)
+    celular.value = longitud
+    
+  }else {
+    span.textContent= "cantidad inferior de 8 o 9 digitos"
+    enviar.disabled = true
+    enviar.classList.add("enviar")
+  }
+  
+})

@@ -45,14 +45,8 @@ $titulado = mysqli_query($bdmysqli,$titul);
 		}
 
 	    </script>
-<<<<<<< Updated upstream
-        <div class="buscador">
-            <input type="number" name="" id="" placeholder="Buscador por el documento">
-        </div>
-=======
          
         
->>>>>>> Stashed changes
         <a href="../usuarios/admin/admin.php"><img src="../img/salida.png" alt="salida" class="salida"></a>
     </header>
     

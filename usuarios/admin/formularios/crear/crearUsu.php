@@ -154,7 +154,16 @@ if ($validar == "" || $validar == null){
             </div>
 
             <div id="titulada">
-                   
+            <label class="">Materia</label><br>
+                <select name="materia" required>
+                    <option value="">Seleccione</option>
+                    <?php
+                    foreach ($tit as $titul){
+                        ?> <option value="<?=$titul['id_materia']?>"><?=$titul['nom_materia']?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
             </div>
 
                      

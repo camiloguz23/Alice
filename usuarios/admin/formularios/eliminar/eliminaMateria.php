@@ -82,7 +82,7 @@ $del = mysqli_query($bdmysqli,$consu);
                         <li><a href="../crear/crearAmbien.php" ><i class="fas fa-plus-square"></i>.Añadir</a></li>
                         <li><a href="eliminarAmbi.php"><i class="fas fa-minus-square"></i>.Eliminar</a></li>
                         <li><a href="../crear/crearmateria.php" ><i class="fas fa-plus-square"></i>.Añadir Materia</a></li>
-                        <li><a href="eliminarMateria.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
+                        <li><a href="../eliminar/eliminaMateria.php" class="active"><i class="fas fa-minus-square"></i>.Eliminar Materia</a></li>
 
                     </ul>
                     </li>

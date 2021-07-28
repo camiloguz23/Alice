@@ -1,25 +1,25 @@
 const email = document.getElementById("email");
-const usuario = document.getElementById("usuario")
-const titulada = document.getElementById("titulada")
-const fijo = document.getElementById("fijo")
-const span = document.getElementById("span")
-const enviar = document.getElementById("btn_enviar")
+const usuario = document.getElementById("usuario");
+var titula = document.getElementById("tituladas");
+const fijo = document.getElementById("fijo");
+const span = document.getElementById("span");
+const enviar = document.getElementById("btn_enviar");
 
-enviar.disabled = true
+enviar.disabled = true;
 
 
 //^ MOSTRAR CAMPO O EL SELECT DEL FORMULARIO CREAR  USUARIO 
 
 usuario.addEventListener("blur", () => {
-  let dato = usuario.value 
+  let dato = usuario.value
   console.log(dato)
   if (dato == 4) {
-    titulada.innerHTML = `  <label  class="">Materia</label><br>
-    <select name="materia" required >
+    titulada.innerHTML = `<label class="">Materia</label><br>
+    <select name="materia" required>
         <option value="">Seleccione</option>
         <?php
-        foreach ($tit as $titula){
-            ?> <option value="<?=$titula['id_materia']?>"><?=$titula['nom_materia']?></option>
+        foreach ($tit as $titul){
+            ?> <option value="<?=$titul['id_materia']?>"><?=$titul['nom_materia']?></option>
         <?php
         }
         ?>

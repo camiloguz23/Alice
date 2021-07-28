@@ -34,14 +34,14 @@ $titulado = mysqli_query($bdmysqli,$titul);
             <li >Por documento</li>
         </ul>
         <div class="buscador">
-        <input  type="text" name="termino" id="ficha" placeholder="numero de ficha" aria-label="Search">
+        <input  type="number" name="termino" id="ficha" placeholder="numero de ficha" aria-label="Search">
         </div>
         <div class="buscador">
         <input  type="text" name="termino" id="ambiente" placeholder="ambiente" aria-label="Search">
         </div>
 
         <div class="buscador">
-        <input  type="text" name="termino" id="termino" placeholder="documento" aria-label="Search">
+        <input  type="number" name="termino" id="termino" placeholder="documento" aria-label="Search">
         </div>	
         
         <a href="../usuarios/admin/admin.php"><img src="../img/salida.png" alt="salida" class="salida"></a>
